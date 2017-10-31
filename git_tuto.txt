@@ -1,0 +1,17 @@
+1. git init : création dossier caché git
+
+2. git add .
+
+3. git commit -m "first commit"
+
+4. git status
+
+5. git remote add origin https://github.com/Lucatim/Domisep.git
+
+6. git config --global user.name [name]
+
+7. git config --global user.email [email]
+
+8. git config --global user.password [password]
+
+9. git push -u origin master
