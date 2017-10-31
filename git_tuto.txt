@@ -1,4 +1,4 @@
-1. git init : création dossier caché git
+1. git init
 
 2. git add .
 
@@ -15,3 +15,9 @@
 8. git config --global user.password [password]
 
 9. git push -u origin master
+
+----------------------
+
+1. git commit -a -m "message à envoyer"
+
+2. git push
