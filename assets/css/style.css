@@ -1,0 +1,195 @@
+/** {
+	border: 1px solid red
+}*/
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: Roboto;
+}
+
+img {
+	width: 100%;
+}
+
+h2 {
+	color: #ff9800;
+}
+
+/*************** HEADER ***************/
+
+header {
+	display: flex;
+/*	justify-content: flex-end;*/
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#div_logo_domisep {
+	display: flex;
+	align-items: center;
+ 	margin-right: auto; 
+ 	margin-left: 50px;
+ 	width: 200px;
+}
+
+#nav_header {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 50px; 
+}
+
+#nav_header li {
+    display: flex;
+    border-right: 1px solid #e3e3e3;
+    padding: 0 10px; /* 0 hauteur et 10 largeur */ 
+}
+
+#nav_header li:last-child {
+	border-right: none;
+}
+
+#nav_header a {
+	text-decoration: none;
+	color: #ff9800;
+}
+
+#nav_header a:hover {
+	color: #ffc947;
+}
+
+.texte_vert {
+	color: #81c784;
+}
+
+#nav_header a:hover span.texte_vert { /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
+	color: #b2fab4;
+}
+
+/*************** SLIDE ***************/
+
+/*#slide_accueil {
+	height: 500px;
+	width: 100%;
+	overflow: hidden;
+}*/ /* On définit un div général pour la hauteur et la largueur du slide, et on cache ce qui dépasse du div */
+
+/*#banniere_accueil {
+	display: flex;
+	height: 2000%;
+	background-image: url(images/banniere_accueil.jpg);
+	background-repeat: no-repeat;
+	margin-top: -200px;
+} *//* On charge l'image en CSS, on la décale vers le haut et on augmente sa hauteur pour qu'elle ne soit pas coupée */
+
+#slide_accueil {
+	height: 10%;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*************** CONTENT ***************/
+
+.container {
+	width: 1000px;
+	margin: 0 auto; /* margin 0 top et auto pour le reste (bottom, left, right). 0 pour prévoir si container est dans une autre div avec une hauteur définie */
+}
+
+#bloc_a_propos, #bloc_pourquoi_domisep, #bloc_nos_solutions {
+	display: flex;
+}
+
+#bloc_pourquoi_domisep {
+	background: #e3e3e3;
+}
+
+#content h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#content p {
+	text-align: justify;
+	padding: 0 30px 0 30px;
+}
+
+#content > div {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/*************** FOOTER ***************/
+
+#haut_footer {
+	display: flex;
+	justify-content: flex-end;
+	background: #ff9800;
+}
+
+#bas_footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#div_logo_blanc_domisep {
+	display: flex;
+	align-items: center;
+ 	margin-right: auto; 
+ 	margin-left: 50px;
+ 	width: 10%;
+}
+
+#nav_footer{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+#nav_footer li {
+    margin-right: 50px;
+}
+
+#nav_footer li:last-child {
+    margin-right: 50px;
+}
+
+#nav_footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#nav_footer a:hover {
+	color: #e3e3e3;
+}
+
+#reseaux_sociaux {
+	display: flex;
+ 	margin-right: auto; 
+ 	margin-left: 50px;
+ 	align-items: center;
+ 	width: 10%;
+}
+
+#facebook_footer, #twitter_footer {
+ 	width: 30px;
+ 	margin:auto;
+}
+
+#copyright {
+	display: flex;
+	margin-right: auto;
+	align-items: center;
+}
+
+#drapeaux {
+	display: flex;
+ 	margin-right: 50px; 
+ 	align-items: center;
+ 	width: 10%;
+}
+
+#drapeaux_francais, #drapeaux_anglais {
+ 	width: 30px;
+ 	margin:auto;
+}
