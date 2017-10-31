@@ -16,7 +16,9 @@ h2 {
 	color: #ff9800;
 }
 
-/*************** HEADER ***************/
+/* ******************* */
+/*        HEADER       */
+/* ******************* */
 
 header {
 	display: flex;
@@ -31,6 +33,7 @@ header {
  	margin-right: auto; 
  	margin-left: 50px;
  	width: 200px;
+	height:80px;
 }
 
 #nav_header {
@@ -44,6 +47,10 @@ header {
     display: flex;
     border-right: 1px solid #e3e3e3;
     padding: 0 10px; /* 0 hauteur et 10 largeur */ 
+}
+
+#nav_header li a i{
+	display:none;
 }
 
 #nav_header li:last-child {
@@ -67,21 +74,9 @@ header {
 	color: #b2fab4;
 }
 
-/*************** SLIDE ***************/
-
-/*#slide_accueil {
-	height: 500px;
-	width: 100%;
-	overflow: hidden;
-}*/ /* On définit un div général pour la hauteur et la largueur du slide, et on cache ce qui dépasse du div */
-
-/*#banniere_accueil {
-	display: flex;
-	height: 2000%;
-	background-image: url(images/banniere_accueil.jpg);
-	background-repeat: no-repeat;
-	margin-top: -200px;
-} *//* On charge l'image en CSS, on la décale vers le haut et on augmente sa hauteur pour qu'elle ne soit pas coupée */
+/* ******************* */
+/*        SLIDE        */
+/* ******************* */
 
 #slide_accueil {
 	height: 10%;
@@ -89,7 +84,9 @@ header {
 	overflow: hidden;
 }
 
-/*************** CONTENT ***************/
+/* ******************* */
+/*       CONTENT       */
+/* ******************* */
 
 .container {
 	width: 1000px;
@@ -119,11 +116,12 @@ header {
 	padding-bottom: 20px;
 }
 
-/*************** FOOTER ***************/
+/* ******************* */
+/*        FOOTER       */
+/* ******************* */
 
 #haut_footer {
 	display: flex;
-	justify-content: flex-end;
 	background: #ff9800;
 }
 
@@ -137,7 +135,7 @@ header {
 	align-items: center;
  	margin-right: auto; 
  	margin-left: 50px;
- 	width: 10%;
+ 	width: 130px;
 }
 
 #nav_footer{
@@ -147,10 +145,6 @@ header {
 }
 
 #nav_footer li {
-    margin-right: 50px;
-}
-
-#nav_footer li:last-child {
     margin-right: 50px;
 }
 
@@ -168,7 +162,7 @@ header {
  	margin-right: auto; 
  	margin-left: 50px;
  	align-items: center;
- 	width: 10%;
+ 	width: 50px;
 }
 
 #facebook_footer, #twitter_footer {
@@ -186,10 +180,111 @@ header {
 	display: flex;
  	margin-right: 50px; 
  	align-items: center;
- 	width: 10%;
+ 	width: 50px;
 }
 
 #drapeaux_francais, #drapeaux_anglais {
  	width: 30px;
  	margin:auto;
+}
+
+#facebook_footer, #drapeaux_francais {
+	margin-right: 5px;
+}
+
+/* ******************* */
+/*    MEDIA QUERIES    */
+/* ******************* */
+
+@media (max-width: 1024px) {
+	#nav_header li a i{
+		display:flex;
+	}
+
+	#nav_header li a .nav_text{
+		display:none;
+	}
+
+	#div_logo_domisep {
+		margin-left: 10px;
+	}
+
+	#nav_header {
+		margin-right: 10px;
+	}
+
+	#copyright {
+		order: 3;
+		font-size:0.8rem;
+	}
+
+	#copyright, #reseaux_sociaux, #drapeaux {
+		margin: auto;
+	}
+
+	#bas_footer {
+		flex-direction: column;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	#bas_footer p {
+		margin: 0;
+	}
+}
+
+@media (min-width: 740px) and (max-width: 1024px) {
+	#content p{
+		line-height:1rem;
+		font-size:0.9rem;
+	}
+
+	#content h2{
+		font-size:1.6rem;
+		margin:20px;
+		padding:0;
+	}
+
+	#div_logo_blanc_domisep {
+		margin-left: 30px;
+	}
+
+	#nav_footer li {
+		margin-right: 25px;
+		font-size:0.9rem;
+	}
+
+	#nav_footer li:last-child {
+		margin-right: 30px;
+	}
+}
+
+@media (max-width: 740px) {
+	#content p{
+		line-height:1rem;
+		font-size:0.8rem;
+	}
+
+	#content h2{
+		font-size:1.3rem;
+		margin:10px;
+		padding:0;
+	}
+
+	#nav_footer {
+		flex-direction: column;
+		align-items: left;
+	}
+
+	#nav_footer li {
+		font-size:1em;
+		line-height: 30px;
+		margin-right: 30px;
+	}
+
+	#div_logo_blanc_domisep {
+		width: 200px;
+		margin: auto;
+	}
+
 }
