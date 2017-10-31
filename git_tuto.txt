@@ -24,10 +24,18 @@
 
 ----------------------
 
-Créer branche de test :
+1. git branch test : créer branche de test
 
-1. git branch test
+2. git checkout test : aller sur la branche test
 
-2. git checkout test
+3. git branch : voir les branches existantes
 
-3. git branch
+Après modif sur la branch :
+commit
+git push --set-upstream origin test
+git checkout master
+git merge test
+git push
+
+git branch -d test : supprimer la branche de test
+
