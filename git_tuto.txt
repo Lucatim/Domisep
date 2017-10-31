@@ -21,3 +21,13 @@
 1. git commit -a -m "message à envoyer"
 
 2. git push
+
+----------------------
+
+Créer branche de test :
+
+1. git branch test
+
+2. git checkout test
+
+3. git branch
