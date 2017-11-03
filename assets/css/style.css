@@ -5,7 +5,7 @@
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Roboto;
+	font-family: Roboto, serif;
 }
 
 img {
@@ -21,17 +21,20 @@ h2 {
 /* ******************* */
 
 header {
-	display: flex;
-/*	justify-content: flex-end;*/
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+#bloc_header {
+	display: flex;
+	justify-content: flex-end;
 }
 
 #div_logo_domisep {
 	display: flex;
 	align-items: center;
- 	margin-right: auto; 
- 	margin-left: 50px;
+ 	margin-right: auto;
+ 	margin-left: 10px;
  	width: 200px;
 	height:80px;
 }
@@ -40,13 +43,14 @@ header {
     list-style-type: none;
     display: flex;
     align-items: center;
-    margin-right: 50px; 
+    margin-right: 10px;
+	padding-left: 0;
 }
 
 #nav_header li {
     display: flex;
     border-right: 1px solid #e3e3e3;
-    padding: 0 10px; /* 0 hauteur et 10 largeur */ 
+    padding: 0 10px; /* 0 hauteur et 10 largeur */
 }
 
 #nav_header li a i{
@@ -109,6 +113,7 @@ header {
 #content p {
 	text-align: justify;
 	padding: 0 30px 0 30px;
+	line-height:1.5rem;
 }
 
 #content > div {
@@ -125,16 +130,16 @@ header {
 	background: #ff9800;
 }
 
-#bas_footer {
+#bas_footer, #bloc_haut_footer {
 	display: flex;
-	justify-content: flex-end;
+	/*justify-content: flex-end;*/
 }
 
 #div_logo_blanc_domisep {
 	display: flex;
 	align-items: center;
- 	margin-right: auto; 
- 	margin-left: 50px;
+ 	margin-right: auto;
+ 	margin-left: 10px;
  	width: 130px;
 }
 
@@ -142,10 +147,15 @@ header {
     list-style-type: none;
     display: flex;
     align-items: center;
+	padding-left: 0;
 }
 
 #nav_footer li {
-    margin-right: 50px;
+    margin-right: 30px;
+}
+
+#nav_footer li:last-child {
+	margin-right: 10px;
 }
 
 #nav_footer a {
@@ -159,7 +169,7 @@ header {
 
 #reseaux_sociaux {
 	display: flex;
- 	margin-right: auto; 
+ 	margin-right: auto;
  	margin-left: 50px;
  	align-items: center;
  	width: 50px;
@@ -178,7 +188,7 @@ header {
 
 #drapeaux {
 	display: flex;
- 	margin-right: 50px; 
+ 	margin-right: 50px;
  	align-items: center;
  	width: 50px;
 }
@@ -196,7 +206,47 @@ header {
 /*    MEDIA QUERIES    */
 /* ******************* */
 
-@media (max-width: 1024px) {
+@media (min-width: 992px) { /* Screen large desktop */
+	#bloc_header, #bas_footer, #bloc_haut_footer {
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	#nav_header li {
+		font-size: 1.2rem;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 992px) { /* Screen desktop */
+	#bloc_header, footer #bas_footer, #bloc_haut_footer {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	#nav_header li {
+		padding: 0 5px;
+
+	}
+
+	#nav_header {
+		margin-right: 10px;
+	}
+
+	#div_logo_blanc_domisep {
+		margin-left: 30px;
+	}
+
+	#nav_footer li:last-child {
+		margin-right: 30px;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 768px) { /* Screen tablet */
+	#bloc_header, footer #bas_footer, #bloc_haut_footer {
+		width: 100%;
+		margin: 0 auto;
+	}
+
 	#nav_header li a i{
 		display:flex;
 	}
@@ -205,12 +255,75 @@ header {
 		display:none;
 	}
 
-	#div_logo_domisep {
-		margin-left: 10px;
+	#content p{
+		line-height: 1.3rem;
+		font-size: 0.9rem;
 	}
 
-	#nav_header {
-		margin-right: 10px;
+	#content h2{
+		font-size:1.6rem;
+		margin:20px;
+		padding:0;
+	}
+
+	#nav_footer {
+		flex-direction: column;
+		align-items: left;
+	}
+
+	#copyright {
+		order: 3;
+		font-size:0.8rem;
+	}
+
+	#copyright, #reseaux_sociaux, #drapeaux {
+		margin: auto;
+	}
+
+	#bas_footer {
+		flex-direction: column;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding: 10px 0 10px 0;
+	}
+
+	#div_logo_blanc_domisep {
+		margin-left: 30px;
+	}
+
+	#bas_footer p {
+		margin: 0;
+	}
+}
+
+@media (max-width: 480px) { /* Screen phone */
+	#bloc_header, footer #bas_footer, #bloc_haut_footer {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	#nav_header li a i{
+		display:flex;
+	}
+
+	#nav_header li a .nav_text{
+		display:none;
+	}
+
+	#content p{
+		line-height:1rem;
+		font-size:0.8rem;
+	}
+
+	#content h2{
+		font-size:1.3rem;
+		margin:10px;
+		padding:0;
+	}
+
+	#nav_footer {
+		flex-direction: column;
+		align-items: left;
 	}
 
 	#copyright {
@@ -231,60 +344,4 @@ header {
 	#bas_footer p {
 		margin: 0;
 	}
-}
-
-@media (min-width: 740px) and (max-width: 1024px) {
-	#content p{
-		line-height:1rem;
-		font-size:0.9rem;
-	}
-
-	#content h2{
-		font-size:1.6rem;
-		margin:20px;
-		padding:0;
-	}
-
-	#div_logo_blanc_domisep {
-		margin-left: 30px;
-	}
-
-	#nav_footer li {
-		margin-right: 25px;
-		font-size:0.9rem;
-	}
-
-	#nav_footer li:last-child {
-		margin-right: 30px;
-	}
-}
-
-@media (max-width: 740px) {
-	#content p{
-		line-height:1rem;
-		font-size:0.8rem;
-	}
-
-	#content h2{
-		font-size:1.3rem;
-		margin:10px;
-		padding:0;
-	}
-
-	#nav_footer {
-		flex-direction: column;
-		align-items: left;
-	}
-
-	#nav_footer li {
-		font-size:1em;
-		line-height: 30px;
-		margin-right: 30px;
-	}
-
-	#div_logo_blanc_domisep {
-		width: 200px;
-		margin: auto;
-	}
-
 }
