@@ -16,6 +16,97 @@ h2 {
 	color: #ff9800;
 }
 
+h3 {
+	text-align: center;
+}
+
+.texte_vert {
+	color: #81c784;
+}
+
+.texte_orange {
+	color: #ff9800;
+}
+
+/* ******************* */
+/*     LABEL INPUT     */
+/* ******************* */
+
+input:focus {
+	outline:none;
+}
+
+#label_input {
+	display: flex;
+	width: 200px;
+	margin: 10px 0 30px 0;
+	border: none;
+	border-bottom: 1px solid #e3e3e3;
+	color: #9f9f9f;
+	-webkit-transition: border 1s ease-in;
+	-moz-transition: border 1s ease-in;
+	-o-transition: all 1s ease-in;
+	transition: border 1s ease-in;
+}
+
+#label_input:focus {
+	border-color: #b2fab4;
+}
+
+/* ******************* */
+/*     BOUTON VERT     */
+/* ******************* */
+
+#bouton_vert{
+	text-align: center;
+}
+
+#bouton_vert a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	padding: 10px 20px 10px 10px;
+	background-color: #81c784;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #e3e3e3;
+}
+
+#bouton_vert a:hover {
+	background-color: #b2fab4;
+}
+
+.material-icons {
+	vertical-align: middle;
+	padding-bottom: 3px;
+}
+
+/* ******************* */
+/*      LIEN VERT      */
+/* ******************* */
+
+.lien_vert a {
+	color: #81c784;
+	text-decoration: none;
+}
+
+.lien_vert a:hover {
+	color: #b2fab4;
+}
+
+/* ********************* */
+/*  LIEN NOIR UNDERLINE  */
+/* ********************* */
+
+#lien_noir_underline a{
+	font-style: italic;
+	color: black;
+	text-decoration: none;
+}
+
+#lien_noir_underline a:hover {
+	text-decoration: underline;
+}
+
 /* ******************* */
 /*        HEADER       */
 /* ******************* */
@@ -27,7 +118,7 @@ header {
 
 #bloc_header {
 	display: flex;
-	justify-content: flex-end;
+	/*justify-content: flex-end;*/
 }
 
 #div_logo_domisep {
@@ -50,7 +141,7 @@ header {
 #nav_header li {
     display: flex;
     border-right: 1px solid #e3e3e3;
-    padding: 0 10px; /* 0 hauteur et 10 largeur */
+    padding: 0 10px;
 }
 
 #nav_header li a i{
@@ -70,10 +161,6 @@ header {
 	color: #ffc947;
 }
 
-.texte_vert {
-	color: #81c784;
-}
-
 #nav_header a:hover span.texte_vert { /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
 	color: #b2fab4;
 }
@@ -83,26 +170,34 @@ header {
 /* ******************* */
 
 #slide_accueil {
-	/*height: 10%;*/
 	width: 100%;
 	overflow: hidden;
+	position: relative;
+}
+
+#slide_circle {
+	left: 0;
+	top: 0;
+	/*margin: auto;*/
+	margin-left: 42%;
+	margin-top: 4%;
+	border-radius: 50%;
+	width: 15%;
+	height: 0;
+	padding-bottom: 15%; /* padding calculé sur le parent */
+	border:4px solid white;
+	background-image: url("../images/unknown.jpg");
+	background-size: 100%;
+	position:absolute;
 }
 
 /* ******************* */
-/*       CONTENT       */
+/*         BODY        */
 /* ******************* */
 
-.container {
+#container {
 	width: 1000px;
 	margin: 0 auto; /* margin 0 top et auto pour le reste (bottom, left, right). 0 pour prévoir si container est dans une autre div avec une hauteur définie */
-}
-
-#bloc_a_propos, #bloc_pourquoi_domisep, #bloc_nos_solutions {
-	display: flex;
-}
-
-#bloc_pourquoi_domisep {
-	background: #e3e3e3;
 }
 
 #content h2 {
@@ -117,8 +212,8 @@ header {
 }
 
 #content > div {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
 
 /* ******************* */
@@ -202,10 +297,57 @@ header {
 }
 
 /* ******************* */
+/*        INDEX        */
+/* ******************* */
+
+#bloc_a_propos, #bloc_pourquoi_domisep, #bloc_nos_solutions {
+	display: flex;
+}
+
+#bloc_pourquoi_domisep {
+	background: #e3e3e3;
+}
+
+/* ******************* */
+/*      CONNEXION      */
+/* ******************* */
+
+#container_connexion {
+	width: 500px;
+	margin: 0 auto;
+	border: 1px solid #e3e3e3;
+	box-shadow: 5px 5px 5px #e3e3e3;
+}
+
+#bloc_connexion	{
+	display: flex;
+	flex-direction: column;
+	padding: 30px 30px 30px 30px;
+}
+
+#bloc_connexion .lien_vert {
+	padding: 10px 0 10px 0;
+}
+
+#bloc_connexion #liens_connexion .lien_vert:first-child {
+	padding-top: 30px;
+}
+
+#bloc_connexion #lien_noir_underline {
+	text-align: center;
+	padding-top: 10px;
+}
+
+#container_connexion p {
+	text-align: center;
+}
+
+/* ******************* */
 /*    MEDIA QUERIES    */
 /* ******************* */
 
-@media (min-width: 992px) { /* Screen large desktop */
+/*
+@media (min-width: 992px) { !* Screen large desktop *!
 	#bloc_header, #bas_footer, #bloc_haut_footer {
 		width: 1000px;
 		margin: 0 auto;
@@ -220,7 +362,7 @@ header {
 	}
 }
 
-@media (min-width: 768px) and (max-width: 992px) { /* Screen desktop */
+@media (min-width: 768px) and (max-width: 992px) { !* Screen desktop *!
 	#bloc_header, footer #bas_footer, #bloc_haut_footer {
 		width: 100%;
 		margin: 0 auto;
@@ -244,7 +386,7 @@ header {
 	}
 }
 
-@media (min-width: 480px) and (max-width: 768px) { /* Screen tablet */
+@media (min-width: 480px) and (max-width: 768px) { !* Screen tablet *!
 	#bloc_header, footer #bas_footer, #bloc_haut_footer {
 		width: 100%;
 		margin: 0 auto;
@@ -299,7 +441,7 @@ header {
 	}
 }
 
-@media (max-width: 480px) { /* Screen phone */
+@media (max-width: 480px) { !* Screen phone *!
 	#bloc_header, footer #bas_footer, #bloc_haut_footer {
 		width: 100%;
 	}
@@ -381,3 +523,4 @@ header {
 		font-size:0.8rem;
 	}
 }
+*/

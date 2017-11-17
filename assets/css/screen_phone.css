@@ -1,0 +1,113 @@
+@media (max-width: 480px) { /* Screen phone */
+
+    /* ******************* */
+    /*        HEADER       */
+    /* ******************* */
+
+    header {
+        margin-top: 0px;
+    }
+
+    #bloc_header, footer #bas_footer, #bloc_haut_footer {
+        width: 100%;
+    }
+
+    #bloc_header {
+        flex-direction: column;
+    }
+
+    #div_logo_domisep, #nav_header {
+        margin: auto;
+    }
+
+    #nav_header li a i{
+        display:flex;
+    }
+
+    #nav_header li a .nav_text{
+        display:none;
+    }
+
+    /* ******************* */
+    /*         BODY        */
+    /* ******************* */
+
+    #content > div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #content p{
+        line-height:1rem;
+        font-size:0.8rem;
+    }
+
+    #content h2{
+        font-size:1.3rem;
+        margin:10px;
+        padding:0;
+    }
+
+    /* ******************* */
+    /*        FOOTER       */
+    /* ******************* */
+
+    #bloc_haut_footer {
+        flex-direction: column;
+        margin: 0;
+    }
+
+
+    #div_logo_blanc_domisep{
+        margin: auto;
+        padding : 10px 0 10px 0;
+    }
+
+    #nav_footer {
+        flex-direction: column;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    #nav_footer li, #nav_footer li:last-child {
+        margin: 0;
+        padding-top: 10px;
+    }
+
+    #bas_footer {
+        flex-direction: column;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #bas_footer p {
+        margin: 0;
+    }
+
+    #copyright, #reseaux_sociaux, #drapeaux {
+        margin: auto;
+    }
+
+    #reseaux_sociaux, #drapeaux {
+        width: 70px;
+    }
+
+    #copyright {
+        order: 3;
+        font-size:0.8rem;
+    }
+
+    /* ******************* */
+    /*      CONNEXION      */
+    /* ******************* */
+
+    #container_connexion {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+
+    #label_input {
+        width: 150px;
+    }
+}
