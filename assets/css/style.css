@@ -20,6 +20,10 @@ h3 {
 	text-align: center;
 }
 
+hr {
+	border-top: 1px solid #e3e3e3
+}
+
 .texte_vert {
 	color: #81c784;
 }
@@ -216,6 +220,13 @@ header {
 	padding-bottom: 30px;
 }
 
+#container_principal {
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid #e3e3e3;
+	box-shadow: 5px 5px 5px #e3e3e3;
+}
+
 /* ******************* */
 /*        FOOTER       */
 /* ******************* */
@@ -300,7 +311,7 @@ header {
 /*        INDEX        */
 /* ******************* */
 
-#bloc_a_propos, #bloc_pourquoi_domisep, #bloc_nos_solutions {
+#bloc_a_propos, #bloc_pourquoi_domisep, #bloc_nos_solutions, #bloc_content {
 	display: flex;
 }
 

@@ -32,6 +32,11 @@
         padding:0;
     }
 
+    #container_principal {
+        border: none;
+        box-shadow: none;
+    }
+
     /* ******************* */
     /*        FOOTER       */
     /* ******************* */

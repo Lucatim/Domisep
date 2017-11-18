@@ -18,19 +18,19 @@
 
 ----------------------
 
-1. git commit -a -m "message à envoyer"
+1. git commit -a -m "message a envoyer"
 
 2. git push
 
 ----------------------
 
-1. git branch test : créer branche de test
+1. git branch test : creer branche de test
 
 2. git checkout test : aller sur la branche test
 
 3. git branch : voir les branches existantes
 
-Après modif sur la branch :
+Apres modif sur la branch :
 commit
 git push --set-upstream origin test
 git checkout master
@@ -38,4 +38,12 @@ git merge test
 git push
 
 git branch -d test : supprimer la branche de test
+
+----------------------
+
+Git bash
+
+echo 2>.gitignore : creer le fichier .gitignore
+
+Ecrire .idea : ne pas push le dossier .idea propre a Webstorm
 
