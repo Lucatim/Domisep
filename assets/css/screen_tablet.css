@@ -80,6 +80,10 @@
         text-align: center;
     }
 
+    #slide_circle {
+        margin-top: 10px;
+    }
+
     #derniere_connexion {
         margin: 0;
     }

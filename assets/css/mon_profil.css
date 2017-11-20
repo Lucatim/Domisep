@@ -1,13 +1,21 @@
+#slide_accueil {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
 #slide_haut {
     display: flex;
     flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #slide_bas {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 30px;
+    width: 215px;
+    margin: auto;
 }
 
 #slide_bas p {
@@ -19,12 +27,16 @@
 }
 
 #derniere_connexion, #date_inscription {
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 10px 10px;
 }
 
-#slide_accueil div p {
+#slide_accueil p {
     margin: 0;
     color: white;
+}
+
+#slide_bas p {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #prenom_nom {
