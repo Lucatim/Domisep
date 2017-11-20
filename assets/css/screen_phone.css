@@ -115,4 +115,22 @@
     #label_input {
         width: 150px;
     }
+
+    /* ******************* */
+    /*     MON PROFIL      */
+    /* ******************* */
+
+    #slide_haut {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #derniere_connexion {
+        margin: 0;
+    }
+
+    #slide_accueil p {
+        font-size: 0.8em;
+    }
 }

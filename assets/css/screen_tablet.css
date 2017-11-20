@@ -69,4 +69,18 @@
     #bas_footer p {
         margin: 0;
     }
+
+    /* ******************* */
+    /*     MON PROFIL      */
+    /* ******************* */
+
+    #slide_haut {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #derniere_connexion {
+        margin: 0;
+    }
 }

@@ -1,0 +1,37 @@
+#slide_haut {
+    display: flex;
+    flex-direction: row;
+}
+
+#slide_bas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#slide_bas p {
+    padding-bottom: 10px;
+}
+
+#derniere_connexion {
+    margin-right: auto;
+}
+
+#derniere_connexion, #date_inscription {
+    padding: 10px 10px 0 10px;
+}
+
+#slide_accueil div p {
+    margin: 0;
+    color: white;
+}
+
+#prenom_nom {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+#numero_client {
+    font-weight: bold;
+}

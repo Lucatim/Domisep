@@ -175,24 +175,27 @@ header {
 
 #slide_accueil {
 	width: 100%;
+	height: 374px;
 	overflow: hidden;
 	position: relative;
+	background-image: url("../images/banniere_accueil_fun.jpg");
 }
 
 #slide_circle {
-	left: 0;
+	/*left: 0;
 	top: 0;
-	/*margin: auto;*/
-	margin-left: 42%;
-	margin-top: 4%;
+	margin: auto;*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
 	border-radius: 50%;
-	width: 15%;
+	width: 175px;
 	height: 0;
-	padding-bottom: 15%; /* padding calculé sur le parent */
+	padding-bottom: 175px; /* padding calculé sur le parent */
 	border:4px solid white;
 	background-image: url("../images/unknown.jpg");
 	background-size: 100%;
-	position:absolute;
+	position:relative;
 }
 
 /* ******************* */
@@ -225,6 +228,10 @@ header {
 	margin: 0 auto;
 	border: 1px solid #e3e3e3;
 	box-shadow: 5px 5px 5px #e3e3e3;
+}
+
+#bloc_content {
+	display: flex;
 }
 
 /* ******************* */
@@ -306,232 +313,3 @@ header {
 #facebook_footer, #drapeaux_francais {
 	margin-right: 5px;
 }
-
-/* ******************* */
-/*        INDEX        */
-/* ******************* */
-
-#bloc_a_propos, #bloc_pourquoi_domisep, #bloc_nos_solutions, #bloc_content {
-	display: flex;
-}
-
-#bloc_pourquoi_domisep {
-	background: #e3e3e3;
-}
-
-/* ******************* */
-/*      CONNEXION      */
-/* ******************* */
-
-#container_connexion {
-	width: 500px;
-	margin: 0 auto;
-	border: 1px solid #e3e3e3;
-	box-shadow: 5px 5px 5px #e3e3e3;
-}
-
-#bloc_connexion	{
-	display: flex;
-	flex-direction: column;
-	padding: 30px 30px 30px 30px;
-}
-
-#bloc_connexion .lien_vert {
-	padding: 10px 0 10px 0;
-}
-
-#bloc_connexion #liens_connexion .lien_vert:first-child {
-	padding-top: 30px;
-}
-
-#bloc_connexion #lien_noir_underline {
-	text-align: center;
-	padding-top: 10px;
-}
-
-#container_connexion p {
-	text-align: center;
-}
-
-/* ******************* */
-/*    MEDIA QUERIES    */
-/* ******************* */
-
-/*
-@media (min-width: 992px) { !* Screen large desktop *!
-	#bloc_header, #bas_footer, #bloc_haut_footer {
-		width: 1000px;
-		margin: 0 auto;
-	}
-
-	#nav_header li {
-		font-size: 1.2rem;
-	}
-
-	#nav_header li:last-child {
-		padding-right: 10px;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 992px) { !* Screen desktop *!
-	#bloc_header, footer #bas_footer, #bloc_haut_footer {
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	#nav_header li {
-		padding: 0 5px;
-
-	}
-
-	#nav_header {
-		margin-right: 10px;
-	}
-
-	#div_logo_blanc_domisep {
-		margin-left: 30px;
-	}
-
-	#nav_footer li:last-child {
-		margin-right: 30px;
-	}
-}
-
-@media (min-width: 480px) and (max-width: 768px) { !* Screen tablet *!
-	#bloc_header, footer #bas_footer, #bloc_haut_footer {
-		width: 100%;
-		margin: 0 auto;
-	}
-
-	#nav_header li a i{
-		display:flex;
-	}
-
-	#nav_header li a .nav_text{
-		display:none;
-	}
-
-	#content p{
-		line-height: 1.3rem;
-		font-size: 0.9rem;
-	}
-
-	#content h2{
-		font-size:1.6rem;
-		margin:20px;
-		padding:0;
-	}
-
-	#nav_footer {
-		flex-direction: column;
-		align-items: left;
-	}
-
-	#copyright {
-		order: 3;
-		font-size:0.8rem;
-	}
-
-	#copyright, #reseaux_sociaux, #drapeaux {
-		margin: auto;
-	}
-
-	#bas_footer {
-		flex-direction: column;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		padding: 10px 0 10px 0;
-	}
-
-	#div_logo_blanc_domisep {
-		margin-left: 30px;
-	}
-
-	#bas_footer p {
-		margin: 0;
-	}
-}
-
-@media (max-width: 480px) { !* Screen phone *!
-	#bloc_header, footer #bas_footer, #bloc_haut_footer {
-		width: 100%;
-	}
-
-	#bloc_header {
-		flex-direction: column;
-	}
-
-	#div_logo_domisep, #nav_header {
-		margin: auto;
-	}
-
-	#nav_header li a i{
-		display:flex;
-	}
-
-	#nav_header li a .nav_text{
-		display:none;
-	}
-
-	#content > div {
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
-
-	#content p{
-		line-height:1rem;
-		font-size:0.8rem;
-	}
-
-	#content h2{
-		font-size:1.3rem;
-		margin:10px;
-		padding:0;
-	}
-
-	#bloc_haut_footer {
-		flex-direction: column;
-		margin: 0;
-	}
-
-
-	#div_logo_blanc_domisep{
-		margin: auto;
-		padding : 10px 0 10px 0;
-	}
-
-	#nav_footer {
-		flex-direction: column;
-		margin: 0;
-		padding-bottom: 10px;
-	}
-
-	#nav_footer li, #nav_footer li:last-child {
-		margin: 0;
-		padding-top: 10px;
-	}
-
-	#bas_footer {
-		flex-direction: column;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-
-	#bas_footer p {
-		margin: 0;
-	}
-
-	#copyright, #reseaux_sociaux, #drapeaux {
-		margin: auto;
-	}
-
-	#reseaux_sociaux, #drapeaux {
-		width: 70px;
-	}
-
-	#copyright {
-		order: 3;
-		font-size:0.8rem;
-	}
-}
-*/
