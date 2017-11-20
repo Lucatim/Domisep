@@ -1,0 +1,316 @@
+* {
+    border: 1px solid red;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, serif;
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    color: #ff9800;
+}
+
+h3 {
+    text-align: center;
+}
+
+hr {
+    border-top: 1px solid #e3e3e3
+}
+
+.texte_vert {
+    color: #81c784;
+}
+
+.texte_orange {
+    color: #ff9800;
+}
+
+/* ******************* */
+/*     LABEL INPUT     */
+/* ******************* */
+
+input:focus {
+    outline:none;
+}
+
+#label_input {
+    display: flex;
+    width: 200px;
+    margin: 10px 0 30px 0;
+    border: none;
+    border-bottom: 1px solid #e3e3e3;
+    color: #9f9f9f;
+    -webkit-transition: border 1s ease-in;
+    -moz-transition: border 1s ease-in;
+    -o-transition: all 1s ease-in;
+    transition: border 1s ease-in;
+}
+
+#label_input:focus {
+    border-color: #b2fab4;
+}
+
+/* ******************* */
+/*     BOUTON VERT     */
+/* ******************* */
+
+#bouton_vert{
+    text-align: center;
+}
+
+#bouton_vert a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px 10px 10px;
+    background-color: #81c784;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #e3e3e3;
+}
+
+#bouton_vert a:hover {
+    background-color: #b2fab4;
+}
+
+.material-icons {
+    vertical-align: middle;
+    padding-bottom: 3px;
+}
+
+/* ******************* */
+/*      LIEN VERT      */
+/* ******************* */
+
+.lien_vert a {
+    color: #81c784;
+    text-decoration: none;
+}
+
+.lien_vert a:hover {
+    color: #b2fab4;
+}
+
+/* ********************* */
+/*  LIEN NOIR UNDERLINE  */
+/* ********************* */
+
+#lien_noir_underline a{
+    font-style: italic;
+    color: black;
+    text-decoration: none;
+}
+
+#lien_noir_underline a:hover {
+    text-decoration: underline;
+}
+
+/* ******************* */
+/*        HEADER       */
+/* ******************* */
+
+header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#bloc_header {
+    display: flex;
+    /*justify-content: flex-end;*/
+}
+
+#div_logo_domisep {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 10px;
+    width: 200px;
+    height:80px;
+}
+
+#nav_header {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding-left: 0;
+}
+
+#nav_header li {
+    display: flex;
+    border-right: 1px solid #e3e3e3;
+    padding: 0 10px;
+}
+
+#nav_header li a i{
+    display:none;
+}
+
+#nav_header li:last-child {
+    border-right: none;
+}
+
+#nav_header a {
+    text-decoration: none;
+    color: #ff9800;
+}
+
+#nav_header a:hover {
+    color: #ffc947;
+}
+
+#nav_header a:hover span.texte_vert { /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
+    color: #b2fab4;
+}
+
+/* ******************* */
+/*        SLIDE        */
+/* ******************* */
+
+#slide_accueil {
+    width: 100%;
+    height: 374px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../images/banniere_accueil_fun.jpg");
+    background-repeat: no-repeat;
+}
+
+#slide_circle {
+    /*left: 0;
+    top: 0;
+    margin: auto;*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 175px;
+    height: 0;
+    padding-bottom: 175px; /* padding calculé sur le parent */
+    border:4px solid white;
+    background-image: url("../images/unknown.jpg");
+    background-size: 100%;
+    position:relative;
+}
+
+/* ******************* */
+/*         BODY        */
+/* ******************* */
+
+#container {
+    width: 1000px;
+    margin: 0 auto; /* margin 0 top et auto pour le reste (bottom, left, right). 0 pour prévoir si container est dans une autre div avec une hauteur définie */
+}
+
+#content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#content p {
+    text-align: justify;
+    padding: 0 30px 0 30px;
+    line-height:1.5rem;
+}
+
+#content > div {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#container_principal {
+    width: 900px;
+    margin: 0 auto;
+    border: 1px solid #e3e3e3;
+    box-shadow: 5px 5px 5px #e3e3e3;
+}
+
+#bloc_content {
+    display: flex;
+}
+
+/* ******************* */
+/*        FOOTER       */
+/* ******************* */
+
+#haut_footer {
+    /*display: flex;*/
+    background: #ff9800;
+}
+
+#bas_footer, #bloc_haut_footer {
+    display: flex;
+    /*justify-content: flex-end;*/
+}
+
+#bloc_haut_footer {
+    margin: 0 30px 0 30px;
+}
+
+#div_logo_blanc_domisep {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 30px;
+    width: 130px;
+}
+
+#nav_footer{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+#nav_footer li {
+    margin-right: 30px;
+}
+
+#nav_footer li:last-child {
+    margin-right: 30px;
+}
+
+#nav_footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#nav_footer a:hover {
+    color: #e3e3e3;
+}
+
+#reseaux_sociaux {
+    display: flex;
+    margin-right: auto;
+    margin-left: 50px;
+    align-items: center;
+    width: 80px;
+}
+
+#copyright {
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+}
+
+#drapeaux {
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+    width: 80px;
+}
+
+#drapeaux_francais, #drapeaux_anglais {
+    width: 30px;
+    margin:auto;
+}
+
+#facebook_footer, #drapeaux_francais {
+    margin-right: 5px;
+}
