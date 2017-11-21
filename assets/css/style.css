@@ -2,8 +2,8 @@
     border: 1px solid red;
 }*/
 
-*:not(#slide_circle):not(.utilisateur_circle) {
-    box-sizing: border-box; /* Pour les paragraphes côte à côte comme sur mon_profil sauf les images en cercle */
+*:not(#slide_circle):not(.rond_image):not(.carre_image) {
+    box-sizing: border-box; /* Pour les paragraphes côte à côte comme sur mon_profil sauf les images en cercle et en carré */
 }
 
 body {
@@ -68,6 +68,7 @@ input:focus {
 .bouton_vert{
     text-align: center;
     margin: 20px 0 20px 0;
+    padding: 0 20px 0 20px;
 }
 
 .bouton_vert a {
@@ -88,6 +89,13 @@ input:focus {
     vertical-align: middle;
     padding-bottom: 3px;
     padding-right: 3px;
+}
+
+.groupe_bouton_vert {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* ******************* */
@@ -123,6 +131,53 @@ input:focus {
 
 .texte_gris {
     color: #9f9f9f;
+}
+
+/* ******************* */
+/*     CARRE IMAGE     */
+/* ******************* */
+
+.carre_image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 2%;
+    width: 175px;
+    height: 0;
+    padding-bottom: 175px; /* padding calculé sur le parent */
+    border:4px solid #81c784;
+    overflow: hidden;
+    /*background-image: url("../images/unknown.jpg");
+    background-size: 100%;*/
+    position:relative;
+}
+
+.carre_image img {
+    width: 100%;
+    height: auto;
+}
+
+/* ******************* */
+/*      ROND IMAGE     */
+/* ******************* */
+
+.rond_image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 175px;
+    height: 0;
+    padding-bottom: 175px; /* padding calculé sur le parent */
+    border:4px solid #81c784;
+    background-image: url("../images/unknown.jpg");
+    background-size: 100%;
+    position:relative;
+}
+
+.rond_image img {
+    width: 100%;
+    height: auto;
 }
 
 /* ******************* */
@@ -204,10 +259,74 @@ header {
     margin: auto;
     border-radius: 50%;
     width: 175px;
+    height: 0;
     padding-bottom: 175px; /* padding calculé sur le parent */
     border:4px solid white;
-    background-image: url("../images/unknown.jpg");
-    background-size: 100%;
+    overflow: hidden;
+    /*background-image: url("../images/unknown.jpg");
+    background-size: 100%;*/
+}
+
+#slide_circle img {
+    width: 100%;
+    height: auto;
+}
+
+#slide_accueil {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#slide_haut {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#slide_bas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 215px;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: auto;*/
+}
+
+#slide_bas p {
+    padding-bottom: 10px;
+}
+
+#derniere_connexion {
+    margin-right: auto;
+}
+
+#derniere_connexion, #date_inscription {
+    padding: 10px 10px 10px 10px;
+}
+
+#slide_accueil p {
+    margin: 0;
+    color: white;
+}
+
+#slide_bas p {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#prenom_nom {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+#prenom_nom p {
+    padding-top: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+#numero_client {
+    font-weight: bold;
 }
 
 /* ******************* */
