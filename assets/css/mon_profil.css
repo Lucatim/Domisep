@@ -1,3 +1,11 @@
+/* ******************* */
+/*      MON PROFIL     */
+/* ******************* */
+
+/* ******************* */
+/*        SLIDE        */
+/* ******************* */
+
 #slide_accueil {
     display: flex;
     flex-direction: column;
@@ -7,7 +15,7 @@
 #slide_haut {
     display: flex;
     flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #slide_bas {
@@ -15,7 +23,9 @@
     flex-direction: column;
     text-align: center;
     width: 215px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: auto;*/
 }
 
 #slide_bas p {
@@ -44,6 +54,68 @@
     font-size: 1.8em;
 }
 
+#prenom_nom p {
+    padding-top: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
 #numero_client {
     font-weight: bold;
 }
+
+/* ******************* */
+/*         BODY        */
+/* ******************* */
+
+.balise_p_flex, .balise_p_flex_50{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.balise_p_flex > p, .balise_p_flex_50 > p {
+    flex: 50%;
+}
+
+.balise_p_flex > p:first-child {
+    flex: 100%;
+}
+
+#mes_utilisateurs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.utilisateur {
+    margin: 0 30px 0 30px;
+}
+
+#mes_utilisateurs p {
+    text-align: center;
+    justify-content: center;
+}
+
+.utilisateur_circle {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 175px;
+    height: 0;
+    padding-bottom: 175px; /* padding calculé sur le parent */
+    border:4px solid #81c784;
+    background-image: url("../images/unknown.jpg");
+    background-size: 100%;
+    position:relative;
+}
+
+.prenom_nom_mes_utilisateurs {
+    font-size: 1.3em;
+}
+
+.acces_utilisateurs {
+    color: #9f9f9f;
+}
+

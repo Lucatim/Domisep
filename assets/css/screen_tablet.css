@@ -21,6 +21,11 @@
     /*         BODY        */
     /* ******************* */
 
+    #content > div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
     #content p{
         line-height: 1.3rem;
         font-size: 0.9rem;
@@ -71,6 +76,14 @@
     }
 
     /* ******************* */
+    /*      CONNEXION      */
+    /* ******************* */
+
+    #bloc_connexion {
+        padding: 10px 30px 10px 30px;
+    }
+
+    /* ******************* */
     /*     MON PROFIL      */
     /* ******************* */
 
@@ -80,11 +93,15 @@
         text-align: center;
     }
 
-    #slide_circle {
-        margin-top: 10px;
-    }
-
     #derniere_connexion {
         margin: 0;
+    }
+
+    .balise_p_flex_50 {
+        flex-direction: column;
+    }
+
+    #mes_utilisateurs {
+        flex-direction: column;
     }
 }

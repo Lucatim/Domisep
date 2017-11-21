@@ -2,6 +2,10 @@
     border: 1px solid red;
 }*/
 
+*:not(#slide_circle):not(.utilisateur_circle) {
+    box-sizing: border-box; /* Pour les paragraphes côte à côte comme sur mon_profil sauf les images en cercle */
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -54,18 +58,19 @@ input:focus {
 }
 
 #label_input:focus {
-    border-color: #b2fab4;
+    border-color: #ff9800;
 }
 
 /* ******************* */
 /*     BOUTON VERT     */
 /* ******************* */
 
-#bouton_vert{
+.bouton_vert{
     text-align: center;
+    margin: 20px 0 20px 0;
 }
 
-#bouton_vert a {
+.bouton_vert a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -75,13 +80,14 @@ input:focus {
     box-shadow: 5px 5px 5px #e3e3e3;
 }
 
-#bouton_vert a:hover {
+.bouton_vert a:hover {
     background-color: #b2fab4;
 }
 
 .material-icons {
     vertical-align: middle;
     padding-bottom: 3px;
+    padding-right: 3px;
 }
 
 /* ******************* */
@@ -109,6 +115,14 @@ input:focus {
 
 #lien_noir_underline a:hover {
     text-decoration: underline;
+}
+
+/* ********************* */
+/*  LIEN NOIR UNDERLINE  */
+/* ********************* */
+
+.texte_gris {
+    color: #9f9f9f;
 }
 
 /* ******************* */
@@ -139,7 +153,7 @@ header {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    padding-left: 0;
+    padding-left: 0; /* Nécessaire lorsque la résolution se réduit */
 }
 
 #nav_header li {
@@ -149,7 +163,7 @@ header {
 }
 
 #nav_header li a i{
-    display:none;
+    display:none; /* Enlever les icônes en grande résolution */
 }
 
 #nav_header li:last-child {
@@ -165,8 +179,8 @@ header {
     color: #ffc947;
 }
 
-#nav_header a:hover span.texte_vert { /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
-    color: #b2fab4;
+#nav_header a:hover span.texte_vert {
+    color: #b2fab4; /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
 }
 
 /* ******************* */
@@ -176,26 +190,24 @@ header {
 #slide_accueil {
     width: 100%;
     height: 374px;
-    overflow: hidden;
-    position: relative;
+    /*overflow: hidden;*/
+    /*position: relative;*/
     background-image: url("../images/banniere_accueil_fun.jpg");
+    background-repeat: no-repeat;
 }
 
 #slide_circle {
     /*left: 0;
     top: 0;
-    margin: auto;*/
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    height: 0;
+    position:relative;*/
+    margin: auto;
     border-radius: 50%;
     width: 175px;
-    height: 0;
     padding-bottom: 175px; /* padding calculé sur le parent */
     border:4px solid white;
     background-image: url("../images/unknown.jpg");
     background-size: 100%;
-    position:relative;
 }
 
 /* ******************* */
@@ -213,9 +225,8 @@ header {
 }
 
 #content p {
-    text-align: justify;
     padding: 0 30px 0 30px;
-    line-height:1.5rem;
+    line-height: 1.5em;
 }
 
 #content > div {
