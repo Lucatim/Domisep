@@ -6,7 +6,7 @@
 /*         BODY        */
 /* ******************* */
 
-#mes_domiciles {
+.mes_domiciles_residences {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -14,6 +14,6 @@
     justify-content: center;
 }
 
-#mes_domiciles .carre_image {
+.mes_domiciles_residences .carre_image {
     margin: 15px 30px 15px 30px;
 }
