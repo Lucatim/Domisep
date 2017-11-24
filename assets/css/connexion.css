@@ -31,3 +31,9 @@
 #container_connexion p {
 	text-align: center;
 }
+
+#slide_accueil {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}

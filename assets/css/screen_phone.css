@@ -39,7 +39,7 @@
 
     #content p{
         line-height:1rem;
-        font-size:0.8rem;
+        font-size:0.9rem;
     }
 
     #content h2{
@@ -112,6 +112,10 @@
         box-shadow: none;
     }
 
+    #bloc_connexion {
+        padding: 10px 30px 10px 30px;
+    }
+
     #label_input {
         width: 150px;
     }
@@ -132,5 +136,17 @@
 
     #slide_accueil p {
         font-size: 0.8em;
+    }
+
+    .balise_p_flex {
+        flex-direction: column;
+    }
+
+    .balise_p_flex_50 {
+        flex-direction: column;
+    }
+
+    #mes_utilisateurs {
+        flex-direction: column;
     }
 }

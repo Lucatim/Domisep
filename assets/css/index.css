@@ -9,3 +9,8 @@
 #bloc_pourquoi_domisep {
     background: #e3e3e3;
 }
+
+#content p {
+    text-align: justify;
+    padding: 0 30px 0 30px;
+}

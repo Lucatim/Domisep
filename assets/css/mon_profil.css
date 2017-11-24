@@ -1,37 +1,46 @@
-#slide_haut {
+/* ******************* */
+/*      MON PROFIL     */
+/* ******************* */
+
+/* ******************* */
+/*         BODY        */
+/* ******************* */
+
+.balise_p_flex, .balise_p_flex_50{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#slide_bas {
+.balise_p_flex > p, .balise_p_flex_50 > p {
+    flex: 50%;
+}
+
+.balise_p_flex > p:first-child {
+    flex: 100%;
+}
+
+#mes_utilisateurs {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.utilisateur {
+    margin: 0 30px 0 30px;
+}
+
+#mes_utilisateurs p {
     text-align: center;
-    padding-top: 30px;
+    justify-content: center;
 }
 
-#slide_bas p {
-    padding-bottom: 10px;
+.prenom_nom_mes_utilisateurs {
+    font-size: 1.3em;
 }
 
-#derniere_connexion {
-    margin-right: auto;
+.acces_utilisateurs {
+    color: #9f9f9f;
 }
 
-#derniere_connexion, #date_inscription {
-    padding: 10px 10px 0 10px;
-}
-
-#slide_accueil div p {
-    margin: 0;
-    color: white;
-}
-
-#prenom_nom {
-    font-weight: bold;
-    font-size: 1.8em;
-}
-
-#numero_client {
-    font-weight: bold;
-}

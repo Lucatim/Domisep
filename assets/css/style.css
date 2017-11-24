@@ -1,5 +1,9 @@
-* {
+/** {
     border: 1px solid red;
+}*/
+
+*:not(#slide_circle):not(.rond_image):not(.carre_image) {
+    box-sizing: border-box; /* Pour les paragraphes côte à côte comme sur mon_profil sauf les images en cercle et en carré */
 }
 
 body {
@@ -54,18 +58,20 @@ input:focus {
 }
 
 #label_input:focus {
-    border-color: #b2fab4;
+    border-color: #ff9800;
 }
 
 /* ******************* */
 /*     BOUTON VERT     */
 /* ******************* */
 
-#bouton_vert{
+.bouton_vert{
     text-align: center;
+    margin: 20px 0 20px 0;
+    padding: 0 20px 0 20px;
 }
 
-#bouton_vert a {
+.bouton_vert a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
@@ -75,13 +81,21 @@ input:focus {
     box-shadow: 5px 5px 5px #e3e3e3;
 }
 
-#bouton_vert a:hover {
+.bouton_vert a:hover {
     background-color: #b2fab4;
 }
 
 .material-icons {
     vertical-align: middle;
     padding-bottom: 3px;
+    padding-right: 3px;
+}
+
+.groupe_bouton_vert {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* ******************* */
@@ -109,6 +123,90 @@ input:focus {
 
 #lien_noir_underline a:hover {
     text-decoration: underline;
+}
+
+/* ********************* */
+/*  LIEN NOIR UNDERLINE  */
+/* ********************* */
+
+.texte_gris {
+    color: #9f9f9f;
+}
+
+/* ******************* */
+/*     CARRE IMAGE     */
+/* ******************* */
+
+.carre_image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 2%;
+    width: 175px;
+    height: 175px;
+    /*padding-bottom: 175px; *//* padding calculé sur le parent */
+    border:4px solid #81c784;
+    overflow: hidden;
+    /*background-image: url("../images/unknown.jpg");
+    background-size: 100%;*/
+    position:relative;
+}
+
+.carre_image img {
+    width: 175px;
+    height: 175px;
+    margin: auto;
+}
+
+.carre_image {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.carre_image p {
+    margin: 0;
+    color: white;
+}
+
+.bandeau_bas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    /*margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;*/
+}
+
+.carre_image .bandeau_bas {
+    padding: 5px 0 5px 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ******************* */
+/*      ROND IMAGE     */
+/* ******************* */
+
+.rond_image {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    /*padding-bottom: 175px;*/ /* padding calculé sur le parent */
+    border:4px solid #81c784;
+    background-image: url("../images/unknown.jpg");
+    background-size: 100%;
+    position:relative;
+}
+
+.rond_image img {
+    width: 100%;
+    height: auto;
 }
 
 /* ******************* */
@@ -139,7 +237,7 @@ header {
     display: flex;
     align-items: center;
     margin-right: 10px;
-    padding-left: 0;
+    padding-left: 0; /* Nécessaire lorsque la résolution se réduit */
 }
 
 #nav_header li {
@@ -149,7 +247,7 @@ header {
 }
 
 #nav_header li a i{
-    display:none;
+    display:none; /* Enlever les icônes en grande résolution */
 }
 
 #nav_header li:last-child {
@@ -165,8 +263,8 @@ header {
     color: #ffc947;
 }
 
-#nav_header a:hover span.texte_vert { /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
-    color: #b2fab4;
+#nav_header a:hover span.texte_vert {
+    color: #b2fab4; /*Tous les span qui contiennent la class texte_vert ET qui sont des liens:hover de nav_header */
 }
 
 /* ******************* */
@@ -176,8 +274,8 @@ header {
 #slide_accueil {
     width: 100%;
     height: 374px;
-    overflow: hidden;
-    position: relative;
+    /*overflow: hidden;*/
+    /*position: relative;*/
     background-image: url("../images/banniere_accueil_fun.jpg");
     background-repeat: no-repeat;
 }
@@ -185,18 +283,76 @@ header {
 #slide_circle {
     /*left: 0;
     top: 0;
-    margin: auto;*/
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    height: 0;
+    position:relative;*/
+    margin: auto;
     border-radius: 50%;
     width: 175px;
     height: 0;
     padding-bottom: 175px; /* padding calculé sur le parent */
     border:4px solid white;
-    background-image: url("../images/unknown.jpg");
-    background-size: 100%;
-    position:relative;
+    overflow: hidden;
+    /*background-image: url("../images/unknown.jpg");
+    background-size: 100%;*/
+}
+
+#slide_circle img {
+    width: 100%;
+    height: auto;
+}
+
+#slide_accueil {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#slide_accueil p {
+    margin: 0;
+    color: white;
+}
+
+#slide_haut {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#slide_bas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 215px;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: auto;*/
+}
+
+#slide_bas p {
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#derniere_connexion {
+    margin-right: auto;
+}
+
+#derniere_connexion, #date_inscription {
+    padding: 10px 10px 10px 10px;
+}
+
+#prenom_nom {
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+#prenom_nom p {
+    padding-top: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+#numero_client {
+    font-weight: bold;
 }
 
 /* ******************* */
@@ -214,9 +370,8 @@ header {
 }
 
 #content p {
-    text-align: justify;
     padding: 0 30px 0 30px;
-    line-height:1.5rem;
+    line-height: 1.5em;
 }
 
 #content > div {
