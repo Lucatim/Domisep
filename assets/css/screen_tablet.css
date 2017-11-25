@@ -104,4 +104,12 @@
     #mes_utilisateurs {
         flex-direction: column;
     }
+
+    /* ******************* */
+    /*      DOMICILE       */
+    /* ******************* */
+
+    .groupe_carre_image_texte_droite {
+        justify-content: center;
+    }
 }

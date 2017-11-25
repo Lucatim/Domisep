@@ -3,12 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/gerer_mon_domicile.css" />
-    <link rel="stylesheet" href="assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
-    <link rel="stylesheet" href="assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
-    <link rel="stylesheet" href="assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
-    <link rel="stylesheet" href="assets/css/screen_phone.css" media="(max-width: 480px)"/>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
+    <link rel="stylesheet" href="../assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
+    <link rel="stylesheet" href="../assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
+    <link rel="stylesheet" href="../assets/css/screen_phone.css" media="(max-width: 480px)"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Domisep - Gérer mon domicile</title>
@@ -19,22 +18,22 @@
     <header>
         <div id="bloc_header">
             <div id="div_logo_domisep">
-                <img src="assets/images/domisep_logo.png" alt="logo_domisep">
+                <img src="../assets/images/domisep_logo.png" alt="logo_domisep">
             </div>
 
             <ul id=nav_header>
-                <li><a href="index_logged.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
-                <li><a href="mon_profil.html"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
+                <li><a href="../index_logged.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
+                <li><a href="../mon_profil.html"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
                 <li><a href="gerer_mon_domicile.html"><i class="material-icons">domain</i><span class="nav_text">Gérer mon dom<span class="texte_vert" >icile</span></span></a></li>
                 <li><a href="messagerie.html"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
-                <li><a href="index.html"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>
+                <li><a href="../index.html"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>
             </ul>
         </div>
     </header>
 
     <div id="slide_accueil">
         <div id="slide_circle">
-            <img src="assets/images/unknown.jpg" alt="unknown">
+            <img src="../assets/images/unknown.jpg" alt="unknown">
         </div>
 
         <div id="slide_bas">
@@ -54,60 +53,81 @@
 
                 <h2>Mes domiciles</h2>
 
-                <div class="mes_domiciles_residences">
-                    <div class="carre_image">
-                        <img src="assets/images/domicile-1.jpg" alt="unknown">
+                <div class="groupe_carre_image">
+                    <a href="domicile.html" class="carre_image">
+                        <img src="../assets/images/domicile-1.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Domicile 1</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="carre_image">
-                        <img src="assets/images/domicile-2.jpg" alt="unknown">
+                    <a href="#" class="carre_image">
+                        <img src="../assets/images/domicile-2.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Domicile 2</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="carre_image">
-                        <img src="assets/images/domicile-3.jpg" alt="unknown">
+                    <a href="#" class="carre_image">
+                        <img src="../assets/images/domicile-3.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Domicile 3</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="carre_image">
-                        <img src="assets/images/domicile-4.jpg" alt="unknown">
+                    <a href="#" class="carre_image">
+                        <img src="../assets/images/domicile-4.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Domicile 4</p>
                         </div>
+                    </a>
+                </div>
+
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
+                    </div>
+
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">delete</i>Supprimer</a>
                     </div>
                 </div>
 
+                <hr>
+
                 <h2>Mes résidences</h2>
 
-                <div class="mes_domiciles_residences">
-                    <div class="carre_image">
-                        <img src="assets/images/unknown.jpg" alt="unknown">
+                <div class="groupe_carre_image">
+                    <a href="#" class="carre_image">
+                        <img src="../assets/images/residence-1.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Résidence 1</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="carre_image">
-                        <img src="assets/images/unknown.jpg" alt="unknown">
+                    <a href="#" class="carre_image">
+                        <img src="../assets/images/residence-2.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Résidence 2</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
+                    </div>
+
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">delete</i>Supprimer</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -116,7 +136,7 @@
         <div id="haut_footer">
             <div id="bloc_haut_footer">
                 <div id="div_logo_blanc_domisep">
-                    <img src="assets/images/domisep_logo_blanc.png" alt="logo_domisep_blanc"/>
+                    <img src="../assets/images/domisep_logo_blanc.png" alt="logo_domisep_blanc"/>
                 </div>
 
                 <ul id="nav_footer">
@@ -131,10 +151,10 @@
         <div id="bas_footer">
             <div id="reseaux_sociaux">
                 <div id="facebook_footer">
-                    <a href="#"><img src="assets/images/facebook_footer.png" alt="Facebook"/></a>
+                    <a href="#"><img src="../assets/images/facebook_footer.png" alt="Facebook"/></a>
                 </div>
                 <div id="twitter_footer">
-                    <a href="#"><img src="assets/images/twitter_footer.png" alt="Twitter"/></a>
+                    <a href="#"><img src="../assets/images/twitter_footer.png" alt="Twitter"/></a>
                 </div>
             </div>
 
@@ -144,10 +164,10 @@
 
             <div id="drapeaux">
                 <div id ="drapeaux_francais">
-                    <a href="#"><img src="assets/images/france.png" alt="Français"/></a>
+                    <a href="#"><img src="../assets/images/france.png" alt="Français"/></a>
                 </div>
                 <div id ="drapeaux_anglais">
-                    <a href="#"><img src="assets/images/united-kingdom.png" alt="Anglais"/></a>
+                    <a href="#"><img src="../assets/images/united-kingdom.png" alt="Anglais"/></a>
                 </div>
             </div>
         </div>
