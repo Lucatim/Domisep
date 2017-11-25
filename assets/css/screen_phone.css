@@ -1,4 +1,27 @@
 @media (max-width: 480px) { /* Screen phone */
+    /* ******************* */
+    /*     LABEL INPUT     */
+    /* ******************* */
+
+    #label_input {
+        width: 150px;
+    }
+
+    /* ******************* */
+    /*  GROUPE CARRE IMAGE */
+    /* ******************* */
+
+    .groupe_carre_image_texte_droite {
+        justify-content: center;
+    }
+
+    /* ******************* */
+    /*     BALISE P FLEX   */
+    /* ******************* */
+
+    .balise_p_flex, .balise_p_flex_50, .balise_p_flex_33 {
+        flex-direction: column;
+    }
 
     /* ******************* */
     /*        HEADER       */
@@ -26,6 +49,20 @@
 
     #nav_header li a .nav_text{
         display:none;
+    }
+
+    /* ******************* */
+    /*        SLIDE        */
+    /* ******************* */
+
+    #slide_haut {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #slide_accueil p {
+        font-size: 0.8em;
     }
 
     /* ******************* */
@@ -116,45 +153,15 @@
         padding: 10px 30px 10px 30px;
     }
 
-    #label_input {
-        width: 150px;
-    }
-
     /* ******************* */
     /*     MON PROFIL      */
     /* ******************* */
-
-    #slide_haut {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
 
     #derniere_connexion {
         margin: 0;
     }
 
-    #slide_accueil p {
-        font-size: 0.8em;
-    }
-
-    .balise_p_flex {
-        flex-direction: column;
-    }
-
-    .balise_p_flex_50 {
-        flex-direction: column;
-    }
-
     #mes_utilisateurs {
         flex-direction: column;
-    }
-
-    /* ******************* */
-    /*      DOMICILE       */
-    /* ******************* */
-
-    .groupe_carre_image_texte_droite {
-        justify-content: center;
     }
 }

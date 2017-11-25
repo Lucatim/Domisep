@@ -14,6 +14,44 @@
     <title>Domisep - Température</title>
 </head>
 
+<!--------------------------------------------------------------------------------------->
+<!-- API GOOGLE https://developers.google.com/chart/interactive/docs/gallery/linechart -->
+<!--------------------------------------------------------------------------------------->
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawBasic);
+
+    function drawBasic() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Température');
+        data.addColumn('number', 'Chambre 1');
+
+        data.addRows([
+            [0, 25],   [1, 24],  [2, 23],  [3, 23],  [4, 24],  [5, 25],
+            [6, 26],  [7, 26],  [8, 24],  [9, 23],  [10, 25], [11, 26],
+            [12, 25], [13, 25], [14, 24], [15, 21], [16, 20], [17, 23],
+            [18, 22], [19, 23]
+        ]);
+
+        var options = {
+            title: 'Novembre',
+            curveType: 'function',
+            legend: { position: 'bottom' },
+            hAxis: { title: 'Jour' },
+            vAxis: { title: 'Température' },
+            series: {
+                0: {color: '#81c784'}
+            }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+    }
+</script>
+
 <body>
 <div id="bloc_page">
     <header>
@@ -59,7 +97,7 @@
                         <div class="carre_image">
                             <img src="../assets/images/capteur_temperature.jpg" alt="unknown">
 
-                            <div class="bandeau_bas">
+                            <div class="bandeau_bas_red">
                                 <p>Température</p>
                             </div>
                         </div>
@@ -77,16 +115,54 @@
                         </ul>
 
                         <p>Nombre de capteurs : <span class="texte_gris">XX</span></p>
+                    </div>
+                </div>
 
-                        <p class="texte_alerte_off">Capteurs déficients : 0</p>
+                <div id="capteurs_deficients">
+                    <p class="texte_alerte_on">Capteurs déficients : 1</p>
+                    <p class="texte_alerte_on">Domisep est actuellement en train de réparer la panne<br>
+                    Nous nous excusons pour la gêne occasionnée.</p>
+                </div>
+
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
                     </div>
 
-
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">delete</i>Supprimer</a>
+                    </div>
                 </div>
 
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">mode_edit</i>Editer</a>
+                <hr>
+
+                <h2>Mes températures</h2>
+
+                <div class="balise_p_flex_33">
+                    <p class="texte_alerte_on">Chambre 1 : ERREUR</p>
+                    <p>Chambre 2 : <span class="texte_gris">Ville</span></p>
+                    <p>Salon : <span class="texte_gris">XXXXX</span></p>
+                    <p>Toilettes : <span class="texte_gris">France</span></p>
+                    <p>Salle de bain : <span class="texte_gris">France</span></p>
+                    <p>Garage : <span class="texte_gris">France</span></p>
                 </div>
+
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">alarm_add</i>Planifier</a>
+                    </div>
+
+                    <div class="bouton_vert">
+                        <a href="#"><i class="material-icons">delete</i>Alerte</a>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h2>Mon historique</h2>
+
+                <div id="curve_chart" style="width: 100%; height: 500px"></div>
+
             </div>
         </div>
     </section>

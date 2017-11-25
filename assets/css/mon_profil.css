@@ -6,20 +6,6 @@
 /*         BODY        */
 /* ******************* */
 
-.balise_p_flex, .balise_p_flex_50{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.balise_p_flex > p, .balise_p_flex_50 > p {
-    flex: 50%;
-}
-
-.balise_p_flex > p:first-child {
-    flex: 100%;
-}
-
 #mes_utilisateurs {
     display: flex;
     flex-wrap: wrap;

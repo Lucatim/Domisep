@@ -156,6 +156,7 @@ input:focus {
     border:4px solid #81c784;
     overflow: hidden;
     position:relative;
+
 }
 
 .carre_image img {
@@ -183,12 +184,17 @@ input:focus {
     height: auto;
 }
 
+.carre_image:hover img.portrait {
+    width: 120%;
+    height: auto;
+}
+
 .carre_image p {
     margin: 0;
     color: white;
 }
 
-.bandeau_bas {
+.bandeau_bas, .bandeau_bas_red {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -203,6 +209,12 @@ input:focus {
     padding: 5px 0 5px 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carre_image .bandeau_bas_red {
+    padding: 5px 0 5px 0;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0.7);
 }
 
 /* ******************* */
@@ -265,15 +277,12 @@ input:focus {
 /*    TEXTE ALERTE     */
 /* ******************* */
 
-.texte_alerte_on, .texte_alerte_off {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 1.3em;
-}
-
 .texte_alerte_on {
     color: red;
+}
+
+#capteurs_deficients {
+    text-align: center;
 }
 
 /* ******************* */
@@ -316,14 +325,35 @@ input:focus {
     opacity: 0.8;
 }
 
+.rond_image img.portrait {
+    width: 100%;
+    height: auto;
+}
+
 .rond_image:hover img.portrait {
     width: 120%;
     opacity: 0.8;
 }
 
-.rond_image img.portrait {
-    width: 100%;
-    height: auto;
+/* ******************* */
+/*     BALISE P FLEX   */
+/* ******************* */
+
+.balise_p_flex, .balise_p_flex_50, .balise_p_flex_33 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.balise_p_flex > p, .balise_p_flex_50 > p {
+    flex: 50%;
+}
+
+.balise_p_flex_33 > p {
+    flex: 33%;
+}
+
+.balise_p_flex > p:first-child {
+    flex: 100%;
 }
 
 /* ******************* */

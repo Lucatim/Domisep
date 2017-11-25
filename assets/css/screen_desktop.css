@@ -36,12 +36,4 @@
     #nav_footer li:last-child {
         margin-right: 30px;
     }
-
-    /* ******************* */
-    /*     MON PROFIL      */
-    /* ******************* */
-
-    .balise_p_flex_50 {
-        flex-direction: column;
-    }
 }
