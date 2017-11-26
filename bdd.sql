@@ -1,145 +1,181 @@
-CREATE TABLE sub_list(
-id_sub_list PRIMARY KEY AUTO_INCREMENT ,
-name varchar(16),
-price float
+CREATE TABLE sub_list (
+    id_sub_list int NOT NULL AUTO_INCREMENT,
+
+    name varchar(16),
+    price float,
+
+	  PRIMARY KEY (id_sub_list)
+)
+
+CREATE TABLE client (
+  id_client int UNIQUE NOT NULL AUTO_INCREMENT,
+  id_sub_list int,
+
+  pass varchar(16),
+  date_reg date,
+  date_log datetime,
+  title varchar(32),
+  pic varchar(32),
+  surname varchar(32),
+  name varchar(32),
+  birth date,
+  bill_addr varchar(32),
+  bill_town varchar(32),
+  bill_post_code int,
+  bill_state varchar(32),
+  bill_country varchar(32),
+  mail varchar(32),
+  phone bigint,
+  fax int,
+  view_on boolean,
+  modif_on boolean,
+  discount int,
+  number_sensor int,
+  second_client boolean,
+
+  PRIMARY KEY (id_client),
+  FOREIGN KEY (id_sub_list) REFERENCES sub_list(id_sub_list)
 );
 
 
-CREATE TABLE user(
+CREATE TABLE mail (
+  id_mail int UNIQUE NOT NULL AUTO_INCREMENT,
+  recipient int,
+  sender int,
+  num_client int,
 
-num_client int PRIMARY KEY AUTO_INCREMENT ,
-id_sub_list int REFERENCES sub_list(id_sub_list),
+  bin boolean,
+  subject varchar(32),
+  mess text,
+  date_mail datetime,
 
-id bigint UNIQUE NOT NULL AUTO_INCREMENT,
-pass varchar(16),
-date_reg date,
-date_log datetime,
-title varchar(32),
-pic text,
-surname varchar(32),
-name varchar(32),
-birth date,
-bill_addr varchar(32),
-bill_town varchar(32),
-bill_post_code int,
-bill_state varchar(32),
-bill_country varchar(32),
-mail varchar(32),
-phone int,
-fax int,
-
-view_on boolean,
-modif_on boolean,
-
-discount int,
-number_sensor int,
-
-second_user boolean
+  PRIMARY KEY (id_mail),
+  FOREIGN KEY (recipient) REFERENCES client(num_client),
+  FOREIGN KEY (sender) REFERENCES client(num_client)
 );
 
+CREATE TABLE  bill (
+  id_bill int UNIQUE NOT NULL AUTO_INCREMENT,
+  num_client int,
 
-CREATE TABLE mail(
-id_mail int PRIMARY KEY AUTO_INCREMENT,
-recipient int REFERENCES user(num_client),
-sender int REFERENCES user(num_client),
+  date_bill date,
+  pdf varchar(32),
 
-title varchar(32),
-mess text,
-date_mail datetime,
-bin boolean,
+  PRIMARY KEY (id_bill),
+  FOREIGN KEY (num_client) REFERENCES client(num_client)
 );
 
-CREATE TABLE  bill(
-id_bill int PRIMARY KEY AUTO_INCREMENT ,
-num_client REFERENCES user(num_client),
+CREATE TABLE residence (
+  id_residence int,
 
-date_bill date,
-pdf text
+  name varchar(32),
+  temp_max int,
+  heat_on boolean,
+
+  PRIMARY KEY (id_residence)
 );
 
+CREATE TABLE home (
+  id_home int,
 
+  pic varchar(32),
+  addr varchar(32),
+  post_code int,
+  state varchar(32),
+  country varchar(32),
+  number_user int,
+  name varchar(16),
 
-CREATE TABLE block(
-id_block PRIMARY KEY,
-
-name varchar(32),
-temp_max int,
-heat_on boolean
+  PRIMARY KEY (id_home)
 );
 
-CREATE TABLE home(
-id_home PRIMARY KEY,
+CREATE TABLE client_home_residence (
+  num_client int,
+  id_home int,
+  id_residence int,
 
-addr varchar(32),
-post_code int,
-state varchar(32),
-country varchar(32),
-num_user int,
-name varchar(16)
+  FOREIGN KEY (num_client) REFERENCES client(num_client),
+  FOREIGN KEY (id_home) REFERENCES home(id_home),
+  FOREIGN KEY (id_residence) REFERENCES residence(id_residence)
 );
 
-CREATE TABLE user_home_block(
-num_client REFERENCES user(num_client),
-id_home REFERENCES home(id_home) ,
-id_block REFERENCES block(id_block)
+CREATE TABLE room (
+  id_room int,
+  id_home int,
+  id_room_list int,
+
+  pos int,
+  order_client int,
+  type_room varchar(16),
+
+  PRIMARY KEY (id_room),
+  FOREIGN KEY (id_home) REFERENCES home(id_home),
+  FOREIGN KEY (id_room_list) REFERENCES room_list(id_room_list)
 );
 
+CREATE TABLE room_list (
+  id_room_list int NOT NULL AUTO_INCREMENT,
 
-CREATE TABLE room(
-id_room PRIMARY KEY,
-id_home REFERENCES home(id_home),
-id_room_list REFERENCES room_list(id_room_list),
+  name varchar(16),
 
-pos int,
-order int,
+  PRIMARY KEY (id_room_list)
 );
 
-CREATE TABLE room_list(
-id_room_list PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE sensor (
+  id_sensor int NOT NULL AUTO_INCREMENT,
+  id_room int,
 
-name varchar(16)
+  data float,
+  sensor_on boolean,
+
+  PRIMARY KEY (id_sensor),
+  FOREIGN KEY (id_room) REFERENCES room(id_room)
 );
 
-CREATE TABLE sensor(
-id_sensor  PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_room REFERENCES room(id_room),
+CREATE TABLE sensor_data (
+  id_sensor_data int NOT NULL AUTO_INCREMENT,
+  id_sensor int,
 
-data float,
-sensor_on boolean
+  date_sensor date,
+  data float,
+
+  PRIMARY KEY (id_sensor_data),
+  FOREIGN KEY (id_sensor) REFERENCES sensor(id_sensor)
 );
 
-CREATE TABLE sensor_data(
-id_sensor_data PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_sensor REFERENCES sensor(id_sensor),
+CREATE TABLE sensor_order (
+  id_sensor_order int NOT NULL AUTO_INCREMENT,
+  id_sensor int,
 
-date_sensor date,
-data float
+  hour_beg int,
+  hour_end int,
+  order_on boolean,
+  threshold float,
+
+  PRIMARY KEY (id_sensor_order),
+  FOREIGN KEY (id_sensor) REFERENCES sensor(id_sensor)
 );
 
-CREATE TABLE sensor_order(
-id_sensor_order PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_sensor REFERENCES sensor(id_sensor),
+CREATE TABLE sensor_list (
+  id_sensor_list int NOT NULL AUTO_INCREMENT,
+  id_sensor int,
 
-hour_beg int,
-hour_end int,
-order_on boolean,
-limit float
+  name varchar(16),
+  pic varchar(32),
+  available boolean,
+
+  PRIMARY KEY (id_sensor_list),
+  FOREIGN KEY (id_sensor) REFERENCES sensor(id_sensor)
 );
 
-CREATE TABLE sensor_list(
-id_sensor_list PRIMARY KEY NOT NULL AUTO_INCREMENT,
-id_sensor REFERENCES sensor(id_sensor),
+CREATE TABLE sensor_room (
+  id_room_list int,
+  id_sensor_list int,
 
-name varchar(16),
-pic text,
-on boolean
-);
+  s_on boolean,
 
-CREATE TABLE sensor_room(
-id_room_list REFERENCES room_list(id_room_list) ,
-id_sensor_list REFERENCES sensor_list(id_sensor_list) ,
-
-on boolean
+  FOREIGN KEY (id_room_list) REFERENCES room_list(id_room_list),
+  FOREIGN KEY (id_sensor_list) REFERENCES sensor_list(id_sensor_list)
 );
 
 
