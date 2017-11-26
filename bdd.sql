@@ -5,7 +5,7 @@ CREATE TABLE sub_list (
     price float,
 
 	  PRIMARY KEY (id_sub_list)
-)
+);
 
 CREATE TABLE client (
   id_client int UNIQUE NOT NULL AUTO_INCREMENT,
@@ -177,8 +177,3 @@ CREATE TABLE sensor_room (
   FOREIGN KEY (id_room_list) REFERENCES room_list(id_room_list),
   FOREIGN KEY (id_sensor_list) REFERENCES sensor_list(id_sensor_list)
 );
-
-
-
-
-
