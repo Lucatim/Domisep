@@ -1,0 +1,41 @@
+table
+{
+
+    margin: inherit;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-collapse:collapse; /* Les bordures sont collées*/
+}
+
+td
+{
+    padding-top:10px;
+    border: 1px solid gray;
+    width: 150px;
+    height:150px;
+    vertical-align: text-top;
+    text-align: center;
+}
+
+#bloc_date_prelevement
+{
+    text-align: center;
+}
+
+#titre_prelevement
+{
+    /* Chrome reduit la taille du texte avec un webkit 1em*/
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 1.3em;
+    font-weight:bold;
+
+}
+
+#date_prelevement
+{
+    font-size: 1em;
+
+
+}
