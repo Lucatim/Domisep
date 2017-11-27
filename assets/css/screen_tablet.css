@@ -1,4 +1,23 @@
 @media (min-width: 480px) and (max-width: 768px) { /* Screen tablet */
+    /* ******************* */
+    /*  GROUPE CARRE IMAGE */
+    /* ******************* */
+
+    .groupe_carre_image_texte_droite {
+        justify-content: center;
+    }
+
+    /* ******************* */
+    /*     BALISE P FLEX   */
+    /* ******************* */
+
+    .balise_p_flex_50, .balise_p_flex_33 {
+        flex-direction: column;
+    }
+
+    .balise_p_flex_33 > p {
+        flex: 50%;
+    }
 
     /* ******************* */
     /*        HEADER       */
@@ -9,12 +28,22 @@
         margin: 0 auto;
     }
 
-    #nav_header li a i{
-        display:flex;
+    #nav_header li a i {
+        display: flex;
     }
 
-    #nav_header li a .nav_text{
-        display:none;
+    #nav_header li a .nav_text {
+        display: none;
+    }
+
+    /* ******************* */
+    /*        SLIDE        */
+    /* ******************* */
+
+    #slide_haut {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
     /* ******************* */
@@ -26,15 +55,15 @@
         padding-bottom: 10px;
     }
 
-    #content p{
+    #content p {
         line-height: 1.3rem;
         font-size: 0.9rem;
     }
 
-    #content h2{
-        font-size:1.6rem;
-        margin:20px;
-        padding:0;
+    #content h2 {
+        font-size: 1.6rem;
+        margin: 20px;
+        padding: 0;
     }
 
     #container_principal {
@@ -53,7 +82,7 @@
 
     #copyright {
         order: 3;
-        font-size:0.8rem;
+        font-size: 0.8rem;
     }
 
     #copyright, #reseaux_sociaux, #drapeaux {
@@ -87,18 +116,8 @@
     /*     MON PROFIL      */
     /* ******************* */
 
-    #slide_haut {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
     #derniere_connexion {
         margin: 0;
-    }
-
-    .balise_p_flex_50 {
-        flex-direction: column;
     }
 
     #mes_utilisateurs {
