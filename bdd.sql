@@ -4,7 +4,7 @@ CREATE TABLE sub_list (
     name varchar(16),
     price float,
 
-	  PRIMARY KEY (id_sub_list)
+    PRIMARY KEY (id_sub_list)
 );
 
 CREATE TABLE client (
