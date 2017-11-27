@@ -119,6 +119,18 @@ select {
 }
 
 /* ******************* */
+/*     BOUTON GRIS     */
+/* ******************* */
+
+.bouton_vert.bouton_gris a {
+    background-color: #607d8b;
+}
+
+.bouton_vert a:hover {
+    background-color: #8eacbb;
+}
+
+/* ******************* */
 /*      LIEN VERT      */
 /* ******************* */
 

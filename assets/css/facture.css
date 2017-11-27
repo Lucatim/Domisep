@@ -1,6 +1,16 @@
+.image_tableau
+{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+
+}
+
+
 table
 {
-
     margin: inherit;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -9,12 +19,17 @@ table
 
 td
 {
-    padding-top:10px;
-    border: 1px solid gray;
+    border: 1px solid #e3e3e3;
     width: 150px;
     height:150px;
     vertical-align: text-top;
     text-align: center;
+
+}
+
+td p
+{
+    font-size: 1em;
 }
 
 #bloc_date_prelevement
@@ -24,10 +39,6 @@ td
 
 #titre_prelevement
 {
-    /* Chrome reduit la taille du texte avec un webkit 1em*/
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     font-size: 1.3em;
     font-weight:bold;
 
@@ -36,6 +47,4 @@ td
 #date_prelevement
 {
     font-size: 1em;
-
-
 }
