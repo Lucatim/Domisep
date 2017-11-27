@@ -1,5 +1,9 @@
 @media (min-width: 768px) and (max-width: 992px) { /* Screen desktop */
 
+    .messagerie_message {
+        width: 400px;
+    }
+
     /* ******************* */
     /*        HEADER       */
     /* ******************* */
