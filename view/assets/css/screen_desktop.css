@@ -1,0 +1,39 @@
+@media (min-width: 768px) and (max-width: 992px) { /* Screen desktop */
+
+    /* ******************* */
+    /*        HEADER       */
+    /* ******************* */
+
+    #bloc_header, footer #bas_footer, #bloc_haut_footer {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #nav_header li {
+        padding: 0 5px;
+    }
+
+    #nav_header {
+        margin-right: 10px;
+    }
+
+    /* ******************* */
+    /*         BODY        */
+    /* ******************* */
+
+    #container_principal {
+        width: 700px;
+    }
+
+    /* ******************* */
+    /*        FOOTER       */
+    /* ******************* */
+
+    #div_logo_blanc_domisep {
+        margin-left: 30px;
+    }
+
+    #nav_footer li:last-child {
+        margin-right: 30px;
+    }
+}
