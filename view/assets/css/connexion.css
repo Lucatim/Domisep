@@ -1,0 +1,39 @@
+/* ******************* */
+/*      CONNEXION      */
+/* ******************* */
+
+#container_connexion {
+	width: 500px;
+	margin: 0 auto;
+	border: 1px solid #e3e3e3;
+	box-shadow: 5px 5px 5px #e3e3e3;
+}
+
+#bloc_connexion	{
+	display: flex;
+	flex-direction: column;
+	padding: 30px 30px 30px 30px;
+}
+
+#bloc_connexion .lien_vert {
+	padding: 10px 0 10px 0;
+}
+
+#bloc_connexion #liens_connexion .lien_vert:first-child {
+	padding-top: 30px;
+}
+
+#bloc_connexion #lien_noir_underline {
+	text-align: center;
+	padding-top: 10px;
+}
+
+#container_connexion p {
+	text-align: center;
+}
+
+#slide_accueil {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
