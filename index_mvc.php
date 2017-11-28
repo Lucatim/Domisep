@@ -12,15 +12,20 @@
 if(isset($_POST['cible']) && !empty($_POST['cible'])) {
     // Si la variable cible est passé en GET
     $url = $_POST['cible']; //user, sensor, etc.
-    include ('control/'.$url.'php');
+    include_once ('control/'.$url.'php');
 
 }
 /*else {
     // Si aucun contrôleur défini en GET, on bascule sur utilisateurs
     $url = 'utilisateurs';
 }*/
+else{
+    include_once ('view/base/header.php');
 
+    include_once ('index.html');
 
+    include_once ('view/base/footer.php');
+}
 
 
 ?>
