@@ -15,17 +15,20 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <?php
     //Modification du CSS du header en fonction de la page
-
-    if(){
-
+    if(isset($_SESSION["role"])&& !empty($_SESSION["role"])) {
+        $role=$_SESSION["role"];
+        if (isset($_POST["cible"]) && !empty($_POST["cible"])) {
+            $cible = $_POST["cible"];
+            echo('<link rel="stylesheet" href="assets/css/' . $cible . '.css" />');
+        }
     }
-    elseif (){
-
+    else{
+        echo ('<link rel="stylesheet" href="assets/css/index.css" />');
     }
 
     ?>
 
-    <link rel="stylesheet" href="assets/css/index.css" />
+
     <link rel="stylesheet" href="assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
     <link rel="stylesheet" href="assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
     <link rel="stylesheet" href="assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
@@ -39,7 +42,19 @@
 //Définition du header en fonction la connexion ou non
 
 //Si l'utilisateur est connecté
-if(){
+if(isset($_SESSION["role"]) && !empty($_SESSION["role"])) {
+    $role=$_SESSION["role"];
+    //Utilisateur n'est pas gestionnaire
+    if($role===false){
+
+
+    }
+    //Utilisateur est gestionnaire
+    else{
+        if($role===true){
+
+        }
+    }
     ?>
 
 <?php

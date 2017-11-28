@@ -32,6 +32,7 @@ CREATE TABLE client (
   discount int,
   number_sensor int,
   second_client boolean,
+  manager boolean,
 
   PRIMARY KEY (id_client),
   FOREIGN KEY (id_sub_list) REFERENCES sub_list(id_sub_list)
