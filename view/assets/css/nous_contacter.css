@@ -1,0 +1,14 @@
+.container_contacter {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.balise_contacter {
+    display: flex;
+    flex-wrap: wrap;
+}
+.icone_contacte{
+    display: flex;
+}
+
+
