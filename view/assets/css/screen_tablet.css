@@ -19,7 +19,7 @@
     /*     BALISE P FLEX   */
     /* ******************* */
 
-    .balise_p_flex_50, .balise_p_flex_33 {
+    .balise_p_flex_33 {
         flex-direction: column;
     }
 

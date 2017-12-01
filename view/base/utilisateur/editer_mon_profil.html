@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href= "../../assets/css/editer_mon_profil.css">
+    <link rel="stylesheet" href="../../assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
+    <link rel="stylesheet" href="../../assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
+    <link rel="stylesheet" href="../../assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
+    <link rel="stylesheet" href="../../assets/css/screen_phone.css" media="(max-width: 480px)"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Editer Mon Profil</title>
+</head>
+
+
+
+<body>
+
+<div id="bloc_page">
+    <header>
+        <div id="bloc_header">
+            <div id="div_logo_domisep">
+                <img src="../../assets/images/domisep_logo.png" alt="logo_domisep">
+            </div>
+
+            <ul id=nav_header>
+                <li><a href="../../../index_logged.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
+                <li><a href="mon_profil.html"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
+                <li><a href="gerer_mon_domicile/gerer_mon_domicile.html"><i class="material-icons">domain</i><span class="nav_text">Gérer mon dom<span class="texte_vert" >icile</span></span></a></li>
+                <li><a href="../messagerie/messagerie.html"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
+                <li><a href="../../../index.html"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="slide_accueil">
+        <div id="slide_haut">
+            <div id="derniere_connexion">
+                <p>Dernière connexion : JJ/MM/AAAA à HH:MM</p>
+            </div>
+
+            <div id="date_inscription">
+                <p>Date d'inscription : JJ/MM/AAAA</p>
+            </div>
+        </div>
+
+        <div id="slide_circle">
+            <img src="../../assets/images/unknown.jpg" alt="unknown">
+        </div>
+
+        <div id="slide_bas">
+            <div id="prenom_nom">
+                <p>Prénom NOM</p>
+            </div>
+
+            <div id="numero_client">
+                <p>N° client XXXXX</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="content">
+        <div id="bloc_content">
+            <div id="container_principal">
+                <h2>Editer mon profil</h2>
+                <div class="info_container">
+                    <div class="balise_p_flex_50">
+                        <form>
+                            <p>Civilité </p>
+                            <input type="radio" name="gender"> <label>M.</label>
+                            <input type="radio" name="gender"> <label>Mme.</label>
+                            <input type="radio" name="gender"> <label>Autre</label>
+                        </form>
+
+                        <form>
+                            <p>Adresse </p>
+                            <input type="text" name="Adresse" class="label_input">
+                        </form>
+
+                        <form>
+                                <p>Prénom </p>
+                                <input type="text" name="first_name" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Code postal </p>
+                            <input type="text" name="postal_code" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Nom </p>
+                            <input type="text" name="last_name" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Ville </p>
+                            <input type="text" name="city" class="label_input">
+                        </form>
+
+
+                        <form>
+                            <p>Date de naissance </p>
+                            <input type="date" name="date_of_birth" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Pays </p>
+                            <input type="text" name="country" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Email </p>
+                            <input type="email" name="email" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Numéro de téléphone </p>
+                            <input type="tel" name="telephone_number" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Email de secours </p>
+                            <input type="email" name="second_mail" class="label_input">
+                        </form>
+
+                        <form>
+                            <p>Fax </p>
+                            <input type="tel" name="Fax_number" class="label_input">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="haut_footer">
+            <div id="bloc_haut_footer">
+                <div id="div_logo_blanc_domisep">
+                    <img src="../../assets/images/domisep_logo_blanc.png" alt="logo_domisep_blanc"/>
+                </div>
+
+                <ul id="nav_footer">
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">On parle de nous</a></li>
+                    <li><a href="#">Notre équipe</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="bas_footer">
+            <div id="reseaux_sociaux">
+                <div id="facebook_footer">
+                    <a href="#"><img src="../../assets/images/facebook_footer.png" alt="Facebook"/></a>
+                </div>
+                <div id="twitter_footer">
+                    <a href="#"><img src="../../assets/images/twitter_footer.png" alt="Twitter"/></a>
+                </div>
+            </div>
+
+            <div id=copyright>
+                <p>&#9400; 2017 Domisep. Tous droits réservés.</p>
+            </div>
+
+            <div id="drapeaux">
+                <div id ="drapeaux_francais">
+                    <a href="#"><img src="../../assets/images/france.png" alt="Français"/></a>
+                </div>
+                <div id ="drapeaux_anglais">
+                    <a href="#"><img src="../../assets/images/united-kingdom.png" alt="Anglais"/></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
