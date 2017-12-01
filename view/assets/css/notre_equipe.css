@@ -1,0 +1,35 @@
+/* ******************* */
+/*    NOTRE EQUIPE     */
+/* ******************* */
+
+/* ******************* */
+/*         BODY        */
+/* ******************* */
+
+.profils_notre_equipe {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profils_notre_equipe .rond_image {
+    margin: 15px 30px 15px 30px;
+}
+
+.profil_membre_equipe {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail_profil_equipe {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.prenom_nom_equipe {
+    font-size: 1.3em;
+    font-weight: bold;
+}
