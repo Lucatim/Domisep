@@ -172,4 +172,16 @@
     #mes_utilisateurs {
         flex-direction: column;
     }
+
+    /* ******************* */
+    /*    NOTRE EQUIPE     */
+    /* ******************* */
+
+    .profil_membre_equipe {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+    }
 }
