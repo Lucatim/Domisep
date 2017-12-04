@@ -1,3 +1,18 @@
+DROP TABLE IF EXISTS sub_list CASCADE;
+DROP TABLE IF EXISTS client CASCADE;
+DROP TABLE IF EXISTS mail CASCADE;
+DROP TABLE IF EXISTS bill CASCADE;
+DROP TABLE IF EXISTS residence CASCADE;
+DROP TABLE IF EXISTS home CASCADE;
+DROP TABLE IF EXISTS client_home_residence CASCADE;
+DROP TABLE IF EXISTS room CASCADE;
+DROP TABLE IF EXISTS room_list CASCADE;
+DROP TABLE IF EXISTS sensor CASCADE;
+DROP TABLE IF EXISTS sensor_order CASCADE;
+DROP TABLE IF EXISTS sensor_data CASCADE;
+DROP TABLE IF EXISTS sensor_list CASCADE;
+DROP TABLE IF EXISTS sensor_room CASCADE;
+
 CREATE TABLE sub_list (
     id_sub_list int NOT NULL AUTO_INCREMENT,
 
@@ -33,6 +48,7 @@ CREATE TABLE client (
   number_sensor int,
   second_client boolean,
   manager boolean,
+  admin boolean,
 
   PRIMARY KEY (id_client),
   FOREIGN KEY (id_sub_list) REFERENCES sub_list(id_sub_list)
