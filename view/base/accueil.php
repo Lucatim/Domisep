@@ -12,9 +12,6 @@
 
 ?>
 
-    <div id="slide_accueil">
-    </div>
-
     <section id="content">
         <div id="bloc_a_propos">
             <div class="container">
