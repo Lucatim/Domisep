@@ -134,6 +134,15 @@
 
     /* ******************* */
     /*     MES FACTURES    */
-    /* ******************* */
+    /* ******************* *
+
+    .row_table {
+        display: flex;
+        flex-basis: 50%;
+    }*/
+
+    .cell_table{
+        position: relative;
+    }
 
 }
