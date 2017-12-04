@@ -184,4 +184,15 @@
         text-align: center;
         margin: auto;
     }
+
+    /* ******************* */
+    /*     MES FACTURES    */
+    /* ******************* */
+
+    table{
+        max-width: 150px;
+    }
+    .cell_table{
+        display: inline-table;
+    }
 }
