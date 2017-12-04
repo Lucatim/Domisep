@@ -9,9 +9,9 @@
 
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
-if(isset($_POST['cible']) && !empty($_POST['cible'])) {
+if(isset($_GET['target']) && !empty($_GET['target'])) {
     // Si la variable cible est passé en GET
-    $url = $_POST['cible']; //user, sensor, etc.
+    $url = $_GET['target']; //user, sensor, etc.
     include_once ('control/'.$url.'php');
 
 }
@@ -22,7 +22,7 @@ if(isset($_POST['cible']) && !empty($_POST['cible'])) {
 else{
     include_once ('view/base/header.php');
 
-    include_once ('index.html');
+    include_once ('view/base/accueil.php');
 
     include_once ('view/base/footer.php');
 }
