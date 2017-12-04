@@ -14,7 +14,7 @@ table
     margin: inherit;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-collapse:collapse; /* Les bordures sont collées*/
+    border-collapse: collapse; /* Les bordures sont collées*/
 }
 
 .cell_table
