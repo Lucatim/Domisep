@@ -22,11 +22,11 @@
 
                     <div id="liens_connexion">
                         <div class="lien_vert">
-                            <a href="connexion_id_oublie.html">Identifiant oublié ?</a>
+                            <a href="index_mvc.php?target=connexion&function=id_oublie">Identifiant oublié ?</a>
                         </div>
 
                         <div class="lien_vert">
-                            <a href="index_mvc?target=connexion&?function=prem">Première connexion ?</a>
+                            <a href="index_mvc?target=connexion&function=prem">Première connexion ?</a>
                         </div>
                     </div>
 

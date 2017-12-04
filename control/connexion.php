@@ -22,8 +22,12 @@ switch ($function){
     case "prem":
         require_once ("view/base/connexion/connexion_first.php");
         break;
-
+    case "id_oublie":
+        require_once ("view/base/connexion/connexion_id_oublie.php");
+        break;
 }
 
+//$return=PdoDomisep->pdoConnectDB();
 
+//var_dump($return);
 ?>
