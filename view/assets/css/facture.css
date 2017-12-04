@@ -17,7 +17,7 @@ table
     border-collapse:collapse; /* Les bordures sont collées*/
 }
 
-td
+.cell_table
 {
     border: 1px solid #e3e3e3;
     width: 150px;
@@ -27,7 +27,7 @@ td
 
 }
 
-td p
+.cell_table p
 {
     font-size: 1em;
 }
