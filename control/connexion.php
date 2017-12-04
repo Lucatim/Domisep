@@ -6,22 +6,24 @@
  * Time: 11:01
  */
 
-include_once ('../view/base/header.php');
+//include_once ('view/base/header.php');
 
 // si la fonction n'est pas définie, on choisit d'afficher l'accueil
-if (!isset($_GET['fonction']) || empty($_GET['fonction'])) {
-    $function = "accueil";
+if (!isset($_GET['function']) || empty($_GET['function'])) {
+    $function = "connexion";
 } else {
-    $function = $_GET['fonction'];
-    switch ($_GET['fonction']){
-        case premconnexion
-
-            break;
-
-    }
-
+    $function = $_GET['function'];
 }
 
+switch ($function){
+    case "connexion":
+        require_once ("view/base/connexion/connexion.php");
+        break;
+    case "prem":
+        require_once ("view/base/connexion/connexion_first.php");
+        break;
+
+}
 
 
 ?>

@@ -6,13 +6,13 @@
  * Date: 27/11/2017
  * Time: 10:48
  */
-
+include_once ('view/base/header.php');
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
 if(isset($_GET['target']) && !empty($_GET['target'])) {
     // Si la variable cible est passé en GET
     $url = $_GET['target']; //user, sensor, etc.
-    include_once ('control/'.$url.'php');
+    require_once('control/'.$url.'.php');
 
 }
 /*else {
@@ -20,12 +20,12 @@ if(isset($_GET['target']) && !empty($_GET['target'])) {
     $url = 'utilisateurs';
 }*/
 else{
-    include_once ('view/base/header.php');
 
     include_once ('view/base/accueil.php');
 
-    include_once ('view/base/footer.php');
+
 }
 
+include_once ('view/base/footer.php');
 
 ?>

@@ -18,10 +18,11 @@
     //Modification du CSS du header en fonction de la page
     if(isset($_SESSION["role"])&& !empty($_SESSION["role"])) {
         $role=$_SESSION["role"];
-        if (isset($_POST["cible"]) && !empty($_POST["cible"])) {
-            $cible = $_POST["cible"];
-            echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
-        }
+
+    }
+    if (isset($_GET["target"]) && !empty($_GET["target"])) {
+        $cible = $_GET["target"];
+        echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
     }
     else{
         echo ('<link rel="stylesheet" href="view/assets/css/index.css" />');
@@ -61,8 +62,11 @@
     <meta name="theme-color" content="#ffffff">
 
     <title>Domisep - Accueil</title>
+    <?php
+    //Gerer le titre en fonction de la page
+    //<title>Domisep - Connexion</title>
+    ?>
 </head>
-
 <?php
 //Définition du header en fonction la connexion ou non
 
@@ -105,7 +109,7 @@ else{
                 <li><a href="index_mvc.php#bloc_a_propos"><i class="material-icons">info</i><span class="nav_text">A propos</span></a></li>
                 <li><a href="index_mvc.php#bloc_pourquoi_domisep"><i class="material-icons">help</i><span class="nav_text">Pourquoi Dom<span class="texte_vert" >isep ?</span></span></a></li>
                 <li><a href="index_mvc.php#bloc_nos_solutions"><i class="material-icons">lightbulb_outline</i><span class="nav_text">Nos solutions</span></a></li>
-                <li><a href="connexion/connexion.html"><i class="material-icons">power_settings_new</i><span class="nav_text">Me connecter</span></a></li>
+                <li><a href="index_mvc.php?target=connexion"><i class="material-icons">power_settings_new</i><span class="nav_text">Me connecter</span></a></li>
             </ul>
         </div>
     </header>
