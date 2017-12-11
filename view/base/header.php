@@ -11,6 +11,14 @@
 <html lang="fr">
 
 <head>
+    <?php
+        //Script jQuery
+    ?>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
     <link rel="stylesheet" href="view/assets/css/style.css" />

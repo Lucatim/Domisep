@@ -49,6 +49,7 @@ CREATE TABLE client (
   second_client boolean,
   manager boolean,
   admin boolean,
+  first_log boolean DEFAULT TRUE ,
 
   PRIMARY KEY (id_client),
   FOREIGN KEY (id_sub_list) REFERENCES sub_list(id_sub_list)
