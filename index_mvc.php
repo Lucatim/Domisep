@@ -12,7 +12,7 @@ if(session_status()===PHP_SESSION_DISABLED){
 }*/
 
 session_start();
-include_once ('view/base/header.php');
+include_once('view/base/header.php');
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
 if(isset($_GET['target']) && !empty($_GET['target'])) {

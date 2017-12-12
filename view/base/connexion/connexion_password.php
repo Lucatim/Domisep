@@ -9,7 +9,17 @@
 <section id="content">
         <div id="bloc_content">
             <div id="container_connexion">
-                <h2>Bienvenue Prénom NOM</h2>
+                <h2>Bienvenue
+                    <?php
+                    if(isset($_SESSION["prenom"])&& !empty($_SESSION["prenom"])){
+                        echo ($_SESSION["prenom"]);
+                    }
+                    echo (" ");
+                    if(isset($_SESSION["nom"])&& !empty($_SESSION["nom"])){
+                        echo ($_SESSION["nom"]);
+                    }
+                    ?>
+                </h2>
                 <div id="bloc_connexion">
 
                     <script src="js/submitFormButton.js"></script>

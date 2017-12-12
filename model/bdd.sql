@@ -1,3 +1,6 @@
+/*
+Drop table
+ */
 DROP TABLE IF EXISTS sub_list CASCADE;
 DROP TABLE IF EXISTS client CASCADE;
 DROP TABLE IF EXISTS mail CASCADE;
@@ -12,6 +15,10 @@ DROP TABLE IF EXISTS sensor_order CASCADE;
 DROP TABLE IF EXISTS sensor_data CASCADE;
 DROP TABLE IF EXISTS sensor_list CASCADE;
 DROP TABLE IF EXISTS sensor_room CASCADE;
+
+/*
+Table create
+*/
 
 CREATE TABLE sub_list (
     id_sub_list int NOT NULL AUTO_INCREMENT,
@@ -46,9 +53,9 @@ CREATE TABLE client (
   modif_on boolean,
   discount int,
   number_sensor int,
-  second_client boolean,
-  manager boolean,
-  admin boolean,
+  second_client boolean DEFAULT FALSE,
+  manager boolean DEFAULT FALSE,
+  admin boolean DEFAULT FALSE ,
   first_log boolean DEFAULT TRUE ,
 
   PRIMARY KEY (id_client),
@@ -195,3 +202,10 @@ CREATE TABLE sensor_room (
   FOREIGN KEY (id_room_list) REFERENCES room_list(id_room_list),
   FOREIGN KEY (id_sensor_list) REFERENCES sensor_list(id_sensor_list)
 );
+
+
+/*
+Insert
+*/
+
+INSERT INTO client(pass,surname,name) VALUES('franky','Franck','MEYER');

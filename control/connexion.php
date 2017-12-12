@@ -20,15 +20,19 @@ if (!isset($_GET['function']) || empty($_GET['function'])) {
 }
 
 switch ($function){
+
     case "connexion":
         require_once ("view/base/connexion/connexion.php");
         break;
+
     case "prem":
         require_once ("view/base/connexion/connexion_first.php");
         break;
+
     case "id_oublie":
         require_once ("view/base/connexion/connexion_id_oublie.php");
         break;
+
     case "verif_id":
         $error="";
         echo ($_POST["identifiant"]);
@@ -59,6 +63,7 @@ switch ($function){
         }
         break;
 
+    //cas ou utilisateur se connecte pour la premiere fois
     case "verif_id_first":
         $error="";
         echo ($_POST["identifiant"]);
@@ -72,6 +77,9 @@ switch ($function){
                 $firstCon=connexion::connexionFirst($id[0]);
                 if($firstCon[0]==true){
                     $_SESSION["id"]=$id[0];
+                    $nomPrenom=connexion::getNomPrenom($_SESSION["id"]);
+                    $_SESSION["nom"]=$nomPrenom["name"];
+                    $_SESSION["prenom"]=$nomPrenom["surname"];
                     require_once ("view/base/connexion/connexion_password.php");
                     break;
 
@@ -97,18 +105,24 @@ switch ($function){
             break;
         }
         break;
+
+    //verification du mot de passe
     case "verif_pass":
-        var_dump($_SESSION["id"]);
         if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
-            echo ($_SESSION["id"]);
 
             $pass=connexion::verifPass($_SESSION["id"],$_POST["identifiant"]);
 
             if($pass){
                 $_SESSION["pass"]=$pass[0];
                 $conn=connexion::connexionFinal($_SESSION["id"],$_SESSION["pass"]);
+                var_dump($conn);
                 if($conn){
-                    require_once ("view/base/accueil.php");
+                    $_SESSION["role"]=$conn['manager'];
+                    $_SESSION["admin"]=$conn['admin'];
+                    var_dump($_SESSION);
+                    require_once ("index_mvc.php");
+                    //header('Location: index_mvc.php');
+                    //exit();
                 }
             }
             else{
@@ -121,6 +135,12 @@ switch ($function){
             $error="pass_nul";
         }
         break;
+
+    case "deconnexion":
+        session_destroy();
+        require_once("index_mvc.php");
+        break;
+
 
 }
 
