@@ -26,7 +26,6 @@
     //Modification du CSS du header en fonction de la page
     if(isset($_SESSION["role"])&& !empty($_SESSION["role"])) {
         $role=$_SESSION["role"];
-
     }
     if (isset($_GET["target"]) && !empty($_GET["target"])) {
         $cible = $_GET["target"];
@@ -82,15 +81,31 @@
 if(isset($_SESSION["role"]) && !empty($_SESSION["role"])) {
     $role=$_SESSION["role"];
     //Utilisateur n'est pas gestionnaire
-    if($role===false){
+    if($role===false){?>
 
+        <header>
+        <div id="bloc_header">
+            <div id="div_logo_domisep">
+                <img src="../../assets/images/domisep_logo.png" alt="logo_domisep">
+            </div>
+
+            <ul id=nav_header>
+                <li><a href="../../../index_logged.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
+                <li><a href="mon_profil.html"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
+                <li><a href="gerer_mon_domicile/gerer_mon_domicile.html"><i class="material-icons">domain</i><span class="nav_text">Gérer mon dom<span class="texte_vert" >icile</span></span></a></li>
+                <li><a href="../messagerie/messagerie.html"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
+                <li><a href="../../../index.html"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <?php
 
     }
     //Utilisateur est gestionnaire
     else{
-        if($role===true){
+        if($role===true){?>
 
-        }
+        <?php }
     }
 
     ?>
