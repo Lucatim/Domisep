@@ -6,7 +6,8 @@
  * Time: 09:14
  */
 
-
+var_dump($_SESSION["id"]);
+var_dump($_SESSION["pass"]);
 
 
 

@@ -97,6 +97,30 @@ switch ($function){
             break;
         }
         break;
+    case "verif_pass":
+        var_dump($_SESSION["id"]);
+        if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
+            echo ($_SESSION["id"]);
+
+            $pass=connexion::verifPass($_SESSION["id"],$_POST["identifiant"]);
+
+            if($pass){
+                $_SESSION["pass"]=$pass[0];
+                $conn=connexion::connexionFinal($_SESSION["id"],$_SESSION["pass"]);
+                if($conn){
+                    require_once ("view/base/accueil.php");
+                }
+            }
+            else{
+             $error="pass";
+             require_once ("view/base/connexion/connexion_password.php");
+            }
+
+        }
+        else{
+            $error="pass_nul";
+        }
+        break;
 
 }
 

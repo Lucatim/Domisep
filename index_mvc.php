@@ -6,9 +6,12 @@
  * Date: 27/11/2017
  * Time: 10:48
  */
+/*
 if(session_status()===PHP_SESSION_DISABLED){
     session_start();
-}
+}*/
+
+session_start();
 include_once ('view/base/header.php');
 
 // On identifie le contrôleur à appeler dont le nom est contenu dans cible passé en GET
