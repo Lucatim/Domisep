@@ -120,7 +120,11 @@ switch ($function){
                     $_SESSION["role"]=$conn['manager'];
                     $_SESSION["admin"]=$conn['admin'];
                     var_dump($_SESSION);
-                    require_once ("index_mvc.php");
+                    //header("Refresh:0");
+                    ?>
+                    <script src="js/redirectToAccueil.js" ></script>
+                    <?php
+                    //require_once ("view/base/accueil.php");
                     //header('Location: index_mvc.php');
                     //exit();
                 }
@@ -138,7 +142,10 @@ switch ($function){
 
     case "deconnexion":
         session_destroy();
-        require_once("index_mvc.php");
+        ?>
+        <script src="js/redirectToAccueil.js" ></script>
+        <?php
+        //require_once("view/base/accueil.php");
         break;
 
 
