@@ -21,7 +21,7 @@ Table create
 */
 
 CREATE TABLE sub_list (
-    id_sub_list int NOT NULL AUTO_INCREMENT,
+    id_sub_list int UNIQUE NOT NULL AUTO_INCREMENT,
 
     name varchar(16),
     price float,
@@ -101,7 +101,7 @@ CREATE TABLE residence (
 );
 
 CREATE TABLE home (
-  id_home int,
+  id_home int UNIQUE NOT NULL AUTO_INCREMENT,
 
   pic varchar(32),
   addr varchar(32),
@@ -125,7 +125,7 @@ CREATE TABLE client_home_residence (
 );
 
 CREATE TABLE room (
-  id_room int,
+  id_room int UNIQUE NOT NULL AUTO_INCREMENT,
   id_home int,
   id_room_list int,
 
@@ -147,7 +147,7 @@ CREATE TABLE room_list (
 );
 
 CREATE TABLE sensor (
-  id_sensor int NOT NULL AUTO_INCREMENT,
+  id_sensor int UNIQUE NOT NULL AUTO_INCREMENT,
   id_room int,
 
   data float,
@@ -169,7 +169,7 @@ CREATE TABLE sensor_data (
 );
 
 CREATE TABLE sensor_order (
-  id_sensor_order int NOT NULL AUTO_INCREMENT,
+  id_sensor_order int UNIQUE NOT NULL AUTO_INCREMENT,
   id_sensor int,
 
   hour_beg int,
@@ -209,3 +209,7 @@ Insert
 */
 
 INSERT INTO client(pass,surname,name) VALUES('franky','Franck','MEYER');
+
+INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Franck','rue Bartholdi',68000,'Alsace','France',2);
+
+INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
