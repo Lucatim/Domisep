@@ -18,7 +18,6 @@ if (!isset($_GET['function']) || empty($_GET['function'])) {
 } else {
     $function = $_GET['function'];
 }
-
 switch ($function){
 
     case "connexion":

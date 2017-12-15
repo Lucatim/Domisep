@@ -97,7 +97,7 @@ if(isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role']==
                 <li><a href="index_mvc.php"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
                 <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
                 <li><a href="index_mvc.php?target=utilisateur"><i class="material-icons">domain</i><span class="nav_text">Gérer mon dom<span class="texte_vert" >icile</span></span></a></li>
-                <li><a href="../messagerie/messagerie.html"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
+                <li><a href="index_mvc.php?target=messagerie"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
                 <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>
             </ul>
         </div>
