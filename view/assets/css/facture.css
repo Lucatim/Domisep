@@ -5,16 +5,12 @@
     display: flex;
     flex-direction: column;
     margin:auto;
-
 }
-
 
 table
 {
-    margin: inherit;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-collapse: collapse; /* Les bordures sont collées*/
+    margin: 20px auto 20px auto;
+    border-collapse:collapse; /* Les bordures sont collées */
 }
 
 .cell_table
@@ -24,7 +20,6 @@ table
     height:150px;
     vertical-align: text-top;
     text-align: center;
-
 }
 
 .cell_table p
@@ -41,7 +36,6 @@ table
 {
     font-size: 1.3em;
     font-weight:bold;
-
 }
 
 #date_prelevement

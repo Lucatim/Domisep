@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
+    <link rel="stylesheet" href="../../assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
+    <link rel="stylesheet" href="../../assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
+    <link rel="stylesheet" href="../../assets/css/screen_phone.css" media="(max-width: 480px)"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Editer Mes Utilisateurs</title>
+</head>
+
+<body>
+
+<div id="bloc_page">
+    <header>
+        <div id="bloc_header">
+            <div id="div_logo_domisep">
+                <img src="../../assets/images/domisep_logo.png" alt="logo_domisep">
+            </div>
+
+            <ul id=nav_header>
+                <li><a href="../../../index_logged.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
+                <li><a href="mon_profil.html"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
+                <li><a href="gerer_mon_domicile/gerer_mon_domicile.html"><i class="material-icons">domain</i><span class="nav_text">Gérer mon dom<span class="texte_vert" >icile</span></span></a></li>
+                <li><a href="../messagerie/messagerie.html"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
+                <li><a href="../../../index.html"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="slide_accueil">
+        <div id="slide_haut">
+            <div id="derniere_connexion">
+                <p>Dernière connexion : JJ/MM/AAAA à HH:MM</p>
+            </div>
+
+            <div id="date_inscription">
+                <p>Date d'inscription : JJ/MM/AAAA</p>
+            </div>
+        </div>
+
+        <div id="slide_circle">
+            <img src="../../assets/images/unknown.jpg" alt="unknown">
+        </div>
+
+        <div id="slide_bas">
+            <div id="prenom_nom">
+                <p>Prénom NOM</p>
+            </div>
+
+            <div id="numero_client">
+                <p>N° client XXXXX</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="content">
+        <div id="bloc_content">
+            <div id="container_principal">
+                <h2>Editer mes utilisateurs</h2>
+
+                <div class="groupe_rond_image_txt">
+                    <div class="rond_image_txt">
+                        <div class="container_edit_image">
+                            <div class="rond_image opacity_edit_image">
+                                <img src="../../assets/images/gilbert.jpg" alt="unknown">
+                            </div>
+
+                            <div class="material-icons_edit">
+                                <a href="#"><i class="material-icons">edit</i></a>
+                            </div>
+                        </div>
+
+                        <form>
+                            <input title="address" type="text" name="Adresse" value="Gigi" class="label_input">
+                        </form>
+
+                        <div class="div_select">
+                            <select title="acces_utilisateur" name="acces_utilisateur">
+                                <option value="" disabled selected>Accès total</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rond_image_txt">
+                        <div class="container_edit_image">
+                            <div class="rond_image opacity_edit_image">
+                                <img src="../../assets/images/avatar_user_1.jpg" class="portrait" alt="unknown">
+                            </div>
+
+                            <div class="material-icons_edit">
+                                <a href="#"><i class="material-icons">edit</i></a>
+                            </div>
+                        </div>
+
+                        <form>
+                            <input title="address" type="text" name="Adresse" value="Van-Kévin Suy" class="label_input">
+                        </form>
+
+                        <div class="div_select">
+                            <select title="acces_utilisateur" name="acces_utilisateur">
+                                <option value="" disabled selected>Accès</option>
+                                <option value="total">Accès total</option>
+                                <option value="limite">Accès limité</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rond_image_txt">
+                        <div class="container_edit_image">
+                            <div class="rond_image opacity_edit_image">
+                                <img src="../../assets/images/lucas.jpg" class="portrait" alt="unknown">
+                            </div>
+
+                            <div class="material-icons_edit">
+                                <a href="#"><i class="material-icons">edit</i></a>
+                            </div>
+                        </div>
+
+                        <form>
+                            <input title="address" type="text" name="Adresse" value="Lucas Quéant" class="label_input">
+                        </form>
+
+                        <div class="div_select">
+                            <select title="acces_utilisateur" name="acces_utilisateur">
+                                <option value="" disabled selected>Accès</option>
+                                <option value="total">Accès total</option>
+                                <option value="limite">Accès limité</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Accès total</h2>
+
+                <p>Il n'est pas possible d'éditer les droits d'un utilisateur avec un accès total.</p>
+
+                <h2>Accès limité</h2>
+
+                <p class="texte_gras">Mon profil</p>
+                <div class="balise_form_flex_50">
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_profil" class="checkbox">
+                            <label for="item_voir_profil">Voir mon profil</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_editer_profil" class="checkbox">
+                            <label for="item_editer_profil">Editer mon profil</label>
+                        </div>
+                    </form>
+                </div>
+
+                <p class="texte_gras">Messagerie</p>
+                <div class="balise_form_flex_50">
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_messagerie" class="checkbox">
+                            <label for="item_voir_messagerie">Voir ma messagerie</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_editer_messagerie" class="checkbox">
+                            <label for="item_editer_messagerie">Gerer ma messagerie</label>
+                        </div>
+                    </form>
+                </div>
+
+                <p class="texte_gras">Gérer mon domicile</p>
+                <div class="balise_form_flex_50">
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_domicile_residence" class="checkbox">
+                            <label for="item_gerer_domicile_residence">Gérer mes domiciles / résidences</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_capteur" class="checkbox">
+                            <label for="item_gerer_capteur">Gérer mes capteurs</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_consommation" class="checkbox">
+                            <label for="item_voir_consommation">Voir ma consommation</label>
+                        </div>
+                    </form>
+                </div>
+
+                <p class="texte_gras">Mes capteurs</p>
+                <div class="balise_form_flex_50">
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_temperature" class="checkbox">
+                            <label for="item_voir_temperature">Voir ma température</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_temperature" class="checkbox">
+                            <label for="item_gerer_temperature">Gérer ma température</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_humidite" class="checkbox">
+                            <label for="item_voir_humidite">Voir mon humidité</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_humidite" class="checkbox">
+                            <label for="item_gerer_humidite">Gérer mon humidité</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_pression" class="checkbox">
+                            <label for="item_voir_pression">Voir ma pression</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_pression" class="checkbox">
+                            <label for="item_gerer_pression">Gérer ma pression</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_lumiere" class="checkbox">
+                            <label for="item_voir_lumiere">Voir ma lumière</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_lumiere" class="checkbox">
+                            <label for="item_gerer_lumiere">Gérer ma lumière</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_fumee" class="checkbox">
+                            <label for="item_voir_fumee">Voir mon détecteur de fumée</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_fumee" class="checkbox">
+                            <label for="item_gerer_fumee">Gérer mon détecteur de fumée</label>
+                        </div>
+                    </form>
+
+                    <form>
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_voir_intrusions" class="checkbox">
+                            <label for="item_voir_intrusions">Voir mes intrusions</label>
+                        </div>
+
+                        <div class="container_checkbox_label">
+                            <input title="address" type="checkbox" id="item_gerer_intrusions" class="checkbox">
+                            <label for="item_gerer_intrusions">Gérer mes intrusions</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a href="mon_profil.html"><i class="material-icons">save</i>Valider</a>
+                    </div>
+
+                    <div class="bouton_vert bouton_gris">
+                        <a href="mon_profil.html"><i class="material-icons">undo</i>Retour</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="haut_footer">
+            <div id="bloc_haut_footer">
+                <div id="div_logo_blanc_domisep">
+                    <img src="../../assets/images/domisep_logo_blanc.png" alt="logo_domisep_blanc"/>
+                </div>
+
+                <ul id="nav_footer">
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">On parle de nous</a></li>
+                    <li><a href="#">Notre équipe</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="bas_footer">
+            <div id="reseaux_sociaux">
+                <div id="facebook_footer">
+                    <a href="#"><img src="../../assets/images/facebook_footer.png" alt="Facebook"/></a>
+                </div>
+                <div id="twitter_footer">
+                    <a href="#"><img src="../../assets/images/twitter_footer.png" alt="Twitter"/></a>
+                </div>
+            </div>
+
+            <div id=copyright>
+                <p>&#9400; 2017 Domisep. Tous droits réservés.</p>
+            </div>
+
+            <div id="drapeaux">
+                <div id ="drapeaux_francais">
+                    <a href="#"><img src="../../assets/images/france.png" alt="Français"/></a>
+                </div>
+                <div id ="drapeaux_anglais">
+                    <a href="#"><img src="../../assets/images/united-kingdom.png" alt="Anglais"/></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

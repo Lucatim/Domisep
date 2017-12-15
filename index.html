@@ -1,125 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
 
-        <link rel="stylesheet" href="view/assets/css/style.css" />
-        <link rel="stylesheet" href="view/assets/css/index.css" />
-        <link rel="stylesheet" href="view/assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
-        <link rel="stylesheet" href="view/assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
-        <link rel="stylesheet" href="view/assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
-        <link rel="stylesheet" href="view/assets/css/screen_phone.css" media="(max-width: 480px)"/>
+    <link rel="stylesheet" href="view/assets/css/style.css" />
+    <link rel="stylesheet" href="view/assets/css/index.css" />
+    <link rel="stylesheet" href="view/assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
+    <link rel="stylesheet" href="view/assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
+    <link rel="stylesheet" href="view/assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
+    <link rel="stylesheet" href="view/assets/css/screen_phone.css" media="(max-width: 480px)"/>
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="view/assets/images/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="view/assets/images/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="view/assets/images/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="view/assets/images/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="view/assets/images/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="view/assets/images/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="view/assets/images/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="view/assets/images/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="view/assets/images/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="view/assets/images/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="view/assets/images/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="view/assets/images/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="view/assets/images/favicon/favicon-16x16.png">
-        <link rel="manifest" href="view/assets/images/favicon/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="view/assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="view/assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="view/assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="view/assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="view/assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="view/assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="view/assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="view/assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="view/assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="view/assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="view/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="view/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="view/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="view/assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-        <title>Domisep - Accueil</title>
-    </head>
+    <title>Domisep - Accueil</title>
+</head>
 
-    <body>
-        <div id="bloc_page">
-            <header>
-                <div id="bloc_header">
-                    <div id="div_logo_domisep">
-                        <img src="view/assets/images/domisep_logo.png" alt="logo_domisep">
-                    </div>
-
-                    <ul id=nav_header>
-                        <li><a href="index.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
-                        <li><a href="#bloc_a_propos"><i class="material-icons">info</i><span class="nav_text">A propos</span></a></li>
-                        <li><a href="#bloc_pourquoi_domisep"><i class="material-icons">help</i><span class="nav_text">Pourquoi Dom<span class="texte_vert" >isep ?</span></span></a></li>
-                        <li><a href="#bloc_nos_solutions"><i class="material-icons">lightbulb_outline</i><span class="nav_text">Nos solutions</span></a></li>
-                        <li><a href="view/base/connexion/connexion.html"><i class="material-icons">account_box</i><span class="nav_text">Me connecter</span></a></li>
-                    </ul>
+<body>
+    <div id="bloc_page">
+        <header>
+            <div id="bloc_header">
+                <div id="div_logo_domisep">
+                    <img src="view/assets/images/domisep_logo.png" alt="logo_domisep">
                 </div>
-            </header>
 
-            <div id="slide_accueil">
+                <ul id=nav_header>
+                    <li><a href="index.html"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
+                    <li><a href="#bloc_a_propos"><i class="material-icons">info</i><span class="nav_text">A propos</span></a></li>
+                    <li><a href="#bloc_pourquoi_domisep"><i class="material-icons">help</i><span class="nav_text">Pourquoi Dom<span class="texte_vert" >isep ?</span></span></a></li>
+                    <li><a href="#bloc_nos_solutions"><i class="material-icons">lightbulb_outline</i><span class="nav_text">Nos solutions</span></a></li>
+                    <li><a href="view/base/connexion/connexion.html"><i class="material-icons">account_box</i><span class="nav_text">Me connecter</span></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="slide_accueil">
+        </div>
+
+        <section id="content">
+            <div class="bloc_content">
+                <div class="container_index">
+                    <h2>A propos</h2>
+                    <p>Domisep propose une gestion complète des <span class="texte_gras">habitations connectées</span>
+                        (immeubles et maisons)
+                        pour les particuliers</p>
+                    <p>Elle gère un parc de plusieurs milliers d’habitations dans plus d’une dizaine de pays en
+                        Europe</p>
+                    <p>L'entreprise offre une <span class="texte_gras">solution complète</span> pour réduire sa <span
+                            class="texte_gras">consommation</span>, <span class="texte_gras">piloter</span> et <span
+                            class="texte_gras">protéger</span> son
+                        domicile</p>
+                </div>
             </div>
 
-            <section id="content">
-                <div id="bloc_a_propos">
-                    <div class="container">
-                        <h2>A propos</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper mi ac magna ullamcorper, quis lacinia nisi dapibus. Proin fringilla laoreet libero, vitae ornare magna placerat non. Curabitur orci velit, porttitor sed consectetur quis, elementum vitae augue. Donec aliquam ac nisl non pretium. Nulla facilisi. Morbi lobortis ullamcorper nisl. Pellentesque posuere luctus aliquam. Suspendisse quis tristique sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu venenatis lorem, a laoreet lectus. Duis blandit, ante ac ornare imperdiet, quam eros suscipit turpis, at ornare nisi turpis et tortor. Sed id ante accumsan, elementum sapien vitae, iaculis dolor. </p>
-                    </div>
-                </div>
+            <div class="bloc_content">
+                <div class="container_index">
+                    <h2>Pourquoi Dom<span class="texte_vert">isep ?</span></h2>
 
-                <div id="bloc_pourquoi_domisep">
-                    <div class="container">
-                        <h2>Pourquoi Dom<span class="texte_vert">isep ?</span></h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper mi ac magna ullamcorper, quis lacinia nisi dapibus. Proin fringilla laoreet libero, vitae ornare magna placerat non. Curabitur orci velit, porttitor sed consectetur quis, elementum vitae augue. Donec aliquam ac nisl non pretium. Nulla facilisi. Morbi lobortis ullamcorper nisl. Pellentesque posuere luctus aliquam. Suspendisse quis tristique sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu venenatis lorem, a laoreet lectus. Duis blandit, ante ac ornare imperdiet, quam eros suscipit turpis, at ornare nisi turpis et tortor. Sed id ante accumsan, elementum sapien vitae, iaculis dolor.  </p>
-                    </div>
-                </div>
+                    <div class="groupe_grand_carre_image">
+                        <div class="grand_carre_image">
+                            <div class="carre_image">
+                                <img src="view/assets/images/nimporte_ou_index.jpg" alt="unknown" class="portrait">
 
-                <div id="bloc_nos_solutions">
-                    <div class="container">
-                        <h2>Nos solutions</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper mi ac magna ullamcorper, quis lacinia nisi dapibus. Proin fringilla laoreet libero, vitae ornare magna placerat non. Curabitur orci velit, porttitor sed consectetur quis, elementum vitae augue. Donec aliquam ac nisl non pretium. Nulla facilisi. Morbi lobortis ullamcorper nisl. Pellentesque posuere luctus aliquam. Suspendisse quis tristique sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu venenatis lorem, a laoreet lectus. Duis blandit, ante ac ornare imperdiet, quam eros suscipit turpis, at ornare nisi turpis et tortor. Sed id ante accumsan, elementum sapien vitae, iaculis dolor. </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper mi ac magna ullamcorper, quis lacinia nisi dapibus. Proin fringilla laoreet libero, vitae ornare magna placerat non. Curabitur orci velit, porttitor sed consectetur quis, elementum vitae augue. Donec aliquam ac nisl non pretium. Nulla facilisi. Morbi lobortis ullamcorper nisl. Pellentesque posuere luctus aliquam. Suspendisse quis tristique sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu venenatis lorem, a laoreet lectus. Duis blandit, ante ac ornare imperdiet, quam eros suscipit turpis, at ornare nisi turpis et tortor. Sed id ante accumsan, elementum sapien vitae, iaculis dolor. </p>
-                    </div>
-                </div>
-            </section>
-
-            <footer>
-                <div id="haut_footer">
-                    <div id="bloc_haut_footer">
-                        <div id="div_logo_blanc_domisep">
-                            <img src="view/assets/images/domisep_logo_blanc.png" alt="logo_domisep_blanc"/>
+                                <div class="bandeau_bas">
+                                    <p>Contrôler n'importe où</p>
+                                </div>
+                            </div>
                         </div>
 
-                        <ul id="nav_footer">
-                            <li><a href="#">Mentions légales</a></li>
-                            <li><a href="#">On parle de nous</a></li>
-                            <li><a href="#">Notre équipe</a></li>
-                            <li><a href="#">Nous contacter</a></li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="grand_carre_image">
+                            <div class="carre_image">
+                                <img src="view/assets/images/consommation-electricite.jpg" alt="unknown">
 
-                <div id="bas_footer">
-                    <div id="reseaux_sociaux">
-                        <div id="facebook_footer">
-                            <a href="#"><img src="view/assets/images/facebook_footer.png" alt="Facebook"/></a>
+                                <div class="bandeau_bas">
+                                    <p>Gérer la consommation</p>
+                                </div>
+                            </div>
                         </div>
-                        <div id="twitter_footer">
-                            <a href="#"><img src="view/assets/images/twitter_footer.png" alt="Twitter"/></a>
-                        </div>
-                    </div>
 
-                    <div id=copyright>
-                        <p>&#9400; 2017 Domisep. Tous droits réservés.</p>
-                    </div>
+                        <div class="grand_carre_image">
+                            <div class="carre_image">
+                                <img src="view/assets/images/residence_index.jpg" alt="unknown">
 
-                    <div id="drapeaux">
-                        <div id ="drapeaux_francais">
-                            <a href="#"><img src="view/assets/images/france.png" alt="Français"/></a>
-                        </div>
-                        <div id ="drapeaux_anglais">
-                            <a href="#"><img src="view/assets/images/united-kingdom.png" alt="Anglais"/></a>
+                                <div class="bandeau_bas">
+                                    <p>Adapté au gestionnaire</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
-        </div>
-    </body>
+            </div>
+
+            <div class="bloc_content">
+                <div class="container_index">
+                    <h2>Notre solution</h2>
+                    <div class="groupe_carre_image">
+                        <a href="domicile.html" class="carre_image">
+                            <img src="view/assets/images/messagerie_index.png" alt="unknown">
+
+                            <div class="bandeau_bas">
+                                <p>Messagerie privée</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="carre_image">
+                            <img src="view/assets/images/suivi_donnees_index.jpg" alt="unknown">
+
+                            <div class="bandeau_bas">
+                                <p>Suivi des données</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="carre_image">
+                            <img src="view/assets/images/gestion_utilisateur_index.jpg" alt="unknown">
+
+                            <div class="bandeau_bas">
+                                <p>Gestion des utilisateurs</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="carre_image">
+                            <img src="view/assets/images/planifier_index.jpg" alt="unknown">
+
+                            <div class="bandeau_bas">
+                                <p>Planifier des horaires</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div id="haut_footer">
+                <div id="bloc_haut_footer">
+                    <div id="div_logo_blanc_domisep">
+                        <img src="view/assets/images/domisep_logo_blanc.png" alt="logo_domisep_blanc"/>
+                    </div>
+
+                    <ul id="nav_footer">
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">On parle de nous</a></li>
+                        <li><a href="#">Notre équipe</a></li>
+                        <li><a href="#">Nous contacter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="bas_footer">
+                <div id="reseaux_sociaux">
+                    <div id="facebook_footer">
+                        <a href="#"><img src="view/assets/images/facebook_footer.png" alt="Facebook"/></a>
+                    </div>
+                    <div id="twitter_footer">
+                        <a href="#"><img src="view/assets/images/twitter_footer.png" alt="Twitter"/></a>
+                    </div>
+                </div>
+
+                <div id=copyright>
+                    <p>&#9400; 2017 Domisep. Tous droits réservés.</p>
+                </div>
+
+                <div id="drapeaux">
+                    <div id ="drapeaux_francais">
+                        <a href="#"><img src="view/assets/images/france.png" alt="Français"/></a>
+                    </div>
+                    <div id ="drapeaux_anglais">
+                        <a href="#"><img src="view/assets/images/united-kingdom.png" alt="Anglais"/></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
 </html>

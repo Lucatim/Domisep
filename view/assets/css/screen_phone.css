@@ -27,7 +27,7 @@
     /*     BALISE P FLEX   */
     /* ******************* */
 
-    .balise_p_flex, .balise_p_flex_50, .balise_p_flex_33 {
+    .balise_p_flex, .balise_p_flex_50, .balise_p_flex_33, .balise_form_flex_50 {
         flex-direction: column;
     }
 
@@ -84,11 +84,11 @@
 
     #content p{
         line-height:1rem;
-        font-size:0.9rem;
+        /*font-size:0.9rem;*/
     }
 
     #content h2{
-        font-size:1.3rem;
+        /*font-size:1.3rem;*/
         margin:10px;
         padding:0;
     }
@@ -106,7 +106,6 @@
         flex-direction: column;
         margin: 0;
     }
-
 
     #div_logo_blanc_domisep{
         margin: auto;

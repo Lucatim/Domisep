@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="view/assets/css/style.css" />
     <?php
     //Modification du CSS du header en fonction de la page
-    var_dump($_SESSION);
+    var_dump($_SESSION); // Permet d'afficher les variables de la session
     if(isset($_SESSION['role'])&& (!empty($_SESSION['role']) || $_SESSION['role']==="0")) {
         $role=$_SESSION["role"];
         //echo ("je suis rentré car la variable session contenant le role existe");
@@ -95,7 +95,7 @@ if(isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role']==
 
             <ul id=nav_header>
                 <li><a href="index_mvc.php"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a></li>
-                <li><a href="mon_profil.html"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
+                <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span class="nav_text">Mon profil</span></a></li>
                 <li><a href="index_mvc.php?target=utilisateur"><i class="material-icons">domain</i><span class="nav_text">Gérer mon dom<span class="texte_vert" >icile</span></span></a></li>
                 <li><a href="../messagerie/messagerie.html"><i class="material-icons">message</i><span class="nav_text">Messagerie</span></a></li>
                 <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span class="nav_text">Me déconnecter</span></a></li>

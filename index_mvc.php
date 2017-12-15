@@ -25,11 +25,8 @@ if(isset($_GET['target']) && !empty($_GET['target'])) {
     // Si aucun contrôleur défini en GET, on bascule sur utilisateurs
     $url = 'utilisateurs';
 }*/
-else{
-
+else {
     include_once ('view/base/accueil.php');
-
-
 }
 
 include_once ('view/base/footer.php');

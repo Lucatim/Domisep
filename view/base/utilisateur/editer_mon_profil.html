@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Definition of the viewport for a mobile screen -->
     <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href= "../../assets/css/editer_mon_profil.css">
     <link rel="stylesheet" href="../../assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
     <link rel="stylesheet" href="../../assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
     <link rel="stylesheet" href="../../assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
@@ -13,8 +12,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Editer Mon Profil</title>
 </head>
-
-
 
 <body>
 
@@ -46,8 +43,14 @@
             </div>
         </div>
 
-        <div id="slide_circle">
-            <img src="../../assets/images/unknown.jpg" alt="unknown">
+        <div class="container_edit_image">
+            <div id="slide_circle" class="opacity_edit_image">
+                <img src="../../assets/images/unknown.jpg" alt="unknown">
+            </div>
+
+            <div class="material-icons_edit">
+                <a href="#"><i class="material-icons">edit</i></a>
+            </div>
         </div>
 
         <div id="slide_bas">
@@ -65,72 +68,83 @@
         <div id="bloc_content">
             <div id="container_principal">
                 <h2>Editer mon profil</h2>
-                <div class="info_container">
-                    <div class="balise_p_flex_50">
-                        <form>
-                            <p>Civilité </p>
-                            <input type="radio" name="gender"> <label>M.</label>
-                            <input type="radio" name="gender"> <label>Mme.</label>
-                            <input type="radio" name="gender"> <label>Autre</label>
+
+                    <div class="balise_form_flex_50 form_flex_edit">
+                        <form class="input_radio">
+                            <label class="label_radio">Civilité </label>
+                            <input title="gender" type="radio" name="gender" checked="checked"> <label >M.</label>
+                            <input title="gender" type="radio" name="gender"> <label>Mme.</label>
+                            <input title="gender" type="radio" name="gender"> <label>Autre</label>
                         </form>
 
                         <form>
-                            <p>Adresse </p>
-                            <input type="text" name="Adresse" class="label_input">
+                            <label>Adresse </label>
+                            <input title="address" type="text" name="Adresse" value="XX Avenue de France" class="label_input">
                         </form>
 
                         <form>
-                                <p>Prénom </p>
-                                <input type="text" name="first_name" class="label_input">
+                            <label>Prénom </label>
+                            <input title="first_name" type="text" name="first_name" value="Jean" class="label_input">
                         </form>
 
                         <form>
-                            <p>Code postal </p>
-                            <input type="text" name="postal_code" class="label_input">
+                            <label>Code postal </label>
+                            <input title="postal_code" type="text" name="postal_code" value="75001" class="label_input">
                         </form>
 
                         <form>
-                            <p>Nom </p>
-                            <input type="text" name="last_name" class="label_input">
+                            <label>Nom </label>
+                            <input title="last_name" type="text" name="last_name" value="Dupont" class="label_input">
                         </form>
 
                         <form>
-                            <p>Ville </p>
-                            <input type="text" name="city" class="label_input">
+                            <label>Ville </label>
+                            <input title="city" type="text" name="city" value="Paris" class="label_input">
                         </form>
 
 
                         <form>
-                            <p>Date de naissance </p>
-                            <input type="date" name="date_of_birth" class="label_input">
+                            <label>Date de naissance </label>
+                            <input title="date_of_birth" type="date" name="date_of_birth" value="1984-02-06" class="label_input">
                         </form>
 
                         <form>
-                            <p>Pays </p>
-                            <input type="text" name="country" class="label_input">
+                            <label>Pays </label>
+                            <input title="country" type="text" name="country" value="France" class="label_input">
                         </form>
 
                         <form>
-                            <p>Email </p>
-                            <input type="email" name="email" class="label_input">
+                            <label>Email </label>
+                            <input title="email" type="email" name="email" value="jean.dupont@gmail.com" class="label_input">
                         </form>
 
                         <form>
-                            <p>Numéro de téléphone </p>
-                            <input type="tel" name="telephone_number" class="label_input">
+                            <label>Numéro de téléphone </label>
+                            <input title="telephone_number" type="tel" name="telephone_number" value="0605040302" class="label_input">
                         </form>
 
                         <form>
-                            <p>Email de secours </p>
-                            <input type="email" name="second_mail" class="label_input">
+                            <label>Email de secours </label>
+                            <input title="second_mail" type="email" name="second_mail" value="jdupnt@hotmail.fr" class="label_input">
                         </form>
 
                         <form>
-                            <p>Fax </p>
-                            <input type="tel" name="Fax_number" class="label_input">
+                            <label>Fax </label>
+                            <input title="Fax_number" type="tel" name="Fax_number" value="0102030405" class="label_input">
                         </form>
                     </div>
+
+
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a href="mon_profil.html"><i class="material-icons">save</i>Valider</a>
+                    </div>
+
+                    <div class="bouton_vert bouton_gris">
+                        <a href="mon_profil.html"><i class="material-icons">undo</i>Retour</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
