@@ -23,7 +23,7 @@ class utilisateur
         $bdd=PdoDomisep::pdoConnectDB();
         $req=$bdd->prepare('SELECT id_home,name FROM home WHERE id_home=?');
         $req->execute(array($idDomicile));
-        $val=$req->fetchAll();
+        $val=$req->fetch();
         $req->closeCursor();
         return $val;
     }
@@ -31,24 +31,24 @@ class utilisateur
     //Fonction permettant de récupérer la liste des domiciles d'un client
     public static function getDomicileClient($idClient){
         $idDomiciles=utilisateur::getIdDomicileClient($idClient);
-        var_dump($idDomiciles);
+        //var_dump($idDomiciles);
         $nbDomicile=count($idDomiciles);
-        var_dump($nbDomicile);
+        //var_dump($nbDomicile);
         if($nbDomicile>1){
             $listeDomicile=array();
             foreach ($idDomiciles as $idD){
                 $dataDomi=utilisateur::idToDomicile($idD["id_home"]);
                 $listeDomicile[]=$dataDomi;
             }
-            var_dump($listeDomicile);
+            //var_dump($listeDomicile);
             return $listeDomicile;
 
         }
         else{
             if ($nbDomicile==1){
-                var_dump($idDomiciles);
+                //var_dump($idDomiciles);
                 $dataDomi=utilisateur::idToDomicile($idDomiciles[0][0]);
-                var_dump($dataDomi);
+                //var_dump($dataDomi);
                 return $dataDomi;
 
             }
@@ -68,6 +68,7 @@ class utilisateur
         return $val;
     }
 
+    //Fonction permettant de recuperer les pieces d'un domicile
     public static function getPieceDomicile($idDomicile){
         $bdd=PdoDomisep::pdoConnectDB();
         $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');
@@ -77,6 +78,7 @@ class utilisateur
         return $val;
     }
 
+    //Fonction permettant de recuperer les capteurs d'un domicile
     public static function getCapteursDomicile($idDomicile){
         $bdd=PdoDomisep::pdoConnectDB();
         $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');

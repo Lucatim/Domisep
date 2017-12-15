@@ -34,17 +34,22 @@ switch ($function){
 
     case "verif_id":
         $error="";
-        echo ($_POST["identifiant"]);
+        //echo ($_POST["identifiant"]);
         if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
             $id=connexion::verifNumClient($_POST["identifiant"]);
             //echo ($id);
-            var_dump($id);
+            //var_dump($id);
             if($id){
-                if(connexion::connexionFirst($id[0])){
+                $firstCon=connexion::connexionFirst($id[0]);
+                var_dump(connexion::connexionFirst($id[0]));
+                if($firstCon[0]==true){
                     require_once("view/base/connexion/connexion_first.php");
                     break;
                 }
                 $_SESSION["id"]=$id[0];
+                $nomPrenom=connexion::getNomPrenom($_SESSION["id"]);
+                $_SESSION["nom"]=$nomPrenom["name"];
+                $_SESSION["prenom"]=$nomPrenom["surname"];
                 require_once ("view/base/connexion/connexion_password.php");
                 break;
             }
@@ -65,14 +70,14 @@ switch ($function){
     //cas ou utilisateur se connecte pour la premiere fois
     case "verif_id_first":
         $error="";
-        echo ($_POST["identifiant"]);
+        //echo ($_POST["identifiant"]);
         if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
             $id=connexion::verifNumClient($_POST["identifiant"]);
             //echo ($id);
-            var_dump($id);
+            //var_dump($id);
             if($id){
                 //controle premiere connexion
-                var_dump(connexion::connexionFirst($id[0]));
+                //var_dump(connexion::connexionFirst($id[0]));
                 $firstCon=connexion::connexionFirst($id[0]);
                 if($firstCon[0]==true){
                     $_SESSION["id"]=$id[0];
@@ -114,11 +119,11 @@ switch ($function){
             if($pass){
                 $_SESSION["pass"]=$pass[0];
                 $conn=connexion::connexionFinal($_SESSION["id"],$_SESSION["pass"]);
-                var_dump($conn);
+                //var_dump($conn);
                 if($conn){
                     $_SESSION["role"]=$conn['manager'];
                     $_SESSION["admin"]=$conn['admin'];
-                    var_dump($_SESSION);
+                    //var_dump($_SESSION);
                     //header("Refresh:0");
                     ?>
                     <script src="js/redirectToAccueil.js" ></script>
@@ -153,9 +158,5 @@ switch ($function){
 //$return=PdoDomisep->pdoConnectDB();
 
 //var_dump($return);
-$return=PdoDomisep::pdoConnectDB();
-var_dump($return);
-$pdo=new PdoDomisep();
-var_dump($pdo->pdoConnectDB());
-$pdo->pdoConnectDB();
+
 ?>

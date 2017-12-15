@@ -141,11 +141,6 @@ if(isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role']==
     }
 
     ?>
-    <div id="slide_accueil">
-        <div id="slide_circle">
-            <img src="view/assets/images/unknown.jpg" alt="unknown">
-        </div>
-    </div>
 <?php
 }
 else{
@@ -168,9 +163,26 @@ else{
             </ul>
         </div>
     </header>
-
-    <div id="slide_accueil">
-    </div>
 <?php
+}
+//Gestion de l'image sous le header / vignette image de profil
+if (isset($_GET["target"]) && !empty($_GET["target"])) {
+    $cible = $_GET["target"];
+
+    switch ($cible){
+        case "connexion":
+            echo ('<div id="slide_accueil"><div id="slide_circle"><img src="view/assets/images/unknown.jpg" alt="unknown"></div></div>');
+            break;
+
+        case "profil":
+
+            break;
+
+        default:
+            echo ('<div id="slide_accueil"></div>');
+    }
+}
+else{
+    echo ('<div id="slide_accueil"></div>');
 }
 ?>

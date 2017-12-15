@@ -210,10 +210,14 @@ Insert
 
 INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');
 
+INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FALSE);
+
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
-INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
+INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
+INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
+INSERT INTO client_home_residence(num_client,id_home) VALUES(1,2);
 
 INSERT INTO sensor_list(name) VALUES('Température'),('Humidité'),('Lumière');
 
