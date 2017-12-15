@@ -139,7 +139,7 @@ CREATE TABLE room (
 );
 
 CREATE TABLE room_list (
-  id_room_list int NOT NULL AUTO_INCREMENT,
+  id_room_list int UNIQUE NOT NULL AUTO_INCREMENT,
 
   name varchar(16),
 
@@ -149,12 +149,14 @@ CREATE TABLE room_list (
 CREATE TABLE sensor (
   id_sensor int UNIQUE NOT NULL AUTO_INCREMENT,
   id_room int,
+  id_sensor_list int,
 
   data float,
-  sensor_on boolean,
+  sensor_on boolean DEFAULT TRUE,
 
   PRIMARY KEY (id_sensor),
-  FOREIGN KEY (id_room) REFERENCES room(id_room)
+  FOREIGN KEY (id_room) REFERENCES room(id_room),
+  FOREIGN KEY (id_sensor_list) REFERENCES sensor_list(id_sensor_list)
 );
 
 CREATE TABLE sensor_data (
@@ -182,15 +184,13 @@ CREATE TABLE sensor_order (
 );
 
 CREATE TABLE sensor_list (
-  id_sensor_list int NOT NULL AUTO_INCREMENT,
-  id_sensor int,
+  id_sensor_list int UNIQUE NOT NULL AUTO_INCREMENT,
 
   name varchar(16),
   pic varchar(32),
-  available boolean,
+  available boolean DEFAULT TRUE,
 
-  PRIMARY KEY (id_sensor_list),
-  FOREIGN KEY (id_sensor) REFERENCES sensor(id_sensor)
+  PRIMARY KEY (id_sensor_list)
 );
 
 CREATE TABLE sensor_room (
@@ -213,3 +213,12 @@ INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
+
+
+INSERT INTO sensor_list(name) VALUES('Température'),('Humidité'),('Lumière');
+
+INSERT INTO room_list(name) VALUES('Salon'),('Cuisine'),('Chambre');
+
+INSERT INTO room(id_home,id_room_list) VALUES (1,1);
+
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (1,1,20);

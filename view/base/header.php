@@ -31,11 +31,39 @@
     }
     if (isset($_GET["target"]) && !empty($_GET["target"])) {
         $cible = $_GET["target"];
-        echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+        if($cible==="connexion" ){
+            echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+        }
+
+        if($cible==="profil"){
+            if (isset($_GET['function']) && !empty($_GET['function'])) {
+                $cible=$_GET['function'];
+
+                if($cible==="facture"){
+                    echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+                }
+
+            }
+        }
+
+        if($cible==="base"){
+            if (isset($_GET['function']) && !empty($_GET['function'])) {
+                $cible=$_GET['function'];
+
+                if($cible==="notre_equipe" || $cible==="nous_contacter"){
+                    echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+                }
+
+            }
+        }
+
+
+
     }
+    /*
     else{
         echo ('<link rel="stylesheet" href="view/assets/css/index.css" />');
-    }
+    }*/
 
     ?>
 

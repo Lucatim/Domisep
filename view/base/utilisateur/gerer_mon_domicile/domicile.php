@@ -51,9 +51,12 @@
             <hr>
 
             <h2>Mes capteurs</h2>
+                            <?php
+
+                            ?>
 
             <div class="groupe_carre_image">
-                <a href="capteur.html" class="carre_image red">
+                <a href="view/base/utilisateur/gerer_mon_domicile/capteur.html" class="carre_image red">
                     <img src="view/assets/images/capteur_temperature.jpg" alt="unknown">
 
                     <div class="bandeau_bas red">

@@ -68,4 +68,22 @@ class utilisateur
         return $val;
     }
 
+    public static function getPieceDomicile($idDomicile){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');
+        $req->execute(array($idDomicile));
+        $val=$req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
+    public static function getCapteursDomicile($idDomicile){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');
+        $req->execute(array($idDomicile));
+        $val=$req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
 }

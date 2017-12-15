@@ -28,9 +28,5 @@ switch ($function){
         break;
 }
 
-$return=PdoDomisep::pdoConnectDB();
-var_dump($return);
-$pdo=new PdoDomisep();
-var_dump($pdo->pdoConnectDB());
-$pdo->pdoConnectDB();
+
 ?>
