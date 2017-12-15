@@ -6,7 +6,11 @@
  * Time: 23:57
  */
 ?>
+<?php if (isset($_SESSION["domiSelect"]) && !empty($_SESSION["domiSelect"])){
+    var_dump($_SESSION["domiSelect"]);
 
+    $domi=$_SESSION["domiSelect"];
+?>
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
@@ -16,24 +20,27 @@
             <div class="groupe_carre_image_texte_droite">
                 <div class="grand_carre_image">
                     <div class="carre_image red">
-                        <img src="../../../assets/images/domicile-1.jpg" alt="unknown">
+                        <img src="view/assets/images/domicile-1.jpg" alt="unknown">
 
                         <div class="bandeau_bas red">
-                            <p>Domicile 1</p>
+                            <?php
+                            echo ('
+                            ?>
+                            <p></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="texte_droite_cgi">
-                    <p>Adresse : <span class="texte_gris">XX Avenue de France</span></p>
-                    <p>Code postal : <span class="texte_gris">XXXXX</span></p>
-                    <p>Ville : <span class="texte_gris">Paris</span></p>
-                    <p>Pays : <span class="texte_gris">France</span></p>
+                    <p>Adresse : <span class="texte_gris">'.$domi["addr"].' </span></p>
+                    <p>Code postal : <span class="texte_gris">'.$domi["post_code"].' </span></p>
+                    <p>Ville : <span class="texte_gris">'.$domi["state"].'</span></p>
+                    <p>Pays : <span class="texte_gris">'.$domi["country"]. '</span></p>
                     <p class="p_padding_top">Nombre de pièces : <span class="texte_gris">XX</span></p>
                     <p>Nombre de capteurs : <span class="texte_gris">XX</span></p>
                 </div>
-            </div>
-
+            </div>"');
+?>
             <div class="bouton_vert">
                 <a href="#"><i class="material-icons">mode_edit</i>Editer</a>
             </div>
@@ -44,7 +51,7 @@
 
             <div class="groupe_carre_image">
                 <a href="capteur.html" class="carre_image red">
-                    <img src="../../../assets/images/capteur_temperature.jpg" alt="unknown">
+                    <img src="view/assets/images/capteur_temperature.jpg" alt="unknown">
 
                     <div class="bandeau_bas red">
                         <p>Température</p>
@@ -52,7 +59,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/capteur_humidite.jpg" alt="unknown">
+                    <img src="view/assets/images/capteur_humidite.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Humidité</p>
@@ -60,7 +67,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/capteur_pression.jpg" alt="unknown">
+                    <img src="view/assets/images/capteur_pression.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Pression</p>
@@ -68,7 +75,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/capteur_lumiere.jpg" alt="unknown">
+                    <img src="view/assets/images/capteur_lumiere.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Lumière</p>
@@ -76,7 +83,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/capteur_fumee.jpg" alt="unknown">
+                    <img src="view/assets/images/capteur_fumee.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Fumée</p>
@@ -84,7 +91,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/capteur_intrusion.jpg" class="portrait" alt="unknown">
+                    <img src="view/assets/images/capteur_intrusion.jpg" class="portrait" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Intrusion</p>
@@ -108,7 +115,7 @@
 
             <div class="groupe_carre_image">
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/consommation-electricite.jpg" alt="unknown">
+                    <img src="view/assets/images/consommation-electricite.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Electricité</p>
@@ -116,7 +123,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/consommation-eau.jpg" alt="unknown">
+                    <img src="view/assets/images/consommation-eau.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Eau</p>
@@ -124,7 +131,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="../../../assets/images/consommation-gaz.jpg" alt="unknown">
+                    <img src="view/assets/images/consommation-gaz.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Gaz</p>
@@ -134,3 +141,5 @@
         </div>
     </div>
 </section>
+
+<?php }?>

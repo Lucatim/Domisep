@@ -58,4 +58,14 @@ class utilisateur
         }
     }
 
+    //Fonction récupérant les données du domicile à partir de son id (version complete)
+    public static function getDomicileComplet($idDomicile){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');
+        $req->execute(array($idDomicile));
+        $val=$req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
 }

@@ -28,7 +28,10 @@ switch ($function){
         break;
 
     case "domicile":
-
+        if(isset($_GET["home"])&& !empty($_GET["home"])){
+            $_SESSION["domiSelect"]= utilisateur::getDomicileComplet($_GET["home"]);
+        }
+        require_once ("view/base/utilisateur/gerer_mon_domicile/domicile.php");
         break;
 
 }
