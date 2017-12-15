@@ -37,7 +37,7 @@
 
             <div onclick="window.location='#';" class="case_message">
                 <div class="rond_image petit_rond">
-                    <img src="view/assets/images/lucas.jpg" alt="unknown">
+                    <img src="view/assets/images/lucas.jpg" alt="unknown" class="portrait">
                 </div>
 
                 <div class="informations_message">

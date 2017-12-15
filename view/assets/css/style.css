@@ -523,6 +523,10 @@ select {
     font-size: 50px;
 }
 
+/* ******************* */
+/*  OPACITY EDIT IMAGE */
+/* ******************* */
+
 .opacity_edit_image img, .opacity_edit_image:hover img { /* On enlève les transitions et les zooms pour l'edit */
     opacity: 0.3;
     height: 100%;
@@ -870,7 +874,7 @@ header {
     padding-bottom: 10px;
 }
 
-.bloc_content {
+#bloc_content, .bloc_content_index {
     display: flex;
 }
 

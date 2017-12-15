@@ -208,8 +208,8 @@ CREATE TABLE sensor_room (
 Insert
 */
 
-INSERT INTO client(pass,surname,name) VALUES('franky','Franck','MEYER');
+INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');
 
-INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Franck','rue Bartholdi',68000,'Alsace','France',2);
+INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);

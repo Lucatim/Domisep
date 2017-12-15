@@ -8,7 +8,7 @@
 ?>
 
 <section id="content">
-    <div class="bloc_content">
+    <div class="bloc_content_index">
         <div class="container_index">
             <h2>A propos</h2>
             <p>Domisep propose une gestion complète des <span class="texte_gras">habitations connectées</span>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="bloc_content">
+    <div class="bloc_content_index">
         <div class="container_index">
             <h2>Pourquoi Dom<span class="texte_vert">isep ?</span></h2>
 
@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <div class="bloc_content">
+    <div class="bloc_content_index">
         <div class="container_index">
             <h2>Notre solution</h2>
             <div class="groupe_carre_image">

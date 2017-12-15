@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="view/assets/css/style.css" />
     <?php
     //Modification du CSS du header en fonction de la page
-    var_dump($_SESSION); // Permet d'afficher les variables de la session
+    //var_dump($_SESSION); // Permet d'afficher les variables de la session
     if(isset($_SESSION['role'])&& (!empty($_SESSION['role']) || $_SESSION['role']==="0")) {
         $role=$_SESSION["role"];
         //echo ("je suis rentré car la variable session contenant le role existe");
@@ -81,9 +81,9 @@
 
 //Si l'utilisateur est connecté
 if(isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role']==="0")) {
-    echo ($_SESSION["role"]);
+    //echo ($_SESSION["role"]);
     $role=$_SESSION["role"];
-    echo ($role);
+    //echo ($role);
     //Utilisateur n'est pas gestionnaire
     if($role==="0"){?>
 

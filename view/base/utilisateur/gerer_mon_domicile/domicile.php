@@ -7,7 +7,7 @@
  */
 ?>
 <?php if (isset($_SESSION["domiSelect"]) && !empty($_SESSION["domiSelect"])){
-    var_dump($_SESSION["domiSelect"]);
+    //var_dump($_SESSION["domiSelect"]);
 
     $domi=$_SESSION["domiSelect"];
 ?>
@@ -23,24 +23,27 @@
                         <img src="view/assets/images/domicile-1.jpg" alt="unknown">
 
                         <div class="bandeau_bas red">
-                            <?php
-                            echo ('
-                            ?>
-                            <p></p>
+                            <p>
+                                <?php
+                                    echo ($domi['name']);
+                                ?>
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="texte_droite_cgi">
-                    <p>Adresse : <span class="texte_gris">'.$domi["addr"].' </span></p>
-                    <p>Code postal : <span class="texte_gris">'.$domi["post_code"].' </span></p>
-                    <p>Ville : <span class="texte_gris">'.$domi["state"].'</span></p>
-                    <p>Pays : <span class="texte_gris">'.$domi["country"]. '</span></p>
-                    <p class="p_padding_top">Nombre de pièces : <span class="texte_gris">XX</span></p>
-                    <p>Nombre de capteurs : <span class="texte_gris">XX</span></p>
-                </div>
-            </div>"');
-?>
+                <?php echo ('
+                    <div class="texte_droite_cgi">
+                        <p>Adresse : <span class="texte_gris">'.$domi["addr"].' </span></p>
+                        <p>Code postal : <span class="texte_gris">'.$domi["post_code"].' </span></p>
+                        <p>Ville : <span class="texte_gris">'.$domi["state"].'</span></p>
+                        <p>Pays : <span class="texte_gris">'.$domi["country"]. '</span></p>
+                        <p class="p_padding_top">Nombre de pièces : <span class="texte_gris">XX</span></p>
+                        <p>Nombre de capteurs : <span class="texte_gris">XX</span></p>
+                    </div>');
+                ?>
+            </div>
+
             <div class="bouton_vert">
                 <a href="#"><i class="material-icons">mode_edit</i>Editer</a>
             </div>
