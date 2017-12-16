@@ -58,7 +58,7 @@ class utilisateur
         }
     }
 
-    //Fonction récupérant les données du domicile à partir de son id (version complete)
+    //Fonction récupérant toutes les données du domicile à partir de son id (version complete)
     public static function getDomicileComplet($idDomicile){
         $bdd=PdoDomisep::pdoConnectDB();
         $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');
@@ -68,10 +68,12 @@ class utilisateur
         return $val;
     }
 
+
+
     //Fonction permettant de recuperer les pieces d'un domicile
-    public static function getPieceDomicile($idDomicile){
+    public static function getPiecesDomicile($idDomicile){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req=$bdd->prepare('SELECT id_home,name,addr,post_code,state,country FROM home WHERE id_home=?');
+        $req=$bdd->prepare('SELECT id_room FROM room WHERE id_home=?');
         $req->execute(array($idDomicile));
         $val=$req->fetch();
         $req->closeCursor();

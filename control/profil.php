@@ -8,6 +8,7 @@
 
 // Appel de la classe PDO perso pour connexion BDD
 require_once 'model/PdoDomisep.php';
+require_once 'model/profil.php';
 
 // Si la fonction n'est pas définie, on choisit d'afficher l'accueil
 if (!isset($_GET['function']) || empty($_GET['function'])) {

@@ -28,10 +28,12 @@ switch ($function){
         break;
 
     case "domicile":
+        //Ne pas oublier de verifier si l'appartement appartient bien a l'utilisateur
         if(isset($_GET["home"])&& !empty($_GET["home"])){
             $_SESSION["domiSelect"]= utilisateur::getDomicileComplet($_GET["home"]);
+            require_once ("view/base/utilisateur/gerer_mon_domicile/domicile.php");
         }
-        require_once ("view/base/utilisateur/gerer_mon_domicile/domicile.php");
+       //penser a la redirection vers les domiciles
         break;
 
 }

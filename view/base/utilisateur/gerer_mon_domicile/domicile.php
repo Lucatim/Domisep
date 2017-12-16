@@ -43,9 +43,45 @@
                     </div>');
                 ?>
             </div>
-
+<?php /*
             <div class="bouton_vert">
                 <a href="#"><i class="material-icons">mode_edit</i>Editer</a>
+            </div>
+*/ ?>
+            <hr>
+
+            <h2>Mes pièces</h2>
+            <?php
+
+            ?>
+
+            <div class="groupe_carre_image">
+                <a href="view/base/utilisateur/gerer_mon_domicile/capteur.html" class="carre_image red">
+                    <img src="view/assets/images/capteur_temperature.jpg" alt="unknown">
+
+                    <div class="bandeau_bas red">
+                        <p>Température</p>
+                    </div>
+                </a>
+
+                <a href="#" class="carre_image">
+                    <img src="view/assets/images/capteur_humidite.jpg" alt="unknown">
+
+                    <div class="bandeau_bas">
+                        <p>Humidité</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="groupe_bouton_vert">
+                <div class="bouton_vert">
+                    <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
+                </div>
+
+                <div class="bouton_vert">
+                    <a href="#"><i class="material-icons">delete</i>Supprimer</a>
+                </div>
             </div>
 
             <hr>

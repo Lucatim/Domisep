@@ -16,7 +16,7 @@
                 <?php
                 //Boucle affichage domicile
                 if (isset($_SESSION["listeDomicile"])&& !empty($_SESSION["listeDomicile"])){
-                    var_dump($_SESSION["listeDomicile"]);
+                    //var_dump($_SESSION["listeDomicile"]);
                     //nombre image aléatoire
                     $i=0;
                     foreach ($_SESSION["listeDomicile"] as $domicile){
@@ -35,7 +35,7 @@
                         }
                         else{
                             ?>
-                            <a href="#" class="carre_image">
+                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($domicile["id_home"])?>" class="carre_image">
                                 <img src="view/assets/images/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
 
                                 <div class="bandeau_bas">
