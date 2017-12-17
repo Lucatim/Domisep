@@ -51,10 +51,24 @@
             <hr>
 
             <h2>Mes pièces</h2>
+            <div class="groupe_carre_image">
             <?php
+            foreach ($domi["pieces"] as $piece){
+                //Condition changement cadre rouge si capteur defectueux
+                //Gere lien direction piece
+                echo ("<a href=\"#\" class=\"carre_image\">
+                    <img src=\"view/assets/images/capteur_humidite.jpg\" alt=\"unknown\">
 
+                    <div class=\"bandeau_bas\">
+                        <p>".$piece["name"]."</p>
+                    </div>
+                </a>");
+            }
             ?>
+            </div>
 
+            <?php
+/* Exemple carré rouge/carré vert
             <div class="groupe_carre_image">
                 <a href="view/base/utilisateur/gerer_mon_domicile/capteur.html" class="carre_image red">
                     <img src="view/assets/images/capteur_temperature.jpg" alt="unknown">
@@ -72,7 +86,8 @@
                     </div>
                 </a>
             </div>
-
+*/
+            ?>
 
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
@@ -87,58 +102,22 @@
             <hr>
 
             <h2>Mes capteurs</h2>
-                            <?php
-
-                            ?>
-
             <div class="groupe_carre_image">
-                <a href="view/base/utilisateur/gerer_mon_domicile/capteur.html" class="carre_image red">
-                    <img src="view/assets/images/capteur_temperature.jpg" alt="unknown">
-
-                    <div class="bandeau_bas red">
-                        <p>Température</p>
-                    </div>
-                </a>
-
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/capteur_humidite.jpg" alt="unknown">
+            <?php
+            foreach ($domi["pieces"] as $piece){
+                $nomPiece=$piece["name"];
+                foreach ($piece["capteurs"] as $capteur){
+                    echo ('<a href="#" class="carre_image">
+                    <img src="'.$capteur["pic"].'" alt="unknown">
 
                     <div class="bandeau_bas">
-                        <p>Humidité</p>
+                        <p>'.$capteur["name"].' ('.$nomPiece.')</p>
                     </div>
-                </a>
+                </a>');
+                }
+            }
 
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/capteur_pression.jpg" alt="unknown">
-
-                    <div class="bandeau_bas">
-                        <p>Pression</p>
-                    </div>
-                </a>
-
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/capteur_lumiere.jpg" alt="unknown">
-
-                    <div class="bandeau_bas">
-                        <p>Lumière</p>
-                    </div>
-                </a>
-
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/capteur_fumee.jpg" alt="unknown">
-
-                    <div class="bandeau_bas">
-                        <p>Fumée</p>
-                    </div>
-                </a>
-
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/capteur_intrusion.jpg" class="portrait" alt="unknown">
-
-                    <div class="bandeau_bas">
-                        <p>Intrusion</p>
-                    </div>
-                </a>
+            ?>
             </div>
 
             <div class="groupe_bouton_vert">
@@ -184,4 +163,10 @@
     </div>
 </section>
 
-<?php }?>
+<?php
+}
+else{
+
+
+}
+?>

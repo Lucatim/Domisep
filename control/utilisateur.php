@@ -30,7 +30,10 @@ switch ($function){
     case "domicile":
         //Ne pas oublier de verifier si l'appartement appartient bien a l'utilisateur
         if(isset($_GET["home"])&& !empty($_GET["home"])){
+            //Recupere tous info domicile, pieces et capteurs
             $_SESSION["domiSelect"]= utilisateur::getDomicileComplet($_GET["home"]);
+            ini_set('xdebug.var_display_max_depth', 15);
+            var_dump($_SESSION["domiSelect"]);
             require_once ("view/base/utilisateur/gerer_mon_domicile/domicile.php");
         }
        //penser a la redirection vers les domiciles

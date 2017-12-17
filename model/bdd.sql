@@ -186,8 +186,8 @@ CREATE TABLE sensor_order (
 CREATE TABLE sensor_list (
   id_sensor_list int UNIQUE NOT NULL AUTO_INCREMENT,
 
-  name varchar(16),
-  pic varchar(32),
+  name varchar(32),
+  pic varchar(256),
   available boolean DEFAULT TRUE,
 
   PRIMARY KEY (id_sensor_list)
@@ -219,7 +219,7 @@ INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart d
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,2);
 
-INSERT INTO sensor_list(name) VALUES('Température'),('Humidité'),('Lumière');
+INSERT INTO sensor_list(name,pic) VALUES('Température','view/assets/images/capteur_temperature.jpg'),('Humidité','view/assets/images/capteur_humidite.jpg'),('Pression','view/assets/images/capteur_pression.jpg'),('Lumière','view/assets/images/capteur_lumiere.jpg'),('Fumée','view/assets/images/capteur_fumee.jpg'),('Intrusion','view/assets/images/capteur_intrusion.jpg');
 
 INSERT INTO room_list(name) VALUES('Salon'),('Cuisine'),('Chambre');
 
