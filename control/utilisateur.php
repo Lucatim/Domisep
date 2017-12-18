@@ -39,4 +39,9 @@ switch ($function){
        //penser a la redirection vers les domiciles
         break;
 
+    case "capteur":
+
+        require_once ("view/base/utilisateur/gerer_mon_domicile/capteur.php");
+        break;
+
 }

@@ -67,6 +67,8 @@ class utilisateur
         $req->closeCursor();
         //Recupere les pieces du domiciles
         $val["pieces"]=utilisateur::getPiecesDomicile($val["id_home"]);
+        //Recupere les differents types de capteurs a afficher
+        $val["capteurs"]=utilisateur::getAllCapteursDomicile($val["id_home"]);
         return $val;
     }
 
@@ -130,9 +132,18 @@ class utilisateur
         return $val;
     }
 
-    //Fonction Optionnelle
-    public static function getAllCapteursDomicile(){
-
+    //Fonction permettant de récupérer tous les types de capteurs utilisés
+    public static function getAllCapteursDomicile($idDomicile){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT DISTINCT id_sensor_list,name,pic,available FROM sensor_list WHERE id_sensor_list IN (
+        SELECT id_sensor_list FROM sensor WHERE id_room IN (
+        SELECT id_room FROM room WHERE id_home=?
+        )
+        )');
+        $req->execute(array($idDomicile));
+        $val=$req->fetchAll();
+        $req->closeCursor();
+        return $val;
     }
 
 }

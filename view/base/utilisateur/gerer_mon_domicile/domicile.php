@@ -104,7 +104,7 @@
             <h2>Mes capteurs</h2>
             <div class="groupe_carre_image">
             <?php
-            foreach ($domi["pieces"] as $piece){
+            /*foreach ($domi["pieces"] as $piece){
                 $nomPiece=$piece["name"];
                 foreach ($piece["capteurs"] as $capteur){
                     echo ('<a href="#" class="carre_image">
@@ -115,6 +115,16 @@
                     </div>
                 </a>');
                 }
+            }*/
+
+            foreach ($domi["capteurs"] as $capteur){
+                echo ('<a href="index_mvc.php?target=utilisateur&function=capteur&capteur='.$capteur["id_sensor_list"].'" class="carre_image">
+                    <img src="'.$capteur["pic"].'" alt="unknown">
+
+                    <div class="bandeau_bas">
+                        <p>'.$capteur["name"].'</p>
+                    </div>
+                </a>');
             }
 
             ?>
