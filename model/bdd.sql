@@ -160,7 +160,7 @@ CREATE TABLE sensor (
 );
 
 CREATE TABLE sensor_data (
-  id_sensor_data int NOT NULL AUTO_INCREMENT,
+  id_sensor_data int UNIQUE NOT NULL AUTO_INCREMENT,
   id_sensor int,
 
   date_sensor date,
@@ -207,17 +207,28 @@ CREATE TABLE sensor_room (
 /*
 Insert
 */
-
+/* User1 */
 INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');
 
+/* User2 */
 INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FALSE);
 
+/* User3 */
+INSERT INTO client(pass,surname,name,first_log) VALUES('ap','Alexandre','PRADIER',FALSE);
+
+/* Home1 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
+/* Home2 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
+/* Home3 */
+INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Alex','Colombes',92,'Haut de Seine','France',1);
+
+/* Attribut des domiciles aux users */
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,2);
+INSERT INTO client_home_residence(num_client,id_home) VALUES(3,3);
 
 INSERT INTO sensor_list(name,pic) VALUES('Température','view/assets/images/capteur_temperature.jpg'),('Humidité','view/assets/images/capteur_humidite.jpg'),('Pression','view/assets/images/capteur_pression.jpg'),('Lumière','view/assets/images/capteur_lumiere.jpg'),('Fumée','view/assets/images/capteur_fumee.jpg'),('Intrusion','view/assets/images/capteur_intrusion.jpg');
 
