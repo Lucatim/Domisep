@@ -189,6 +189,7 @@ CREATE TABLE sensor_list (
   name varchar(32),
   pic varchar(256),
   available boolean DEFAULT TRUE,
+  unite varchar(16),
 
   PRIMARY KEY (id_sensor_list)
 );
@@ -230,7 +231,7 @@ INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
 INSERT INTO client_home_residence(num_client,id_home) VALUES(1,2);
 INSERT INTO client_home_residence(num_client,id_home) VALUES(3,3);
 
-INSERT INTO sensor_list(name,pic) VALUES('Température','view/assets/images/capteur_temperature.jpg'),('Humidité','view/assets/images/capteur_humidite.jpg'),('Pression','view/assets/images/capteur_pression.jpg'),('Lumière','view/assets/images/capteur_lumiere.jpg'),('Fumée','view/assets/images/capteur_fumee.jpg'),('Intrusion','view/assets/images/capteur_intrusion.jpg');
+INSERT INTO sensor_list(name,pic,unite) VALUES('Température','view/assets/images/capteur_temperature.jpg','°C'),('Humidité','view/assets/images/capteur_humidite.jpg',''),('Pression','view/assets/images/capteur_pression.jpg','Bar'),('Lumière','view/assets/images/capteur_lumiere.jpg','Lumens'),('Fumée','view/assets/images/capteur_fumee.jpg','Feu'),('Intrusion','view/assets/images/capteur_intrusion.jpg',NULL);
 
 INSERT INTO room_list(name) VALUES('Salon'),('Cuisine'),('Chambre'),('Salle de Bain'),('Bureau'),('Couloir'),('Entrée'),('Toilettes'),('Buanderie'),('Salle à manger'),('Grenier'),('Garage'),('Cellier'),('Salle Cinéma'),('Cave');
 

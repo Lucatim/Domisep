@@ -15,11 +15,13 @@
             <div class="groupe_carre_image">
                 <?php
                 //Boucle affichage domicile
+                var_dump($_SESSION["listeDomicile"]);
                 if (isset($_SESSION["listeDomicile"])&& !empty($_SESSION["listeDomicile"])){
                     //var_dump($_SESSION["listeDomicile"]);
                     //nombre image aléatoire
                     $i=0;
                     foreach ($_SESSION["listeDomicile"] as $domicile){
+                        //var_dump($domicile);
                         //var_dump($domicile);
                         if($i==0){
                             ?>

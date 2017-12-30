@@ -40,8 +40,11 @@ switch ($function){
         break;
 
     case "capteur":
+        if (isset($_GET["capteur"])&& !empty($_GET["capteur"])){
+            $_SESSION["capteurSelect"]=utilisateur::getCaracteristiqueCapteur($_GET["capteur"]);
+            require_once ("view/base/utilisateur/gerer_mon_domicile/capteur.php");
+        }
 
-        require_once ("view/base/utilisateur/gerer_mon_domicile/capteur.php");
         break;
 
 }
