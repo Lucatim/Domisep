@@ -101,8 +101,8 @@
 
                             <h2>Enter votre message</h2>
 
-                            <form action="view/base/messagerie/envoi_message.php" method="post">
-                                <label>Envoyer à : <input type="text" name="recipeient" ></label><br>
+                            <form action="view/base/messagerie/envoi_message.php" method="post" id="message">
+                                <label>Envoyer à : <input type="text" name="recipient" id="recipient"></label><br>
                                 <label>De : <input type="text" name="sender" ></label><br>
                                 <label>Numéros client : <input type="text" name="num_client" ></label><br>
                                 <label>sujet : <input type="text" name="subject" ></label><br>

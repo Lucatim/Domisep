@@ -21,7 +21,6 @@ $req->execute(array(
     'recipient'=> $_POST['recipient'],
     'sender' => $_POST['sender'],
     'num_client' => $_POST['num_client'],
-
     'subject'  => $_POST['subject'],
     'mess' => $_POST['mess']
     ));
@@ -29,9 +28,6 @@ $req->execute(array(
 
 
 header('Location: http://localhost/Domisep/index_mvc.php?target=messagerie#');
-
-
-
 
 
 ?>
