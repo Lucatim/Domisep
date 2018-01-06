@@ -36,3 +36,26 @@
     cursor: pointer;
 }
 
+input:focus {
+    outline: none;
+}
+
+.messagerie_form {
+    display: inline-block;
+    width: 200px;
+    margin: 10px 0 30px 0;
+    border: none;
+    border-bottom: 1px solid #e3e3e3;
+    color: #9f9f9f;
+
+    -webkit-transition: border 1s ease-in;
+    -moz-transition: border 1s ease-in;
+    -o-transition: all 1s ease-in;
+    transition: border 1s ease-in;
+}
+
+.messagerie_form:focus {
+    border-color: #ff9800;
+}
+
+

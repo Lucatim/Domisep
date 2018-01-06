@@ -6,7 +6,7 @@
  * Time: 12:42
  */
 ?>
-
+<script src="js/nouveau_message.js"></script>
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
@@ -92,27 +92,33 @@
                 </div>
             </div>
 
+
+
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
-                    <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
+                   <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
                     <div id="myModal" class="modal">
                         <div class="modal-content">
                             <span class="close">&times;</span>
 
                             <h2>Enter votre message</h2>
 
-                            <form action="view/base/messagerie/envoi_message.php" method="post" id="message">
-                                <label>Envoyer à : <input type="text" name="recipient" id="recipient"></label><br>
-                                <label>De : <input type="text" name="sender" ></label><br>
-                                <label>Numéros client : <input type="text" name="num_client" ></label><br>
-                                <label>sujet : <input type="text" name="subject" ></label><br>
-                                <label>message : <input type="textarea" name="mess" ></label><br>
-
-                                <input type="submit" name="envoi" value="envoyer">
+                            <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" >
+                                
+                                <label>Envoyer à :</label> <input type="text" name="recipient" class="messagerie_form" ><br>
+                                <label>De : </label><input type="text" name="sender" class="messagerie_form"><br>
+                                <label>Numéros client : </label><input type="text" name="num_client" class="messagerie_form" ><br>
+                                <label>Sujet : </label><input type="text" name="subject" class="messagerie_form"><br>
+                                <label>Message :</label><textarea name="mess"></textarea><br>
+                                
+                            <div class="groupe_bouton_vert">
+                               <a type="submit" name="envoi" id="btn_sending" ><i class="material-icons">send</i>Envoyer</a>
+                            </div>                              
                             </form>
                         </div>
                     </div>
                 </div>
+
 
                 <div class="bouton_vert">
                     <a href="#"><i class="material-icons">mail</i>Boîte de réception</a>
@@ -123,17 +129,56 @@
                 </div>
 
                 <div class="bouton_vert">
-                    <a href="../utilisateur/facture.html"><i class="material-icons">delete</i>Corbeille</a>
+                    <a href="view/base/utilisateur/facture.html"><i class="material-icons">delete</i>Corbeille</a>
                 </div>
+<script>
+     function validateForm() 
+{
+    var formuaire = document.getElementById('myForm');
+    var recipient = document.forms["myForm"]["recipient"].value;
+    var sender = document.forms["myForm"]["sender"].value;
+    var num_client = document.forms["myForm"]["num_client"].value;
+    var subject = document.forms["myForm"]["subject"].value;
+    var message = document.forms["myForm"]["mess"].value;
+    
+    if (recipient == "" ) {
+    alert("Le champ du destinataire est vide ou pas un entier");
+    return false;
+    }
 
+    if (sender == "") {
+    alert("Le champs nom est vide ou pas un entier");
+    return false;
+    }
 
+    if (num_client == "" ) {
+    alert("Le numéros client est vide ou pas un entier");
+    return false;
+    }
 
-                <script>
-                // Get the modal
+    if (subject == "") {
+    alert("Le sujet est vide");
+    return false;
+    }
+
+    if (message == "") {
+    alert("Le message est vide");
+    return false;
+    }
+
+    
+    
+    formuaire.submit();
+    alert("message envoyé");
+    
+};
+ // Get the modal
                 var modal = document.getElementById('myModal');
 
                 // Get the button that opens the modal
                 var btn = document.getElementById("myBtn");
+
+                var btn_sending = document.getElementById("btn_sending");
 
                 // Get the <span> element that closes the modal
                 var span = document.getElementsByClassName("close")[0];
@@ -141,6 +186,10 @@
                 // When the user clicks the button, open the modal
                 btn.onclick = function() {
                     modal.style.display = "block";
+                }
+
+                btn_sending.onclick = function(){
+                    validateForm();
                 }
 
                 // When the user clicks on <span> (x), close the modal
@@ -154,11 +203,9 @@
                         modal.style.display = "none";
                     }
                 }
-                </script>
 
 
-
-
+</script>
 
             </div>
         </div>
