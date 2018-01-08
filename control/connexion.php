@@ -9,6 +9,7 @@
 //Appel de la classe PDO perso pour connexion BDD
 require_once 'model/PdoDomisep.php';
 require_once 'model/connexion.php';
+require_once 'model/helper.php';
 
 //include_once ('view/base/header.php');
 
@@ -47,9 +48,23 @@ switch ($function){
                     break;
                 }
                 $_SESSION["id"]=$id[0];
+
                 $nomPrenom=connexion::getNomPrenom($_SESSION["id"]);
                 $_SESSION["nom"]=$nomPrenom["name"];
                 $_SESSION["prenom"]=$nomPrenom["surname"];
+
+                $_SESSION["img"]=connexion::getImage($_SESSION["id"]);
+
+                //$_SESSION["profilSelect"] = profil::getProfilComplet($_SESSION["id"]);
+
+                $infoSlide = connexion::getDateSlide($_SESSION["id"]);
+
+                $_SESSION["date_register"]=$infoSlide["date_reg"];
+                $_SESSION["date_logged"]=$infoSlide["date_log"];
+
+                $_SESSION["date_register"] = helper::convertDate($_SESSION["date_register"]);
+                $_SESSION["date_logged"] = helper::convertDate($_SESSION["date_logged"]);
+
                 require_once ("view/base/connexion/connexion_password.php");
                 break;
             }
@@ -81,9 +96,22 @@ switch ($function){
                 $firstCon=connexion::connexionFirst($id[0]);
                 if($firstCon[0]==true){
                     $_SESSION["id"]=$id[0];
+
                     $nomPrenom=connexion::getNomPrenom($_SESSION["id"]);
                     $_SESSION["nom"]=$nomPrenom["name"];
                     $_SESSION["prenom"]=$nomPrenom["surname"];
+
+                    $_SESSION["img"]=connexion::getImage($_SESSION["id"]);
+
+                    $infoSlide = connexion::getDateSlide($_SESSION["id"]);
+
+                    $_SESSION["date_register"]=$infoSlide["date_reg"];
+
+                    $_SESSION["date_logged"]=$infoSlide["date_log"];
+
+                    $_SESSION["date_register"] = helper::convertDate($_SESSION["date_register"], 1);
+                    $_SESSION["date_register"] = helper::convertDate($_SESSION["date_logged"], 2);
+
                     require_once ("view/base/connexion/connexion_password.php");
                     break;
 

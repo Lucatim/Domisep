@@ -68,5 +68,21 @@ class connexion
 
     }
 
+    public static function getImage($numClient){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT pic FROM client WHERE id_client=?');
+        $req->execute(array($numClient));
+        $val=$req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
 
+    public static function getDateSlide($numClient){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT date_reg,date_log FROM client WHERE id_client=?');
+        $req->execute(array($numClient));
+        $val=$req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
 }

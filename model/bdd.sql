@@ -36,8 +36,8 @@ CREATE TABLE client (
   pass varchar(16),
   date_reg date,
   date_log datetime,
-  title varchar(32),
-  pic varchar(32),
+  gender varchar(16),
+  pic varchar(128) DEFAULT "view/assets/images/unknown.jpg",
   surname varchar(32),
   name varchar(32),
   birth date,
@@ -47,8 +47,9 @@ CREATE TABLE client (
   bill_state varchar(32),
   bill_country varchar(32),
   mail varchar(32),
-  phone bigint,
-  fax int,
+  mail_security varchar(32),
+  phone varchar(16),
+  fax varchar(16),
   view_on boolean,
   modif_on boolean,
   discount int,
@@ -208,8 +209,16 @@ CREATE TABLE sensor_room (
 /*
 Insert
 */
+
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538');
+
+  /*pic varchar(128),*/
 /* User1 */
-INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');
+/*INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');*/
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538');
+
 
 /* User2 */
 INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FALSE);
