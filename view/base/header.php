@@ -9,7 +9,7 @@
 ?>
     <!DOCTYPE html>
     <html lang="fr">
-    
+
 <head>
     <?php
     //Script+CSS select2

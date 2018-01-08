@@ -13,6 +13,28 @@ var request=$.ajax(
     request.done(function(d) {
         debugger;
         console.log("coucou la requete est fini");
+        var labels=[];
+        var series=[];
+
+        d.forEach(function (e) {
+            debugger;
+            labels.push(e.date_sensor);
+            series.push(e.data);
+
+        });
+        var data = {
+            // A labels array that can contain any sort of values
+            labels: labels,
+            // Our series array that contains series objects or in this case series data arrays
+            series: [
+                series
+            ]
+        };
+
+// Create a new line chart object where as first parameter we pass in a selector
+// that is resolving to our chart container element. The Second parameter
+// is the actual data object.
+        new Chartist.Line('.ct-chart', data);
     });
 
 request.fail(function (msg) {

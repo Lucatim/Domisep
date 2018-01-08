@@ -183,10 +183,10 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                     </select>
                 </div>
 
-                <div id="curve_chart" style="width: 100%; height: 500px"></div>
+                <div class="ct-chart ct-perfect-fourth"></div>
 
             </div>
         </div>
     </section>
 
-<?php } ?>
+<?php }                 //<div id="curve_chart" style="width: 100%; height: 500px"></div>?>
