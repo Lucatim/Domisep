@@ -1,11 +1,12 @@
 $(document).ready(function () {
     debugger;
+    var idCapteur=idCapteurPage;
     console.log("coucou je suis dedans");
 var request=$.ajax(
     {
         method: 'GET',
         url: 'control/requestAJAX.php?function=data_capteur',
-        data:{ idCapteur: 1},
+        data:{ idCapteur: idCapteur,date:null},
         dataType:"json",
         timeout:999999999
     });

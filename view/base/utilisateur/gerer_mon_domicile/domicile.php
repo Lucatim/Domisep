@@ -7,7 +7,7 @@
  */
 ?>
 <?php if (isset($_SESSION["domiSelect"]) && !empty($_SESSION["domiSelect"])){
-    //var_dump($_SESSION["domiSelect"]);
+    var_dump($_SESSION["domiSelect"]);
 
     $domi=$_SESSION["domiSelect"];
 ?>
@@ -53,10 +53,11 @@
             <h2>Mes pièces</h2>
             <div class="groupe_carre_image">
             <?php
+            var_dump($domi["pieces"]);
             foreach ($domi["pieces"] as $piece){
                 //Condition changement cadre rouge si capteur defectueux
                 //Gere lien direction piece
-                echo ("<a href=\"#\" class=\"carre_image\">
+                echo ("<a href='index_mvc.php?target=utilisateur&function=piece&piece=".$piece["id_room"]."' class=\"carre_image\">
                     <img src=\"view/assets/images/capteur_humidite.jpg\" alt=\"unknown\">
 
                     <div class=\"bandeau_bas\">

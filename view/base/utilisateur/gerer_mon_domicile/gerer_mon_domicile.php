@@ -15,7 +15,7 @@
             <div class="groupe_carre_image">
                 <?php
                 //Boucle affichage domicile
-                var_dump($_SESSION["listeDomicile"]);
+                //var_dump($_SESSION["listeDomicile"]);
                 if (isset($_SESSION["listeDomicile"])&& !empty($_SESSION["listeDomicile"])){
                     //var_dump($_SESSION["listeDomicile"]);
                     //nombre image aléatoire

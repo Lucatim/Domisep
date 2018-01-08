@@ -6,12 +6,21 @@
  * Time: 16:12
  */
 //Script permettant de gerer l'affichage du graphique
+//Le premier permet de recuperer id du capteur
+//Le deuxieme recupere les donnees et gere l'affichage du graphique
+if(isset($_GET["capteur"])&& !empty($_GET["capteur"])){
+
 ?>
+    <script type='text/javascript'>
+        var idCapteurPage = "<?php echo $_GET["capteur"] ?>"; //placer echo entre guillemet
+    </script>
     <script src="js/ajaxCapteurData.js" ></script>
 <?php
+}
 if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset($_GET["capteur"])&& !empty($_GET["capteur"])) && (isset($_SESSION["capteurSelect"])&& !empty($_SESSION["capteurSelect"]))) {
     //$numCapteur=$_GET["capteur"];
     ini_set('xdebug.var_display_max_depth', 15);
+    var_dump($_SESSION);
     $capteur=$_SESSION["capteurSelect"];
     var_dump($capteur);
     $pieces=$_SESSION["domiSelect"]["pieces"];
@@ -43,7 +52,11 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                         <ul>
                             <?php
                             foreach ($pieces as $p){
-                                echo ('<li class="texte_gris">'.$p["name"].'</li>');
+                                foreach ($p["capteurs"] as $c){
+                                    if ($c["id_sensor"]==$_GET["capteur"]){
+                                        echo ('<li class="texte_gris">'.$p["name"].'</li>');
+                                    }
+                                }
                             }
                             ?>
                         </ul>
