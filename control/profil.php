@@ -19,7 +19,14 @@ if (!isset($_GET['function']) || empty($_GET['function'])) {
 
 switch ($function){
     case "mon_profil":
-        require_once ("view/base/utilisateur/mon_profil.php");
+        //var_dump($_GET['client']);
+        //var_dump($_SESSION);
+        if(isset($_SESSION["id"])&& !empty($_SESSION["id"])){
+            // Récupère toutes les informations du profil
+            $_SESSION["profilSelect"] = profil::getProfilComplet($_SESSION["id"]);
+            //var_dump($_SESSION["profilSelect"]);
+            require_once ("view/base/utilisateur/mon_profil.php");
+        }
         break;
     case "editer_mon_profil":
         require_once ("view/base/utilisateur/editer_mon_profil.php");

@@ -637,7 +637,7 @@ select {
     flex-wrap: wrap;
 }
 
-.balise_p_flex > p, .balise_p_flex_50 > p, .balise_form_flex_50 > form {
+.balise_p_flex > p, .balise_p_flex_50 > p, .balise_form_flex_50 > div {
     flex: 50%;
 }
 
@@ -780,6 +780,17 @@ header {
 }
 
 #slide_circle img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#slide_circle img.portrait {
     width: 100%;
     height: auto;
 }
@@ -805,7 +816,7 @@ header {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 215px;
+    width: 300px;
     margin-left: auto;
     margin-right: auto;
     /*margin-top: auto;*/

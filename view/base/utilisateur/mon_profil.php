@@ -7,36 +7,46 @@
  */
 ?>
 
+<?php if (isset($_SESSION["profilSelect"]) && !empty($_SESSION["profilSelect"]))
+{
+    var_dump($_SESSION["profilSelect"]);
+
+    $profil = $_SESSION["profilSelect"];
+}
+?>
+
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
 
-            <h2>Identité de l'utilisateur principal</h2>
 
-            <div class="balise_p_flex">
-                <p>Civilité : <span class="texte_gris">M.</span></p>
-                <p>Prénom : <span class="texte_gris">Prénom</span></p>
-                <p>Nom : <span class="texte_gris">Nom</span></p>
-                <p>Date de naissance : <span class="texte_gris">JJ/MM/AAAA</span></p>
-            </div>
+            <h2>Identité de l'utilisateur principal</h2>
+            <?php echo ('
+                <div class="balise_p_flex">
+                    <p>Civilité : <span class="texte_gris">M.</span></p>
+                    <p>Prénom : <span class="texte_gris">'.$profil["surname"].'</span></p>
+                    <p>Nom : <span class="texte_gris">'.$profil["name"].'</span></p>
+                    <p>Date de naissance : <span class="texte_gris">'.$profil["birth"].'</span></p>
+                </div>
 
             <h2>Adresse de facturation</h2>
 
             <div class="balise_p_flex_50">
-                <p>Adresse : <span class="texte_gris">XX Avenue de France</span></p>
-                <p>Ville : <span class="texte_gris">Ville</span></p>
-                <p>Code Postal : <span class="texte_gris">XXXXX</span></p>
-                <p>Pays : <span class="texte_gris">France</span></p>
+                <p>Adresse : <span class="texte_gris">'.$profil["bill_addr"].'</span></p>
+                <p>Ville : <span class="texte_gris">'.$profil["bill_town"].'</span></p>
+                <p>Code Postal : <span class="texte_gris">'.$profil["bill_post_code"].'</span></p>
+                <p>Pays : <span class="texte_gris">'.$profil["bill_country"].'</span></p>
             </div>
 
             <h2>Contact</h2>
 
             <div class="balise_p_flex_50">
-                <p>Email : <span class="texte_gris">prenom.nom@mail.com</span></p>
-                <p>Email de secours : <span class="texte_gris">prenom.nom@mail.com</span></p>
-                <p>Téléphone portable : <span class="texte_gris">0102030405</span></p>
-                <p>Fax : <span class="texte_gris">0102030405</span></p>
-            </div>
+                <p>Email : <span class="texte_gris">'.$profil["mail"].'</span></p>
+                <p>Email de secours : <span class="texte_gris">'.$profil["mail_security"].'</span></p>
+                <p>Téléphone portable : <span class="texte_gris">'.$profil["phone"].'</span></p>
+                <p>Fax : <span class="texte_gris">'.$profil["fax"].'</span></p>
+            </div>');
+            ?>
 
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
@@ -122,3 +132,4 @@
         </div>
     </div>
 </section>
+
