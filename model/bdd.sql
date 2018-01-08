@@ -239,3 +239,11 @@ INSERT INTO room(id_home,id_room_list) VALUES (1,1);
 
 INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (1,1,20);
 
+/* Jeu essai donnée graph capteur */
+INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,16,CURDATE());
+INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,6,"2017-12-21");
+INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,12,"2017-12-19");
+INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,26,"2017-12-12");
+
+
+

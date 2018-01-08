@@ -12,6 +12,18 @@
 
 <head>
     <?php
+    //Script+CSS select2
+    ?>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <?php
+    //Script+CSS Chartist.js
+    ?>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+    <?php
         //Script jQuery
     ?>
     <script

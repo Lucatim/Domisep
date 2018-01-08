@@ -196,4 +196,21 @@ class utilisateur
         return $val[0];
     }
 
+    //Fonction recuperant tout les donnees historise du capteur, utilise notamment pour les requete AJAX de Chartist.js
+    public static function getDataCapteurs($idCapteur,$date){
+        $bdd = PdoDomisep::pdoConnectDB();
+        //Test des parametre de la requete
+        if ($date ==null){
+            $req = $bdd->prepare('SELECT * FROM sensor_data WHERE id_sensor=?');
+            $req->execute(array($idCapteur));
+        }
+        else{
+            $req = $bdd->prepare('SELECT * FROM sensor_data WHERE id_sensor=? and date_sensor>=?  ');
+            $req->execute(array($idCapteur,$date));
+        }
+        $val = $req->fetchAll();
+        $req->closeCursor();
+        return $val;
+    }
+
 }

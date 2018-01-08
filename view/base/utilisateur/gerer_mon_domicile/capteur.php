@@ -5,6 +5,10 @@
  * Date: 17/12/2017
  * Time: 16:12
  */
+//Script permettant de gerer l'affichage du graphique
+?>
+    <script src="js/ajaxCapteurData.js" ></script>
+<?php
 if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset($_GET["capteur"])&& !empty($_GET["capteur"])) && (isset($_SESSION["capteurSelect"])&& !empty($_SESSION["capteurSelect"]))) {
     //$numCapteur=$_GET["capteur"];
     ini_set('xdebug.var_display_max_depth', 15);

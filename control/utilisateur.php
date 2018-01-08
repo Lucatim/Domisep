@@ -47,4 +47,24 @@ switch ($function){
 
         break;
 
+    case "data_capteur":
+        //Verification des parametre passé a la methode de la classe
+        if (isset($_POST["date"]) && !empty($_POST["date"])){
+            $date=$_POST["date"];
+            if (isset($_POST["idCapteur"]) && !empty($_POST["idCapteur"])){
+                $idCapteur=$_POST["idCapteur"];
+                $data=utilisateur::getDataCapteurs($idCapteur,$date);
+                json_decode($data);
+            }
+        }
+        else{
+            if (isset($_POST["idCapteur"]) && !empty($_POST["idCapteur"])){
+                $idCapteur=$_POST["idCapteur"];
+                $data=utilisateur::getDataCapteurs($idCapteur,null);
+                json_decode($data);
+            }
+        }
+
+        break;
+
 }
