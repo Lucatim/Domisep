@@ -9,8 +9,7 @@
 ?>
     <!DOCTYPE html>
     <html lang="fr">
-
-<<<<<<< HEAD
+    
 <head>
     <?php
     //Script+CSS select2
@@ -25,10 +24,6 @@
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
     <?php
-=======
-    <head>
-        <?php
->>>>>>> 69b255686f2dcf11f298bae084ccaa7639e87e93
         //Script jQuery
         ?>
         <script
