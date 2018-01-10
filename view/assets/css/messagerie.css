@@ -40,6 +40,7 @@ input:focus {
     outline: none;
 }
 
+/*
 .messagerie_form {
     display: inline-block;
     width: 200px;
@@ -57,5 +58,23 @@ input:focus {
 .messagerie_form:focus {
     border-color: #ff9800;
 }
+*/
 
+#myForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.form_element{
+    align-self: center;
+}
+
+#the_message{
+
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
 

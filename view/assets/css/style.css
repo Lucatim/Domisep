@@ -53,8 +53,8 @@ hr {
 /* ******************* */
 
 input:focus {
-    outline: none;
-}
+        outline: none;
+    }
 
 .label_input {
     display: flex;
@@ -71,6 +71,28 @@ input:focus {
 }
 
 .label_input:focus {
+    border-color: #ff9800;
+}
+
+/* ******************* */
+/*     Textarea INPUT  */
+/* ******************* */
+.textarea_input {
+    display: flex;
+    width: 500px;
+    height: 100px;
+    margin: 10px 0 30px 0;
+
+    border: 1px solid #e3e3e3;
+    color: #9f9f9f;
+
+    -webkit-transition: border 1s ease-in;
+    -moz-transition: border 1s ease-in;
+    -o-transition: all 1s ease-in;
+    transition: border 1s ease-in;
+}
+
+.textarea_input:focus {
     border-color: #ff9800;
 }
 

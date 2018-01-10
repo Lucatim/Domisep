@@ -13,14 +13,12 @@ catch (Exception $e)
 
 
 
-$req = $bdd->prepare('INSERT INTO mail(recipient , sender , num_client , subject , mess ) 
-                               VALUES(:recipient , :sender , :num_client , :subject , :mess)');
+$req = $bdd->prepare('INSERT INTO mail(recipient , subject , mess ) 
+                               VALUES(:recipient , :subject , :mess)');
 
 
 $req->execute(array(
     'recipient'=> $_POST['recipient'],
-    'sender' => $_POST['sender'],
-    'num_client' => $_POST['num_client'],
     'subject'  => $_POST['subject'],
     'mess' => $_POST['mess']
     ));
