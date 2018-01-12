@@ -20,24 +20,22 @@
             <br />
 
             <div id="adapt_content"></div>
-            <div class="groupe_bouton_vert">
-                <div class="bouton_vert">
-                   <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
-                </div>
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                       <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
+                    </div>
 
-                <div class="bouton_vert"  >
-                    <a href="#" ><i class="material-icons">mail</i>Boîte de réception</a>
-                </div>
+                    <div class="bouton_vert"  >
+                        <a href="#" ><i class="material-icons">mail</i>Boîte de réception</a>
+                    </div>
 
-                <div class="bouton_vert" >
-                    <a href="#" ><i class="material-icons">send</i>Messages envoyés</a>
-                </div>
+                    <div class="bouton_vert" >
+                        <a href="#" ><i class="material-icons">send</i>Messages envoyés</a>
+                    </div>
 
-                <div class="bouton_vert" >
-                    <a href="view/base/utilisateur/facture.html"><i class="material-icons">delete</i>Corbeille</a>
-                </div>
-
-
+                    <div class="bouton_vert" >
+                        <a href="view/base/utilisateur/facture.html"><i class="material-icons">delete</i>Corbeille</a>
+                    </div>
             </div>
 
             <!--  action="view/base/messagerie/envoi_message.php" -->
@@ -47,17 +45,30 @@
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>Modal Header</h2>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the Modal Body</p>
-                        <p>Some other text...</p>
-                    </div>
-                    <div class="modal-footer">
-                        <h3>Modal Footer</h3>
-                    </div>
+
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Nouveau message</h2>
+                        </div>
+                        <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" >
+                            <div class="form_flex form_element">
+                                <label>Destinataire :</label>
+                                      	<input type="text" name="recipient" class="label_input"><br>
+                            </div>
+
+                            <div class="form_flex form_element">
+                                   	<label>Sujet : </label>
+                                   	<input type="text" name="subject" class="label_input">
+                            </div>
+                            <div class="form_flex form_element">
+                                  		<label id="the_message">Message :</label>
+                                  		<textarea name="mess" class="textarea_input"></textarea>
+                            </div>
+
+                            <div class="bouton_vert form_element">
+                                <a type="submit" name="envoi" id="btn_sending" ><i class="material-icons">send</i>Envoyer</a>
+                            </div>
+                        </form>
                 </div>
 
             </div>
@@ -133,5 +144,4 @@
         </div>
     </div>
 
-    gvf gbygbbygbyg
 </section>
