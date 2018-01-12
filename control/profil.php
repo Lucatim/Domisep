@@ -32,6 +32,48 @@ switch ($function){
         require_once ("view/base/utilisateur/editer_mon_profil.php");
         break;
     case "facture":
+        $_SESSION["date_inscription"]=profil::getDateInscription($_SESSION["id"]);
+        $datereg=$_SESSION["date_inscription"];
+        $datereg=$datereg["date_reg"];
+        $datereg=date_parse($datereg);
+        $moisreg=$datereg["month"];
+        $jourreg=$datereg["day"];
+        $anneereg=$datereg["year"];
+
+        $jour=idate('j');
+        $mois=idate('n');
+        $annee=idate('Y');
+
+        $tabl= array();
+        $tabl[1][1]="Janvier";
+        $tabl[1][2]="Fevrier";
+        $tabl[1][3]="Mars";
+        $tabl[1][4]="Avril";
+        $tabl[2][1]="Mai";
+        $tabl[2][2]="Juin";
+        $tabl[2][3]="Juillet";
+        $tabl[2][4]="Aout";
+        $tabl[3][1]="Septembre";
+        $tabl[3][2]="Octobre";
+        $tabl[3][3]="Novembre";
+        $tabl[3][4]="Decembre";
+
+        $nbmois= array();
+        $nbmois[1][1]="01";
+        $nbmois[1][2]="02";
+        $nbmois[1][3]="03";
+        $nbmois[1][4]="04";
+        $nbmois[2][1]="05";
+        $nbmois[2][2]="06";
+        $nbmois[2][3]="07";
+        $nbmois[2][4]="08";
+        $nbmois[3][1]="09";
+        $nbmois[3][2]="10";
+        $nbmois[3][3]="11";
+        $nbmois[3][4]="12";
+
+        $_SESSION["Path_PDF"]=profil::getpdfPath($_SESSION["id"],"$annee'-'$mois'-'01'");
+
         require_once ("view/base/utilisateur/facture.php");
         break;
     case "editer_mes_utilisateurs":

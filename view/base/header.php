@@ -89,6 +89,7 @@
     <link rel="stylesheet" href="view/assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
     <link rel="stylesheet" href="view/assets/css/screen_phone.css" media="(max-width: 480px)"/>
     <link rel="stylesheet" href="view/assets/css/messagerie.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

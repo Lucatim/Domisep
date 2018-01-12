@@ -17,4 +17,26 @@ class profil
         $req->closeCursor(); // Libération de la connexion au serveur
         return $val;
     }
+
+    public static function getDateInscription($idUtilisateur)
+    {
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT date_reg FROM client WHERE id_client=?');
+        $req->execute(array($idUtilisateur));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
+    public static function getpdfPath($datePDF,$idUtilisateur)
+    {
+
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT pdf FROM bill WHERE num_client=? and date_bill=?');
+        $req->execute(array($idUtilisateur, $datePDF));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
 }

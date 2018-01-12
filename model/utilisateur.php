@@ -72,9 +72,9 @@ class utilisateur
         $val = $req->fetch();
         $req->closeCursor();
         //Compte le nombre de capteurs du domicile
-        $val["nbrCapteurs"]=utilisateur::getNombreCapteurDomicile($idDomicile);
+        $val["nbrCapteurs"] = utilisateur::getNombreCapteurDomicile($idDomicile);
         //Recupere le nombre de piece du domicile
-        $val["nbrPiece"]=utilisateur::getNombrePieceDomicile($idDomicile);
+        $val["nbrPiece"] = utilisateur::getNombrePieceDomicile($idDomicile);
         //Recupere les pieces du domiciles
         $val["pieces"] = utilisateur::getPiecesDomicile($val["id_home"]);
         //Recupere les differents types de capteurs a afficher
@@ -162,14 +162,14 @@ class utilisateur
 
     //Fonction permettant de récupérer les capteurs d'un domcile a partir d'un type de capteur
 
-    public static function getCapteursDomicileFromTypeCapteur($idDomcile,$idSensorList)
+    public static function getCapteursDomicileFromTypeCapteur($idDomcile, $idSensorList)
     {
-        $pieces =utilisateur::getPiecesDomicile($idDomcile);
-        foreach ($pieces as $k=>$v){
+        $pieces = utilisateur::getPiecesDomicile($idDomcile);
+        foreach ($pieces as $k => $v) {
 
         }
-        $bdd=PdoDomisep::pdoConnectDB();
-        $req=$bdd->prepare('SELECT sensor FROM sensor WHERE id_sensor_list');
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT sensor FROM sensor WHERE id_sensor_list');
         $req->execute(array());
         $val = $req->fetch();
         $req->closeCursor();
@@ -177,7 +177,8 @@ class utilisateur
     }
 
     //Fonction permettant de compter le nombre de capteurs d'un domiicile
-    public static function getNombreCapteurDomicile($idDomicile){
+    public static function getNombreCapteurDomicile($idDomicile)
+    {
         $bdd = PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT COUNT(*) FROM sensor WHERE id_room IN(SELECT id_room FROM room WHERE id_home=?)');
         $req->execute(array($idDomicile));
@@ -187,7 +188,8 @@ class utilisateur
     }
 
     //Fonction permettant de recuperer le nombre de pieces d'un domciile
-    public static function getNombrePieceDomicile($idDomicile){
+    public static function getNombrePieceDomicile($idDomicile)
+    {
         $bdd = PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT COUNT(*) FROM room WHERE id_home=?');
         $req->execute(array($idDomicile));
@@ -197,16 +199,16 @@ class utilisateur
     }
 
     //Fonction recuperant tout les donnees historise du capteur, utilise notamment pour les requete AJAX de Chartist.js
-    public static function getDataCapteurs($idCapteur,$date){
+    public static function getDataCapteurs($idCapteur, $date)
+    {
         $bdd = PdoDomisep::pdoConnectDB();
         //Test des parametre de la requete
-        if ($date ==null){
+        if ($date == null) {
             $req = $bdd->prepare('SELECT * FROM sensor_data WHERE id_sensor=?');
             $req->execute(array($idCapteur));
-        }
-        else{
+        } else {
             $req = $bdd->prepare('SELECT * FROM sensor_data WHERE id_sensor=? and date_sensor>=?  ');
-            $req->execute(array($idCapteur,$date));
+            $req->execute(array($idCapteur, $date));
         }
         $val = $req->fetchAll();
         $req->closeCursor();
@@ -247,4 +249,15 @@ class utilisateur
         return $listeResidence;
     }
 
+    //Fonction permettant de recuperer la date d'inscription d'un utilisateur
+    public static function getDateInscription($idUtilisateur)
+    {
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT date_reg FROM client WHERE id_client=?');
+        $req->execute(array($idUtilisateur));
+        $val = $req->fetch();
+        $req->closeCursor();
+
+        return $val;
+    }
 }
