@@ -217,6 +217,7 @@ INSERT INTO client(pass,surname,name,first_log,admin) VALUES('admin','Admin','AD
 /*Insert Manager*/
 INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI',FALSE,TRUE);
 
+
   /*pic varchar(128),*/
 /* User1 */
 /*INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');*/
