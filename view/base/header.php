@@ -124,9 +124,43 @@
 if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] === "0")) {
     //echo ($_SESSION["role"]);
     $role = $_SESSION["role"];
+
+    //Test utilisateur admin
+    if (isset($_SESSION['admin']) && (!empty($_SESSION['admin']))){
+        $admin=$_SESSION['admin'];
+    }
     //echo ($role);
     //Utilisateur n'est pas gestionnaire
     if ($role === "0") {
+        //Utilisateur est admin
+        echo ("pas gestionnaire");
+        if($admin==="1"){
+            echo ("Admin");
+            ?>
+            <header>
+                <div id="bloc_header">
+                    <div id="div_logo_domisep">
+                        <img src="view/assets/images/domisep_logo.png" alt="logo_domisep">
+                    </div>
+
+                    <ul id=nav_header>
+                        <li><a href="index_mvc.php"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a>
+                        </li>
+                        <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span
+                                        class="nav_text">Mon profil</span></a></li>
+                        <li><a href="index_mvc.php?target=utilisateur"><i class="material-icons">domain</i><span
+                                        class="nav_text">Gérer mon dom<span class="texte_vert">isep</span></span></a></li>
+                        <li><a href="index_mvc.php?target=messagerie"><i class="material-icons">message</i><span
+                                        class="nav_text">Messagerie</span></a></li>
+                        <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span
+                                        class="nav_text">Me déconnecter</span></a></li>
+                    </ul>
+                </div>
+            </header>
+            <?php
+        }
+        else{
+            //Utilisateur Normal
         ?>
 
         <header>
@@ -150,11 +184,31 @@ if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] 
             </div>
         </header>
         <?php
-
+        }
     } //Utilisateur est gestionnaire
     else {
-        if ($role === 1) {
+        if ($role === "1") {
             ?>
+            <header>
+                <div id="bloc_header">
+                    <div id="div_logo_domisep">
+                        <img src="view/assets/images/domisep_logo.png" alt="logo_domisep">
+                    </div>
+
+                    <ul id=nav_header>
+                        <li><a href="index_mvc.php"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a>
+                        </li>
+                        <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span
+                                        class="nav_text">Mon profil</span></a></li>
+                        <li><a href="index_mvc.php?target=utilisateur&function=gerer_ma_residence"><i class="material-icons">domain</i><span
+                                        class="nav_text">Gérer ma rés<span class="texte_vert">idence</span></span></a></li>
+                        <li><a href="index_mvc.php?target=messagerie"><i class="material-icons">message</i><span
+                                        class="nav_text">Messagerie</span></a></li>
+                        <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span
+                                        class="nav_text">Me déconnecter</span></a></li>
+                    </ul>
+                </div>
+            </header>
 
         <?php }
     }

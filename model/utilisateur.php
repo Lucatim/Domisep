@@ -213,4 +213,38 @@ class utilisateur
         return $val;
     }
 
+
+    //Fonction recuperant les ID des residences d'un gestionnaire
+    public static function getIDResidenceGestionnaire($idGestionnaire){
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT DISTINCT id_residence FROM client_home_residence WHERE num_client=?');
+        $req->execute(array($idGestionnaire));
+        $val = $req->fetchAll();
+        $req->closeCursor();
+        return $val;
+    }
+
+    //Fonction recuperant les infos d'une residence
+    public static function getResidenceInformation($idResidence){
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT * FROM residence WHERE id_residence=?');
+        $req->execute(array($idResidence));
+        $val = $req->fetchAll();
+        $req->closeCursor();
+        return $val;
+    }
+
+    //Fonction permettant de recuperer les informations des residences d'un gestionnaire
+    public static function getResidenceGestionnaire($idGestionnaire){
+        $listeIdResidence=utilisateur::getIDResidenceGestionnaire($idGestionnaire);
+        $listeResidence=array();
+
+        foreach ($listeIdResidence as $idR){
+            $r=utilisateur::getResidenceInformation($idR);
+            $listeResidence[]=$r;
+        }
+
+        return $listeResidence;
+    }
+
 }

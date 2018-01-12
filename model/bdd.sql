@@ -210,8 +210,11 @@ CREATE TABLE sensor_room (
 Insert
 */
 
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538');
+/*Insert Admin*/
+INSERT INTO client(pass,surname,name,first_log,admin) VALUES('admin','Admin','ADMIN',FALSE,TRUE);
+
+/*Insert Manager*/
+INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI',FALSE,TRUE);
 
   /*pic varchar(128),*/
 /* User1 */

@@ -75,4 +75,12 @@ switch ($function){
         }
         break;
 
+        case "gerer_ma_residence":
+        if(isset($_SESSION["id"])&&!empty($_SESSION["id"])){
+            $_SESSION["listeResidence"]=utilisateur::getResidenceGestionnaire($_SESSION["id"]);
+            var_dump($_SESSION["listeResidence"]);
+        }
+        require_once ("view/base/utilisateur/gerer_mon_domicile/gerer_mon_domicile.php");
+        break;
+
 }
