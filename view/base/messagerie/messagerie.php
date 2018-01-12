@@ -132,6 +132,4 @@
             </div>
         </div>
     </div>
-
-    gvf gbygbbygbyg
 </section>
