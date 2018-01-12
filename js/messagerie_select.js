@@ -1,4 +1,4 @@
-function showUser(str)
+  function showUser(str)
 {
     if (str == "")
     {

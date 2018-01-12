@@ -18,9 +18,8 @@
                 </select>
             </form>
             <br />
-            <div id="txtHint"><b>Person info will be listed here.</b></div>
-            <!-- <div id="adapt_content">
-            </div>  -->
+
+            <div id="adapt_content"></div>
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
                    <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
@@ -41,40 +40,62 @@
 
             </div>
 
+            <!--  action="view/base/messagerie/envoi_message.php" -->
+
+            <!-- The Modal -->
             <div id="myModal" class="modal">
+
+                <!-- Modal content -->
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
 
-                    <h2>Enter votre message</h2>
+            </div>
 
-                    <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" >
+            <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
 
-                        <div class="form_flex form_element">
-                            <label>Destinataire :</label>
-                            <input type="text" name="recipient" class="label_input"><br>
-                        </div>
-                        <!-- <label>De : </label><input type="text" name="sender" class="messagerie_form"><br>
-                        <label>Numéros client : </label><input type="text" name="num_client" class="messagerie_form" ><br> -->
-                        <div class="form_flex form_element">
-                            <label>Sujet : </label>
-                            <input type="text" name="subject" class="label_input">
-                        </div>
+                // Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
 
-                        <div class="form_flex form_element">
-                            <label id="the_message">Message :</label>
-                            <textarea name="mess" class="textarea_input"></textarea>
-                        </div>
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
 
-                        <div class="bouton_vert form_element">
-                            <a type="submit" name="envoi" id="btn_sending" ><i class="material-icons">send</i>Envoyer</a>
-                        </div>
+                // When the user clicks the button, open the modal
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
 
                         <script>
                             function showUser(str)
                             {
                                 if (str == "")
                                 {
-                                    document.getElementById("txtHint").innerHTML = "";
+                                    document.getElementById("adapt_content").innerHTML = "";
                                     return;
                                 }
                                 if (window.XMLHttpRequest) {
@@ -96,7 +117,7 @@
                                 {
                                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
                                     {
-                                        document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                                        document.getElementById("adapt_content").innerHTML = xmlhttp.responseText;
                                     }
                                 }
                                 xmlhttp.open("GET", "view/base/messagerie/get_info.php?q=" + str, true);
@@ -111,4 +132,6 @@
             </div>
         </div>
     </div>
+
+    gvf gbygbbygbyg
 </section>
