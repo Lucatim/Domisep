@@ -53,6 +53,18 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
         header('Content-Type: application/json');
             echo json_encode($val);
             break;
+
+        case "data_messagerie"://sql pour recup les messages
+            $numClient=$_GET["idUser"];
+
+            $req=$bdd->prepare('SELECT mess FROM mail WHERE num_client=?');
+            $req->execute(array($numClient));
+            $val=$req->fetch();
+            $req->closeCursor();
+
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
     }
 
     /*
