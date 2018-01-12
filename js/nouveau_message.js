@@ -7,7 +7,12 @@ function validateForm()
     var message = document.forms["myForm"]["mess"].value;
 
     if (recipient == "" ) {
-        alert("Le champ du destinataire est vide ou pas un entier");
+        alert("Le champ du destinataire est vide");
+        return false;
+    }
+
+    if ( isNaN(recipient) ) {
+        alert("Le champ du destinataire n'est pas un entier");
         return false;
     }
 
