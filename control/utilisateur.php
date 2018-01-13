@@ -19,7 +19,11 @@ if (!isset($_GET['function']) || empty($_GET['function'])) {
     $function = $_GET['function'];
 }
 
+//CREER 2 SWITCH AVEC CONDITION 1 POUR GESTIONNAIRE AUTRE UTILISATEUR
 switch ($function){
+
+    //PARTIE UTILISATEUR
+
     case "gerer_mon_domicile":
         if(isset($_SESSION["id"])&&!empty($_SESSION["id"])){
             $_SESSION["listeDomicile"]=utilisateur::getDomicileClient($_SESSION["id"]);
@@ -64,7 +68,6 @@ switch ($function){
                 json_decode($data);
             }
         }
-
         break;
 
     case "piece":
@@ -75,12 +78,35 @@ switch ($function){
         }
         break;
 
-        case "gerer_ma_residence":
+        //PARTIE GESTIONNAIRE
+
+    case "gerer_ma_residence":
         if(isset($_SESSION["id"])&&!empty($_SESSION["id"])){
             $_SESSION["listeResidence"]=utilisateur::getResidenceGestionnaire($_SESSION["id"]);
-            var_dump($_SESSION["listeResidence"]);
         }
         require_once ("view/base/utilisateur/gerer_ma_residence/gerer_ma_residence.php");
         break;
+
+    case "residence":
+        if(isset($_GET["residence"])&&!empty($_GET["residence"])){
+            //VERIFIER QUE RESIDENCE APPARTIENT BIEN A UTILISATEUR
+            $_SESSION["residenceSelect"]=utilisateur::getResidenceInformation($_GET["residence"]);
+        }
+        require_once ("view/base/utilisateur/gerer_ma_residence/residence.php");
+        break;
+
+//Affichage page ordre chauffage d'une residence
+    case "residence_chauffage":
+        if(isset($_SESSION["residenceSelect"])&&!empty($_SESSION["residenceSelect"])){
+            //VERIFIER QUE RESIDENCE APPARTIENT BIEN A UTILISATEUR
+            $resS=$_SESSION["residenceSelect"];
+            if (isset($resS["id_residence"])&&!empty($resS["id_residence"])){
+                $_SESSION["residenceSelect"]=utilisateur::getResidenceInformation($resS["id_residence"]);
+            }
+
+        }
+        require_once ("view/base/utilisateur/gerer_ma_residence/ordre/chauffage.php");
+        break;
+
 
 }

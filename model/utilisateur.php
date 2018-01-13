@@ -242,7 +242,6 @@ class utilisateur
         $listeResidence=array();
 
         foreach ($listeIdResidence as $idR){
-            var_dump($idR);
             $r=utilisateur::getResidenceInformation($idR["id_residence"]);
             $listeResidence[]=$r;
         }

@@ -95,8 +95,8 @@ CREATE TABLE residence (
   id_residence int UNIQUE NOT NULL AUTO_INCREMENT,
 
   name varchar(32),
-  temp_max int,
-  heat_on boolean,
+  temp_max int DEFAULT 30,
+  heat_on boolean DEFAULT TRUE,
 
   PRIMARY KEY (id_residence)
 );

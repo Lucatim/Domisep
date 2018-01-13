@@ -5,6 +5,7 @@
  * Date: 14/12/2017
  * Time: 19:10
  */
+
 ?>
 <section id="content">
     <div id="bloc_content">
@@ -14,22 +15,16 @@
 
             <div class="groupe_carre_image">
                 <?php
-                //Boucle affichage domicile
-                //var_dump($_SESSION["listeDomicile"]);
+                //Boucle affichage residence
 
-                var_dump($_SESSION["listeResidence"]);
                 if (isset($_SESSION["listeResidence"])&& !empty($_SESSION["listeResidence"])){
-                    //var_dump($_SESSION["listeDomicile"]);
                     //nombre image aléatoire
                     $i=0;
                     foreach ($_SESSION["listeResidence"] as $residence){
-                        var_dump($residence);
-                        //var_dump($domicile);
-                        //var_dump($domicile);
                         if($i==0){
                             ?>
 
-                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($residence["id_residence"])?>" class="carre_image red">
+                            <a href="index_mvc.php?target=utilisateur&function=residence&residence=<?php echo ($residence["id_residence"])?>" class="carre_image red">
                                 <img src="view/assets/images/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
                                 <div class="bandeau_bas red">
                                     <p><?php echo ($residence["name"])?></p>
@@ -40,7 +35,7 @@
                         }
                         else{
                             ?>
-                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($residence["id_residence"])?>" class="carre_image">
+                            <a href="index_mvc.php?target=utilisateur&function=domicile&residence=<?php echo ($residence["id_residence"])?>" class="carre_image">
                                 <img src="view/assets/images/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
 
                                 <div class="bandeau_bas">
