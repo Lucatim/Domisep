@@ -231,7 +231,7 @@ class utilisateur
         $bdd = PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT * FROM residence WHERE id_residence=?');
         $req->execute(array($idResidence));
-        $val = $req->fetchAll();
+        $val = $req->fetch();
         $req->closeCursor();
         return $val;
     }
@@ -242,7 +242,8 @@ class utilisateur
         $listeResidence=array();
 
         foreach ($listeIdResidence as $idR){
-            $r=utilisateur::getResidenceInformation($idR);
+            var_dump($idR);
+            $r=utilisateur::getResidenceInformation($idR["id_residence"]);
             $listeResidence[]=$r;
         }
 

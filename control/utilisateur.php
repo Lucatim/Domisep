@@ -80,7 +80,7 @@ switch ($function){
             $_SESSION["listeResidence"]=utilisateur::getResidenceGestionnaire($_SESSION["id"]);
             var_dump($_SESSION["listeResidence"]);
         }
-        require_once ("view/base/utilisateur/gerer_mon_domicile/gerer_mon_domicile.php");
+        require_once ("view/base/utilisateur/gerer_ma_residence/gerer_ma_residence.php");
         break;
 
 }

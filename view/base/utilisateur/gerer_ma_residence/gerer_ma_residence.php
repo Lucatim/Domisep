@@ -17,8 +17,7 @@
                 //Boucle affichage domicile
                 //var_dump($_SESSION["listeDomicile"]);
 
-
-
+                var_dump($_SESSION["listeResidence"]);
                 if (isset($_SESSION["listeResidence"])&& !empty($_SESSION["listeResidence"])){
                     //var_dump($_SESSION["listeDomicile"]);
                     //nombre image aléatoire
@@ -30,7 +29,7 @@
                         if($i==0){
                             ?>
 
-                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($residence["id_home"])?>" class="carre_image red">
+                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($residence["id_residence"])?>" class="carre_image red">
                                 <img src="view/assets/images/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
                                 <div class="bandeau_bas red">
                                     <p><?php echo ($residence["name"])?></p>
@@ -41,7 +40,7 @@
                         }
                         else{
                             ?>
-                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($residence["id_home"])?>" class="carre_image">
+                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($residence["id_residence"])?>" class="carre_image">
                                 <img src="view/assets/images/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
 
                                 <div class="bandeau_bas">

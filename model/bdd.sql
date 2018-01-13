@@ -92,7 +92,7 @@ CREATE TABLE  bill (
 );
 
 CREATE TABLE residence (
-  id_residence int,
+  id_residence int UNIQUE NOT NULL AUTO_INCREMENT,
 
   name varchar(32),
   temp_max int,
@@ -241,9 +241,9 @@ INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart d
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Alex','Colombes',92,'Haut de Seine','France',1);
 
 /* Attribut des domiciles aux users */
-INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
-INSERT INTO client_home_residence(num_client,id_home) VALUES(1,2);
-INSERT INTO client_home_residence(num_client,id_home) VALUES(3,3);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,1,1);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,2,2);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(4,3,3);
 
 INSERT INTO sensor_list(name,pic,unite) VALUES('Température','view/assets/images/capteur_temperature.jpg','°C'),('Humidité','view/assets/images/capteur_humidite.jpg',''),('Pression','view/assets/images/capteur_pression.jpg','Bar'),('Lumière','view/assets/images/capteur_lumiere.jpg','Lumens'),('Fumée','view/assets/images/capteur_fumee.jpg','Feu'),('Intrusion','view/assets/images/capteur_intrusion.jpg',NULL);
 
@@ -258,6 +258,17 @@ INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,16,CURDATE());
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,6,"2017-12-21");
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,12,"2017-12-19");
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,26,"2017-12-12");
+
+/*Jeu essai Residence*/
+INSERT INTO residence(name) VALUES ("Résidence Reubell");
+INSERT INTO residence(name) VALUES ("Résidence Lodge");
+INSERT INTO residence(name) VALUES ("Résidence Overlook");
+
+/* Attribut des residences aux gestionnaires */
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL,1);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,2);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,3);
+
 
 
 
