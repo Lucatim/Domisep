@@ -59,6 +59,24 @@
                 }
             }
 
+            if (isset($_GET["target"]) && !empty($_GET["target"])) {
+                $cible = $_GET["target"];
+                if ($cible === "connexion") {
+                    echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+                }
+
+                if ($cible === "profil") {
+                    if (isset($_GET['function']) && !empty($_GET['function'])) {
+                        $cible = $_GET['function'];
+
+                        if ($cible === "abonnement") {
+                            echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+                        }
+
+                    }
+                }
+            }
+
             if ($cible === "base") {
                 if (isset($_GET['function']) && !empty($_GET['function'])) {
                     $cible = $_GET['function'];

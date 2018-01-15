@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">shopping_cart</i>Mon abonnement</a>
+                    <a href="index_mvc.php?target=profil&function=abonnement"><i class="material-icons">shopping_cart</i>Mon abonnement</a>
                 </div>
 
                 <div class="bouton_vert">

@@ -30,7 +30,6 @@ class profil
 
     public static function getpdfPath($idUtilisateur, $datePDF)
     {
-
         $bdd = PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT pdf FROM bill WHERE num_client=? AND date_bill=?');
         $req->execute(array($idUtilisateur, $datePDF));
@@ -39,4 +38,39 @@ class profil
         return $val;
     }
 
+    public static function getIDsub($idUtilisateur)
+    {
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT id_sub_list FROM client WHERE id_client=?');
+        $req->execute(array($idUtilisateur));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
+    public static function getDiscount($idUtilisateur)
+    {
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT discount FROM client WHERE id_client=?');
+        $req->execute(array($idUtilisateur));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
+
+
+    public static function getsub($idSub)
+    {
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT name, price FROM sub_list WHERE id_sub_list=2');
+        $req->execute(array($idSub["id_sub_list"]));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
+
 }
+
+?>
