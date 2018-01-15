@@ -48,25 +48,83 @@ $(document).ready(function () {
             }
         }
         if (tempValue !=parseInt($("#temp_max").text())){
-            $("#temp_max").text(tempValue);
+            var request=$.ajax(
+                {
+                    method: 'GET',
+                    url: 'control/requestAJAX.php?function=chauffage_temperature',
+                    data:{ idResidence: idResidencePage ,chaufTemp:tempValue},
+                    dataType:"json",
+                    timeout:999999999
+                });
+            request.always(function (d) {
+                $("#temp_max").text(tempValue);
+
+            });
         }
 
     }
 
     function tempPosChange(pos) {
+        debugger
         var textChaufPos=$("#textChauffagePosition");
+        var paramChauf=$("#ordre_chauf");
         if (pos==true){
-            $("#chauffagePosition").removeClass("bouton_vert");
-            $("#chauffagePosition").addClass("bouton_rouge");
 
-            textChaufPos.text("Chauffage Désactivé");
+            var request=$.ajax(
+                {
+                    method: 'GET',
+                    url: 'control/requestAJAX.php?function=chauffage_position',
+                    data:{ idResidence: idResidencePage ,chaufPos:0},
+                    dataType:"json",
+                    timeout:999999999
+                });
+            request.always(function (d) {
+                debugger
+                //Désactive le chauffage
+                $("#chauffagePosition").removeClass("bouton_vert");
+                $("#chauffagePosition").addClass("bouton_rouge");
+
+                textChaufPos.text("Chauffage Désactivé");
+
+                //paramChauf.removeClass("hide");
+                paramChauf.hide();
+
+                $(".red_indice").addClass("red");
+            });
+            request.fail(function (msg) {
+                debugger;
+                console.log("coucou ca marche pas");
+            })
         }
         else {
-            $("#chauffagePosition").removeClass("bouton_rouge");
-            $("#chauffagePosition").addClass("bouton_vert");
+            //AJAX modication bdd position chauffage
+            var request=$.ajax(
+                {
+                    method: 'GET',
+                    url: 'control/requestAJAX.php?function=chauffage_position',
+                    data:{ idResidence: idResidencePage ,chaufPos:1},
+                    dataType:"json",
+                    timeout:999999999
+                });
+            request.always(function(d) {
+                debugger
+                //Active le chauffage
+                $("#chauffagePosition").removeClass("bouton_rouge");
+                $("#chauffagePosition").addClass("bouton_vert");
 
-            textChaufPos.text("Chauffage Activé");
+                textChaufPos.text("Chauffage Activé");
 
+                //paramChauf.addClass("hide");
+
+                paramChauf.show();
+
+
+                $(".red_indice").removeClass("red");
+            });
+            request.fail(function (msg) {
+                debugger;
+                console.log("coucou ca marche pas");
+            })
         }
 
     }

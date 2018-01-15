@@ -51,18 +51,16 @@
 
             <h2>Mes Ordres</h2>
             <div class="groupe_carre_image">
-            <?php
 
-            echo ("<a href='index_mvc.php?target=utilisateur&function=residence_chauffage' class=\"carre_image\">
-                    <img src=\"view/assets/images/capteur_humidite.jpg\" alt=\"unknown\">
 
-                    <div class=\"bandeau_bas\">
-                        <p>Chauffage</p>
-                    </div>
-                </a>");
-
-            ?>
+            <a href='index_mvc.php?target=utilisateur&function=residence_chauffage' class="carre_image <?php if($res['heat_on']==0){echo 'red';}?>">
+                <img src="view/assets/images/capteur_humidite.jpg" alt="unknown">
+                <div class="bandeau_bas <?php if($res['heat_on']==0){echo 'red';}?> ">
+                    <p>Chauffage</p>
+                </div>
+            </a>
             </div>
+
 
             <?php
 /* Exemple carré rouge/carré vert

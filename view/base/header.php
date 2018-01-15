@@ -120,14 +120,14 @@
     </head>
 <?php
 //Définition du header en fonction la connexion ou non
-
+var_dump($_SESSION);
 //Si l'utilisateur est connecté
 if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] === "0")) {
     //echo ($_SESSION["role"]);
     $role = $_SESSION["role"];
 
     //Test utilisateur admin
-    if (isset($_SESSION['admin']) && (!empty($_SESSION['admin']))){
+    if (isset($_SESSION['admin'])){
         $admin=$_SESSION['admin'];
     }
     //echo ($role);
