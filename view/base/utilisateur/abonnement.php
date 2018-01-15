@@ -5,7 +5,8 @@
  * Date: 15/01/2018
  * Time: 14:44
  */
-
+    $name_sub=$_SESSION["infos_sub"]['name'];
+    $price_sub=$_SESSION["infos_sub"]['price'];
     $discount=$_SESSION["discount"]["discount"];
     if($discount==NULL){
         $discount=0;
