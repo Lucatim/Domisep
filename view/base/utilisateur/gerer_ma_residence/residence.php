@@ -19,10 +19,10 @@
 
             <div class="groupe_carre_image_texte_droite">
                 <div class="grand_carre_image">
-                    <div class="carre_image red">
+                    <div class="carre_image <?php if($res['heat_on']==0){echo 'red';}?>">
                         <img src="view/assets/images/domicile-1.jpg" alt="unknown">
 
-                        <div class="bandeau_bas red">
+                        <div class="bandeau_bas <?php if($res['heat_on']==0){echo 'red';}?>">
                             <p>
                                 <?php
                                     echo ($res['name']);

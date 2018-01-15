@@ -150,7 +150,7 @@ if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] 
                         <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span
                                         class="nav_text">Mon profil</span></a></li>
                         <li><a href="index_mvc.php?target=utilisateur"><i class="material-icons">domain</i><span
-                                        class="nav_text">Gérer mon dom<span class="texte_vert">isep</span></span></a></li>
+                                        class="nav_text">Gérer mon Dom<span class="texte_vert">isep</span></span></a></li>
                         <li><a href="index_mvc.php?target=messagerie"><i class="material-icons">message</i><span
                                         class="nav_text">Messagerie</span></a></li>
                         <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span
