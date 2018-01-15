@@ -28,11 +28,11 @@ class profil
         return $val;
     }
 
-    public static function getpdfPath($datePDF,$idUtilisateur)
+    public static function getpdfPath($idUtilisateur, $datePDF)
     {
 
         $bdd = PdoDomisep::pdoConnectDB();
-        $req = $bdd->prepare('SELECT pdf FROM bill WHERE num_client=? and date_bill=?');
+        $req = $bdd->prepare('SELECT pdf FROM bill WHERE num_client=? AND date_bill=?');
         $req->execute(array($idUtilisateur, $datePDF));
         $val = $req->fetch();
         $req->closeCursor();

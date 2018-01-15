@@ -6,7 +6,6 @@
  * Time: 12:17
  */
 
-var_dump($_SESSION["Path_PDF"]);
 ?>
 
 <section id="content">
@@ -29,7 +28,8 @@ var_dump($_SESSION["Path_PDF"]);
                              if ($nbmois[$i][$j] == $moisreg & $jourreg < 3) {
                                  ;
                              } else {
-                                 echo('<div class="image_tableau"><a href='.$_SESSION["Path_PDF"].'><img src="view/assets/images/pdf.png"></a></div></td>');
+                                 $index=intval($nbmois[$i][$j]);
+                                 echo('<div class="image_tableau"><a href='.$_SESSION["Path_PDF"][$index].'><img src="view/assets/images/pdf.png"></a></div></td>');
                              }
                          }
                      }
@@ -38,7 +38,8 @@ var_dump($_SESSION["Path_PDF"]);
                              if ($nbmois[$i][$j] == $mois & $jour < 3) {
                                  ;
                              } else {
-                                 echo('<div class="image_tableau"><a href="'.$_SESSION["Path_PDF"].'"><img src="view/assets/images/pdf.png"></a></div></td>');
+                                 $index=intval($nbmois[$i][$j]);
+                                 echo('<div class="image_tableau"><a href="'.$_SESSION["Path_PDF"][$index].'"><img src="view/assets/images/pdf.png"></a></div></td>');
                              }
                          }
                      }
