@@ -40,8 +40,8 @@ switch ($function){
         $jourreg=$datereg["day"];
         $anneereg=$datereg["year"];
 
-        $jour=idate('j');
-        $mois=idate('n');
+        $jour=date('d');
+        $mois=date('m');
         $annee=idate('Y');
 
         $tabl= array();
@@ -72,8 +72,13 @@ switch ($function){
         $nbmois[3][3]="11";
         $nbmois[3][4]="12";
 
-        $_SESSION["Path_PDF"]=profil::getpdfPath($_SESSION["id"],"$annee'-'$mois'-'01'");
+        $_SESSION["Path_PDF"]= array();
 
+        for($i=1;$i<=$mois;$i++)
+        {
+            $val = profil::getpdfPath($_SESSION["id"], "$annee'-'$mois'-'01'");
+            $_SESSION["Path_PDF"][$i]= $val["pdf"];
+        }
         require_once ("view/base/utilisateur/facture.php");
         break;
     case "editer_mes_utilisateurs":
