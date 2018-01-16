@@ -14,6 +14,13 @@ body {
 
 img {
     width: 100%;
+
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 h2 {
@@ -577,6 +584,35 @@ select {
     font-size: 50px;
 }
 
+.icone_edit_circle {
+    margin-top: auto;
+    z-index: 1;
+    margin-bottom: initial;
+}
+
+.icone_edit_circle i {
+    font-size: 50px;
+    color: white;
+}
+
+.icone_edit_circle i {
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.icone_edit_circle:hover i {
+    color: #ff9800;
+}
+
+.texte_icone_edit {
+    width: 130px;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+
+
 /* ******************* */
 /*  OPACITY EDIT IMAGE */
 /* ******************* */
@@ -831,6 +867,9 @@ header {
     background-color: black;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 #slide_circle img {

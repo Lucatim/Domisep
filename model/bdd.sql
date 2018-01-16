@@ -55,6 +55,10 @@ CREATE TABLE client (
   discount int,
   number_sensor int,
   second_client boolean DEFAULT FALSE,
+  acces_client boolean DEFAULT TRUE,
+  id_second_client_1 int,
+  id_second_client_2 int,
+  id_second_client_3 int,
   manager boolean DEFAULT FALSE,
   admin boolean DEFAULT FALSE ,
   first_log boolean DEFAULT TRUE ,
@@ -221,9 +225,18 @@ INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI
   /*pic varchar(128),*/
 /* User1 */
 /*INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');*/
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_sub_list,discount)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538',2,20);
+/*INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_sub_list,discount)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538',2,20);*/
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','1','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538','4','5',2,20);
 
+/* SecondClient1 of User1 */
+INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
+    VALUES ('vk','Van-Kévin','Suy','view/assets/images/vankevin.jpg','1','0');
+
+/* SecondClient1 of User1 */
+INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
+    VALUES ('lulu','Lucas','Quéant','view/assets/images/lucas.jpg','1','1');
 
 /* User2 */
 INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FALSE);

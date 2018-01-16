@@ -85,4 +85,24 @@ class connexion
         $req->closeCursor();
         return $val;
     }
+
+    public static function getDatetimeNow($id_client) {
+        //$tz_object = new DateTimeZone('Europe/Paris');
+        $dateTimeZoneParis = new DateTimeZone("Europe/Paris");
+        $dateTimeParis = new DateTime("now", $dateTimeZoneParis);
+        //$datetime = new DateTime();
+        $result = $dateTimeParis->format('Y-m-d H:i:s');
+        //$datetime->setTimezone($tz_object);
+        //date_default_timezone_set('Australia/Melbourne');
+        //$date = date('m/d/Y h:i:s', time());
+
+        $bdd=PdoDomisep::pdoConnectDB(); // Connexion à la BDD
+        $req=$bdd->prepare("UPDATE client SET date_log=:date WHERE id_client=:id"); // Préparation de la requête
+        $req->bindParam("date",$result);
+        $req->bindParam("id",$id_client);
+        $req->execute(); // Exécution de la requête
+        $req->closeCursor(); // Libération de la connexion au serveur
+
+        return $result;
+    }
 }
