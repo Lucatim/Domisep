@@ -10,7 +10,7 @@ echo ("<footer>
             <div id=\"haut_footer\">
                 <div id=\"bloc_haut_footer\">
                     <div id=\"div_logo_blanc_domisep\">
-                        <img src=\"view/assets/images/domisep_logo_blanc.png\" alt=\"logo_domisep_blanc\"/>
+                       <a href='index_mvc.php'> <img src=\"view/assets/images/domisep_logo_blanc.png\" alt=\"logo_domisep_blanc\"/></a>
                     </div>
 
                     <ul id=\"nav_footer\">

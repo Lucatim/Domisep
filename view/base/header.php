@@ -141,7 +141,7 @@ if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] 
             <header>
                 <div id="bloc_header">
                     <div id="div_logo_domisep">
-                        <img src="view/assets/images/domisep_logo.png" alt="logo_domisep">
+                        <a href="index_mvc.php"> <img src="view/assets/images/domisep_logo.png" alt="logo_domisep"></a>
                     </div>
 
                     <ul id=nav_header>

@@ -59,7 +59,7 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
 
             $req=$bdd->prepare('SELECT mess FROM mail WHERE num_client=?');
             $req->execute(array($numClient));
-            $val=$req->fetch();
+            $val=$req->fetchAll();
             $req->closeCursor();
 
             header('Content-Type: application/json');

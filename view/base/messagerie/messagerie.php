@@ -7,17 +7,16 @@
  */
 ?>
 
-var_dump($_SESSION);
-?>
+<?php var_dump($_SESSION); ?>
 <script type='text/javascript'>
     var idUtilisateur = "<?php echo $_SESSION["id"] ?>"; //placer echo entre guillemet
 </script>
-
-<script src="js/ajaxRecuperationMessage.js" ></script>
+<script src="js/messagerie_select.js"></script>
+<script src="js/ajaxRecuperationMessage.js"></script>
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
-            <script src="js/messagerie_select.js"></script>
+
             <form>
                 <select name="users"  onchange="showUser(this.value)">
                     <option value="">Select a person:</option>
@@ -27,17 +26,18 @@ var_dump($_SESSION);
             </form>
             <br />
 
-            <div id="adapt_content"></div>
+            <div id="adapt_content"></div> <!-- div qui va changer en AJAX -->
+
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
                     <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
                 </div>
 
-                <div class="bouton_vert"  >
+                <div id="boiteReception" class="bouton_vert">
                     <a href="#" ><i class="material-icons">mail</i>Boîte de réception</a>
                 </div>
 
-                <div class="bouton_vert" >
+                <div id="messageEnvoye" class="bouton_vert" >
                     <a href="#" ><i class="material-icons">send</i>Messages envoyés</a>
                 </div>
 

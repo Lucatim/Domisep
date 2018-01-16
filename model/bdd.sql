@@ -269,6 +269,8 @@ INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,2);
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,3);
 
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (1,3,3,0,"first send","hello world");
+
 
 
 
