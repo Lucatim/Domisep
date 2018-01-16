@@ -29,7 +29,7 @@ $(document).ready(function () {
                 debugger;
                 //fonction qui modifie une div
                 $(document).ready(function(){$("#boiteReception").click(function(){$("#adapt_content").empty();})});//vider la div adapt_content
-                $(document).ready(function(){$("#boiteReception").click(function(){$("#adapt_content").append(view/base/messagerie/messagerie.html);})});
+                $(document).ready(function(){$("#boiteReception").click(function(){$("#adapt_content").append("change");})});
                 })
             });
 
