@@ -81,8 +81,18 @@ switch ($function){
         }
         require_once ("view/base/utilisateur/facture.php");
         break;
+
     case "editer_mes_utilisateurs":
         require_once ("view/base/utilisateur/editer_mes_utilisateurs.php");
+        break;
+
+    case "abonnement":
+
+        $_SESSION["discount"]=profil::getdiscount($_SESSION["id"]);
+        $_SESSION["id_sub"]=profil::getIDsub($_SESSION["id"]);
+        $_SESSION["infos_sub"]=profil::getsub($_SESSION["id_sub"]);
+
+        require_once ("view/base/utilisateur/abonnement.php");
         break;
 }
 

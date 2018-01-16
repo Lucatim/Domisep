@@ -221,8 +221,8 @@ INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI
   /*pic varchar(128),*/
 /* User1 */
 /*INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');*/
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538');
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_sub_list,discount)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538',2,20);
 
 
 /* User2 */
@@ -236,9 +236,6 @@ INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison d
 
 /* Home2 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
-
-/* Home3 */
-INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Alex','Colombes',92,'Haut de Seine','France',1);
 
 /* Attribut des domiciles aux users */
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,1,1);
@@ -272,5 +269,7 @@ INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL
 INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (1,3,3,0,"first send","hello world");
 
 
+INSERT INTO sub_list(name,price) VALUES ('Standard',30);
+INSERT INTO sub_list(name,price) VALUES ('Premium',50);
 
 
