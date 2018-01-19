@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php var_dump($_SESSION); ?>
+<?//php var_dump($_SESSION); ?>
 <script type='text/javascript'>
     var idUtilisateur = "<?php echo $_SESSION["id"] ?>"; //placer echo entre guillemet
 </script>
@@ -16,16 +16,6 @@
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
-
-            <form>
-                <select name="users"  onchange="showUser(this.value)">
-                    <option value="">Select a person:</option>
-                    <option value="1">Marc Dupont</option>
-                    <option value="2">Jean Martin</option>
-                </select>
-            </form>
-            <br />
-
             <div id="adapt_content"></div> <!-- div qui va changer en AJAX -->
 
             <div class="groupe_bouton_vert">
@@ -53,7 +43,6 @@
 
                 <!-- Modal content -->
                 <div class="modal-content">
-
                     <div class="modal-header">
                         <span class="close">&times;</span>
                         <h2>Nouveau message</h2>
@@ -80,6 +69,9 @@
                 </div>
 
             </div>
+
+
+
 
             <script>
                 // Get the modal

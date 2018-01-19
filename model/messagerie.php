@@ -10,7 +10,7 @@ class messagerie
 {
     public static function verifNumClient($numClient){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req=$bdd->prepare('SELECT mess FROM mail WHERE num_client=?');
+        $req=$bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
         $req->execute(array($numClient));
         $val=$req->fetch();
         $req->closeCursor();

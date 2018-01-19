@@ -57,7 +57,7 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
         case "data_messagerie"://sql pour recup les messages
             $numClient=$_GET["idUser"];
 
-            $req=$bdd->prepare('SELECT mess FROM mail WHERE num_client=?');
+            $req=$bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
             $req->execute(array($numClient));
             $val=$req->fetchAll();
             $req->closeCursor();
