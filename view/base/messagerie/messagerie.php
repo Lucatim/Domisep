@@ -7,7 +7,7 @@
  */
 ?>
 
-<?//php var_dump($_SESSION); ?>
+<?php var_dump($_SESSION); ?>
 <script type='text/javascript'>
     var idUtilisateur = "<?php echo $_SESSION["id"] ?>"; //placer echo entre guillemet
 </script>
