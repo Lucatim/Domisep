@@ -43,22 +43,29 @@
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="container_principal">
                         <span class="close">&times;</span>
                         <h2>Nouveau message</h2>
                     </div>
-                    <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" >
-                        <div class="form_flex form_element">
-                            <label>Destinataire :</label>
-                            <input type="text" name="recipient" class="label_input"><br>
+                    <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" class="input_radio" >
+                        <div class="form_flex_edit">
+                            <label>Destinataire </label>
+                            <input type="text" name="recipient" class="label_input">
                         </div>
 
-                        <div class="form_flex form_element">
-                            <label>Sujet : </label>
+                        <div class="form_flex_edit">
+                            <label>Sujet  </label>
                             <input type="text" name="subject" class="label_input">
+                            <SELECT type="text" name="subject" class="label_input" size="1">
+                                <OPTION>Mon compte en ligne
+                                <OPTION>Mes données
+                                <OPTION>Mon installation
+                                <OPTION>Autre
+                            </SELECT>
                         </div>
-                        <div class="form_flex form_element">
-                            <label id="the_message">Message :</label>
+
+                        <div class="form_flex_edit">
+                            <label id="the_message">Message </label>
                             <textarea name="mess" class="textarea_input"></textarea>
                         </div>
 
