@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php var_dump($_SESSION); ?>
+<?php //var_dump($_SESSION); ?>
 <script type='text/javascript'>
     var idUtilisateur = "<?php echo $_SESSION["id"] ?>"; //placer echo entre guillemet
 </script>
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="bouton_vert" >
-                    <a href="view/base/utilisateur/facture.html"><i class="material-icons">delete</i>Corbeille</a>
+                    <a href=""><i class="material-icons">delete</i>Corbeille</a>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                         <span class="close">&times;</span>
                         <h2>Nouveau message</h2>
                     </div>
-                    <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" class="input_radio" >
+                    <form action="index_mvc?target=messagerie&function=Nouveau" name="myForm" method="post" id="myForm" class="input_radio" >
                         <div class="form_flex_edit">
                             <label>Destinataire </label>
                             <input type="text" name="recipient" class="label_input">
@@ -56,10 +56,10 @@
                         <div class="form_flex_edit">
                             <label>Sujet  </label>
                             <SELECT type="text" name="subject" class="label_input" size="1">
-                                <OPTION>Mon compte en ligne
-                                <OPTION>Mes données
-                                <OPTION>Mon installation
-                                <OPTION>Autre
+                                <OPTION value="Mon compte en ligne">Mon compte en ligne
+                                <OPTION value="Mes données">Mes données
+                                <OPTION value="Mon installation">Mon installation
+                                <OPTION value="Autre">Autre
                             </SELECT>
                         </div>
 

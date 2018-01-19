@@ -24,8 +24,19 @@ switch ($function) {
         break;
 
     case "Nouveau":
+        var_dump($_POST);
+        var_dump($_SESSION);
+        $num_client =$_SESSION['id'];
+        $sender = $_SESSION['id'];
+        $mess = $_POST['mess'];
+        $subject = $_POST['subject'];
+        $recipient = $_POST['recipient'];
+        $bin = "0";
+        messagerie::insertMSG($recipient ,$bin ,$subject , $mess,$num_client, $sender);
+        //messagerie::insertMSG();
         require_once("view/base/messagerie/messagerie.php");
         break;
+
 }
 ?>
 

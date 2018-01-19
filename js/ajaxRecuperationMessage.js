@@ -26,7 +26,7 @@ $(document).ready(function () {
             console.log("coucou la requete est fini");
 
 
-            $(document).ready(function(){$("#boiteReception").click(function(){$("#adapt_content").empty();})});//vider la div adapt_content
+           // $(document).ready(function(){$("#boiteReception").click(function(){$("#adapt_content").empty();})});//vider la div adapt_content
             d.forEach(function (e) {
                  debugger;
 
@@ -39,7 +39,9 @@ $(document).ready(function () {
                 var recipient = e.recipient;
                 var id_mec_co = idUtilisateur;
 
-                if(id_client == recipient){
+
+                if (recipient == id_client ){
+
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#adapt_content").append(
                         "<div id=\"container_principal\">\n" +
                         "          <h2>Boîte de réception</h2>\n" +
@@ -65,8 +67,8 @@ $(document).ready(function () {
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#sujet").text(sujet);});});//remplacer le sujet
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#nom_prenom").text(surname +" "+nom);});});//remplacer le nom et Prenom
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#pic").attr('src',picture);});});//remplacer l'image
-                }
 
+                }
 
 
 
