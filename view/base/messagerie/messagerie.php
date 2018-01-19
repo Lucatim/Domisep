@@ -55,7 +55,6 @@
 
                         <div class="form_flex_edit">
                             <label>Sujet  </label>
-                            <input type="text" name="subject" class="label_input">
                             <SELECT type="text" name="subject" class="label_input" size="1">
                                 <OPTION>Mon compte en ligne
                                 <OPTION>Mes données
