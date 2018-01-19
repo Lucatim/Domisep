@@ -13,8 +13,8 @@ catch (Exception $e)
 
 
 
-$req = $bdd->prepare('INSERT INTO mail(recipient , subject , mess,bin,num_client ) 
-                               VALUES(:recipient , :subject , :mess , :bin, :num_client)');
+$req = $bdd->prepare('INSERT INTO mail(recipient , subject , mess,bin,num_client, sender, num_client ) 
+                               VALUES(:recipient , :subject , :mess , :bin, :num_client, :sender, :num_client)');
 
 
 $req->execute(array(
@@ -22,7 +22,8 @@ $req->execute(array(
     'subject'  => $_POST['subject'],
     'mess' => $_POST['mess'],
     'bin' => "0",
-    'num_client' => $_POST[$_SESSION['id']]
+    'num_client' => $_POST[$_SESSION['id']],
+    'sender'=>
 ));
 
 header('Location: http://localhost/Domisep/index_mvc.php?target=messagerie#');

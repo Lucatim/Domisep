@@ -20,7 +20,7 @@
 
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
-                    <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
+                    <a id="myBtn" href="#" ><i class="material-icons">message</i>Nouveau message</a>
                 </div>
 
                 <div id="boiteReception" class="bouton_vert">
