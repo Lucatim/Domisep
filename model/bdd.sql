@@ -55,6 +55,10 @@ CREATE TABLE client (
   discount int,
   number_sensor int,
   second_client boolean DEFAULT FALSE,
+  acces_client boolean DEFAULT TRUE,
+  id_second_client_1 int,
+  id_second_client_2 int,
+  id_second_client_3 int,
   manager boolean DEFAULT FALSE,
   admin boolean DEFAULT FALSE ,
   first_log boolean DEFAULT TRUE ,
@@ -92,11 +96,11 @@ CREATE TABLE  bill (
 );
 
 CREATE TABLE residence (
-  id_residence int,
+  id_residence int UNIQUE NOT NULL AUTO_INCREMENT,
 
   name varchar(32),
-  temp_max int,
-  heat_on boolean,
+  temp_max int DEFAULT 30,
+  heat_on boolean DEFAULT TRUE,
 
   PRIMARY KEY (id_residence)
 );
@@ -206,19 +210,33 @@ CREATE TABLE sensor_room (
 );
 
 
+
 /*
 Insert
 */
 
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538');
+/*Insert Admin*/
+INSERT INTO client(pass,surname,name,first_log,admin) VALUES('admin','Admin','ADMIN',FALSE,TRUE);
+
+/*Insert Manager*/
+INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI',FALSE,TRUE);
+
 
   /*pic varchar(128),*/
 /* User1 */
 /*INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');*/
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538');
+/*INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_sub_list,discount)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538',2,20);*/
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
+    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','1','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538','4','5',2,20);
 
+/* SecondClient1 of User1 */
+INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
+    VALUES ('vk','Van-Kévin','Suy','view/assets/images/vankevin.jpg','1','0');
+
+/* SecondClient1 of User1 */
+INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
+    VALUES ('lulu','Lucas','Quéant','view/assets/images/lucas.jpg','1','1');
 
 /* User2 */
 INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FALSE);
@@ -232,13 +250,10 @@ INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison d
 /* Home2 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
-/* Home3 */
-INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Alex','Colombes',92,'Haut de Seine','France',1);
-
 /* Attribut des domiciles aux users */
-INSERT INTO client_home_residence(num_client,id_home) VALUES(1,1);
-INSERT INTO client_home_residence(num_client,id_home) VALUES(1,2);
-INSERT INTO client_home_residence(num_client,id_home) VALUES(3,3);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,1,1);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,2,2);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(4,3,3);
 
 INSERT INTO sensor_list(name,pic,unite) VALUES('Température','view/assets/images/capteur_temperature.jpg','°C'),('Humidité','view/assets/images/capteur_humidite.jpg',''),('Pression','view/assets/images/capteur_pression.jpg','Bar'),('Lumière','view/assets/images/capteur_lumiere.jpg','Lumens'),('Fumée','view/assets/images/capteur_fumee.jpg','Feu'),('Intrusion','view/assets/images/capteur_intrusion.jpg',NULL);
 
@@ -254,5 +269,20 @@ INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,6,"2017-12-21");
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,12,"2017-12-19");
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,26,"2017-12-12");
 
+/*Jeu essai Residence*/
+INSERT INTO residence(name) VALUES ("Résidence Reubell");
+INSERT INTO residence(name) VALUES ("Résidence Lodge");
+INSERT INTO residence(name) VALUES ("Résidence Overlook");
+
+/* Attribut des residences aux gestionnaires */
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL,1);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,2);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,3);
+
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (1,3,3,0,"first send","hello world");
+
+
+INSERT INTO sub_list(name,price) VALUES ('Standard',30);
+INSERT INTO sub_list(name,price) VALUES ('Premium',50);
 
 

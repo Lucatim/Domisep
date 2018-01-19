@@ -188,7 +188,7 @@
     /*     MES FACTURES    */
     /* ******************* */
 
-    table{
+    #facture{
         max-width: 150px;
     }
     .cell_table{

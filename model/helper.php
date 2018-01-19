@@ -9,21 +9,21 @@
 class helper
 {
     public static function convertDate($date){
-        $formatter = new IntlDateFormatter('fr_FR',IntlDateFormatter::LONG,
-            IntlDateFormatter::NONE,
-            'Europe/Paris',
-            IntlDateFormatter::GREGORIAN );
+        $date_temp = date("d/m/Y", strtotime($date));
 
-        $date_temp = new DateTime($date);
+        return $date_temp;
+    }
 
-        $date_converted = $formatter->format($date_temp);
+    public static function convertDateTime($dateTime){
+        $dateTime_temp = date("d/m/Y à H\hi\ms\s", strtotime($dateTime));
 
-        return $date_converted;
+        return $dateTime_temp;
+    }
 
-        //$date_temp = new DateTime($date);
-        /*$date_temp=date_create($date);
-        date_format($date_temp,'d/m/Y à H\hi\m\i\n\u\t\e\s');
-
-        return $date_temp;*/
+    public static function verifyForm($form){
+        if (isset($form) && !empty($form))
+            return TRUE;
+        else
+            return FALSE;
     }
 }

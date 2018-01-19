@@ -10,16 +10,17 @@
     <!DOCTYPE html>
     <html lang="fr">
 
-<head>
-
-
-    <?php
+    <head>
+        <?php
         //Script jQuery
         ?>
         <script
                 src="https://code.jquery.com/jquery-3.2.1.js"
                 integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
                 crossorigin="anonymous"></script>
+        <script src="js/edit_icon.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>-->
     <?php
     //Script+CSS select2
     ?>
@@ -56,6 +57,24 @@
                         echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
                     }
 
+                }
+            }
+
+            if (isset($_GET["target"]) && !empty($_GET["target"])) {
+                $cible = $_GET["target"];
+                if ($cible === "connexion") {
+                    echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+                }
+
+                if ($cible === "profil") {
+                    if (isset($_GET['function']) && !empty($_GET['function'])) {
+                        $cible = $_GET['function'];
+
+                        if ($cible === "abonnement") {
+                            echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+                        }
+
+                    }
                 }
             }
 
@@ -120,14 +139,48 @@
     </head>
 <?php
 //Définition du header en fonction la connexion ou non
-
+//var_dump($_SESSION);
 //Si l'utilisateur est connecté
 if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] === "0")) {
     //echo ($_SESSION["role"]);
     $role = $_SESSION["role"];
+
+    //Test utilisateur admin
+    if (isset($_SESSION['admin'])){
+        $admin=$_SESSION['admin'];
+    }
     //echo ($role);
     //Utilisateur n'est pas gestionnaire
     if ($role === "0") {
+        //Utilisateur est admin
+        //echo ("pas gestionnaire");
+        if($admin==="1"){
+            echo ("Admin");
+            ?>
+            <header>
+                <div id="bloc_header">
+                    <div id="div_logo_domisep">
+                        <a href="index_mvc.php"> <img src="view/assets/images/domisep_logo.png" alt="logo_domisep"></a>
+                    </div>
+
+                    <ul id=nav_header>
+                        <li><a href="index_mvc.php"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a>
+                        </li>
+                        <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span
+                                        class="nav_text">Mon profil</span></a></li>
+                        <li><a href="index_mvc.php?target=utilisateur"><i class="material-icons">domain</i><span
+                                        class="nav_text">Gérer mon Dom<span class="texte_vert">isep</span></span></a></li>
+                        <li><a href="index_mvc.php?target=messagerie"><i class="material-icons">message</i><span
+                                        class="nav_text">Messagerie</span></a></li>
+                        <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span
+                                        class="nav_text">Me déconnecter</span></a></li>
+                    </ul>
+                </div>
+            </header>
+            <?php
+        }
+        else{
+            //Utilisateur Normal
         ?>
 
         <header>
@@ -151,11 +204,31 @@ if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] 
             </div>
         </header>
         <?php
-
+        }
     } //Utilisateur est gestionnaire
     else {
-        if ($role === 1) {
+        if ($role === "1") {
             ?>
+            <header>
+                <div id="bloc_header">
+                    <div id="div_logo_domisep">
+                        <img src="view/assets/images/domisep_logo.png" alt="logo_domisep">
+                    </div>
+
+                    <ul id=nav_header>
+                        <li><a href="index_mvc.php"><i class="material-icons">home</i><span class="nav_text">Accueil</span></a>
+                        </li>
+                        <li><a href="index_mvc.php?target=profil"><i class="material-icons">account_circle</i><span
+                                        class="nav_text">Mon profil</span></a></li>
+                        <li><a href="index_mvc.php?target=utilisateur&function=gerer_ma_residence"><i class="material-icons">domain</i><span
+                                        class="nav_text">Gérer ma rés<span class="texte_vert">idence</span></span></a></li>
+                        <li><a href="index_mvc.php?target=messagerie"><i class="material-icons">message</i><span
+                                        class="nav_text">Messagerie</span></a></li>
+                        <li><a href="index_mvc.php?target=connexion&function=deconnexion"><i class="material-icons">power_settings_new</i><span
+                                        class="nav_text">Me déconnecter</span></a></li>
+                    </ul>
+                </div>
+            </header>
 
         <?php }
     }
@@ -199,10 +272,15 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
             break;
 
         case "profil":
-            var_dump($_SESSION["img"]);
+            /*var_dump($_SESSION["img"]);
             var_dump($_SESSION["nom"]);
             var_dump($_SESSION["date_register"]);
-            var_dump($_SESSION["date_logged"]);
+            var_dump($_SESSION["date_logged"]);*/
+            $url_icone = $_SERVER['REQUEST_URI'];
+            if (strpos($url_icone, 'editer_mon_profil') !== false)
+            {
+
+            }
             echo('
                 <div id="slide_accueil">
                    <div id="slide_haut">
@@ -216,7 +294,19 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
                     </div>
             
                     <div id="slide_circle">
-                        <img src='.$_SESSION["img"]["pic"].' alt="image_slide">
+                        <div class="icone_edit_circle">
+                            <a href="index_mvc.php?target=profil&function=editer_mon_profil" id="dl_img"><i class="material-icons">file_download</i></a>                                                                
+                        </div>                    
+                        
+                        
+                        
+                        <div class="texte_icone_edit">
+                            <p>.jpg ou .png (2 Mo max.)</p>
+                        </div>   
+                       
+                        <div class="opacity_edit_image">
+                            <img src='.$_SESSION["img"]["pic"].' alt="image_slide">
+                        </div>                                     
                     </div>
             
                     <div id="slide_bas">

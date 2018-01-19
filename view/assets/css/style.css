@@ -14,6 +14,13 @@ body {
 
 img {
     width: 100%;
+
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 h2 {
@@ -46,6 +53,10 @@ hr {
 
 .texte_gras {
     font-weight: bold;
+}
+
+.hide{
+    display: none ;
 }
 
 /* ******************* */
@@ -246,6 +257,34 @@ select {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0;
+}
+
+/* ******************* */
+/*     BOUTON ROUGE    */
+/* ******************* */
+
+.bouton_rouge {
+    text-align: center;
+    margin: 20px 0 20px 0;
+    padding: 0 20px 0 20px;
+}
+
+.bouton_rouge a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px 10px 10px;
+    background-color: #f05545;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #e3e3e3;
+
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.bouton_rouge a:hover {
+    background-color: #f9786b;
 }
 
 /* ******************* */
@@ -545,6 +584,35 @@ select {
     font-size: 50px;
 }
 
+.icone_edit_circle {
+    margin-top: auto;
+    z-index: 1;
+    margin-bottom: initial;
+}
+
+.icone_edit_circle i {
+    font-size: 50px;
+    color: white;
+}
+
+.icone_edit_circle i {
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.icone_edit_circle:hover i {
+    color: #ff9800;
+}
+
+.texte_icone_edit {
+    width: 130px;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+
+
 /* ******************* */
 /*  OPACITY EDIT IMAGE */
 /* ******************* */
@@ -799,6 +867,9 @@ header {
     background-color: black;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 #slide_circle img {

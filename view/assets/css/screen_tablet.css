@@ -136,10 +136,10 @@
     /*     MES FACTURES    */
     /* ******************* */
 
-    table{
-        max-width: 301px;
+    #facture{
+        max-width: 300px;
     }
     .cell_table{
         display: inline-table;
     }
-}
+
