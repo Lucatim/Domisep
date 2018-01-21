@@ -13,12 +13,19 @@
 </script>
 <script src="js/messagerie_select.js"></script>
 <script src="js/ajaxRecuperationMessage.js"></script>
+
+
+
 <section id="content">
+    <div class="adapt_content"></div>
+
     <div id="bloc_content">
         <div id="container_principal">
-            <div id="adapt_content"></div> <!-- div qui va changer en AJAX -->
+
+            <!-- <div id="adapt_content">zvnzovno</div> --><!-- div qui va changer en AJAX -->
 
             <div class="groupe_bouton_vert">
+                
                 <div class="bouton_vert">
                     <a id="myBtn" href="#" ><i class="material-icons">message</i>Nouveau message</a>
                 </div>
@@ -75,7 +82,6 @@
                 </div>
 
             </div>
-
 
 
 
