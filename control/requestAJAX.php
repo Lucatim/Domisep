@@ -90,6 +90,15 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
             $req->execute();
             $req->closeCursor();
             break;
+
+        case "rechercher_utilisateur":
+            $req=$bdd->prepare('SELECT name FROM client ');
+            $req->execute(array());
+            $val=$req->fetchAll();
+            $req->closeCursor();
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
     }
 
     /*

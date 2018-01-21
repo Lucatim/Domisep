@@ -58,6 +58,9 @@ hr {
 .hide{
     display: none ;
 }
+#rechercher_utilisateur{
+    width: 50%;
+}
 
 /* ******************* */
 /*     LABEL INPUT     */
