@@ -15,7 +15,7 @@
             <h2>Relevé des factures mensuelles</h2>
             <h3>Année <?php echo($annee); ?></h3>
 
-            <table>
+            <table id="facture">
             <?php
             for ($i = 1; $i <= 3; $i++) {
                 echo('<tr class="row_table">');

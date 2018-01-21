@@ -7,42 +7,32 @@
  */
 ?>
 
-var_dump($_SESSION);
-?>
+<?php //var_dump($_SESSION); ?>
 <script type='text/javascript'>
     var idUtilisateur = "<?php echo $_SESSION["id"] ?>"; //placer echo entre guillemet
 </script>
-
-<script src="js/ajaxRecuperationMessage.js" ></script>
+<script src="js/messagerie_select.js"></script>
+<script src="js/ajaxRecuperationMessage.js"></script>
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
-            <script src="js/messagerie_select.js"></script>
-            <form>
-                <select name="users"  onchange="showUser(this.value)">
-                    <option value="">Select a person:</option>
-                    <option value="1">Marc Dupont</option>
-                    <option value="2">Jean Martin</option>
-                </select>
-            </form>
-            <br />
+            <div id="adapt_content"></div> <!-- div qui va changer en AJAX -->
 
-            <div id="adapt_content"></div>
             <div class="groupe_bouton_vert">
                 <div class="bouton_vert">
-                    <a id="myBtn"><i class="material-icons">message</i>Nouveau message</a>
+                    <a id="myBtn" href="#" ><i class="material-icons">message</i>Nouveau message</a>
                 </div>
 
-                <div class="bouton_vert"  >
+                <div id="boiteReception" class="bouton_vert">
                     <a href="#" ><i class="material-icons">mail</i>Boîte de réception</a>
                 </div>
 
-                <div class="bouton_vert" >
+                <div id="messageEnvoye" class="bouton_vert" >
                     <a href="#" ><i class="material-icons">send</i>Messages envoyés</a>
                 </div>
 
                 <div class="bouton_vert" >
-                    <a href="view/base/utilisateur/facture.html"><i class="material-icons">delete</i>Corbeille</a>
+                    <a href=""><i class="material-icons">delete</i>Corbeille</a>
                 </div>
             </div>
 
@@ -53,23 +43,28 @@ var_dump($_SESSION);
 
                 <!-- Modal content -->
                 <div class="modal-content">
-
-                    <div class="modal-header">
+                    <div class="container_principal">
                         <span class="close">&times;</span>
                         <h2>Nouveau message</h2>
                     </div>
-                    <form action="view/base/messagerie/envoi_message.php" name="myForm" method="post" id="myForm" >
-                        <div class="form_flex form_element">
-                            <label>Destinataire :</label>
-                            <input type="text" name="recipient" class="label_input"><br>
+                    <form action="index_mvc?target=messagerie&function=Nouveau" name="myForm" method="post" id="myForm" class="input_radio" >
+                        <div class="form_flex_edit">
+                            <label>Destinataire </label>
+                            <input type="text" name="recipient" class="label_input">
                         </div>
 
-                        <div class="form_flex form_element">
-                            <label>Sujet : </label>
-                            <input type="text" name="subject" class="label_input">
+                        <div class="form_flex_edit">
+                            <label>Sujet  </label>
+                            <SELECT type="text" name="subject" class="label_input" size="1">
+                                <OPTION value="Mon compte en ligne">Mon compte en ligne
+                                <OPTION value="Mes données">Mes données
+                                <OPTION value="Mon installation">Mon installation
+                                <OPTION value="Autre">Autre
+                            </SELECT>
                         </div>
-                        <div class="form_flex form_element">
-                            <label id="the_message">Message :</label>
+
+                        <div class="form_flex_edit">
+                            <label id="the_message">Message </label>
                             <textarea name="mess" class="textarea_input"></textarea>
                         </div>
 
@@ -80,6 +75,9 @@ var_dump($_SESSION);
                 </div>
 
             </div>
+
+
+
 
             <script>
                 // Get the modal

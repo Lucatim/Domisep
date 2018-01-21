@@ -9,7 +9,7 @@
 class PdoDomisep
 {
     public static function pdoConnectDB(){
-        return new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
+            return new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
         /*try{
             return new PDO('mysql:host=localhost;dbname=domisep;charset=utf8', 'root', '');
         }

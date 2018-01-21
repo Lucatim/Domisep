@@ -14,11 +14,11 @@
                 <h3>Toute notre équipe vous remercie d'avoir choisi<br> <span class="texte_orange">Dom</span><span class="texte_vert">isep</span> pour vous accompagner !</h3>
                 <p>Veuillez renseigner votre numéro client afin de finaliser la création de votre profil</p>
                 <div id="bloc_connexion">
-                    <form id="form_connexion" method="post" action="index_mvc.php?target=connexion&function=verif_id_first">
+                    <form id="form_fake_button" method="post" action="index_mvc.php?target=connexion&function=verif_id_first">
                         <label>N° Client</label>
                         <input type="text" name="identifiant" class="label_input"/>
 
-                        <div class="bouton_vert">
+                        <div class="bouton_vert" id="bouton_vert_valider">
                             <a href="connexion_password.html"><i class="material-icons">navigate_next</i>Valider</a>
                         </div>
 

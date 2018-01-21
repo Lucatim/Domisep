@@ -23,12 +23,12 @@
                 <div id="bloc_connexion">
 
                     <script src="js/submitFormButton.js"></script>
-                    <form id="form_connexion" method="post" action="index_mvc.php?target=connexion&function=verif_pass">
+                    <form id="form_fake_button" method="post" action="index_mvc.php?target=connexion&function=verif_pass">
 
                         <label>Saisissez votre mot de passe</label>
                         <input type="password" name="identifiant" class="label_input"/>
 
-                        <div class="bouton_vert">
+                        <div class="bouton_vert" id="bouton_vert_valider">
                             <a href="../../../index_logged.html"><i class="material-icons">navigate_next</i>Valider</a>
                         </div>
 

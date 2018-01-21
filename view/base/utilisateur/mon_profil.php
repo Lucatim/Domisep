@@ -7,12 +7,27 @@
  */
 ?>
 
-<?php if (isset($_SESSION["profilSelect"]) && !empty($_SESSION["profilSelect"]))
-{
-    var_dump($_SESSION["profilSelect"]);
+<?php
+    //var_dump($_SESSION["date"]);
+    if (isset($_SESSION["profilSelect"]) && !empty($_SESSION["profilSelect"]))
+    {
+        //var_dump($_SESSION["profilSelect"]);
+        $profil = $_SESSION["profilSelect"];
+    }
+    if (isset($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1']) && !empty($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1']))
+    {
+        $utilisateur_sec1 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1'];
+    }
+    if (isset($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2']) && !empty($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2']))
+    {
+        $utilisateur_sec2 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2'];
+    }
+    if (isset($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3']) && !empty($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3']))
+    {
+        $utilisateur_sec3 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3'];
+    }
 
-    $profil = $_SESSION["profilSelect"];
-}
+    var_dump($utilisateur_sec1);
 ?>
 
 <section id="content">
@@ -26,7 +41,7 @@
                     <p>Civilité : <span class="texte_gris">M.</span></p>
                     <p>Prénom : <span class="texte_gris">'.$profil["surname"].'</span></p>
                     <p>Nom : <span class="texte_gris">'.$profil["name"].'</span></p>
-                    <p>Date de naissance : <span class="texte_gris">'.$profil["birth"].'</span></p>
+                    <p>Date de naissance : <span class="texte_gris">'.$_SESSION["birth_form"].'</span></p>
                 </div>
 
             <h2>Adresse de facturation</h2>
@@ -54,7 +69,7 @@
                 </div>
 
                 <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">shopping_cart</i>Mon abonnement</a>
+                    <a href="index_mvc.php?target=profil&function=abonnement"><i class="material-icons">shopping_cart</i>Mon abonnement</a>
                 </div>
 
                 <div class="bouton_vert">
@@ -66,48 +81,111 @@
 
             <h2>Mes utilisateurs</h2>
 
+
             <div class="groupe_rond_image_txt">
-                <div class="rond_image_txt">
-                    <div class="rond_image">
-                        <img src="view/assets/images/gilbert.jpg" alt="unknown">
-                    </div>
+                <?php if(isset($profil) && !empty($profil)) {
+                    echo('
+                    <div class="rond_image_txt">
+                        <div class="rond_image">
+                            <img src="' . $profil['pic'] . '" alt="unknown">
+                        </div>
+    
+                        <div class="titre_rond_image">
+                            <p>' . $profil['surname'] . ' ' . $profil['name'] . '</p>
+                        </div>');
+                    if($profil["acces_client"] == 1)
+                        echo('
+                                <div class="texte_gris">
+                                    <p>Accès total</p>
+                                </div>
+                            ');
+                    else
+                        echo('
+                                <div class="texte_gris">
+                                    <p>Accès limité</p>
+                                </div>
+                            ');
+                    echo('</div>');
+                }
+                ?>
 
-                    <div class="titre_rond_image">
-                        <p>Gigi</p>
-                    </div>
+                <?php if(isset($utilisateur_sec1) && !empty($utilisateur_sec1)) {
+                    echo('
+                    <div class="rond_image_txt">
+                        <div class="rond_image">
+                            <img src="' . $utilisateur_sec1['pic'] . '" alt="unknown">
+                        </div>
+    
+                        <div class="titre_rond_image">
+                            <p>' . $utilisateur_sec1['surname'] . ' ' . $utilisateur_sec1['name'] . '</p>
+                        </div>');
+                    if($utilisateur_sec1["acces_client"] == 1)
+                        echo('
+                                <div class="texte_gris">
+                                    <p>Accès total</p>
+                                </div>
+                            ');
+                    else
+                        echo('
+                                <div class="texte_gris">
+                                    <p>Accès limité</p>
+                                </div>
+                            ');
+                    echo('</div>');
+                }
+                ?>
 
-                    <div class="texte_gris">
-                        <p>Accès total</p>
-                    </div>
-                </div>
+                <?php if(isset($utilisateur_sec2) && !empty($utilisateur_sec2)) {
+                    echo('
+                        <div class="rond_image_txt">
+                            <div class="rond_image">
+                                <img src="' . $utilisateur_sec2['pic'] . '" alt="unknown">
+                            </div>
+        
+                            <div class="titre_rond_image">
+                                <p>' . $utilisateur_sec2['surname'] . ' ' . $utilisateur_sec2['name'] . '</p>
+                            </div>');
+                    if($utilisateur_sec2["acces_client"] == 1)
+                        echo('
+                                    <div class="texte_gris">
+                                        <p>Accès total</p>
+                                    </div>
+                                ');
+                    else
+                        echo('
+                                    <div class="texte_gris">
+                                        <p>Accès limité</p>
+                                    </div>
+                                ');
+                    echo('</div>');
+                }
+                ?>
 
-                <div class="rond_image_txt">
-                    <div class="rond_image">
-                        <img src="view/assets/images/avatar_user_1.jpg" alt="unknown">
-                    </div>
-
-                    <div class="titre_rond_image">
-                        <p>Van-Kévin Suy</p>
-                    </div>
-
-                    <div class="texte_gris">
-                        <p>Accès total</p>
-                    </div>
-                </div>
-
-                <div class="rond_image_txt">
-                    <div class="rond_image">
-                        <img src="view/assets/images/lucas.jpg" class="portrait" alt="unknown">
-                    </div>
-
-                    <div class="titre_rond_image">
-                        <p>Lucas Quéant</p>
-                    </div>
-
-                    <div class="texte_gris">
-                        <p>Accès limité</p>
-                    </div>
-                </div>
+                <?php if(isset($utilisateur_sec3) && !empty($utilisateur_sec3)) {
+                    echo('
+                            <div class="rond_image_txt">
+                                <div class="rond_image">
+                                    <img src="' . $utilisateur_sec3['pic'] . '" alt="unknown">
+                                </div>
+            
+                                <div class="titre_rond_image">
+                                    <p>' . $utilisateur_sec3['surname'] . ' ' . $utilisateur_sec3['name'] . '</p>
+                                </div>');
+                    if($utilisateur_sec3["acces_client"] == 1)
+                        echo('
+                                        <div class="texte_gris">
+                                            <p>Accès total</p>
+                                        </div>
+                                    ');
+                    else
+                        echo('
+                                        <div class="texte_gris">
+                                            <p>Accès limité</p>
+                                        </div>
+                                    ');
+                    echo('</div>');
+                }
+                ?>
             </div>
 
             <div class="bouton_vert">
