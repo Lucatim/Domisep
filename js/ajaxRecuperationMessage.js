@@ -39,8 +39,9 @@ $(document).ready(function () {
                 var id_utilisateur_co = idUtilisateur;
                 var id_mail = e.id_mail;
                 var modifier = 0;
+                var corbeille = e.bin;
                 
-                if (recipient == id_utilisateur_co){
+                if (id_client == id_utilisateur_co){
                     $(document).ready(function(){$("#boiteReception").one("click",function(){$(".adapt_content").append("<div id=\"container_principal\">\n" +
                         "                <div onclick=\"window.location='#';\" class=\"case_message nouveau_message\" >\n" +
                         "                    <div class=\"rond_image petit_rond\">\n" +
@@ -60,7 +61,8 @@ $(document).ready(function () {
                         "                        </div>\n" +
                         "                    </div>\n" +
                         "                </div>") ;});});
-                    
+
+
                     // $(document).ready(function(){$("#boiteReception").click(function(){$(".adapt_content").append(
                     //     "<div id=\"container_principal\">\n" +
                     //     "                <div onclick=\"window.location='#';\" class=\"case_message nouveau_message\" >\n" +
@@ -94,11 +96,7 @@ $(document).ready(function () {
 
 
 
-
-                    //$(document).ready(function(){$("#message").attr('id','rebebeberge'+ modifier++)});
-
-
-
+                    //$(document).ready(function(){$("#message").attr('id','rebebeberge'+ modifier++)}); 
             })
             });
 

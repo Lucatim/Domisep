@@ -32,4 +32,12 @@ class messagerie
         ));
 
     }
+
+
+    // public static function recupMSG($recipient){
+    //     $bdd=PdoDomisep::pdoConnectDB();
+    //     $req = $bdd->prepare('SELECT * FROM mail WHERE recipient = ?');
+    //     $req->execute(array($recipient));
+
+    // }
 }
