@@ -50,7 +50,7 @@ switch ($function) {
         //var_dump($_POST);
        // var_dump($_SESSION);
         $id_utilisateur_co = $_SESSION['id'];
-        messagerie::recupMSG($id_utilisateur_co);
+        messagerie::MSG_envoye($id_utilisateur_co);
         //messagerie::insertMSG();
         require_once("view/base/messagerie/messagerie.php");
         break;

@@ -34,7 +34,7 @@
                     <a href="index_mvc?target=messagerie&function=reception" ><i class="material-icons">mail</i>Boîte de réception</a>
                 </div>
 
-                <div id="messageEnvoye" class="bouton_vert" >
+                <div id="message_envoye" class="bouton_vert" >
                     <a href="index_mvc?target=messagerie&function=message_envoye" ><i class="material-icons">send</i>Messages envoyés</a>
                 </div>
 

@@ -44,7 +44,7 @@ class messagerie
 
     public static function MSG_envoye($id_utilisateur_co){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req = $bdd->prepare('SELECT * FROM mail WHERE num_client = ?');
+        $req = $bdd->prepare('SELECT * FROM mail WHERE sender = ?');
         $req->execute(array($id_utilisateur_co));
 
     }
