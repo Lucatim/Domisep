@@ -31,11 +31,11 @@
                 </div>
 
                 <div id="boiteReception" class="bouton_vert">
-                    <a href="#" ><i class="material-icons">mail</i>Boîte de réception</a>
+                    <a href="index_mvc?target=messagerie&function=reception" ><i class="material-icons">mail</i>Boîte de réception</a>
                 </div>
 
                 <div id="messageEnvoye" class="bouton_vert" >
-                    <a href="#" ><i class="material-icons">send</i>Messages envoyés</a>
+                    <a href="index_mvc?target=messagerie&function=message_envoye" ><i class="material-icons">send</i>Messages envoyés</a>
                 </div>
 
                 <div class="bouton_vert" >

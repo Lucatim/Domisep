@@ -12,7 +12,7 @@ class messagerie
         $bdd=PdoDomisep::pdoConnectDB();
         $req=$bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
         $req->execute(array($numClient));
-        $val=$req->fetch();
+        $val=$req->fetchAll();
         $req->closeCursor();
         return $val;
 
@@ -34,10 +34,18 @@ class messagerie
     }
 
 
-    // public static function recupMSG($recipient){
-    //     $bdd=PdoDomisep::pdoConnectDB();
-    //     $req = $bdd->prepare('SELECT * FROM mail WHERE recipient = ?');
-    //     $req->execute(array($recipient));
+     public static function recupMSG($id_utilisateur_co){
+         $bdd=PdoDomisep::pdoConnectDB();
+         $req = $bdd->prepare('SELECT * FROM mail WHERE num_client = ? OR recipient = ?');
+         $req->execute(array($id_utilisateur_co,$id_utilisateur_co));
 
-    // }
+     }
+
+
+    public static function MSG_envoye($id_utilisateur_co){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT * FROM mail WHERE num_client = ?');
+        $req->execute(array($id_utilisateur_co));
+
+    }
 }

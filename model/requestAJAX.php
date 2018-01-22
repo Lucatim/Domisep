@@ -55,11 +55,12 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
             break;
 
         case "data_messagerie"://sql pour recup les messages
-            $numClient=$_GET["idUser"];
+            $num_client=$_SESSION['id'];
+            $recipient = $_SESSION['id'];
 
-            $req=$bdd->prepare('SELECT * FROM mail WHERE num_client=?');
-            $req->execute(array($numClient));
-            $val=$req->fetch();
+            $req=$bdd->prepare('SELECT * FROM mail WHERE num_client=? OR recipient=?');
+            $req->execute(array($num_client, $recipient));
+            $val=$req->fetchAll();
             $req->closeCursor();
 
             header('Content-Type: application/json');

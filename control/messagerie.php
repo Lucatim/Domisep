@@ -37,14 +37,23 @@ switch ($function) {
         require_once("view/base/messagerie/messagerie.php");
         break;
 
-    // case "reception":
-    //     var_dump($_POST);
-    //     var_dump($_SESSION);
-    //     $recipient = $_POST['recipient'];
-    //     messagerie::recupMSG($recipient);
-    //     //messagerie::insertMSG();
-    //     require_once("view/base/messagerie/messagerie.php");
-    //     break;
+     case "reception":
+         var_dump($_POST);
+         var_dump($_SESSION);
+         $id_utilisateur_co = $_SESSION['id'];
+         messagerie::recupMSG($id_utilisateur_co);
+         //messagerie::insertMSG();
+         require_once("view/base/messagerie/messagerie.php");
+         break;
+
+    case "message_envoye":
+        //var_dump($_POST);
+       // var_dump($_SESSION);
+        $id_utilisateur_co = $_SESSION['id'];
+        messagerie::recupMSG($id_utilisateur_co);
+        //messagerie::insertMSG();
+        require_once("view/base/messagerie/messagerie.php");
+        break;
 
 }
 ?>
