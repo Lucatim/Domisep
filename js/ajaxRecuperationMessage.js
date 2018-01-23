@@ -39,7 +39,6 @@ $(document).ready(function () {
                 var sender = e.sender;
                 var id_utilisateur_co = idUtilisateur;
                 var id_mail = e.id_mail;
-                var modifier = 0;
                 var corbeille = e.bin;
 
                 var new_id_container = "container_principal" +id_mail;
@@ -49,7 +48,7 @@ $(document).ready(function () {
                 var new_id_pic = "pic"+id_mail;
 
                 
-                if (recipient == id_utilisateur_co && id_utilisateur_co == id_client){
+                if (recipient == id_utilisateur_co && id_client == sender){
                     $(document).ready(function(){$("#boiteReception").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
                         "                <div onclick=\"window.location='#';\" class=\"case_message nouveau_message\" >\n" +
@@ -150,8 +149,13 @@ $(document).ready(function () {
                 var sender = a.sender;
                 var id_utilisateur_co = idUtilisateur;
                 var id_mail = a.id_mail;
-                var modifier = 0;
                 var corbeille = a.bin;
+
+                var new_id_container = "container_principal" +id_mail;
+                var new_id_message = "message"+id_mail;
+                var new_id_sujet = "sujet"+id_mail;
+                var new_id_nom_prenom = "nom_prenom"+id_mail;
+                var new_id_pic = "pic"+id_mail;
 
 
                 if (sender == id_utilisateur_co && id_utilisateur_co == id_client){
@@ -176,18 +180,20 @@ $(document).ready(function () {
                         "                    </div>\n" +
                         "                </div>");})});
 
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#container_principal").attr('id',new_id_container);});});//remplacer l'id
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#message").attr('id',new_id_message);});});//remplacer l'id
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#sujet").attr('id',new_id_sujet);});});//remplacer l'id
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#nom_prenom").attr('id',new_id_nom_prenom);});});//remplacer l'id
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#pic").attr('id',new_id_pic);});});//remplacer l'id
 
-                    $(document).ready(function(){$("#message_envoye").click(function(){$("#message").attr('id',"message");});});//remplacer l'id
 
-                    $(document).ready(function(){$("#message_envoye").click(function(){$(id_mail).text(message);});});//remplacer le message
-                    $(document).ready(function(){$("#message_envoye").click(function(){$("#sujet").text(sujet);});});//remplacer le sujet
-                    $(document).ready(function(){$("#message_envoye").click(function(){$("#nom_prenom").text(surname +" "+nom);});});//remplacer le nom et Prenom
-                    $(document).ready(function(){$("#message_envoye").click(function(){$("#pic").attr('src',picture);});});//remplacer l'image
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#"+new_id_message).text(message);});});//remplacer le message
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#"+new_id_sujet).text(sujet);});});//remplacer le sujet
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#"+new_id_nom_prenom).text(surname +" "+nom);});});//remplacer le nom et Prenom
+                    $(document).ready(function(){$("#message_envoye").click(function(){$("#"+new_id_pic).attr('src',picture);});});//remplacer l'image
 
                 }
 
-
-                //$(document).ready(function(){$("#message").attr('id','rebebeberge'+ modifier++)});
             })
         });
 
@@ -198,6 +204,3 @@ $(document).ready(function () {
         });
     }
 });
-//index_mvc.php?target=utilisateur&function=data_capteur
-//control/utilisateur.php?function=data_capteur
-
