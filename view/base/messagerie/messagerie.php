@@ -12,8 +12,9 @@
     var idUtilisateur = "<?php echo $_SESSION["id"] ?>"; //placer echo entre guillemet
 </script>
 <script src="js/messagerie_select.js"></script>
-<script src="js/ajaxRecuperationMessage.js"></script>
-
+<script src="js/messageEnvoye.js"></script>
+<script src="js/boiteReception.js"></script>
+<script src="js/corbeille.js"></script>
 
 
 <section id="content">
@@ -34,12 +35,12 @@
                     <a href="index_mvc?target=messagerie&function=reception" ><i class="material-icons">mail</i>Boîte de réception</a>
                 </div>
 
-                <div id="message_envoye" class="bouton_vert" >
-                    <a href="index_mvc?target=messagerie&function=message_envoye" ><i class="material-icons">send</i>Messages envoyés</a>
+                <div id="messageEnvoye" class="bouton_vert" >
+                    <a href="index_mvc?target=messagerie&function=MessageEnvoye" ><i class="material-icons">send</i>Messages envoyés</a>
                 </div>
 
-                <div class="bouton_vert" >
-                    <a href=""><i class="material-icons">delete</i>Corbeille</a>
+                <div id="corbeille" class="bouton_vert" >
+                    <a href="index_mvc?target=messagerie&function=corbeille"><i class="material-icons">delete</i>Corbeille</a>
                 </div>
             </div>
 

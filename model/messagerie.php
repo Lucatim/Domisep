@@ -48,4 +48,10 @@ class messagerie
         $req->execute(array($id_utilisateur_co));
 
     }
+
+    public static function Corbeille($id_utilisateur_co){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT * FROM mail WHERE bin = ? AND num_client = ?');
+        $req->execute(array(1,$id_utilisateur_co));
+    }
 }
