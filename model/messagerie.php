@@ -36,8 +36,8 @@ class messagerie
 
      public static function recupMSG($id_utilisateur_co){
          $bdd=PdoDomisep::pdoConnectDB();
-         $req = $bdd->prepare('SELECT * FROM mail WHERE num_client = ? OR recipient = ?');
-         $req->execute(array($id_utilisateur_co,$id_utilisateur_co));
+         $req = $bdd->prepare('SELECT * FROM mail WHERE recipient = ?');
+         $req->execute(array($id_utilisateur_co));
 
      }
 

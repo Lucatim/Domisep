@@ -48,7 +48,7 @@ $(document).ready(function () {
                 var new_id_pic = "pic"+id_mail;
 
                 
-                if (recipient == id_utilisateur_co && id_client == id_utilisateur_co && corbeille==0){
+                if (sender == id_utilisateur_co && id_client == id_utilisateur_co && corbeille==0){
 
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
