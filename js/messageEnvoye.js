@@ -46,6 +46,7 @@ $(document).ready(function () {
                 var new_id_sujet = "sujet"+id_mail;
                 var new_id_nom_prenom = "nom_prenom"+id_mail;
                 var new_id_pic = "pic"+id_mail;
+                var new_id_delete = "delete"+id_mail;
 
                 
                 if (sender == id_utilisateur_co && id_client == id_utilisateur_co && corbeille==0){
@@ -64,9 +65,8 @@ $(document).ready(function () {
                         "                    </div>\n" +
                         "\n" +
                         "                    <div class=\"informations_message_date_supprimer\">\n" +
-                        "                        <p class=\"messagerie_date\">hh:mm</p>\n" +
                         "                        <div class=\"messagerie_delete\">\n" +
-                        "                            <a href=\"#\"><i class=\"material-icons\">delete</i></a>\n" +
+                        "                            <a href=\"#\" id=\"delete\"><i class=\"material-icons\">delete</i></a>\n" +
                         "                        </div>\n" +
                         "                    </div>\n" +
                         "                </div>");})});
@@ -76,6 +76,8 @@ $(document).ready(function () {
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#sujet").attr('id',new_id_sujet);});});//remplacer l'id
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#nom_prenom").attr('id',new_id_nom_prenom);});});//remplacer l'id
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#pic").attr('id',new_id_pic);});});//remplacer l'id
+                    $(document).ready(function(){$("#messageEnvoye").click(function(){$("#delete").attr('id',new_id_delete);});});//remplacer l'id
+
 
 
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#"+new_id_message).text(message);});});//remplacer le message
@@ -88,6 +90,9 @@ $(document).ready(function () {
 
                 $(document).ready(function(){$("#boiteReception").click(function(){$(".adapt_content").empty()})});
                 $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
+                $(document).ready(function(){$("#"+new_id_delete).click(function(){$("#"+new_id_container).empty()})});  //location.href="index_mvc?target=messagerie&function=delete"
+                $(document).ready(function(){$("#"+new_id_delete).click(function(){location.href="index_mvc?target=messagerie&function=delete"})});
+
 
             })
             });

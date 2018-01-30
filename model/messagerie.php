@@ -54,4 +54,10 @@ class messagerie
         $req = $bdd->prepare('SELECT * FROM mail WHERE bin = ? AND num_client = ?');
         $req->execute(array(1,$id_utilisateur_co));
     }
+
+    public static function delete($id_mail){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('UPDATE mail SET bin=0 WHERE id_mail= ?');
+        $req->execute(array($id_mail));
+    }
 }

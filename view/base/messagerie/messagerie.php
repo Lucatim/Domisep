@@ -23,8 +23,6 @@
     <div id="bloc_content">
         <div id="container_principal">
 
-            <!-- <div id="adapt_content">zvnzovno</div> --><!-- div qui va changer en AJAX -->
-
             <div class="groupe_bouton_vert">
                 
                 <div class="bouton_vert">

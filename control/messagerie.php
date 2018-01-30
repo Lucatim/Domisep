@@ -63,6 +63,15 @@ switch ($function) {
         //messagerie::insertMSG();
         require_once("view/base/messagerie/messagerie.php");
         break;
+
+    case "delete":
+        //var_dump($_POST);
+        // var_dump($_SESSION);
+        $id_mail = $_GET['id_mail'];
+        messagerie::delete($id_mail);
+        //messagerie::insertMSG();
+        require_once("view/base/messagerie/messagerie.php");
+        break;
 }
 ?>
 

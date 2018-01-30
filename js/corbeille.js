@@ -48,6 +48,7 @@ $(document).ready(function () {
                 var new_id_pic = "pic"+id_mail;
 
 
+
                 if ( id_client == id_utilisateur_co && corbeille == "1"){
                     $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").append(
@@ -63,12 +64,6 @@ $(document).ready(function () {
                         "                        <p id=\"message\" class=\"messagerie_message texte_gris\">Lorem ipsum .</p>\n" +
                         "                    </div>\n" +
                         "\n" +
-                        "                    <div class=\"informations_message_date_supprimer\">\n" +
-                        "                        <p class=\"messagerie_date\">hh:mm</p>\n" +
-                        "                        <div class=\"messagerie_delete\">\n" +
-                        "                            <a href=\"#\"><i class=\"material-icons\">delete</i></a>\n" +
-                        "                        </div>\n" +
-                        "                    </div>\n" +
                         "                </div>");})});
 
                     $(document).ready(function(){$("#corbeille").click(function(){$("#container_principal").attr('id',new_id_container);});});//remplacer l'id
@@ -76,6 +71,7 @@ $(document).ready(function () {
                     $(document).ready(function(){$("#corbeille").click(function(){$("#sujet").attr('id',new_id_sujet);});});//remplacer l'id
                     $(document).ready(function(){$("#corbeille").click(function(){$("#nom_prenom").attr('id',new_id_nom_prenom);});});//remplacer l'id
                     $(document).ready(function(){$("#corbeille").click(function(){$("#pic").attr('id',new_id_pic);});});//remplacer l'id
+
 
 
                     $(document).ready(function(){$("#corbeille").click(function(){$("#"+new_id_message).text(message);});});//remplacer le message

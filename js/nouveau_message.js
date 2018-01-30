@@ -4,7 +4,7 @@ function validateForm()
     var formulaire = document.getElementById('myForm');
     var recipient = document.forms["myForm"]["recipient"].value;
     var subject = document.forms["myForm"]["subject"].value;
-    var message = document.forms["myForm"]["mess"].value;
+    var message = document.forms["myForm"]["mess"].value.toString();
 
     if (recipient == "" ) {
         alert("Le champ du destinataire est vide");
@@ -25,6 +25,16 @@ function validateForm()
     if (message == "") {
         alert("Le message est vide");
         return false;
+    }
+
+    if(message.includes("query")||
+        message.includes("prepare")||
+        message.includes("SELECT")||
+        message.includes("prepare")||
+        message.includes("UPDATE")||
+        message.includes("INSERT")||
+        message.includes("INTO")){
+        alert("tentative de hack détectée");
     }
 
 
