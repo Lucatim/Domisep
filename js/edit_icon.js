@@ -24,6 +24,7 @@ $(document).ready(function () {
     if (qs["function"] != 'editer_mon_profil')
     {
         $(".icone_edit_circle").hide();
+        $(".texte_icone_edit").hide();
         $(".opacity_edit_image").removeClass( "opacity_edit_image" );
     }
 });
@@ -78,13 +79,9 @@ $(function(){
             else
             {
                 // On récupère le nom du fichier
-                var files = fi.files;
-                for (var i = 0; i < files.length; i++) {
-                    var filename = files[i].name;
-                }
-                //alert(filename);
+                var files_name = this.files[0].name;
 
-                openFile(filename); // On vérifie le bon format du fichier
+                openFile(files_name); // On vérifie le bon format du fichier
             }
         }
 
@@ -97,7 +94,7 @@ function openFile(file) {
         case 'jpg':
         case 'png':
         case 'jpeg':
-            alert('Bon format');
+            //alert('Bon format');
             break;
         default:
             document.getElementById("file").value = "";

@@ -26,8 +26,6 @@
     {
         $utilisateur_sec3 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3'];
     }
-
-    var_dump($utilisateur_sec1);
 ?>
 
 <section id="content">
@@ -95,13 +93,13 @@
                         </div>');
                     if($profil["acces_client"] == 1)
                         echo('
-                                <div class="texte_gris">
+                                <div class="texte_gris mes_utilisateurs">
                                     <p>Accès total</p>
                                 </div>
                             ');
                     else
                         echo('
-                                <div class="texte_gris">
+                                <div class="texte_gris mes_utilisateurs">
                                     <p>Accès limité</p>
                                 </div>
                             ');
@@ -121,13 +119,13 @@
                         </div>');
                     if($utilisateur_sec1["acces_client"] == 1)
                         echo('
-                                <div class="texte_gris">
+                                <div class="texte_gris mes_utilisateurs">
                                     <p>Accès total</p>
                                 </div>
                             ');
                     else
                         echo('
-                                <div class="texte_gris">
+                                <div class="texte_gris mes_utilisateurs">
                                     <p>Accès limité</p>
                                 </div>
                             ');
@@ -147,13 +145,13 @@
                             </div>');
                     if($utilisateur_sec2["acces_client"] == 1)
                         echo('
-                                    <div class="texte_gris">
+                                    <div class="texte_gris mes_utilisateurs">
                                         <p>Accès total</p>
                                     </div>
                                 ');
                     else
                         echo('
-                                    <div class="texte_gris">
+                                    <div class="texte_gris mes_utilisateurs">
                                         <p>Accès limité</p>
                                     </div>
                                 ');
@@ -173,13 +171,13 @@
                                 </div>');
                     if($utilisateur_sec3["acces_client"] == 1)
                         echo('
-                                        <div class="texte_gris">
+                                        <div class="texte_gris mes_utilisateurs">
                                             <p>Accès total</p>
                                         </div>
                                     ');
                     else
                         echo('
-                                        <div class="texte_gris">
+                                        <div class="texte_gris mes_utilisateurs">
                                             <p>Accès limité</p>
                                         </div>
                                     ');

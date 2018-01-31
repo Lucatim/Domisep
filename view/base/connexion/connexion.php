@@ -23,7 +23,7 @@ if(isset($error)){
 
 
                     <div class="bouton_vert">
-                        <a id="bouton_vert_valider" href="connexion_password.html"><i class="material-icons">navigate_next</i>Suivant</a>
+                        <a id="bouton_vert_valider" href="#"><i class="material-icons">navigate_next</i>Suivant</a>
                     </div>
 
                     <input type="submit" hidden >

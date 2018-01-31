@@ -97,12 +97,29 @@ class connexion
         //$date = date('m/d/Y h:i:s', time());
 
         $bdd=PdoDomisep::pdoConnectDB(); // Connexion à la BDD
-        $req=$bdd->prepare("UPDATE client SET date_log=:date WHERE id_client=:id"); // Préparation de la requête
+        $req=$bdd->prepare("UPDATE client SET date_log_actual=:date WHERE id_client=:id"); // Préparation de la requête
         $req->bindParam("date",$result);
         $req->bindParam("id",$id_client);
         $req->execute(); // Exécution de la requête
         $req->closeCursor(); // Libération de la connexion au serveur
 
         return $result;
+    }
+
+    public static function getDatetimeLastConnexion($id_client) {
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('SELECT date_log FROM client WHERE id_client=?');
+        $req->execute(array($id_client));
+        $val=$req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
+    public static function UpdateDateLog($id_client) {
+        $bdd=PdoDomisep::pdoConnectDB(); // Connexion à la BDD
+        $req=$bdd->prepare("UPDATE client SET date_log=date_log_actual WHERE id_client=:id"); // Préparation de la requête
+        $req->bindParam("id",$id_client);
+        $req->execute(); // Exécution de la requête
+        $req->closeCursor(); // Libération de la connexion au serveur
     }
 }

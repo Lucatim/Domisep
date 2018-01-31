@@ -137,17 +137,13 @@ switch ($function){
                     $_SESSION["role"]=$conn['manager'];
                     $_SESSION["admin"]=$conn['admin'];
 
-                    $date_connexion = connexion::getDatetimeNow($_SESSION["id"]);
-
                     $infoSlide = connexion::getDateSlide($_SESSION["id"]);
 
-                    $_SESSION["date_register"]=$infoSlide["date_reg"];
-                    $_SESSION["date_logged"]=connexion::getDatetimeNow($_SESSION["id"]);
+                    $_SESSION["date_register"]=$infoSlide["date_reg"]; // On stocke la date d'inscription dans la session
+                    $_SESSION["date_register"] = helper::convertDate($_SESSION["date_register"]); // On convertit la date actuelle au bon format
 
-                    $_SESSION["date_register"] = helper::convertDate($_SESSION["date_register"]);
-                    $_SESSION["date_logged"] = helper::convertDateTime($_SESSION["date_logged"]);
-                    //$_SESSION["date"]=$date_connexion;
-                    //var_dump($_SESSION);
+                    $_SESSION["date_logged_actual"]=connexion::getDatetimeLastConnexion($_SESSION["id"]); // On récupère la dernière connexion de l'utilisateur avant celle actuelle
+                    $_SESSION["date_logged_actual"] = helper::convertDateTime($_SESSION["date_logged_actual"]["date_log"]); // On convertit la date actuelle au bon format
                     //header("Refresh:0");
                     var_dump(connexion::connexionFirst($_SESSION["id"]));
                     $premConnexionOption=connexion::connexionFirst($_SESSION["id"])["first_log"];
@@ -179,6 +175,7 @@ switch ($function){
         break;
 
     case "deconnexion":
+        connexion::UpdateDateLog($_SESSION["id"]); // On enregistre la date de connexion actuelle dans une autre colonne
         session_destroy();
         ?>
         <script src="js/redirectToAccueil.js" ></script>
