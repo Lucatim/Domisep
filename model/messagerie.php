@@ -51,13 +51,13 @@ class messagerie
 
     public static function Corbeille($id_utilisateur_co){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req = $bdd->prepare('SELECT * FROM mail WHERE bin = ? AND num_client = ?');
-        $req->execute(array(1,$id_utilisateur_co));
+        $req = $bdd->prepare('SELECT * FROM mail WHERE bin = ? ');
+        $req->execute(array(1));
     }
 
     public static function delete($id_mail){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req = $bdd->prepare('UPDATE mail SET bin=0 WHERE id_mail= ?');
+        $req = $bdd->prepare('UPDATE mail SET bin=1 WHERE id_mail= ?');
         $req->execute(array($id_mail));
     }
 }

@@ -58,6 +58,7 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
             $num_client=$_SESSION['id'];
             $recipient = $_SESSION['id'];
 
+
             $req=$bdd->prepare('SELECT * FROM mail WHERE num_client=? OR recipient=?');
             $req->execute(array($num_client, $recipient));
             $val=$req->fetchAll();
