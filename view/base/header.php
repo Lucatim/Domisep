@@ -19,6 +19,7 @@
                 integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
                 crossorigin="anonymous"></script>
         <script src="js/edit_icon.js"></script>
+        <script src="js/ajouter_class_portrait.js"></script>
         <!--<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
         <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>-->
     <?php
@@ -64,17 +65,6 @@
                 $cible = $_GET["target"];
                 if ($cible === "connexion") {
                     echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
-                }
-
-                if ($cible === "profil") {
-                    if (isset($_GET['function']) && !empty($_GET['function'])) {
-                        $cible = $_GET['function'];
-
-                        if ($cible === "abonnement") {
-                            echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
-                        }
-
-                    }
                 }
             }
 
@@ -295,10 +285,8 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
             
                     <div id="slide_circle">
                         <div class="icone_edit_circle">
-                            <a href="index_mvc.php?target=profil&function=editer_mon_profil" id="dl_img"><i class="material-icons">file_download</i></a>                                                                
-                        </div>                    
-                        
-                        
+                            <a href="index_mvc.php?target=profil&function=editer_mon_profil" id="dl_img"><i class="material-icons">file_download</i></a>                                                                                        
+                        </div>                            
                         
                         <div class="texte_icone_edit">
                             <p>.jpg ou .png (2 Mo max.)</p>

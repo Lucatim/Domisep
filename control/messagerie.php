@@ -65,8 +65,8 @@ switch ($function) {
         break;
 
     case "delete":
-        //var_dump($_POST);
-        // var_dump($_SESSION);
+        var_dump($_POST);
+        var_dump($_SESSION);
         $id_mail = $_GET['id_mail'];
         messagerie::delete($id_mail);
         //messagerie::insertMSG();

@@ -62,25 +62,32 @@ $(document).ready(function () {
 }*/
 
 $(function(){
+    //debugger;
     $('#file').change(function(){
-        var f=this.files[0]; // On récupère la taille du fichier
-        if (f.size > 2000000) // Si le fichier est supérieur à 2 Mo
-        {
-            alert('Fichier trop lourd');
-            document.getElementById('file').value = ""; // On vide le champ
-            document.getElementById('fp').innerHTML = 'Fichier trop lourd !';
+        if($('#file').get(0).files.length === 0){
+            alert('Veuillez choisir un fichier !');
         }
-        else
-        {
-            // On récupère le nom du fichier
-            var files = fi.files;
-            for (var i = 0; i < files.length; i++) {
-                var filename = files[i].name;
+        else {
+            var f=this.files[0]; // On récupère la taille du fichier
+            if (f.size > 2000000) // Si le fichier est supérieur à 2 Mo
+            {
+                alert('Fichier trop lourd');
+                document.getElementById('file').value = ""; // On vide le champ
+                document.getElementById('fp').innerHTML = 'Fichier trop lourd !';
             }
-            //alert(filename);
+            else
+            {
+                // On récupère le nom du fichier
+                var files = fi.files;
+                for (var i = 0; i < files.length; i++) {
+                    var filename = files[i].name;
+                }
+                //alert(filename);
 
-            openFile(filename); // On vérifie le bon format du fichier
+                openFile(filename); // On vérifie le bon format du fichier
+            }
         }
+
     })
 });
 

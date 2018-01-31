@@ -1,8 +1,9 @@
 $(document).ready(function () {
-   // debugger;
+
 console.log("SUBMIT FORM");
     //Detection du click suivant
    $("#bouton_vert_valider").click(function(e){
+       //debugger;
        //Annule action de base à savoir la redirection
        e.preventDefault();
 

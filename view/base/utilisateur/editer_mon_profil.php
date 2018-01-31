@@ -12,9 +12,9 @@
         $profil = $_SESSION["profilSelect"];
 
         //var_dump($_SESSION["birth_form"]);
-        var_dump($_SESSION["Test_form34"]);
-        var_dump($_SESSION["Test_form_2"]);
-        var_dump($_SESSION["req"]);
+        //var_dump($_SESSION["Test_form34"]);
+        //var_dump($_SESSION["Test_form_2"]);
+        //var_dump($_SESSION["req"]);
 
         //var_dump($_SERVER['REQUEST_URI']);
     }
@@ -22,20 +22,33 @@
 <script src="js/submitFormButton.js"></script>
 <script src="js/subitUploadIMG.js"></script>
 <script src="js/edit_icon.js"></script>
-
-<form id="form_fake_button2" method="post" enctype="multipart/form-data" action="index_mvc.php?target=profil&function=editer_mon_profil" onSubmit="return validate();">
-    <input type="file" id="file" name="fichier" accept=".png, .jpg, .jpeg" multiple onchange="GetFileSize()">
-    <p id="fp"></p>
-    <!--<div id="dl_img">
-        <a href="connexion_password.html" ><i class="material-icons">file_download</i></a>
-    </div>-->
-    <input type="submit" name="upload" value="Uploader">
-</form>
+<script src="js/fake_select_file_button.js"></script>
 
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
-            <h2>Editer mon profil</h2>
+            <h2>Editer mon image de profil</h2>
+
+            <form id="form_fake_button2" method="post" enctype="multipart/form-data" action="index_mvc.php?target=profil&function=editer_mon_profil" onSubmit="return validate();">
+                <p>Format .jpg ou .png (2 Mo maximum) :</p>
+                <div class="balise_form_flex_50">
+                    <div class="form_flex_edit">
+                        <!--<label for="file" class="label-file"><i class="material-icons">save</i> Uploader</label>-->
+                        <input type="file" class="input-file" id="file" name="fichier" accept=".png, .jpg, .jpeg" multiple onchange="GetFileSize()">
+                    </div>
+                    <p id="fp"></p>
+                    <div class="form_flex_edit">
+                        <input type="submit" name="upload" value="Uploader" >
+                    </div>
+                </div>
+                <div class="bouton_vert" >
+                    <a id="dl_img" href="index_mvc.php?target=profil&function=editer_mon_profil"><i class="material-icons">save</i>Valider</a>
+                </div>
+            </form>
+
+            <hr>
+
+            <h2>Editer mes informations personelles</h2>
 
                 <form class="input_radio" id="form_fake_button" method="post" action="index_mvc.php?target=profil&function=editer_mon_profil">
                     <div class="balise_form_flex_50">
@@ -108,8 +121,8 @@
                 </form>
 
             <div class="groupe_bouton_vert">
-                <div class="bouton_vert" id="bouton_vert_valider">
-                    <a href="index_mvc.php?target=profil?function=editer_mon_profil"><i class="material-icons">save</i>Valider</a>
+                <div class="bouton_vert" >
+                    <a id="bouton_vert_valider" href="index_mvc.php?target=profil&function=editer_mon_profil"><i class="material-icons">save</i>Valider</a>
                 </div>
 
                 <div class="bouton_vert bouton_gris">

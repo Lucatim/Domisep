@@ -38,11 +38,19 @@ switch ($function){
             require_once ("view/base/utilisateur/mon_profil.php");
         }
         break;
+
     case "editer_mon_profil":
-        if( isset($_POST['upload']) )
+        //if(isset($_POST) && !empty($_POST))
+        var_dump($_POST);
+        //var_dump(count($_POST));
+        //var_dump($_POST['fichier']);
+        //var_dump($_FILES['fichier']);
+
+        if(isset($_POST) && count($_POST)==1) // Si c'est une image, alors une seule ligne dans $_POST
         {
+            var_dump('testestsets');
             $content_dir = 'view/assets/images/client/'; // Dossier où sera déplacé le fichier
-            //$taille_max = 2000000; // 2 Mo
+            $taille_max = 2000000; // 2 Mo
             $tmp_file = $_FILES['fichier']['tmp_name'];
 
             if( !is_uploaded_file($tmp_file) )
@@ -50,25 +58,25 @@ switch ($function){
                 exit("Le fichier $tmp_file est introuvable");
             }
 
-            /*// Vérification de la taille
+            // Vérification de la taille
             $taille_fichier = filesize($_FILES['fichier']['tmp_name']);
             echo $taille_fichier;
 
             if ($taille_fichier > $taille_max) {
                 exit("Vous avez dépassé la taille de fichier autorisée");
-            }*/
+            }
 
-            /*// Vérification de l'extension
+            // Vérification de l'extension
             $type_file = $_FILES['fichier']['type'];
 
             if( !strstr($type_file, 'jpg') && !strstr($type_file, 'jpeg') && !strstr($type_file, 'bmp') && !strstr($type_file, 'png') )
             {
                 exit("Le fichier n'est pas une image");
-            }*/
+            }
 
             // Copie du fichier dans le dossier de destination
             $name_file = pathinfo($_FILES['fichier']['name']);
-            $name_file = $_SESSION["profilSelect"]["id_client"] . '_' . $_SESSION["profilSelect"]["surname"] . '_' . $_SESSION["profilSelect"]["name"] . '.' . $name_file['extension'];
+            $name_file = $_SESSION["profilSelect"]["id_client"] . '_' . helper::remove_accents($_SESSION["profilSelect"]["surname"]) . '_' . helper::remove_accents($_SESSION["profilSelect"]["name"]) . '.' . $name_file['extension'];
 
             if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
             {
@@ -78,79 +86,44 @@ switch ($function){
             echo "Le fichier $name_file a bien été uploadé";
 
             $tmp_name = $content_dir . $name_file;
-
             profil::UploadImage($_SESSION["id"], $tmp_name);
-            $_SESSION["img"]=connexion::getImage($_SESSION["id"]);
+            $_SESSION["img"]=connexion::getImage($_SESSION["id"]); // On rafraîchit l'image
+            //echo('<script src="js/refreshPage.js" ></script>');
         }
 
         /* CONTROLE VALEURS FORM */
-        $_SESSION["Test_form"] = '__';
-        $_SESSION["Test_form_2"] = 'Pas encore de valeur';
-        foreach($_POST as $k=>$value) { // $k Couple les valeurs avec l'indice
-            //var_dump($value);
-            //var_dump($_SESSION["profilSelect"][$k]);
-            if (helper::verifyForm($value) ==  TRUE) {
-                $_SESSION["Test_form"] = 'Ok';
-                //var_dump($_SESSION["profilSelect"][$k]);
+        if (isset($_POST) && count($_POST)>1)
+        {
+            foreach ($_POST as $k => $value)
+            { // $k Couple les valeurs avec l'indice
                 //var_dump($value);
-                if ($_SESSION["profilSelect"][$k] !== $value)
+                //var_dump($_SESSION["profilSelect"][$k]);
+                if (helper::verifyForm($value) == TRUE)
                 {
-                    $_SESSION["req"] = profil::UpdateProfilInfo($_SESSION["id"], $value, $k);
-                    $_SESSION["Test_form34"] = $k;
-                    $_SESSION["Test_form_2"] = 'Valeur differente';
+                    $_SESSION["Test_form"] = 'Ok';
+                    //var_dump($_SESSION["profilSelect"][$k]);
+                    //var_dump($value);
+                    if ($_SESSION["profilSelect"][$k] !== $value)
+                    {
+                        //$_SESSION["req"] = profil::UpdateProfilInfo($_SESSION["id"], $value, $k);
+                        profil::UpdateProfilInfo($_SESSION["id"], $_POST);
+                        $_SESSION["Test_form34"] = $k;
+                        $_SESSION["Test_form_2"] = 'Valeur differente';
+                    }
+                }
+                else
+                {
+                    unset($value);
+                    $_SESSION["Test_form"] = 'Pas Ok';
+                    break;
                 }
             }
-            else {
-                unset($value);
-                $_SESSION["Test_form"] = 'Pas Ok';
-                break;
-            }
+            unset($value);
+            $_SESSION["profilSelect"] = profil::getProfilComplet($_SESSION["id"]);
+            $_SESSION["nom"] = $_SESSION["profilSelect"]["name"];
+            $_SESSION["prenom"] = $_SESSION["profilSelect"]["surname"];
+            //echo('<script src="js/refreshPage.js" ></script>');
         }
-        unset($value);
-
-        /* CONTROLE UPLOAD IMAGE */
-        /*$target_dir = "view/images/client";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
-        if(isset($_POST["submit"])) {
-            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-            if($check !== false) {
-                echo "File is an image - " . $check["mime"] . ".";
-                $uploadOk = 1;
-            } else {
-                echo "File is not an image.";
-                $uploadOk = 0;
-            }
-        }
-        // Check if file already exists
-        if (file_exists($target_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = 0;
-        }
-        // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000) {
-            echo "Sorry, your file is too large.";
-            $uploadOk = 0;
-        }
-        // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            echo "Sorry, your file was not uploaded.";
-        // if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-            } else {
-                echo "Sorry, there was an error uploading your file.";
-            }
-        }*/
 
         require_once ("view/base/utilisateur/editer_mon_profil.php");
         break;
@@ -220,3 +193,4 @@ switch ($function){
 }
 
 ?>
+
