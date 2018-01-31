@@ -2,6 +2,21 @@
     border: 1px solid red;
 }*/
 
+.label-file {
+    display: flex;
+    cursor: pointer;
+    place-content: center;
+    z-index: 1;
+}
+
+.input-file {
+   display: none;
+}
+
+.submit_circle_file {
+    margin: 10px 0 10px 0;
+}
+
 *:not(#slide_circle):not(.rond_image):not(.carre_image) {
     box-sizing: border-box; /* Pour les paragraphes côte à côte comme sur mon_profil sauf les images en cercle et en carré */
 }
@@ -567,7 +582,7 @@ select {
 .groupe_rond_image_txt {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    /*align-items: center;*/
     justify-content: center;
     padding-top: 30px;
 }
@@ -578,13 +593,22 @@ select {
 }
 
 .rond_image_txt {
-    margin: 0 30px 0 30px;
+    margin: 10px 30px 10px 30px;
     display: flex;
     flex-direction: column;
+    max-width: 200px;
 }
 
 .titre_rond_image {
     font-size: 1.3em;
+}
+
+#content .titre_rond_image p {
+    line-height: 30px;
+}
+
+.texte_gris.mes_utilisateurs {
+    margin-top: auto;
 }
 
 /* ******************* */
@@ -647,7 +671,7 @@ select {
     transition: all 0.5s;
 }
 
-.icone_edit_circle:hover i {
+.icone_edit_circle i:hover {
     color: #ff9800;
 }
 

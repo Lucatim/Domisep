@@ -88,17 +88,11 @@
 
         ?>
 
-    <link rel="stylesheet" href="view/assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
-    <link rel="stylesheet" href="view/assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
-    <link rel="stylesheet" href="view/assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
-    <link rel="stylesheet" href="view/assets/css/screen_phone.css" media="(max-width: 480px)"/>
-    <link rel="stylesheet" href="view/assets/css/index.css" />
-    <link rel="stylesheet" href="view/assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
-    <link rel="stylesheet" href="view/assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
-    <link rel="stylesheet" href="view/assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
-    <link rel="stylesheet" href="view/assets/css/screen_phone.css" media="(max-width: 480px)"/>
-    <link rel="stylesheet" href="view/assets/css/messagerie.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="view/assets/css/screen_large_desktop.css" media="(min-width: 992px)"/>
+        <link rel="stylesheet" href="view/assets/css/screen_desktop.css" media="(min-width: 768px) and (max-width: 992px)"/>
+        <link rel="stylesheet" href="view/assets/css/screen_tablet.css" media="(min-width: 480px) and (max-width: 768px)"/>
+        <link rel="stylesheet" href="view/assets/css/screen_phone.css" media="(max-width: 480px)"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -271,25 +265,35 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
             {
 
             }
+
+            var_dump($_SESSION["img"]["pic"]);
             echo('
                 <div id="slide_accueil">
                    <div id="slide_haut">
                         <div id="derniere_connexion">
-                            <p>Dernière connexion : '. $_SESSION["date_logged"] .'</p>
+                            <p>Dernière connexion : '. $_SESSION["date_logged_actual"] .'</p>
                         </div>
             
                         <div id="date_inscription">
                             <p>Date d\'inscription : '. $_SESSION["date_register"] .'</p>
                         </div>
                     </div>
-            
+                               
                     <div id="slide_circle">
                         <div class="icone_edit_circle">
-                            <a href="index_mvc.php?target=profil&function=editer_mon_profil" id="dl_img"><i class="material-icons">file_download</i></a>                                                                                        
-                        </div>                            
-                        
+                            <form id="form_fake_button2" method="post" enctype="multipart/form-data" action="index_mvc.php?target=profil&function=editer_mon_profil" onSubmit="return validate();">
+                                <label for="file" class="label-file">
+                                    <i class="material-icons">file_download</i>                                                                                       
+                                </label>
+                                <input id="file" class="input-file" type="file" name="fichier" accept=".png, .jpg, .jpeg">
+                                <div class="form_flex_edit">
+                                    <input type="submit" class="submit_circle_file" name="upload" value="Uploader" >
+                                </div>
+                            </form>                           
+                        </div>  
+                     
                         <div class="texte_icone_edit">
-                            <p>.jpg ou .png (2 Mo max.)</p>
+                            <p>.jpg ou .png <br>(2 Mo max.)</p>
                         </div>   
                        
                         <div class="opacity_edit_image">
@@ -310,7 +314,25 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
             break;
 
         default:
-            echo('<div id="slide_accueil"></div>');
+            //echo('<div id="slide_accueil"></div>');
+            echo('<div id="slide_accueil">
+                    <div id="slide_circle">
+                        <div class="opacity_edit_image">
+                            <img src='.$_SESSION["img"]["pic"].' alt="image_slide">
+                        </div>
+                    </div>
+                    <div id="slide_bas">
+                        <div id="prenom_nom">
+                            <p>'. $_SESSION["prenom"].'  '.$_SESSION["nom"].'</p>
+                        </div>
+
+                        <div id="numero_client">
+                            <p>N° client : '. $_SESSION["id"] .'</p>
+                        </div>
+                    </div>
+                  </div>');
+            break;
+
     }
 } else {
     echo('<div id="slide_accueil"></div>');

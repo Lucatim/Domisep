@@ -41,14 +41,15 @@ switch ($function){
 
     case "editer_mon_profil":
         //if(isset($_POST) && !empty($_POST))
-        var_dump($_POST);
+        //var_dump($_POST);
         //var_dump(count($_POST));
         //var_dump($_POST['fichier']);
         //var_dump($_FILES['fichier']);
 
+
         if(isset($_POST) && count($_POST)==1) // Si c'est une image, alors une seule ligne dans $_POST
         {
-            var_dump('testestsets');
+            //var_dump('testestsets');
             $content_dir = 'view/assets/images/client/'; // Dossier où sera déplacé le fichier
             $taille_max = 2000000; // 2 Mo
             $tmp_file = $_FILES['fichier']['tmp_name'];
@@ -69,15 +70,32 @@ switch ($function){
             // Vérification de l'extension
             $type_file = $_FILES['fichier']['type'];
 
-            if( !strstr($type_file, 'jpg') && !strstr($type_file, 'jpeg') && !strstr($type_file, 'bmp') && !strstr($type_file, 'png') )
+            if( !strstr($type_file, 'jpg') && !strstr($type_file, 'jpeg') && !strstr($type_file, 'png') )
             {
                 exit("Le fichier n'est pas une image");
             }
 
             // Copie du fichier dans le dossier de destination
             $name_file = pathinfo($_FILES['fichier']['name']);
-            $name_file = $_SESSION["profilSelect"]["id_client"] . '_' . helper::remove_accents($_SESSION["profilSelect"]["surname"]) . '_' . helper::remove_accents($_SESSION["profilSelect"]["name"]) . '.' . $name_file['extension'];
+            //$name_file = $_SESSION["profilSelect"]["id_client"] . '_' . helper::remove_accents($_SESSION["profilSelect"]["surname"]) . '_' . helper::remove_accents($_SESSION["profilSelect"]["name"]) . '.' . $name_file['extension'];
+            $name_file = $_SESSION["profilSelect"]["id_client"] . '.' . $name_file['extension'];
 
+            // Gestion de la supression des anciens fichiers pour éviter d'avoir des fichiers en double avec une extension différente
+            // On récupère le chemin des fichiers
+            $files_to_delete = [
+                 ''.$content_dir.''.''.$_SESSION["profilSelect"]["id_client"].'.jpg',
+                 ''.$content_dir.''.''.$_SESSION["profilSelect"]["id_client"].'.jpeg',
+                 ''.$content_dir.''.''.$_SESSION["profilSelect"]["id_client"].'.png',
+            ];
+
+            // On supprime ces fichiers
+            foreach ($files_to_delete as $file) {
+                if (file_exists($file)) {
+                    unlink($file);
+                }
+            }
+
+            // On upload le nouveau fichier
             if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
             {
                 exit("Impossible de copier le fichier $name_file dans $content_dir");
@@ -119,13 +137,17 @@ switch ($function){
                 }
             }
             unset($value);
+            //echo "<meta http-equiv='refresh' content='0'>";
+            //echo "<script>$(\"#scores\").load(\"header.php #scores\");</script>";
             $_SESSION["profilSelect"] = profil::getProfilComplet($_SESSION["id"]);
-            $_SESSION["nom"] = $_SESSION["profilSelect"]["name"];
             $_SESSION["prenom"] = $_SESSION["profilSelect"]["surname"];
-            //echo('<script src="js/refreshPage.js" ></script>');
+            $_SESSION["nom"] = $_SESSION["profilSelect"]["name"];
+            $_SESSION["img"]["pic"] = $_SESSION["profilSelect"]["pic"];
+            echo('<script src="js/refreshSlide.js" ></script>');
         }
 
         require_once ("view/base/utilisateur/editer_mon_profil.php");
+
         break;
     case "facture":
         $_SESSION["date_inscription"]=profil::getDateInscription($_SESSION["id"]);

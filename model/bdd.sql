@@ -36,6 +36,7 @@ CREATE TABLE client (
   pass varchar(512),
   date_reg date,
   date_log datetime,
+  date_log_actual datetime,
   gender varchar(16),
   pic varchar(128) DEFAULT "view/assets/images/unknown.jpg",
   surname varchar(32),
@@ -66,7 +67,6 @@ CREATE TABLE client (
   PRIMARY KEY (id_client),
   FOREIGN KEY (id_sub_list) REFERENCES sub_list(id_sub_list)
 );
-
 
 CREATE TABLE mail (
   id_mail int UNIQUE NOT NULL AUTO_INCREMENT,
