@@ -21,7 +21,7 @@
             <h2>Mon abonnement</h2>
 
 
-            <div class="balise_p_flex_50">
+            <div class="balise_p_flex_50 balise_p_flex_center">
                 <p>Type d'abonnement : <span class="texte_gris"><?php echo($name_sub)?></span></p>
                 <p>Prix initial : <span class="texte_gris"><?php echo($price_sub)?> €</span></p>
                 <p>Réduction : <span class="texte_gris"><?php echo($discount)?>%</span></p>

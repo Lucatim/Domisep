@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // debugger;
+    debugger;
     console.log("SUBMIT IMG");
 
     $("#dl_img").click(function(f){

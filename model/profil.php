@@ -36,12 +36,38 @@ class profil
         return $val;
     }
 
-    public static function UpdateProfilInfo($id_client, $value_form, $nom_champ) {
+    public static function UpdateProfilInfo($id_client, $value_form) {
         $bdd=PdoDomisep::pdoConnectDB(); // Connexion à la BDD
-        $req=$bdd->prepare("UPDATE client SET :n_champ=:value_f WHERE id_client=:id"); // Préparation de la requête
-        $req->bindParam(':value_f',$value_form);
-        $req->bindParam(':n_champ',$nom_champ);
+
+        /*$rs = $bdd->query('SELECT * FROM client LIMIT 0');
+        var_dump($rs);
+        for ($i = 0; $i < $rs->columnCount(); $i++) {
+            $col = $rs->getColumnMeta($i);
+            $columns[] = $col['name'];
+        }
+
+        switch ($nom_champ) {
+            case 'gender':
+                $k_array = 1;
+                break;
+        }*/
+
+        $req=$bdd->prepare("UPDATE client SET surname=:v_surname,name=:v_name,gender=:v_gender, birth=:v_birth, bill_addr=:v_bill_addr, bill_town=:v_bill_town, bill_post_code=:v_bill_post_code, bill_country=:v_bill_country, mail=:v_mail, mail_security=:v_mail_security, phone=:v_phone, fax=:v_fax WHERE id_client=:id"); // Préparation de la requête
+        $req->bindParam(':v_surname',$value_form["surname"]);
+        $req->bindParam(':v_name',$value_form["name"]);
+        $req->bindParam(':v_gender',$value_form["gender"]);
+        $req->bindParam(':v_birth',$value_form["birth"]);
+        $req->bindParam(':v_bill_addr',$value_form["bill_addr"]);
+        $req->bindParam(':v_bill_town',$value_form["bill_town"]);
+        $req->bindParam(':v_bill_post_code',$value_form["bill_post_code"]);
+        $req->bindParam(':v_bill_country',$value_form["bill_country"]);
+        $req->bindParam(':v_mail',$value_form["mail"]);
+        $req->bindParam(':v_mail_security',$value_form["mail_security"]);
+        $req->bindParam(':v_phone',$value_form["phone"]);
+        $req->bindParam(':v_fax',$value_form["fax"]);
         $req->bindParam(':id',$id_client);
+
+        //die(var_dump($req->execute()));*/
         $req->execute(); // Exécution de la requête
         $req->closeCursor(); // Libération de la connexion au serveur
 

@@ -67,8 +67,8 @@ hr {
 /* ******************* */
 
 input:focus {
-        outline: none;
-    }
+    outline: none;
+}
 
 .label_input {
     display: flex;
@@ -89,7 +89,47 @@ input:focus {
 }
 
 /* ******************* */
-/*     Textarea INPUT  */
+/*      FILE INPUT     */
+/* ******************* */
+
+/*.label-file {
+   cursor: pointer;
+   color: #00b1ca;
+   font-weight: bold;
+}
+
+.label-file:hover {
+    color: #25a5c4;
+}
+
+.input-file {
+   display: none;
+}*/
+
+.bouton_vert {
+    text-align: center;
+    margin: 20px 0 20px 0;
+    padding: 0 20px 0 20px;
+}
+
+.bouton_vert a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px 10px 10px;
+    background-color: #81c784;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #e3e3e3;
+
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
+
+/* ******************* */
+/*    TEXTAREA INPUT   */
 /* ******************* */
 .textarea_input {
     display: flex;
@@ -746,6 +786,10 @@ select {
     margin-left: auto;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+.balise_p_flex_center {
+    text-align: center;
 }
 
 /* ******************* */

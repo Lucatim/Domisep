@@ -244,6 +244,10 @@ INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FAL
 /* User3 */
 INSERT INTO client(pass,surname,name,first_log) VALUES('ap','Alexandre','PRADIER',FALSE);
 
+/* UserManuelUtilisateur */
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
+    VALUES ('2018-01-29','2017-02-24 23:42:16','0000','Henri','Martin','1','view/assets/images/Henri.jpg','1952-04-01','42 avenue de Friedland','Paris','75008','France','henri.martin@gmail.com','h.martin@vivendi.com','0603789466','0145789538','4','5',2,20);
+
 /* Home1 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
