@@ -6,6 +6,11 @@
  * Time: 11:58
  */
 
+require_once 'model/PdoDomisep.php';
+require_once 'model/profil.php';
+require_once 'model/utilisateur.php';
+require_once 'model/admin.php';
+
 if (!isset($_GET['function']) || empty($_GET['function'])) {
     $function = "gerer_mon_domisep";
 } else {
@@ -55,6 +60,59 @@ switch ($function){
 
     case "recherche_utilisateur":
         var_dump($_POST);
+        if (isset($_POST["id_utilisateur"])&&!empty($_POST["id_utilisateur"])){
+            $idUtilisateur=$_POST["id_utilisateur"];
+            $_SESSION["utilisateur_selection"]=profil::getProfilComplet($idUtilisateur);
+            $_SESSION["utilisateur_selection"]["listeDomicile"]=utilisateur::getDomicileClient($idUtilisateur);
+            require_once 'view/base/admin/gerer_mon_domisep/gerer_utilisateur.php';
+        }
+        else{
+            if(isset($_SESSION["utilisateur_selection"]) && !empty($_SESSION["utilisateur_selection"])){
+                require_once 'view/base/admin/gerer_mon_domisep/gerer_utilisateur.php';
+            }
+        }
+
+        break;
+
+    case "ajouter_domicile":
+        require_once 'view/base/admin/gerer_mon_domisep/ajouter_domicile.php';
+        break;
+
+    case "ajouter_domicile_form":
+        //var_dump($_SESSION["utilisateur_selection"]);
+        //var_dump($_POST);
+        if (isset($_POST)&&!empty($_POST)){
+        //var_dump($_SESSION["utilisateur_selection"]);
+        //var_dump($_POST);
+        admin::ajouterDomicile($_SESSION["utilisateur_selection"]["id_client"],$_POST);
+        }
+        require_once 'view/base/admin/gerer_mon_domisep/gerer_utilisateur.php';
+        break;
+
+    case "gerer_domicile_utilisateur":
+        if (isset($_GET["home"])&&!empty($_GET["home"])){
+            $_SESSION["utilisateur_selection"]["domicile_selection"]=utilisateur::getDomicileComplet($_GET["home"]);
+            require_once 'view/base/admin/gerer_mon_domisep/gerer_domicile_utilisateur.php';
+        }
+        break;
+
+    case "ajouter_piece":
+
+        require_once 'view/base/admin/gerer_mon_domisep/ajouter_piece.php';
+        break;
+
+    case "ajouter_piece_form":
+        //var_dump($_SESSION["utilisateur_selection"]);
+        //var_dump($_POST);
+        if (isset($_POST)&&!empty($_POST)){
+            var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]);
+            var_dump($_POST);
+            admin::ajouterPiece($_SESSION["utilisateur_selection"]["domicile_selection"]["id_home"],$_POST["id_type_piece"]);
+            //var_dump($_SESSION["utilisateur_selection"]);
+            //var_dump($_POST);
+            //admin::ajouterDomicile($_SESSION["utilisateur_selection"]["id_client"],$_POST);
+        }
+        //require_once 'view/base/admin/gerer_mon_domisep/gerer_utilisateur.php';
         break;
 }
 

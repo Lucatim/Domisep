@@ -108,13 +108,13 @@ CREATE TABLE residence (
 CREATE TABLE home (
   id_home int UNIQUE NOT NULL AUTO_INCREMENT,
 
-  pic varchar(32),
+  pic varchar(32) DEFAULT NULL,
   addr varchar(32),
   post_code int,
   state varchar(32),
   country varchar(32),
-  number_user int,
-  name varchar(16),
+  number_user int DEFAULT NULL,
+  name varchar(32),
 
   PRIMARY KEY (id_home)
 );

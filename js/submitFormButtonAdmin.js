@@ -16,4 +16,10 @@ $(document).ready(function () {
         //Envoi du formulaire
         $("#form_connexion").submit();
     });
+
+    $("#ajouter_domicile").click(function (e) {
+       e.preventDefault();
+
+       $("#form_ajouter_domicile").submit();
+    });
 });

@@ -92,7 +92,25 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
             break;
 
         case "rechercher_utilisateur":
-            $req=$bdd->prepare('SELECT name FROM client ');
+            $req=$bdd->prepare('SELECT id_client,name FROM client ');
+            $req->execute(array());
+            $val=$req->fetchAll();
+            $req->closeCursor();
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
+
+        case "rechercher_residence":
+            $req=$bdd->prepare('SELECT id_residence,name FROM residence');
+            $req->execute(array());
+            $val=$req->fetchAll();
+            $req->closeCursor();
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
+
+        case "liste_type_piece":
+            $req=$bdd->prepare('SELECT * FROM room_list');
             $req->execute(array());
             $val=$req->fetchAll();
             $req->closeCursor();

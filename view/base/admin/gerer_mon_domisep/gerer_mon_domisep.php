@@ -13,12 +13,12 @@
         <div id="container_principal">
 
             <h2>Rechercher un utilisateur</h2>
-            <form method="post" action="index_mvc.php?target=admin&function=rechercher_utilisateur">
+            <form method="post" action="index_mvc.php?target=admin&function=recherche_utilisateur">
             <label for="rechercher_utilisateur">
                 Rechercher un utilisateur existant
-                <select id="rechercher_utilisateur" ></select>
-                <input type="submit" name="Accèder">
             </label>
+                <select name="id_utilisateur" id="rechercher_utilisateur" ></select>
+                <input type="submit" name="Accèder">
             </form>
             <hr>
 
@@ -188,7 +188,13 @@ if (isset($_SESSION["ajouter_utilisateur"])){ ?>
             <hr>
 
             <h2>Rechercher une résidence</h2>
-
+            <form method="post" action="index_mvc.php?target=admin&function=recherche_residence">
+                <label for="rechercher_utilisateur">
+                    Rechercher une résidence existante
+                </label>
+                <select name="selectResidence" id="rechercher_residence" ></select>
+                <input type="submit" name="Accèder">
+            </form>
             <hr>
 
             <h2>Ajouter une résidence</h2>
