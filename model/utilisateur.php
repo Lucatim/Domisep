@@ -260,4 +260,27 @@ class utilisateur
 
         return $val;
     }
+
+    //Fonction permettant de modifier le mdp d'un utilisateur
+    public static function modifPass($idUtilisateur,$pass){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('UPDATE client SET pass=SHA2(:pass,0) WHERE id_client=:idR');
+        //$req->bind_param('ii',$chaufPos,$idResidence);
+        $req->bindParam(':pass',$pass);
+        $req->bindParam(':idR',$idUtilisateur);
+        $req->execute();
+        $req->closeCursor();
+    }
+
+    //Fonction permettant de desactiver l'option e premiere connexion
+    public static function modifPremiereConnexion($idUtilisateur){
+        $optionPremConnexion=0;
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('UPDATE client SET first_log=:optionPremCon WHERE id_client=:idR');
+        //$req->bind_param('ii',$chaufPos,$idResidence);
+        $req->bindParam(':optionPremCon',$optionPremConnexion);
+        $req->bindParam(':idR',$idUtilisateur);
+        $req->execute();
+        $req->closeCursor();
+    }
 }

@@ -52,6 +52,10 @@ switch ($function){
 
     }
         break;
+
+    case "recherche_utilisateur":
+        var_dump($_POST);
+        break;
 }
 
 

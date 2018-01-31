@@ -10,6 +10,7 @@
 require_once 'model/PdoDomisep.php';
 require_once 'model/connexion.php';
 require_once 'model/helper.php';
+require_once 'model/utilisateur.php';
 
 //include_once ('view/base/header.php');
 
@@ -123,6 +124,7 @@ switch ($function){
 
     //verification du mot de passe
     case "verif_pass":
+        var_dump($_SESSION);
         if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
 
             $pass=connexion::verifPass($_SESSION["id"],$_POST["identifiant"]);
@@ -147,9 +149,19 @@ switch ($function){
                     //$_SESSION["date"]=$date_connexion;
                     //var_dump($_SESSION);
                     //header("Refresh:0");
+                    var_dump(connexion::connexionFirst($_SESSION["id"]));
+                    $premConnexionOption=connexion::connexionFirst($_SESSION["id"])["first_log"];
+                    if ($premConnexionOption==1){
+                        echo 'test connexion first';
+                        require_once ('view/base/connexion/connexion_modif_pass.php');
+                    }
+                    else{
+
                     ?>
-                    <script src="js/redirectToAccueil.js" ></script>
+                        <script src="js/redirectToAccueil.js" ></script>
                     <?php
+                        //
+                    }
                     //require_once ("view/base/accueil.php");
                     //header('Location: index_mvc.php');
                     //exit();
@@ -174,6 +186,16 @@ switch ($function){
         //require_once("view/base/accueil.php");
         break;
 
+    case "modif_pass":
+        if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
+            utilisateur::modifPass($_SESSION["id"],$_POST["identifiant"]);
+            utilisateur::modifPremiereConnexion($_SESSION["id"]);
+        }
+
+        ?>
+        <script src="js/redirectToAccueil.js" ></script>
+        <?php
+        break;
 
 }
 

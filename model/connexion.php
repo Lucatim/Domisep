@@ -30,7 +30,7 @@ class connexion
 
     public static function verifPass($numClient,$pass){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req=$bdd->prepare('SELECT pass FROM client WHERE id_client=? AND pass=? ');
+        $req=$bdd->prepare('SELECT pass FROM client WHERE id_client=? AND pass=SHA2(?,0) ');
         $req->execute(array($numClient,$pass));
         $val=$req->fetch();
         $req->closeCursor();

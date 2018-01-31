@@ -8,8 +8,8 @@ $(document).ready(function () {
             data: function (params) {
                 debugger
                 return {
-                    q: params.term, // search term
-                    page: params.page
+                    q: params.term // search term
+                    //page: params.page
                 };
             },
             processResults: function (data, params) {

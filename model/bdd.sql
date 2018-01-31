@@ -33,7 +33,7 @@ CREATE TABLE client (
   id_client int UNIQUE NOT NULL AUTO_INCREMENT,
   id_sub_list int,
 
-  pass varchar(16),
+  pass varchar(512),
   date_reg date,
   date_log datetime,
   gender varchar(16),
@@ -216,10 +216,10 @@ Insert
 */
 
 /*Insert Admin*/
-INSERT INTO client(pass,surname,name,first_log,admin) VALUES('admin','Admin','ADMIN',FALSE,TRUE);
+INSERT INTO client(pass,surname,name,first_log,admin) VALUES(SHA2('admin',0),'Admin','ADMIN',FALSE,TRUE);
 
 /*Insert Manager*/
-INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI',FALSE,TRUE);
+INSERT INTO client(pass,surname,name,first_log,manager) VALUES(SHA2('jul',0),'Jul','OVNI',FALSE,TRUE);
 
 
   /*pic varchar(128),*/
@@ -228,21 +228,21 @@ INSERT INTO client(pass,surname,name,first_log,manager) VALUES('jul','Jul','OVNI
 /*INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_sub_list,discount)
     VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538',2,20);*/
 INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','1','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538','4','5',2,20);
+    VALUES ('2012-11-05','2017-02-24 23:42:16',SHA2('gigi',0),'Gilbert','MONTAGNE','1','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538','4','5',2,20);
 
 /* SecondClient1 of User1 */
 INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
-    VALUES ('vk','Van-Kévin','Suy','view/assets/images/vankevin.jpg','1','0');
+    VALUES (SHA2('vk',0),'Van-Kévin','Suy','view/assets/images/vankevin.jpg','1','0');
 
 /* SecondClient1 of User1 */
 INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
-    VALUES ('lulu','Lucas','Quéant','view/assets/images/lucas.jpg','1','1');
+    VALUES (SHA2('lulu',0),'Lucas','Quéant','view/assets/images/lucas.jpg','1','1');
 
 /* User2 */
-INSERT INTO client(pass,surname,name,first_log) VALUES('fm','Franck','MEYER',FALSE);
+INSERT INTO client(pass,surname,name,first_log) VALUES(SHA2('fm',0),'Franck','MEYER',FALSE);
 
 /* User3 */
-INSERT INTO client(pass,surname,name,first_log) VALUES('ap','Alexandre','PRADIER',FALSE);
+INSERT INTO client(pass,surname,name,first_log) VALUES(SHA2('ap',0),'Alexandre','PRADIER',FALSE);
 
 /* Home1 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
