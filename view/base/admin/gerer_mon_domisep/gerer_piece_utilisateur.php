@@ -2,18 +2,18 @@
 /**
  * Created by PhpStorm.
  * User: franck.meyer
- * Date: 08/01/2018
- * Time: 15:02
+ * Date: 01/02/2018
+ * Time: 12:26
  */
-//Script permettant de gerer l'affichage du graphique
-//Le premier permet de recuperer id du capteur
-//Le deuxieme recupere les donnees et gere l'affichage du graphique
 
-if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset($_GET["piece"])&& !empty($_GET["piece"])) && (isset($_SESSION["pieceSelect"])&& !empty($_SESSION["pieceSelect"]))) {
+if ((isset($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"])&& !empty($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]))) {
     //$numCapteur=$_GET["capteur"];
     //ini_set('xdebug.var_display_max_depth', 15);
+    var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]);
 
-    $piece=$_SESSION["pieceSelect"];
+    $piece=$_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"];
+
+    var_dump($piece);
     //var_dump($piece)
     ?>
 
@@ -56,12 +56,12 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                 $defaut["nbr"]=0;
 
                 //Boucle permettant de connaitre le nombre de capteurs défectueux
-                    foreach ($piece["capteurs"] as $c){
-                        if ($c["sensor_on"]==0){
-                            $defaut["defaut"]=true;
-                            $defaut["nbr"]+=1;
-                        }
+                foreach ($piece["capteurs"] as $c){
+                    if ($c["sensor_on"]==0){
+                        $defaut["defaut"]=true;
+                        $defaut["nbr"]+=1;
                     }
+                }
 
 
                 //Si il a y a un problème, on informe
@@ -81,33 +81,33 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
 
                 <hr>
 
-                <h2>Mes capteurs</h2>
+                <h2>Capteurs</h2>
 
                 <div class="balise_p_flex_33">
                     <?php
 
-                        $pName=$piece["name"];
-                        foreach ($piece["capteurs"] as $c){
-                            if ($c["sensor_on"]==1){
-                                echo ('<p>'.$c["name"].' : <span class="texte_gris">'.$c["data"].' '. $c["unite"].'</span></p>');
-                            }
-                            else{
-                                if($c["sensor_on"]==0){
-                                    echo ('<p class="texte_rouge">'.$pName.' : ERREUR</p>');
-                                }
+                    $pName=$piece["name"];
+                    foreach ($piece["capteurs"] as $c){
+                        if ($c["sensor_on"]==1){
+                            echo ('<p>'.$c["name"].' : <span class="texte_gris">'.$c["data"].' '. $c["unite"].'</span></p>');
+                        }
+                        else{
+                            if($c["sensor_on"]==0){
+                                echo ('<p class="texte_rouge">'.$pName.' : ERREUR</p>');
                             }
                         }
+                    }
 
                     ?>
                 </div>
 
                 <div class="groupe_bouton_vert">
                     <div class="bouton_vert">
-                        <a href="#"><i class="material-icons">alarm_add</i>Planifier</a>
+                        <a href="index_mvc.php?target=admin&function=ajouter_capteur"><i class="material-icons">add_circle</i>Ajouter</a>
                     </div>
 
                     <div class="bouton_vert">
-                        <a href="#"><i class="material-icons">delete</i>Alerte</a>
+                        <a href="#"><i class="material-icons">delete</i>Supprimer</a>
                     </div>
                 </div>
 

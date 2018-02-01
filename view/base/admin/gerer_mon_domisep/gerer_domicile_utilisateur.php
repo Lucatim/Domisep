@@ -56,7 +56,7 @@ if (isset($_SESSION["utilisateur_selection"]["domicile_selection"])&&!empty($_SE
             foreach ($domi["pieces"] as $piece){
                 //Condition changement cadre rouge si capteur defectueux
                 //Gere lien direction piece
-                echo ("<a href='index_mvc.php?target=admin&function=&piece=".$piece["id_room"]."' class=\"carre_image\">
+                echo ("<a href='index_mvc.php?target=admin&function=gerer_piece_utilisateur&piece=".$piece["id_room"]."' class=\"carre_image\">
                     <img src=\"view/assets/images/capteur_humidite.jpg\" alt=\"unknown\">
 
                     <div class=\"bandeau_bas\">

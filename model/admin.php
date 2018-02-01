@@ -14,10 +14,32 @@ class admin
         $req=$bdd->prepare('INSERT INTO client(date_reg,gender,surname,name,birth,bill_addr,bill_town,bill_post_code,bill_state,bill_country,mail,mail_security,phone,fax) 
         VALUES(:date_reg,:gender,:surname,:name,:birth,:bill_addr,:bill_town,:bill_post_code,:bill_state,:bill_country,:mail,:mail_security,:phone,:fax)');
         //$req->bind_param('ii',$chaufPos,$idResidence);
-        $req->bindParam(':date_reg',new DateTime(new DateTimeZone("Europe/Paris")));
+
+        $date=null;
+        $req->bindParam(':date_reg', $date /*now()  new DateTime(new DateTimeZone("Europe/Paris"))*/);
+
+        $req->bindParam(':gender',$dataForm["gender"]);
+        $req->bindParam(':surname',$dataForm["first_name"]);
+        $req->bindParam(':name',$dataForm["last_name"]);
+        $req->bindParam(':birth',$dataForm["date_of_birth"]);
+        $req->bindParam(':bill_addr',$dataForm["address"]);
+        $req->bindParam(':bill_town',$dataForm["city"]);
+        $req->bindParam(':bill_post_code',$dataForm["postal_code"]);
+        $req->bindParam(':bill_state',$dataForm["country"]);
+        $req->bindParam(':bill_country',$dataForm["country"]);
+        $req->bindParam(':mail',$dataForm["email"]);
+        $req->bindParam(':mail_security',$dataForm["second_mail"]);
+        $req->bindParam(':phone',$dataForm["telephone_number"]);
+        $req->bindParam(':fax',$dataForm["Fax_number"]);
+
+
         //$req->bindParam(':gender',);
         $req->execute();
+
+        $idUtilisateur=$bdd->lastInsertId();
         $req->closeCursor();
+
+        utilisateur::modifPass($idUtilisateur,"provi");
     }
 
     public static function ajouterDomicile($idUtilisateur,$dataForm){
@@ -67,6 +89,18 @@ class admin
         //$req->bind_param('ii',$chaufPos,$idResidence);
         $req->bindParam(':idHome',$idDomicile);
         $req->bindParam(':idRoomList',$idRoomList);
+        //$req->bindParam(':gender',);
+        $req->execute();
+        $req->closeCursor();
+    }
+
+    public static function ajouterCapteur($idPiece,$idListeCapteur){
+        $bdd=PdoDomisep::pdoConnectDB();
+        $req=$bdd->prepare('INSERT INTO sensor(id_room,id_sensor_list) 
+        VALUES(:idRoom,:idListSensor)');
+        //$req->bind_param('ii',$chaufPos,$idResidence);
+        $req->bindParam(':idRoom',$idPiece);
+        $req->bindParam(':idListSensor',$idListeCapteur);
         //$req->bindParam(':gender',);
         $req->execute();
         $req->closeCursor();

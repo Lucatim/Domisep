@@ -96,14 +96,14 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
 
                 <hr>
 
-                <h2>Mes températures</h2>
+                <h2>Mes données</h2>
 
                 <div class="balise_p_flex_33">
                     <?php
                     foreach ($pieces as $p){
                         $pName=$p["name"];
                         foreach ($p["capteurs"] as $c){
-                            if ($c["sensor_on"]==1){
+                            if ($c["sensor_on"]==1 && $c["id_sensor_list"]==$capteur["id_sensor_list"]){
                                 echo ('<p>'.$pName.' : <span class="texte_gris">'.$c["data"].' '. $c["unite"].'</span></p>');
                             }
                             else{

@@ -29,9 +29,9 @@ if (isset($_SESSION["ajouter_utilisateur"])){ ?>
         <div class="balise_form_flex_50">
             <div class="form_flex_edit">
                 <label class="label_radio">Civilité * </label>
-                <input title="gender" type="radio" name="gender" checked="checked"> <label>M.</label>
-                <input title="gender" type="radio" name="gender"> <label>Mme.</label>
-                <input title="gender" type="radio" name="gender"> <label>Autre</label>
+                <input title="gender" type="radio" name="gender" checked="checked" value="1"> <label>M.</label>
+                <input title="gender" type="radio" name="gender" value="0"> <label>Mme.</label>
+                <input title="gender" type="radio" name="gender" value="2"> <label>Autre</label>
             </div>
 
             <div class="form_flex_edit">

@@ -8,7 +8,7 @@
 ?>
 
 <?php if (isset($_SESSION["residenceSelect"]) && !empty($_SESSION["residenceSelect"])){
-    var_dump($_SESSION["residenceSelect"]);
+    //var_dump($_SESSION["residenceSelect"]);
 
     $res=$_SESSION["residenceSelect"];
     ?>

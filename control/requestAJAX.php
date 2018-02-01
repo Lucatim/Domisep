@@ -117,6 +117,16 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
             header('Content-Type: application/json');
             echo json_encode($val);
             break;
+
+        case "liste_type_capteur":
+            $req=$bdd->prepare('SELECT * FROM sensor_list');
+            $req->execute(array());
+            $val=$req->fetchAll();
+            $req->closeCursor();
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
+
     }
 
     /*
