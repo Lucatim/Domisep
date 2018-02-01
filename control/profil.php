@@ -161,7 +161,7 @@ switch ($function){
         $anneereg=$datereg["year"];
 
         $jour=date('d');
-        $mois=date('m');
+        $mois=date('n');
         $annee=idate('Y');
 
         $tabl= array();
@@ -206,19 +206,19 @@ switch ($function){
 
         if(isset($_POST) && !empty($_POST))
         {
-            if(isset($_POST["id_client1"])) {
+            if( isset($_POST["id_client1"]) && !empty($_POST["id_client1"])){
                 $full_name = mb_split(' ', $_POST["full_name1"]);
 
                 profil::UpdateAcces($_POST["id_client1"], $_POST["acces_utilisateur1"], $full_name[1], $full_name[0]);
             }
 
-            if(isset($_POST["id_client2"])) {
+            if( isset($_POST["id_client2"]) && !empty($_POST["id_client2"])) {
                 $full_name = mb_split(' ', $_POST["full_name2"]);
 
                 profil::UpdateAcces($_POST["id_client2"], $_POST["acces_utilisateur2"], $full_name[1], $full_name[0]);
             }
 
-            if(isset($_POST["id_client3"])) {
+            if(isset($_POST["id_client3"]) && !empty($_POST["id_client3"])) {
                 $full_name = mb_split(' ', $_POST["full_name3"]);
 
                 profil::UpdateAcces($_POST["id_client3"], $_POST["acces_utilisateur3"], $full_name[1], $full_name[0]);
