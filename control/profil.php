@@ -61,7 +61,7 @@ switch ($function){
 
             // Vérification de la taille
             $taille_fichier = filesize($_FILES['fichier']['tmp_name']);
-            echo $taille_fichier;
+            //echo $taille_fichier;
 
             if ($taille_fichier > $taille_max) {
                 exit("Vous avez dépassé la taille de fichier autorisée");
@@ -79,7 +79,7 @@ switch ($function){
             $name_file = pathinfo($_FILES['fichier']['name']);
             //$name_file = $_SESSION["profilSelect"]["id_client"] . '_' . helper::remove_accents($_SESSION["profilSelect"]["surname"]) . '_' . helper::remove_accents($_SESSION["profilSelect"]["name"]) . '.' . $name_file['extension'];
             $name_file = $_SESSION["profilSelect"]["id_client"] . '.' . $name_file['extension'];
-            echo($name_file);
+            //echo($name_file);
 
             // Gestion de la supression des anciens fichiers pour éviter d'avoir des fichiers en double avec une extension différente
             // On récupère le chemin des fichiers
@@ -96,14 +96,14 @@ switch ($function){
                 }
             }
 
-            echo($_FILES['fichier']['name']);
+            //echo($_FILES['fichier']['name']);
             // On upload le nouveau fichier
             if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
             {
                 exit("Impossible de copier le fichier $name_file dans $content_dir");
             }
 
-            echo "Le fichier $name_file a bien été uploadé";
+            //echo "Le fichier $name_file a bien été uploadé";
 
             $tmp_name = $content_dir . $name_file;
             profil::UploadImage($_SESSION["id"], $tmp_name);

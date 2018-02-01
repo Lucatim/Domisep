@@ -152,7 +152,7 @@ switch ($function){
                     //var_dump(connexion::connexionFirst($_SESSION["id"]));
                     $premConnexionOption=connexion::connexionFirst($_SESSION["id"])["first_log"];
                     if ($premConnexionOption==1){
-                        echo 'test connexion first';
+                        //echo 'test connexion first';
                         require_once ('view/base/connexion/connexion_modif_pass.php');
                     }
                     else{

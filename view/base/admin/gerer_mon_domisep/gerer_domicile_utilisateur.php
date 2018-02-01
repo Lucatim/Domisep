@@ -19,7 +19,7 @@ if (isset($_SESSION["utilisateur_selection"]["domicile_selection"])&&!empty($_SE
             <div class="groupe_carre_image_texte_droite">
                 <div class="grand_carre_image">
                     <div class="carre_image red">
-                        <img src="view/assets/images/domicile-1.jpg" alt="unknown">
+                        <img src="view/assets/images/domicile/domicile-1.jpg" alt="unknown">
 
                         <div class="bandeau_bas red">
                             <p>
