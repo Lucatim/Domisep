@@ -19,7 +19,7 @@ class messagerie
     }
     public static function insertMSG($recipient , $subject ,$bin ,  $mess, $num_client, $sender){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req = $bdd->prepare('INSERT INTO mail(recipient , subject , mess,bin, num_client, sender ) 
+        $req = $bdd->prepare('INSERT INTO mail(recipient , subject , mess,bin, num_client, sender )
                                VALUES(:recipient , :subject , :mess , :bin, :num_client, :sender)');
 
         $req->execute(array(
@@ -30,7 +30,9 @@ class messagerie
             'num_client' => $num_client,
             'sender'=> $sender
         ));
-
+        $val=$req->fetchAll();
+        $req->closeCursor();
+        return $val;
     }
 
 
@@ -38,7 +40,9 @@ class messagerie
          $bdd=PdoDomisep::pdoConnectDB();
          $req = $bdd->prepare('SELECT * FROM mail WHERE recipient = ?');
          $req->execute(array($id_utilisateur_co));
-
+         $val=$req->fetchAll();
+         $req->closeCursor();
+         return $val;
      }
 
 
@@ -46,18 +50,29 @@ class messagerie
         $bdd=PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT * FROM mail WHERE sender = ?');
         $req->execute(array($id_utilisateur_co));
+        $val=$req->fetchAll();
+        $req->closeCursor();
+        return $val;
 
     }
 
     public static function Corbeille($id_utilisateur_co){
         $bdd=PdoDomisep::pdoConnectDB();
-        $req = $bdd->prepare('SELECT * FROM mail WHERE bin = ? ');
-        $req->execute(array(1));
+        $req = $bdd->prepare('SELECT * FROM mail,client WHERE bin = ? OR id_client=?');
+        $req->execute(array(1, $id_utilisateur_co));
+        $val=$req->fetchAll();
+        $req->closeCursor();
+        return $val;
+
     }
 
     public static function delete($id_mail){
         $bdd=PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('UPDATE mail SET bin=1 WHERE id_mail= ?');
         $req->execute(array($id_mail));
+        $val=$req->fetchAll();
+        $req->closeCursor();
+        return $val;
+
     }
 }

@@ -17,7 +17,7 @@
 
                 <div class="profil_membre_equipe">
                     <div class="rond_image">
-                        <img src="view/assets/images/Guillaume-min.jpg" class="portrait" alt="unknown">
+                        <img src="view/assets/images/notreEquipe/Guillaume-min.jpg" class="portrait" alt="unknown">
                     </div>
                     <div class="detail_profil_equipe">
                         <div class="prenom_nom_equipe">
@@ -32,7 +32,7 @@
 
                 <div class="profil_membre_equipe">
                     <div class="rond_image">
-                        <img src="view/assets/images/Franck.jpg" class="portrait" alt="unknown">
+                        <img src="view/assets/images/notreEquipe/Franck.jpg" class="portrait" alt="unknown">
                     </div>
                     <div class="detail_profil_equipe">
                         <div class="prenom_nom_equipe">
@@ -47,7 +47,7 @@
 
                 <div class="profil_membre_equipe">
                     <div class="rond_image">
-                        <img src="view/assets/images/Vankevin.jpg" class="portrait" alt="unknown">
+                        <img src="view/assets/images/notreEquipe/Vankevin.jpg" class="portrait" alt="unknown">
                     </div>
                     <div class="detail_profil_equipe">
                         <div class="prenom_nom_equipe">
@@ -62,7 +62,7 @@
 
                 <div class="profil_membre_equipe">
                     <div class="rond_image">
-                        <img src="view/assets/images/Lucas.jpg" class="portrait" alt="unknown">
+                        <img src="view/assets/images/notreEquipe/Lucas.jpg" class="portrait" alt="unknown">
                     </div>
                     <div class="detail_profil_equipe">
                         <div class="prenom_nom_equipe">
@@ -77,7 +77,7 @@
 
                 <div class="profil_membre_equipe">
                     <div class="rond_image">
-                        <img src="view/assets/images/Alick.jpg" class="portrait" alt="unknown">
+                        <img src="view/assets/images/notreEquipe/Alick.jpg" class="portrait" alt="unknown">
                     </div>
                     <div class="detail_profil_equipe">
                         <div class="prenom_nom_equipe">
@@ -92,7 +92,7 @@
 
                 <div class="profil_membre_equipe">
                     <div class="rond_image">
-                        <img src="view/assets/images/Alex.jpg" class="portrait" alt="unknown">
+                        <img src="view/assets/images/notreEquipe/Alex.jpg" class="portrait" alt="unknown">
                     </div>
                     <div class="detail_profil_equipe">
                         <div class="prenom_nom_equipe">

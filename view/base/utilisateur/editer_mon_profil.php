@@ -17,6 +17,7 @@
         //var_dump($_SESSION["req"]);
 
         //var_dump($_SERVER['REQUEST_URI']);
+
     }
 ?>
 <script src="js/submitFormButton.js"></script>

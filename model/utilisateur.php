@@ -283,4 +283,32 @@ class utilisateur
         $req->execute();
         $req->closeCursor();
     }
+
+    //Fonction permettant de récupérer le nombre d'habitations d'une résidence
+    public static function getNumberOfHome($idResidence){
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT COUNT(*) FROM client_home_residence WHERE id_residence=? AND id_home IS NOT NULL');
+        $req->execute(array($idResidence));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val[0];
+    }
+
+    public static function getResidenceOfDomicile($idClient, $idHome){
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT COUNT(*) FROM client_home_residence WHERE id_home=? AND num_client=? AND id_residence IS NOT NULL');
+        $req->execute(array($idHome,$idClient));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val[0];
+    }
+
+    public static function getIDResidence($idHome){
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT id_residence FROM client_home_residence WHERE id_home=?');
+        $req->execute(array($idHome));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val[0];
+    }
 }

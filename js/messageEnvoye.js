@@ -15,7 +15,7 @@ $(document).ready(function () {
         var request=$.ajax(
             {
                 method: 'GET',
-                url: 'control/requestAJAX.php?function=data_messagerie',
+                url: 'model/requestAJAX.php?function=messageEnvoye',
                 data:{ idUser: idUser},
                 dataType:"json",
                 timeout:999999999
@@ -49,12 +49,12 @@ $(document).ready(function () {
                 var new_id_pic = "pic"+id_mail;
                 var new_id_delete = "delete"+id_mail;
 
-                
-                if (sender == id_utilisateur_co && id_client == id_utilisateur_co && corbeille==0){
 
+                if (sender == id_utilisateur_co && id_client == id_utilisateur_co && corbeille==0){
+                   $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
-                        "                <div onclick=\"window.location='#';\" class=\"case_message nouveau_message\" >\n" +
+                        "                <div onclick=\"window.location='#';\" class=\"case_message\" >\n" +
                         "                    <div class=\"rond_image petit_rond\">\n" +
                         "                        <img id=\"pic\" src=\"../../assets/images/gilbert.jpg\" alt=\"unknown\">\n" +
                         "                    </div>\n" +
@@ -92,15 +92,17 @@ $(document).ready(function () {
 
                 }
 
-
                 $(document).ready(function(){$("#boiteReception").click(function(){$(".adapt_content").empty()})});
                 $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
 
-                $(document).ready(function(){$("#"+new_id_delete).click(function(){$("#"+new_id_container).empty()})});  //location.href="index_mvc?target=messagerie&function=delete"
+
+                $(document).ready(function(){$("#"+new_id_delete).click(function(){$("#"+new_id_container).empty()})});
                 $(document).ready(function(){$("#"+new_id_delete).click(function(){location.href="index_mvc?target=messagerie&function=delete&id_mail="+id_mail})}); //bin prend la valeur 1 dans la bdd
+
 
             })
             });
+
 
 
         request.fail(function (msg) {

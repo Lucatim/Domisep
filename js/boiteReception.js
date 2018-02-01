@@ -31,7 +31,7 @@ $(document).ready(function () {
 
                 var sujet = e.subject;
                 var surname = e.surname;
-                var nom = e.nom;
+                var nom = e.name;
                 var picture = e.pic;
                 var message = e.mess;
                 var id_client = e.id_client;
@@ -53,12 +53,10 @@ $(document).ready(function () {
 
 
                 if (recipient == id_utilisateur_co && id_client == id_utilisateur_co && corbeille == 0){
-
-
-
+                    $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#boiteReception").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
-                        "                <div onclick=\"window.location='#';\" class=\"case_message nouveau_message\" >\n" +
+                        "                <div onclick=\"window.location='#';\" class=\"case_message\" >\n" +
                         "                    <div class=\"rond_image petit_rond\">\n" +
                         "                        <img id=\"pic\" src=\"../../assets/images/gilbert.jpg\" alt=\"unknown\">\n" +
                         "                    </div>\n" +
@@ -100,7 +98,7 @@ $(document).ready(function () {
                 $(document).ready(function(){$("#messageEnvoye").click(function(){$(".adapt_content").empty()})});
                 $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
 
-                $(document).ready(function(){$("#"+new_id_delete).click(function(){$("#"+new_id_container).empty()})});  //location.href="index_mvc?target=messagerie&function=delete"
+                 $(document).ready(function(){$("#"+new_id_delete).click(function(){$("#"+new_id_container).empty()})});  //location.href="index_mvc?target=messagerie&function=delete"
                 $(document).ready(function(){$("#"+new_id_delete).click(function(){location.href="index_mvc?target=messagerie&function=delete&id_mail="+id_mail})}); //bin prend la valeur 1 dans la bdd
 
 
@@ -114,25 +112,3 @@ $(document).ready(function () {
         });
     }
 });
-//index_mvc.php?target=utilisateur&function=data_capteur
-//control/utilisateur.php?function=data_capteur
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

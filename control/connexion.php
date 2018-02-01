@@ -141,11 +141,15 @@ switch ($function){
 
                     $_SESSION["date_register"]=$infoSlide["date_reg"]; // On stocke la date d'inscription dans la session
                     $_SESSION["date_register"] = helper::convertDate($_SESSION["date_register"]); // On convertit la date actuelle au bon format
+                    //var_dump($_SESSION["date_register"]);
+                    $_SESSION["date_log_first_connexion"]=$infoSlide["date_log"];
+
+                    $_SESSION["date_logged"]=connexion::getDatetimeNow($_SESSION["id"]);
 
                     $_SESSION["date_logged_actual"]=connexion::getDatetimeLastConnexion($_SESSION["id"]); // On récupère la dernière connexion de l'utilisateur avant celle actuelle
                     $_SESSION["date_logged_actual"] = helper::convertDateTime($_SESSION["date_logged_actual"]["date_log"]); // On convertit la date actuelle au bon format
                     //header("Refresh:0");
-                    var_dump(connexion::connexionFirst($_SESSION["id"]));
+                    //var_dump(connexion::connexionFirst($_SESSION["id"]));
                     $premConnexionOption=connexion::connexionFirst($_SESSION["id"])["first_log"];
                     if ($premConnexionOption==1){
                         echo 'test connexion first';

@@ -30,7 +30,7 @@
             <div class="groupe_grand_carre_image">
                 <div class="grand_carre_image">
                     <div class="carre_image">
-                        <img src="view/assets/images/nimporte_ou_index.jpg" alt="unknown" class="portrait">
+                        <img src="view/assets/images/index/nimporte_ou_index.jpg" alt="unknown" class="portrait">
 
                         <div class="bandeau_bas">
                             <p>Contrôler n'importe où</p>
@@ -40,7 +40,7 @@
 
                 <div class="grand_carre_image">
                     <div class="carre_image">
-                        <img src="view/assets/images/consommation-electricite.jpg" alt="unknown">
+                        <img src="view/assets/images/consommation/consommation-electricite.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Gérer la consommation</p>
@@ -50,7 +50,7 @@
 
                 <div class="grand_carre_image">
                     <div class="carre_image">
-                        <img src="view/assets/images/residence_index.jpg" alt="unknown">
+                        <img src="view/assets/images/index/residence_index.jpg" alt="unknown">
 
                         <div class="bandeau_bas">
                             <p>Adapté au gestionnaire</p>
@@ -65,37 +65,37 @@
         <div class="container_index">
             <h2>Notre solution</h2>
             <div class="groupe_carre_image">
-                <a href="domicile.html" class="carre_image">
-                    <img src="view/assets/images/messagerie_index.png" alt="unknown">
+                <div class="carre_image">
+                    <img src="view/assets/images/index/messagerie_index.png" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Messagerie privée</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/suivi_donnees_index.jpg" alt="unknown">
+                <div class="carre_image">
+                    <img src="view/assets/images/index/suivi_donnees_index.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Suivi des données</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/gestion_utilisateur_index.jpg" alt="unknown">
+                <div class="carre_image">
+                    <img src="view/assets/images/index/gestion_utilisateur_index.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Gestion des utilisateurs</p>
                     </div>
-                </a>
+                </div>
 
-                <a href="#" class="carre_image">
-                    <img src="view/assets/images/planifier_index.jpg" alt="unknown">
+                <div class="carre_image">
+                    <img src="view/assets/images/index/planifier_index.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Planifier des horaires</p>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>

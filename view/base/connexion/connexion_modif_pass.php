@@ -19,7 +19,7 @@
                         <input type="text" name="identifiant" class="label_input"/>
 
                         <div class="bouton_vert" id="bouton_vert_valider">
-                            <a href="connexion_password.html"><i class="material-icons">navigate_next</i>Valider</a>
+                            <a href="#"><i class="material-icons">navigate_next</i>Valider</a>
                         </div>
 
                         <input type="submit" hidden>

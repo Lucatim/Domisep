@@ -15,7 +15,7 @@ $(document).ready(function () {
         var request=$.ajax(
             {
                 method: 'GET',
-                url: 'control/requestAJAX.php?function=data_messagerie',
+                url: 'model/requestAJAX.php?function=corbeille',
                 data:{ idUser: idUser},
                 dataType:"json",
                 timeout:999999999
@@ -50,10 +50,10 @@ $(document).ready(function () {
 
 
                 if ( id_client == id_utilisateur_co && corbeille == "1"){
-                    $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
+                    //$(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
-                        "                <div onclick=\"window.location='#';\" class=\"case_message nouveau_message\" >\n" +
+                        "                <div onclick=\"window.location='#';\" class=\"case_message\" >\n" +
                         "                    <div class=\"rond_image petit_rond\">\n" +
                         "                        <img id=\"pic\" src=\"../../assets/images/gilbert.jpg\" alt=\"unknown\">\n" +
                         "                    </div>\n" +
@@ -94,5 +94,3 @@ $(document).ready(function () {
         });
     }
 });
-//index_mvc.php?target=utilisateur&function=data_capteur
-//control/utilisateur.php?function=data_capteur

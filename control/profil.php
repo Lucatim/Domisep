@@ -79,6 +79,7 @@ switch ($function){
             $name_file = pathinfo($_FILES['fichier']['name']);
             //$name_file = $_SESSION["profilSelect"]["id_client"] . '_' . helper::remove_accents($_SESSION["profilSelect"]["surname"]) . '_' . helper::remove_accents($_SESSION["profilSelect"]["name"]) . '.' . $name_file['extension'];
             $name_file = $_SESSION["profilSelect"]["id_client"] . '.' . $name_file['extension'];
+            echo($name_file);
 
             // Gestion de la supression des anciens fichiers pour éviter d'avoir des fichiers en double avec une extension différente
             // On récupère le chemin des fichiers
@@ -95,6 +96,7 @@ switch ($function){
                 }
             }
 
+            echo($_FILES['fichier']['name']);
             // On upload le nouveau fichier
             if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
             {
@@ -143,7 +145,7 @@ switch ($function){
             $_SESSION["prenom"] = $_SESSION["profilSelect"]["surname"];
             $_SESSION["nom"] = $_SESSION["profilSelect"]["name"];
             $_SESSION["img"]["pic"] = $_SESSION["profilSelect"]["pic"];
-            echo('<script src="js/refreshSlide.js" ></script>');
+            //echo('<script src="js/refreshSlide.js" ></script>');
         }
 
         require_once ("view/base/utilisateur/editer_mon_profil.php");
@@ -159,7 +161,7 @@ switch ($function){
         $anneereg=$datereg["year"];
 
         $jour=date('d');
-        $mois=date('m');
+        $mois=date('n');
         $annee=idate('Y');
 
         $tabl= array();
@@ -201,6 +203,33 @@ switch ($function){
         break;
 
     case "editer_mes_utilisateurs":
+
+        if(isset($_POST) && !empty($_POST))
+        {
+            if( isset($_POST["id_client1"]) && !empty($_POST["id_client1"])){
+                $full_name = mb_split(' ', $_POST["full_name1"]);
+
+                profil::UpdateAcces($_POST["id_client1"], $_POST["acces_utilisateur1"], $full_name[1], $full_name[0]);
+            }
+
+            if( isset($_POST["id_client2"]) && !empty($_POST["id_client2"])) {
+                $full_name = mb_split(' ', $_POST["full_name2"]);
+
+                profil::UpdateAcces($_POST["id_client2"], $_POST["acces_utilisateur2"], $full_name[1], $full_name[0]);
+            }
+
+            if(isset($_POST["id_client3"]) && !empty($_POST["id_client3"])) {
+                $full_name = mb_split(' ', $_POST["full_name3"]);
+
+                profil::UpdateAcces($_POST["id_client3"], $_POST["acces_utilisateur3"], $full_name[1], $full_name[0]);
+            }
+
+        }
+        $IDutilisateurs_seondaires = profil::getUtilisateursSecondairesID($_SESSION["id"]);
+        $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1'] = profil::getUtilisateurSecondaireInfo($IDutilisateurs_seondaires['id_second_client_1']);
+        $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2'] = profil::getUtilisateurSecondaireInfo($IDutilisateurs_seondaires['id_second_client_2']);
+        $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3'] = profil::getUtilisateurSecondaireInfo($IDutilisateurs_seondaires['id_second_client_3']);
+
         require_once ("view/base/utilisateur/editer_mes_utilisateurs.php");
         break;
 

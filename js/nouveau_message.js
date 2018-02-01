@@ -34,7 +34,7 @@ function validateForm()
         message.includes("UPDATE")||
         message.includes("INSERT")||
         message.includes("INTO")){
-        alert("tentative de hack détectée");
+        alert("Message invalide");
 
         return false;
     }

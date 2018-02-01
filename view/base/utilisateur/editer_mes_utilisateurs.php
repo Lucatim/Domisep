@@ -1,230 +1,158 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Lucas
- * Date: 15/12/2017
- * Time: 12:25
- */
+if (isset($_SESSION["profilSelect"]) && !empty($_SESSION["profilSelect"]))
+{
+    $profil = $_SESSION["profilSelect"];
+}
+if (isset($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1']) && !empty($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1']))
+{
+    $utilisateur_sec1 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1'];
+}
+if (isset($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2']) && !empty($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2']))
+{
+    $utilisateur_sec2 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2'];
+}
+if (isset($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3']) && !empty($_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3']))
+{
+    $utilisateur_sec3 = $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3'];
+}
+
 ?>
+
+<script src="js/submitFormButton.js"></script>
 
 <section id="content">
     <div id="bloc_content">
         <div id="container_principal">
-            <h2>Editer mes utilisateurs</h2>
+            <form class="input_radio" id="form_fake_button" method="post" action="index_mvc.php?target=profil&function=editer_mes_utilisateurs">
+                <h2>Editer mes utilisateurs</h2>
 
-            <div class="groupe_rond_image_txt">
-                <div class="rond_image_txt">
-                    <div class="container_edit_image">
-                        <div class="rond_image opacity_edit_image">
-                            <img src="view/assets/images/gilbert.jpg" alt="unknown">
-                        </div>
+                <div class="groupe_rond_image_txt">
+                    <?php if(isset($profil) && !empty($profil)) {
+                        echo('
+                        <div class="rond_image_txt">
+                            <div class="rond_image">
+                                <img src="' . $profil['pic'] . '" alt="unknown">
+                            </div>
+                                
+                            <div class="titre_rond_image">
+                                <p>' . $profil['surname'] . ' ' . $profil['name'] . '</p>
+                            </div>
+                            
+                            <div class="div_select">
+                            <select title="acces_utilisateur" name="acces_utilisateur">
+                                <option value="" disabled selected>Accès total</option>
+                            </select>
+                            </div>
+                        </div>');
+                    }
+                    ?>
 
-                        <div class="material-icons_edit">
-                            <a href="#"><i class="material-icons">edit</i></a>
-                        </div>
+                    <?php if(isset($utilisateur_sec1) && !empty($utilisateur_sec1)) {
+                        echo('
+                        <div class="rond_image_txt">
+                            <div class="rond_image">
+                                <img src="' . $utilisateur_sec1['pic'] . '" alt="unknown">
+                            </div>
+                            
+                            <input title="name" type="text" name="full_name1" value="'. $utilisateur_sec1['surname'] . ' ' . $utilisateur_sec1['name'] .'" class="label_input">
+                            <input type="text" name="id_client1" value="'.$utilisateur_sec1["id_client"].'" hidden>');
+                        if($utilisateur_sec1["acces_client"] == 1)
+                            echo('
+                                    <div class="div_select">
+                                        <select title="acces_utilisateur" name="acces_utilisateur1">
+                                             <option value="1" selected>Accès total</option>
+                                             <option value="0">Accès limité</option>
+                                        </select>
+                                    </div>
+                                ');
+                        else
+                            echo('
+                                    <div class="div_select">
+                                        <select title="acces_utilisateur" name="acces_utilisateur1">
+                                             <option value="1">Accès total</option>
+                                             <option value="0" selected>Accès limité</option>
+                                        </select>
+                                    </div>
+                                ');
+                        echo('</div>');
+                    }
+                    ?>
+
+                    <?php if(isset($utilisateur_sec2) && !empty($utilisateur_sec2)) {
+                        echo('
+                            <div class="rond_image_txt">
+                                <div class="rond_image">
+                                    <img src="' . $utilisateur_sec2['pic'] . '" alt="unknown">
+                                </div>
+            
+                                    <input title="name" type="text" name="full_name2" value="'. $utilisateur_sec2['surname'] . ' ' . $utilisateur_sec2['name'] .'" class="label_input">
+                                    <input type="text" name="id_client2" value="'.$utilisateur_sec2["id_client"].'" hidden>');
+                        if($utilisateur_sec2["acces_client"] == 1)
+                            echo('
+                                    <div class="div_select">
+                                        <select title="acces_utilisateur" name="acces_utilisateur2">
+                                            <option value="1" selected>Accès total</option>
+                                            <option value="0">Accès limité</option>
+                                         </select>
+                                    </div>
+                                    ');
+                        else
+                            echo('
+                                    <div class="div_select">
+                                        <select title="acces_utilisateur" name="acces_utilisateur2">
+                                            <option value="1">Accès total</option>
+                                            <option value="0" selected>Accès limité</option>
+                                        </select>
+                                    </div>
+                                    ');
+                        echo('</div>');
+                    }
+                    ?>
+
+                    <?php if(isset($utilisateur_sec3) && !empty($utilisateur_sec3)) {
+                        echo('
+                                <div class="rond_image_txt">
+                                    <div class="rond_image">
+                                        <img src="' . $utilisateur_sec3['pic'] . '" alt="unknown">
+                                    </div>
+                
+                                        <input title="name" type="text" name="full_name3" value="'. $utilisateur_sec3['surname'] . ' ' . $utilisateur_sec3['name'] .'" class="label_input">
+                                        <input type="text" name="id_client3" value="'.$utilisateur_sec3["id_client"].'" hidden>');
+
+                        if($utilisateur_sec3["acces_client"] == 1)
+                            echo('
+                                    <div class="div_select">
+                                        <select title="acces_utilisateur" name="acces_utilisateur3">
+                                            <option value="1" selected>Accès total</option>
+                                            <option value="0">Accès limité</option>
+                                         </select>
+                                    </div>
+                                        ');
+                        else
+                            echo('
+                                    <div class="div_select">
+                                        <select title="acces_utilisateur" name="acces_utilisateur3">
+                                            <option value="1">Accès total</option>
+                                            <option value="0" selected>Accès limité</option>
+                                        </select>
+                                    </div>
+                                        ');
+                        echo('</div>');
+                    }
+                    ?>
+                </div>
+                <input type="submit" hidden>
+            </form>
+                <div class="groupe_bouton_vert">
+                    <div class="bouton_vert">
+                        <a id="bouton_vert_valider" href="index_mvc.php?target=profil&function=editer_mes_utilisateurs"><i class="material-icons">save</i>Valider</a>
                     </div>
 
-                    <form>
-                        <input title="address" type="text" name="Adresse" value="Gigi" class="label_input">
-                    </form>
-
-                    <div class="div_select">
-                        <select title="acces_utilisateur" name="acces_utilisateur">
-                            <option value="" disabled selected>Accès total</option>
-                        </select>
+                    <div class="bouton_vert bouton_gris">
+                        <a href="index_mvc.php?target=profil"><i class="material-icons">undo</i>Retour</a>
                     </div>
                 </div>
-
-                <div class="rond_image_txt">
-                    <div class="container_edit_image">
-                        <div class="rond_image opacity_edit_image">
-                            <img src="view/assets/images/avatar_user_1.jpg" class="portrait" alt="unknown">
-                        </div>
-
-                        <div class="material-icons_edit">
-                            <a href="#"><i class="material-icons">edit</i></a>
-                        </div>
-                    </div>
-
-                    <form>
-                        <input title="address" type="text" name="Adresse" value="Van-Kévin Suy" class="label_input">
-                    </form>
-
-                    <div class="div_select">
-                        <select title="acces_utilisateur" name="acces_utilisateur">
-                            <option value="" disabled selected>Accès</option>
-                            <option value="total">Accès total</option>
-                            <option value="limite">Accès limité</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="rond_image_txt">
-                    <div class="container_edit_image">
-                        <div class="rond_image opacity_edit_image">
-                            <img src="view/assets/images/lucas.jpg" class="portrait" alt="unknown">
-                        </div>
-
-                        <div class="material-icons_edit">
-                            <a href="#"><i class="material-icons">edit</i></a>
-                        </div>
-                    </div>
-
-                    <form>
-                        <input title="address" type="text" name="Adresse" value="Lucas Quéant" class="label_input">
-                    </form>
-
-                    <div class="div_select">
-                        <select title="acces_utilisateur" name="acces_utilisateur">
-                            <option value="" disabled selected>Accès</option>
-                            <option value="total">Accès total</option>
-                            <option value="limite">Accès limité</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <h2>Accès total</h2>
-
-            <p>Il n'est pas possible d'éditer les droits d'un utilisateur avec un accès total.</p>
-
-            <h2>Accès limité</h2>
-
-            <p class="texte_gras">Mon profil</p>
-            <div class="balise_form_flex_50">
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_profil" class="checkbox">
-                        <label for="item_voir_profil">Voir mon profil</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_editer_profil" class="checkbox">
-                        <label for="item_editer_profil">Editer mon profil</label>
-                    </div>
-                </form>
-            </div>
-
-            <p class="texte_gras">Messagerie</p>
-            <div class="balise_form_flex_50">
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_messagerie" class="checkbox">
-                        <label for="item_voir_messagerie">Voir ma messagerie</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_editer_messagerie" class="checkbox">
-                        <label for="item_editer_messagerie">Gerer ma messagerie</label>
-                    </div>
-                </form>
-            </div>
-
-            <p class="texte_gras">Gérer mon domicile</p>
-            <div class="balise_form_flex_50">
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_domicile_residence" class="checkbox">
-                        <label for="item_gerer_domicile_residence">Gérer mes domiciles / résidences</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_capteur" class="checkbox">
-                        <label for="item_gerer_capteur">Gérer mes capteurs</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_consommation" class="checkbox">
-                        <label for="item_voir_consommation">Voir ma consommation</label>
-                    </div>
-                </form>
-            </div>
-
-            <p class="texte_gras">Mes capteurs</p>
-            <div class="balise_form_flex_50">
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_temperature" class="checkbox">
-                        <label for="item_voir_temperature">Voir ma température</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_temperature" class="checkbox">
-                        <label for="item_gerer_temperature">Gérer ma température</label>
-                    </div>
-                </form>
-
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_humidite" class="checkbox">
-                        <label for="item_voir_humidite">Voir mon humidité</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_humidite" class="checkbox">
-                        <label for="item_gerer_humidite">Gérer mon humidité</label>
-                    </div>
-                </form>
-
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_pression" class="checkbox">
-                        <label for="item_voir_pression">Voir ma pression</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_pression" class="checkbox">
-                        <label for="item_gerer_pression">Gérer ma pression</label>
-                    </div>
-                </form>
-
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_lumiere" class="checkbox">
-                        <label for="item_voir_lumiere">Voir ma lumière</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_lumiere" class="checkbox">
-                        <label for="item_gerer_lumiere">Gérer ma lumière</label>
-                    </div>
-                </form>
-
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_fumee" class="checkbox">
-                        <label for="item_voir_fumee">Voir mon détecteur de fumée</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_fumee" class="checkbox">
-                        <label for="item_gerer_fumee">Gérer mon détecteur de fumée</label>
-                    </div>
-                </form>
-
-                <form>
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_voir_intrusions" class="checkbox">
-                        <label for="item_voir_intrusions">Voir mes intrusions</label>
-                    </div>
-
-                    <div class="container_checkbox_label">
-                        <input title="address" type="checkbox" id="item_gerer_intrusions" class="checkbox">
-                        <label for="item_gerer_intrusions">Gérer mes intrusions</label>
-                    </div>
-                </form>
-            </div>
-
-            <div class="groupe_bouton_vert">
-                <div class="bouton_vert">
-                    <a href="index_mvc.php?target=profil"><i class="material-icons">save</i>Valider</a>
-                </div>
-
-                <div class="bouton_vert bouton_gris">
-                    <a href="index_mvc.php?target=profil"><i class="material-icons">undo</i>Retour</a>
-                </div>
-            </div>
 
         </div>
     </div>
-</section>
+    </section>
