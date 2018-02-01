@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    debugger;
+    //debugger;
     //Ajax liste utilisateur
     var request=$.ajax(
         {
@@ -11,7 +11,7 @@ $(document).ready(function () {
         });
 
     request.done(function(d) {
-        debugger;
+        //debugger;
         console.log("coucou la requete est fini");
         //var labels=[];
         //var series=[];
@@ -19,7 +19,7 @@ $(document).ready(function () {
         var data=[];
 
         d.forEach(function (e) {
-            debugger;
+            //debugger;
             var objectData={};
             objectData.id=e.id_client;
             objectData.text=e.name;
@@ -35,7 +35,7 @@ $(document).ready(function () {
     });
 
     request.fail(function (msg) {
-        debugger;
+        //debugger;
         console.log("coucou ca marche pas");
     });
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
         });
 
     requestResidence.done(function(d) {
-        debugger;
+        //debugger;
         //console.log("coucou la requete est fini");
         //var labels=[];
         //var series=[];
@@ -58,7 +58,7 @@ $(document).ready(function () {
         var data=[];
 
         d.forEach(function (e) {
-            debugger;
+            //debugger;
             var objectData={};
             objectData.id=e.id_residence;
             objectData.text=e.name;
@@ -74,7 +74,7 @@ $(document).ready(function () {
     });
 
     requestResidence.fail(function (msg) {
-        debugger;
+        //debugger;
         console.log("coucou ca marche pas");
     });
 

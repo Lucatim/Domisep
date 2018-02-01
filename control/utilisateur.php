@@ -9,6 +9,7 @@
 require_once 'model/PdoDomisep.php';
 require_once 'model/connexion.php';
 require_once 'model/utilisateur.php';
+require_once 'model/helper.php';
 
 //include_once ('view/base/header.php');
 
@@ -53,6 +54,7 @@ switch ($function){
     case "capteur":
         if (isset($_GET["capteur"])&& !empty($_GET["capteur"])){
             $_SESSION["capteurSelect"]=utilisateur::getCaracteristiqueCapteur($_GET["capteur"]);
+            $_SESSION["nbCapteursHome"]=utilisateur::getNombreCapteurDomicile($_GET["capteur"]);
             require_once ("view/base/utilisateur/gerer_mon_domicile/capteur.php");
         }
 
@@ -83,6 +85,7 @@ switch ($function){
             $idListPiece=utilisateur::getPieceListFromPiece($_GET["piece"]);
             $_SESSION["pieceSelect"]=utilisateur::getCaracteristiquePiece($idListPiece["id_room_list"]);
             $_SESSION["pieceSelect"]["capteurs"]=utilisateur::getCapteursPiece($_GET["piece"]);
+            $_SESSION["nbCapteursPiece"]=utilisateur::getNombreCapteurPiece($_GET["piece"]);
             require_once ("view/base/utilisateur/gerer_mon_domicile/piece.php");
         }
         break;

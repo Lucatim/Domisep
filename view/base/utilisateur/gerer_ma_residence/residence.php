@@ -7,11 +7,11 @@
  */
 ?>
 <?php if (isset($_SESSION["residenceSelect"]) && !empty($_SESSION["residenceSelect"])){
-    var_dump($_SESSION["residenceSelect"]);
+    //var_dump($_SESSION["residenceSelect"]);
 
     $res=$_SESSION["residenceSelect"];
 
-    var_dump($_SESSION["numberOfHome"]);
+    //var_dump($_SESSION["numberOfHome"]);
 ?>
 <section id="content">
     <div id="bloc_content">

@@ -43,7 +43,7 @@ switch ($function){
             //var_dump($id);
             if($id){
                 $firstCon=connexion::connexionFirst($id[0]);
-                var_dump(connexion::connexionFirst($id[0]));
+                //var_dump(connexion::connexionFirst($id[0]));
                 if($firstCon[0]==true){
                     require_once("view/base/connexion/connexion_first.php");
                     break;
@@ -124,7 +124,7 @@ switch ($function){
 
     //verification du mot de passe
     case "verif_pass":
-        var_dump($_SESSION);
+        //var_dump($_SESSION);
         if(!empty($_POST["identifiant"])&&isset($_POST["identifiant"])){
 
             $pass=connexion::verifPass($_SESSION["id"],$_POST["identifiant"]);

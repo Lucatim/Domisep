@@ -20,7 +20,7 @@ $(document).ready(function () {
         });
 
     request.done(function(d) {
-        debugger;
+        //debugger;
         console.log("coucou la requete est fini");
         //var labels=[];
         //var series=[];
@@ -28,7 +28,7 @@ $(document).ready(function () {
         var data=[];
 
         d.forEach(function (e) {
-            debugger;
+            //debugger;
             var objectData={};
             objectData.id=e.id_room_list;
             objectData.text=e.name;
@@ -44,7 +44,7 @@ $(document).ready(function () {
     });
 
     request.fail(function (msg) {
-        debugger;
+        //debugger;
         console.log("coucou ca marche pas");
     });
 });

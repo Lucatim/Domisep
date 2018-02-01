@@ -14,6 +14,9 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
     //ini_set('xdebug.var_display_max_depth', 15);
 
     $piece=$_SESSION["pieceSelect"];
+    $domi = $_SESSION["domiSelect"];
+    var_dump($piece);
+    //var_dump($_SESSION["nbCapteursPiece"]);
     //var_dump($piece)
     ?>
 
@@ -28,10 +31,10 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                 ?>
                 <div class="groupe_carre_image_texte_droite">
                     <div class="grand_carre_image">
-                        <div class="carre_image red">
-                            <img src="<?php //echo($capteur["pic"]); ?>" alt="unknown">
+                        <div class="carre_image">
+                            <img src="view/assets/images/pieces/<?php echo (strtolower($piece["name"])) ?>.jpg" alt="unknown">
 
-                            <div class="bandeau_bas red">
+                            <div class="bandeau_bas">
                                 <p><?php echo ($piece["name"]); ?></p>
                             </div>
                         </div>
@@ -47,7 +50,7 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                             ?>
                         </ul>
 
-                        <p>Nombre de capteurs : <span class="texte_gris">XX</span></p>
+                        <p>Nombre de capteurs : <span class="texte_gris"><?php echo($_SESSION["nbCapteursPiece"]) ?></span></p>
                     </div>
                 </div>
                 <?php
@@ -75,8 +78,9 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                     </div>
 
                 <?php } ?>
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">mode_edit</i>Editer mon capteur</a>
+
+                <div class="bouton_vert bouton_gris">
+                    <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo $domi['id_home'] ?>"><i class="material-icons">undo</i>Retour</a>
                 </div>
 
                 <hr>

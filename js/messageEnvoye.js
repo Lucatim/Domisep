@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    debugger;
+    //debugger;
     var idUser=idUtilisateur;
     console.log("coucou je suis dedans");
 
     ajaxMSG();
 
     $("#messageEnvoye").click(function (e) {
-        debugger;
+        //debugger;
         e.preventDefault();
         ajaxMSG();
     });
@@ -22,11 +22,11 @@ $(document).ready(function () {
             });
 
         request.done(function(d) {
-            debugger;
+            //debugger;
             console.log("coucou la requete est fini");
 
             d.forEach(function (e) {
-                 debugger;
+                 //debugger;
 
 
                 var sujet = e.subject;
@@ -106,7 +106,7 @@ $(document).ready(function () {
 
 
         request.fail(function (msg) {
-            debugger;
+            //debugger;
             console.log("coucou ca marche pas");
         });
     }

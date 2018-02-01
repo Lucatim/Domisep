@@ -26,9 +26,9 @@
                         if($i==0){
                             ?>
 
-                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($domicile["id_home"])?>" class="carre_image red">
-                                <img src="view/assets/images/domicile/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
-                                <div class="bandeau_bas red">
+                            <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($domicile["id_home"])?>" class="carre_image">
+                                <img src="view/assets/images/domicile/domicile-<?php echo($domicile["id_home"]) ?>.jpg" alt="unknown">
+                                <div class="bandeau_bas">
                                     <p><?php echo ($domicile["name"])?></p>
                                 </div>
                             </a>
@@ -38,7 +38,7 @@
                         else{
                             ?>
                             <a href="index_mvc.php?target=utilisateur&function=domicile&home=<?php echo ($domicile["id_home"])?>" class="carre_image">
-                                <img src="view/assets/images/domicile/domicile-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
+                                <img src="view/assets/images/domicile/domicile-<?php echo($domicile["id_home"]) ?>.jpg" alt="unknown">
 
                                 <div class="bandeau_bas">
                                     <p><?php echo ($domicile["name"])?></p>

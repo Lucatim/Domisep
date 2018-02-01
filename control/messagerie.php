@@ -24,8 +24,8 @@ switch ($function) {
     break;
 
     case "Nouveau":
-    var_dump($_POST);
-    var_dump($_SESSION);
+    //var_dump($_POST);
+    //var_dump($_SESSION);
     $num_client =$_SESSION['id'];
     $sender = $_SESSION['id'];
     $mess = $_POST['mess'];
@@ -38,8 +38,8 @@ switch ($function) {
     break;
 
     case "reception":
-     var_dump($_POST);
-     var_dump($_SESSION);
+     //var_dump($_POST);
+     //var_dump($_SESSION);
      $id_utilisateur_co = $_SESSION['id'];
      messagerie::recupMSG($id_utilisateur_co);
      require_once("view/base/messagerie/messagerie.php");
@@ -63,8 +63,8 @@ switch ($function) {
     break;
 
     case "delete":
-    var_dump($_POST);
-    var_dump($_SESSION);
+    //var_dump($_POST);
+    //var_dump($_SESSION);
     $id_mail = $_GET['id_mail'];
     messagerie::delete($id_mail);
     //messagerie::insertMSG();

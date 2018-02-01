@@ -28,10 +28,10 @@ if (isset($_SESSION["residenceSelectUser"]) && !empty($_SESSION["residenceSelect
 
             <div class="groupe_carre_image_texte_droite">
                 <div class="grand_carre_image">
-                    <div class="carre_image red">
+                    <div class="carre_image">
                         <img src="view/assets/images/domicile/domicile-<?php echo($domi['id_home']) ?>.jpg" alt="unknown">
 
-                        <div class="bandeau_bas red">
+                        <div class="bandeau_bas">
                             <p>
                                 <?php
                                     echo ($domi['name']);
@@ -65,6 +65,10 @@ if (isset($_SESSION["residenceSelectUser"]) && !empty($_SESSION["residenceSelect
                 }
                 ?>
             </div>
+
+            <div class="bouton_vert bouton_gris">
+                <a href="index_mvc.php?target=utilisateur"><i class="material-icons">undo</i>Retour</a>
+            </div>
 <?php /*
             <div class="bouton_vert">
                 <a href="#"><i class="material-icons">mode_edit</i>Editer</a>
@@ -80,7 +84,7 @@ if (isset($_SESSION["residenceSelectUser"]) && !empty($_SESSION["residenceSelect
                 //Condition changement cadre rouge si capteur defectueux
                 //Gere lien direction piece
                 echo ("<a href='index_mvc.php?target=utilisateur&function=piece&piece=".$piece["id_room"]."' class=\"carre_image\">
-                    <img src=\"view/assets/images/pieces/".$piece["name"].".jpg\" alt=\"unknown\">
+                    <img src=\"view/assets/images/pieces/".helper::remove_accents($piece["name"]).".jpg\" alt=\"unknown\">
 
                     <div class=\"bandeau_bas\">
                         <p>".$piece["name"]."</p>

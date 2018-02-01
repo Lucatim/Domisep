@@ -221,19 +221,17 @@ CREATE TABLE sensor_room (
 /*
 Insert
 */
-
-/*Insert Admin*/
+/******************************************************************/
+/*                       INSERT ADMIN                            */
+/*****************************************************************/
+/* MOT DE PASSE A MODIFIER SI BESOIN, VOIR MANUEL DE DEPLOIEMENT */
+/* REMPLACER LE MOT DE PASSE 'admin' PAR VOTRE MOT DE PASSE      */
 INSERT INTO client(pass,surname,name,first_log,admin) VALUES(SHA2('admin',0),'Admin','ADMIN',FALSE,TRUE);
 
 /*Insert Manager*/
 INSERT INTO client(pass,surname,name,first_log,manager) VALUES(SHA2('jul',0),'Jul','OVNI',FALSE,TRUE);
 
-
-  /*pic varchar(128),*/
 /* User1 */
-/*INSERT INTO client(pass,surname,name) VALUES('gigi','Gilbert','MONTAGNE');*/
-/*INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_sub_list,discount)
-    VALUES ('2012-11-05','2017-02-24 23:42:16','gigi','Gilbert','MONTAGNE','0','view/assets/images/gilbert.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538',2,20);*/
 INSERT INTO client(date_reg,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
     VALUES ('2012-11-05',SHA2('gigi',0),'Gilbert','MONTAGNE','1','view/assets/images/unknown.jpg','1951-12-28','Rue de la clairvoyance','Paris','75001','France','gilbert.montagne@gmail.com','g.montagne@stars80.fr','0603789466','0145789538','4','5',2,20);
 
@@ -251,10 +249,6 @@ INSERT INTO client(pass,surname,name,first_log) VALUES(SHA2('fm',0),'Franck','ME
 /* User3 */
 INSERT INTO client(pass,surname,name,first_log) VALUES(SHA2('ap',0),'Alexandre','PRADIER',FALSE);
 
-/* UserManuelUtilisateur */
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
-    VALUES ('2018-01-29','2017-02-24 23:42:16','0000','Henri','Martin','1','view/assets/images/Henri.jpg','1952-04-01','42 avenue de Friedland','Paris','75008','France','henri.martin@gmail.com','h.martin@vivendi.com','0603789466','0145789538','4','5',2,20);
-
 /* Home1 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
@@ -270,7 +264,7 @@ INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,2,2)
 INSERT INTO client_home_residence(num_client,id_home) VALUES(3,3);
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(4,1,3);
 
-INSERT INTO sensor_list(name,pic,unite) VALUES('Température','view/assets/images/capteurs/capteur_temperature.jpg','°C'),('Humidité','view/assets/images/capteurs/capteur_humidite.jpg',''),('Pression','view/assets/images/capteurs/capteur_pression.jpg','Bar'),('Lumière','view/assets/images/capteurs/capteur_lumiere.jpg','Lumens'),('Fumée','view/assets/images/capteurs/capteur_fumee.jpg','Feu'),('Intrusion','view/assets/images/capteurs/capteur_intrusion.jpg',NULL);
+INSERT INTO sensor_list(name,pic,unite) VALUES('Température','view/assets/images/capteurs/capteur_temperature.jpg','°C'),('Humidité','view/assets/images/capteurs/capteur_humidite.jpg','%'),('Pression','view/assets/images/capteurs/capteur_pression.jpg','Bar'),('Lumière','view/assets/images/capteurs/capteur_lumiere.jpg','Lumens'),('Fumée','view/assets/images/capteurs/capteur_fumee.jpg',NULL),('Intrusion','view/assets/images/capteurs/capteur_intrusion.jpg',NULL);
 
 INSERT INTO room_list(name) VALUES('Salon'),('Cuisine'),('Chambre'),('Salle de Bain'),('Bureau'),('Couloir'),('Entrée'),('Toilettes'),('Buanderie'),('Salle à manger'),('Grenier'),('Garage'),('Cellier'),('Salle Cinéma'),('Cave');
 
@@ -278,6 +272,7 @@ INSERT INTO room(id_home,id_room_list) VALUES (1,1);
 INSERT INTO room(id_home,id_room_list) VALUES (1,11);
 
 INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (1,1,20);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (1,2,20);
 
 /* Jeu essai donnée graph capteur */
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,16,CURDATE());
@@ -286,7 +281,7 @@ INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,12,"2017-12-19");
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,26,"2017-12-12");
 
 /*Jeu essai Residence*/
-INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Reubell","Rue de la soif 1","Paris","75005","France");
+INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Reubell","17 avenue des fleurs","Paris","75005","France");
 INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Lodge","Rue de la soif 2","Paris","75005","France");
 INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Overlook","Rue de la soif 3","Paris","75005","France");
 
@@ -299,10 +294,70 @@ INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (1,3
 INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (2,3,3,0,"Mes données","hello world");
 INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (3,3,3,0,"Mon compte en ligne","hello world");
 
-
-
-
 INSERT INTO sub_list(name,price) VALUES ('Standard',30);
 INSERT INTO sub_list(name,price) VALUES ('Premium',50);
 
+/************************/
+/* DEMONSTRATION CLIENT */
+/************************/
 
+/* UTILISATEUR PRINCIPAL */
+INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
+    VALUES ('2018-01-29','2017-02-24 23:42:16',SHA2('0000',0),'Henri','Martin','1','view/assets/images/Henri.jpg','1952-04-01','42 avenue de Friedland','Paris','75008','France','henri.martin@gmail.com','h.martin@vivendi.com','0603789466','0145789538','9','10',2,20);
+
+/* UTILISATEUR SECONDAIRE 1 */
+INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
+    VALUES (SHA2('1111',0),'Sophia','Davinski','view/assets/images/client/9.jpg','1','1');
+
+/* UTILISATEUR SECONDAIRE 2 */
+INSERT INTO client(pass,surname,name,pic,second_client,acces_client)
+    VALUES (SHA2('2222',0),'Jean','Kévin','view/assets/images/client/10.jpg','1','0');
+
+/* ADMIN */
+INSERT INTO client(pass,surname,name,first_log,admin) VALUES(SHA2('admin',0),'Dominique','Hyzep',FALSE,TRUE);
+
+/* MANAGER */
+INSERT INTO client(pass,surname,name,first_log,manager) VALUES(SHA2('manager',0),'Jean-Pierre','Dacotta',FALSE,TRUE);
+
+/* DOMICILE 1 POUR UTILISATEUR PRINCIPAL */
+INSERT INTO home(name,number_user) VALUES('Villa de Boulogne',3); /* Les informations du domicile seront données par la résidence */
+
+/* DOMICILE VIDE POUR UTILISATEUR PRINCIPAL */
+INSERT INTO home(name,addr,post_code,country,number_user) VALUES('Maison de vacances','Avenue de la plage',40200,'France',3);
+
+/* ATTRIBUT DU DOMICILE 1 */
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(8,4,1);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(9,4,1);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(10,4,1);
+
+/* ATTRIBUT DU DOMICILE VIDE */
+INSERT INTO client_home_residence(num_client,id_home) VALUES(8,5);
+INSERT INTO client_home_residence(num_client,id_home) VALUES(9,5);
+INSERT INTO client_home_residence(num_client,id_home) VALUES(10,5);
+
+/* PIECES */
+INSERT INTO room(id_home,id_room_list) VALUES (4,1);
+INSERT INTO room(id_home,id_room_list) VALUES (4,2);
+INSERT INTO room(id_home,id_room_list) VALUES (4,3);
+INSERT INTO room(id_home,id_room_list) VALUES (4,4);
+INSERT INTO room(id_home,id_room_list) VALUES (4,5);
+INSERT INTO room(id_home,id_room_list) VALUES (4,6);
+INSERT INTO room(id_home,id_room_list) VALUES (4,7);
+INSERT INTO room(id_home,id_room_list) VALUES (4,8);
+INSERT INTO room(id_home,id_room_list) VALUES (4,9);
+INSERT INTO room(id_home,id_room_list) VALUES (4,10);
+INSERT INTO room(id_home,id_room_list) VALUES (4,11);
+INSERT INTO room(id_home,id_room_list) VALUES (4,12);
+INSERT INTO room(id_home,id_room_list) VALUES (4,13);
+INSERT INTO room(id_home,id_room_list) VALUES (4,14);
+INSERT INTO room(id_home,id_room_list) VALUES (4,15);
+
+/* CAPTEURS */
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (1,1,6);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (2,1,20);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (3,1,10);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (4,2,23);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (4,3,18);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (4,4,22);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (4,5,0);
+INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (4,6,0);

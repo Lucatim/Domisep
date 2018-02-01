@@ -9,11 +9,11 @@
 if ((isset($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"])&& !empty($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]))) {
     //$numCapteur=$_GET["capteur"];
     //ini_set('xdebug.var_display_max_depth', 15);
-    var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]);
+    //var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]);
 
     $piece=$_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"];
 
-    var_dump($piece);
+    //var_dump($piece);
     //var_dump($piece)
     ?>
 

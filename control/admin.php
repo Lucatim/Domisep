@@ -24,11 +24,11 @@ switch ($function){
 
     case "ajouter_utilisateur":
 
-        var_dump($_POST);
+        //var_dump($_POST);
         if(isset($_POST)&&!empty($_POST)) {
             $data = $_POST;
             $_SESSION["ajouter_utilisateur"] = $_POST;
-            var_dump($data);
+            //var_dump($data);
 
 
             //Verification que tous les champs soient remplis
@@ -62,7 +62,7 @@ switch ($function){
         break;
 
     case "recherche_utilisateur":
-        var_dump($_POST);
+        //var_dump($_POST);
         if (isset($_POST["id_utilisateur"])&&!empty($_POST["id_utilisateur"])){
             $idUtilisateur=$_POST["id_utilisateur"];
             $_SESSION["utilisateur_selection"]=profil::getProfilComplet($idUtilisateur);
@@ -107,8 +107,8 @@ switch ($function){
         //var_dump($_SESSION["utilisateur_selection"]);
         //var_dump($_POST);
         if (isset($_POST)&&!empty($_POST)){
-            var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]);
-            var_dump($_POST);
+            //var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]);
+            //var_dump($_POST);
             admin::ajouterPiece($_SESSION["utilisateur_selection"]["domicile_selection"]["id_home"],$_POST["id_type_piece"]);
             //var_dump($_SESSION["utilisateur_selection"]);
             //var_dump($_POST);
@@ -140,8 +140,8 @@ switch ($function){
 
     case "ajouter_capteur_form":
         if(isset($_POST)&&!empty($_POST)){
-            var_dump($_POST);
-            var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]);
+            //var_dump($_POST);
+            //var_dump($_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]);
             //$_POST["id_type_capteur"];
             $piece=$_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"];
             admin::ajouterCapteur($piece["idPiece"],$_POST["id_type_capteur"]);

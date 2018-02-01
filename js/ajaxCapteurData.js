@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    debugger;
+    //debugger;
     var idCapteur=idCapteurPage;
     console.log("coucou je suis dedans");
 var request=$.ajax(
@@ -12,13 +12,13 @@ var request=$.ajax(
     });
 
     request.done(function(d) {
-        debugger;
+        //debugger;
         console.log("coucou la requete est fini");
         var labels=[];
         var series=[];
 
         d.forEach(function (e) {
-            debugger;
+            //debugger;
             labels.push(e.date_sensor);
             series.push(e.data);
 
@@ -39,7 +39,7 @@ var request=$.ajax(
     });
 
 request.fail(function (msg) {
-    debugger;
+    //debugger;
     console.log("coucou ca marche pas");
 })
 

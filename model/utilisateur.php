@@ -186,7 +186,7 @@ class utilisateur
         return $val;
     }
 
-    //Fonction permettant de compter le nombre de capteurs d'un domiicile
+    //Fonction permettant de compter le nombre de capteurs d'un domicile
     public static function getNombreCapteurDomicile($idDomicile)
     {
         $bdd = PdoDomisep::pdoConnectDB();
@@ -304,6 +304,7 @@ class utilisateur
         return $val[0];
     }
 
+    // Fonction permettant de compter si une habitation a une résidence
     public static function getResidenceOfDomicile($idClient, $idHome){
         $bdd = PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT COUNT(*) FROM client_home_residence WHERE id_home=? AND num_client=? AND id_residence IS NOT NULL');
@@ -313,10 +314,22 @@ class utilisateur
         return $val[0];
     }
 
+    // Fonction permettant de récupérer l'ID d'une résidence
     public static function getIDResidence($idHome){
         $bdd = PdoDomisep::pdoConnectDB();
         $req = $bdd->prepare('SELECT id_residence FROM client_home_residence WHERE id_home=?');
         $req->execute(array($idHome));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val[0];
+    }
+
+    //Fonction permettant de compter le nombre de capteurs d'une pièce
+    public static function getNombreCapteurPiece($idRoom)
+    {
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT COUNT(*) FROM sensor WHERE id_room=?');
+        $req->execute(array($idRoom));
         $val = $req->fetch();
         $req->closeCursor();
         return $val[0];

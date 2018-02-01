@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    debugger
+    //debugger
     console.log("chargement OK");
     var saveTempDefaultText=$("#temp_max").text();
     var saveTempDefaultInt=parseInt(saveTempDefaultText);
@@ -65,7 +65,7 @@ $(document).ready(function () {
     }
 
     function tempPosChange(pos) {
-        debugger
+        //debugger
         var textChaufPos=$("#textChauffagePosition");
         var paramChauf=$("#ordre_chauf");
         if (pos==true){
@@ -79,7 +79,7 @@ $(document).ready(function () {
                     timeout:999999999
                 });
             request.always(function (d) {
-                debugger
+                //debugger
                 //Désactive le chauffage
                 $("#chauffagePosition").removeClass("bouton_vert");
                 $("#chauffagePosition").addClass("bouton_rouge");
@@ -92,7 +92,7 @@ $(document).ready(function () {
                 $(".red_indice").addClass("red");
             });
             request.fail(function (msg) {
-                debugger;
+                //debugger;
                 console.log("coucou ca marche pas");
             })
         }
@@ -107,7 +107,7 @@ $(document).ready(function () {
                     timeout:999999999
                 });
             request.always(function(d) {
-                debugger
+                //debugger
                 //Active le chauffage
                 $("#chauffagePosition").removeClass("bouton_rouge");
                 $("#chauffagePosition").addClass("bouton_vert");
@@ -122,7 +122,7 @@ $(document).ready(function () {
                 $(".red_indice").removeClass("red");
             });
             request.fail(function (msg) {
-                debugger;
+                //debugger;
                 console.log("coucou ca marche pas");
             })
         }
