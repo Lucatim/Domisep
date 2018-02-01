@@ -50,6 +50,10 @@
                 echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
             }
 
+            if ($cible === "messagerie") {
+                echo('<link rel="stylesheet" href="view/assets/css/' . $cible . '.css" />');
+            }
+
             if ($cible === "profil") {
                 if (isset($_GET['function']) && !empty($_GET['function'])) {
                     $cible = $_GET['function'];
@@ -60,6 +64,9 @@
 
                 }
             }
+
+
+
 
             if (isset($_GET["target"]) && !empty($_GET["target"])) {
                 $cible = $_GET["target"];

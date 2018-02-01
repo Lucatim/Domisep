@@ -55,12 +55,46 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
             break;
 
         case "data_messagerie"://sql pour recup les messages
-            $num_client=$_SESSION['id'];
-            $recipient = $_SESSION['id'];
+            $num_client= $_GET["idUser"];
+            $recipient = $_GET["idUser"];
+
+            $req=$bdd->prepare('SELECT * FROM mail WHERE num_client=? OR recipient = ? ');
+            $req->execute(array($num_client, $recipient ));
+            $val=$req->fetchAll();
+            $req->closeCursor();
+
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
+
+        case  "corbeille":
+            $numClient=$_GET["idUser"];
+
+            $req = $bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
+            $req->execute(array($numClient));
+            $val=$req->fetchAll();
+            $req->closeCursor();
+
+            header('Content-Type: application/json');
+            echo json_encode($val);
+            break;
+
+        case  "delete":
+            $id_utilisateur_co = $_SESSION['id'];
+
+            $bdd=PdoDomisep::pdoConnectDB();
+            $req = $bdd->prepare('UPDATE mail SET bin=1 WHERE id_mail= ?');
+            $req->execute(array($id_utilisateur_co));
+            $val=$req->fetchAll();
+            $req->closeCursor();
+            return $val;
 
 
-            $req=$bdd->prepare('SELECT * FROM mail WHERE num_client=? OR recipient=?');
-            $req->execute(array($num_client, $recipient));
+        case  "messageEnvoye":
+            $numClient=$_GET["idUser"];
+
+            $req = $bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
+            $req->execute(array($numClient));
             $val=$req->fetchAll();
             $req->closeCursor();
 

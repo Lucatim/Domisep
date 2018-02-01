@@ -18,23 +18,24 @@
 
 
 <section id="content">
-    <div class="adapt_content"></div>
 
+    <div class="adapt_content"></div>
     <div id="bloc_content">
+
         <div id="container_principal">
 
             <div class="groupe_bouton_vert">
-                
+
                 <div class="bouton_vert">
                     <a id="myBtn" href="#" ><i class="material-icons">message</i>Nouveau message</a>
                 </div>
 
                 <div id="boiteReception" class="bouton_vert">
-                    <a href="index_mvc?target=messagerie&function=reception" ><i class="material-icons">mail</i>Boîte de réception</a>
+                    <a href="index_mvc?target=messagerie&function=reception"  ><i class="material-icons">mail</i>Boîte de réception</a>
                 </div>
 
                 <div id="messageEnvoye" class="bouton_vert" >
-                    <a href="index_mvc?target=messagerie&function=MessageEnvoye" ><i class="material-icons">send</i>Messages envoyés</a>
+                    <a id="message_envoye" href="index_mvc?target=messagerie&function=MessageEnvoye" ><i class="material-icons">send</i>Messages envoyés</a>
                 </div>
 
                 <div id="corbeille" class="bouton_vert" >
@@ -56,7 +57,10 @@
                     <form action="index_mvc?target=messagerie&function=Nouveau" name="myForm" method="post" id="myForm" class="input_radio" >
                         <div class="form_flex_edit">
                             <label>Destinataire </label>
-                            <input type="text" name="recipient" class="label_input">
+                            <SELECT type="text" name="recipient" class="label_input" size="1">
+                                <OPTION value="1">Administrateur
+                                <OPTION value="4">Gestionnaire
+                            </SELECT>
                         </div>
 
                         <div class="form_flex_edit">
@@ -68,6 +72,7 @@
                                 <OPTION value="Autre">Autre
                             </SELECT>
                         </div>
+                        
 
                         <div class="form_flex_edit">
                             <label id="the_message">Message </label>
