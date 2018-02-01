@@ -143,7 +143,7 @@ switch ($function){
             $_SESSION["prenom"] = $_SESSION["profilSelect"]["surname"];
             $_SESSION["nom"] = $_SESSION["profilSelect"]["name"];
             $_SESSION["img"]["pic"] = $_SESSION["profilSelect"]["pic"];
-            echo('<script src="js/refreshSlide.js" ></script>');
+            //echo('<script src="js/refreshSlide.js" ></script>');
         }
 
         require_once ("view/base/utilisateur/editer_mon_profil.php");

@@ -266,16 +266,21 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
 
             }
 
-            var_dump($_SESSION["img"]["pic"]);
-            echo('
+            ?>
                 <div id="slide_accueil">
                    <div id="slide_haut">
                         <div id="derniere_connexion">
-                            <p>Dernière connexion : '. $_SESSION["date_logged_actual"] .'</p>
+                            <p>Dernière connexion : <?php if (empty($_SESSION["date_log_first_connexion"])) {
+                                echo ('/'); // On n'affiche pas de dernière date si c'est la première fois qu'il se connecte
+                            }
+                            else {
+                                echo $_SESSION["date_logged_actual"];
+                            }?>
+                            </p>
                         </div>
             
                         <div id="date_inscription">
-                            <p>Date d\'inscription : '. $_SESSION["date_register"] .'</p>
+                            <p>Date d'inscription : <?php echo $_SESSION["date_register"] ?></p>
                         </div>
                     </div>
                                
@@ -297,20 +302,21 @@ if (isset($_GET["target"]) && !empty($_GET["target"])) {
                         </div>   
                        
                         <div class="opacity_edit_image">
-                            <img src='.$_SESSION["img"]["pic"].' alt="image_slide">
+                            <img src=<?php echo $_SESSION["img"]["pic"] ?> alt="image_slide">
                         </div>                                     
                     </div>
             
                     <div id="slide_bas">
                         <div id="prenom_nom">
-                            <p>'. $_SESSION["prenom"].'  '.$_SESSION["nom"].'</p>
+                            <p><?php echo ($_SESSION["prenom"] . ' ' . $_SESSION["nom"])?></p>
                         </div>
             
                         <div id="numero_client">
-                            <p>N° client : '. $_SESSION["id"] .'</p>
+                            <p>N° client : <?php echo $_SESSION["id"] ?></p>
                         </div>
                     </div>
-                </div>');
+                </div>
+        <?php
             break;
 
         default:

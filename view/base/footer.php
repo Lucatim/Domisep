@@ -25,10 +25,10 @@ echo ("<footer>
             <div id=\"bas_footer\">
                 <div id=\"reseaux_sociaux\">
                     <div id=\"facebook_footer\">
-                        <a href=\"#\"><img src=\"view/assets/images/facebook_footer.png\" alt=\"Facebook\"/></a>
+                        <a href=\"#\"><img src=\"view/assets/images/footer/facebook_footer.png\" alt=\"Facebook\"/></a>
                     </div>
                     <div id=\"twitter_footer\">
-                        <a href=\"#\"><img src=\"view/assets/images/twitter_footer.png\" alt=\"Twitter\"/></a>
+                        <a href=\"#\"><img src=\"view/assets/images/footer/twitter_footer.png\" alt=\"Twitter\"/></a>
                     </div>
                 </div>
 
@@ -38,10 +38,10 @@ echo ("<footer>
 
                 <div id=\"drapeaux\">
                     <div id =\"drapeaux_francais\">
-                        <a href=\"#\"><img src=\"view/assets/images/france.png\" alt=\"Français\"/></a>
+                        <a href=\"#\"><img src=\"view/assets/images/footer/france.png\" alt=\"Français\"/></a>
                     </div>
                     <div id =\"drapeaux_anglais\">
-                        <a href=\"#\"><img src=\"view/assets/images/united-kingdom.png\" alt=\"Anglais\"/></a>
+                        <a href=\"#\"><img src=\"view/assets/images/footer/united-kingdom.png\" alt=\"Anglais\"/></a>
                     </div>
                 </div>
             </div>

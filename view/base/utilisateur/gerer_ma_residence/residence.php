@@ -20,7 +20,7 @@
             <div class="groupe_carre_image_texte_droite">
                 <div class="grand_carre_image">
                     <div class="carre_image <?php if($res['heat_on']==0){echo 'red';}?>">
-                        <img src="view/assets/images/domicile-1.jpg" alt="unknown">
+                        <img src="view/assets/images/residence/residence-<?php echo($res['id_residence']) ?>.jpg" alt="unknown">
 
                         <div class="bandeau_bas <?php if($res['heat_on']==0){echo 'red';}?>">
                             <p>
@@ -54,7 +54,7 @@
 
 
             <a href='index_mvc.php?target=utilisateur&function=residence_chauffage' class="carre_image <?php if($res['heat_on']==0){echo 'red';}?>">
-                <img src="view/assets/images/capteur_humidite.jpg" alt="unknown">
+                <img src="view/assets/images/capteurs/capteur_temperature.jpg" alt="unknown">
                 <div class="bandeau_bas <?php if($res['heat_on']==0){echo 'red';}?> ">
                     <p>Chauffage</p>
                 </div>
@@ -101,7 +101,7 @@
 
             <div class="groupe_carre_image">
                 <a href="#" class="carre_image">
-                    <img src="view/assets/images/consommation-electricite.jpg" alt="unknown">
+                    <img src="view/assets/images/consommation/consommation-electricite.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Electricité</p>
@@ -109,7 +109,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="view/assets/images/consommation-eau.jpg" alt="unknown">
+                    <img src="view/assets/images/consommation/consommation-eau.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Eau</p>
@@ -117,7 +117,7 @@
                 </a>
 
                 <a href="#" class="carre_image">
-                    <img src="view/assets/images/consommation-gaz.jpg" alt="unknown">
+                    <img src="view/assets/images/consommation/consommation-gaz.jpg" alt="unknown">
 
                     <div class="bandeau_bas">
                         <p>Gaz</p>

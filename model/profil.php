@@ -53,7 +53,7 @@ class profil
         }*/
 
         $req=$bdd->prepare("UPDATE client SET surname=:v_surname,name=:v_name,gender=:v_gender, birth=:v_birth, bill_addr=:v_bill_addr, bill_town=:v_bill_town, bill_post_code=:v_bill_post_code, bill_country=:v_bill_country, mail=:v_mail, mail_security=:v_mail_security, phone=:v_phone, fax=:v_fax WHERE id_client=:id"); // Préparation de la requête
-        $req->bindParam(':v_surname',$value_form["surname"]);
+        $req->bindParam(':v_surname',mysqli_real_escape_string($bdd, $value_form["surname"]));
         $req->bindParam(':v_name',$value_form["name"]);
         $req->bindParam(':v_gender',$value_form["gender"]);
         $req->bindParam(':v_birth',$value_form["birth"]);
