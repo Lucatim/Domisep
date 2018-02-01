@@ -135,6 +135,20 @@ class profil
         return $val;
     }
 
+    public static function UpdateAcces($id_client, $access_utilisateur, $post_name, $post_surname) {
+        $bdd=PdoDomisep::pdoConnectDB(); // Connexion à la BDD
+
+        $req=$bdd->prepare("UPDATE client SET name=:v_name, surname=:v_surname, acces_client=:v_acces_client WHERE id_client=:id"); // Préparation de la requête
+
+        $req->bindParam(':v_surname',$post_surname);
+        $req->bindParam(':v_name',$post_name);
+        $req->bindParam(':v_acces_client',$access_utilisateur);
+        $req->bindParam(':id',$id_client);
+
+        $req->execute(); // Exécution de la requête
+        $req->closeCursor(); // Libération de la connexion au serveur
+    }
+
 
 }
 

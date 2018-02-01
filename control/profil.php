@@ -203,6 +203,33 @@ switch ($function){
         break;
 
     case "editer_mes_utilisateurs":
+
+        if(isset($_POST) && !empty($_POST))
+        {
+            if(isset($_POST["id_client1"])) {
+                $full_name = mb_split(' ', $_POST["full_name1"]);
+
+                profil::UpdateAcces($_POST["id_client1"], $_POST["acces_utilisateur1"], $full_name[1], $full_name[0]);
+            }
+
+            if(isset($_POST["id_client2"])) {
+                $full_name = mb_split(' ', $_POST["full_name2"]);
+
+                profil::UpdateAcces($_POST["id_client2"], $_POST["acces_utilisateur2"], $full_name[1], $full_name[0]);
+            }
+
+            if(isset($_POST["id_client3"])) {
+                $full_name = mb_split(' ', $_POST["full_name3"]);
+
+                profil::UpdateAcces($_POST["id_client3"], $_POST["acces_utilisateur3"], $full_name[1], $full_name[0]);
+            }
+
+        }
+        $IDutilisateurs_seondaires = profil::getUtilisateursSecondairesID($_SESSION["id"]);
+        $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire1'] = profil::getUtilisateurSecondaireInfo($IDutilisateurs_seondaires['id_second_client_1']);
+        $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire2'] = profil::getUtilisateurSecondaireInfo($IDutilisateurs_seondaires['id_second_client_2']);
+        $_SESSION["utilisateurs_secondaires"]['utilisateur_secondaire3'] = profil::getUtilisateurSecondaireInfo($IDutilisateurs_seondaires['id_second_client_3']);
+
         require_once ("view/base/utilisateur/editer_mes_utilisateurs.php");
         break;
 
