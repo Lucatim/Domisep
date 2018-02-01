@@ -309,8 +309,8 @@ INSERT INTO sub_list(name,price) VALUES ('Premium',50);
 /************************/
 
 /* UTILISATEUR PRINCIPAL */
-INSERT INTO client(date_reg,date_log,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
-    VALUES ('2018-01-29','2017-02-24 23:42:16',SHA2('0000',0),'Henri','Martin','1','view/assets/images/Henri.jpg','1952-04-01','42 avenue de Friedland','Paris','75008','France','henri.martin@gmail.com','h.martin@vivendi.com','0603789466','0145789538','9','10',2,20);
+INSERT INTO client(date_reg,pass,surname,name,gender, pic, birth, bill_addr, bill_town, bill_post_code, bill_country, mail, mail_security, phone, fax, id_second_client_1, id_second_client_2, id_sub_list,discount)
+    VALUES ('2018-01-29',SHA2('0000',0),'Henri','Martin','1','view/assets/images/Henri.jpg','1952-04-01','42 avenue de Friedland','Paris','75008','France','henri.martin@gmail.com','h.martin@vivendi.com','0603789466','0145789538','9','10',2,20);
 
 /* UTILISATEUR SECONDAIRE 1 */
 INSERT INTO client(pass,surname,name,pic,second_client,acces_client)

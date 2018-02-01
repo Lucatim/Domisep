@@ -15,7 +15,7 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
 
     $piece=$_SESSION["pieceSelect"];
     $domi = $_SESSION["domiSelect"];
-    var_dump($piece);
+    //var_dump($piece);
     //var_dump($_SESSION["nbCapteursPiece"]);
     //var_dump($piece)
     ?>

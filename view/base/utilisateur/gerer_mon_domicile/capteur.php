@@ -40,10 +40,10 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                 ?>
                 <div class="groupe_carre_image_texte_droite">
                     <div class="grand_carre_image">
-                        <div class="carre_image red">
+                        <div class="carre_image">
                             <img src="<?php echo($capteur["pic"]); ?>" alt="unknown">
 
-                            <div class="bandeau_bas red">
+                            <div class="bandeau_bas">
                                 <p><?php echo ($capteur["name"]); ?></p>
                             </div>
                         </div>

@@ -35,7 +35,7 @@
                         }
                         else{
                             ?>
-                            <a href="index_mvc.php?target=utilisateur&function=domicile&residence=<?php echo ($residence["id_residence"])?>" class="carre_image">
+                            <a href="index_mvc.php?target=utilisateur&function=residence&residence=<?php echo ($residence["id_residence"])?>" class="carre_image">
                                 <img src="view/assets/images/residence/residence-<?php echo(($i%4)+1) ?>.jpg" alt="unknown">
 
                                 <div class="bandeau_bas">
