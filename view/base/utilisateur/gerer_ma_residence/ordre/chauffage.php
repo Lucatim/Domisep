@@ -27,7 +27,7 @@
                 <div class="groupe_carre_image_texte_droite">
                     <div class="red_indice grand_carre_image <?php if ($res["heat_on"]==0){echo "red";}  ?>">
                         <div class="red_indice carre_image <?php if ($res["heat_on"]==0){echo "red";}  ?>">
-                            <img src="view/assets/images/domicile-1.jpg" alt="unknown">
+                            <img src="view/assets/images/residence/residence-1.jpg" alt="unknown">
 
                             <div class="red_indice bandeau_bas <?php if ($res["heat_on"]==0){echo "red";}  ?>">
                                 <p>

@@ -6,6 +6,8 @@
  * Time: 22:46
  */
 
+require_once 'model/helper.php';
+
 if (isset($_SESSION["utilisateur_selection"]["domicile_selection"])&&!empty($_SESSION["utilisateur_selection"]["domicile_selection"])){
     $domi=$_SESSION["utilisateur_selection"]["domicile_selection"];
 ?>
@@ -19,7 +21,7 @@ if (isset($_SESSION["utilisateur_selection"]["domicile_selection"])&&!empty($_SE
             <div class="groupe_carre_image_texte_droite">
                 <div class="grand_carre_image">
                     <div class="carre_image red">
-                        <img src="view/assets/images/domicile-1.jpg" alt="unknown">
+                        <img src="view/assets/images/domicile/domicile-<?php echo($domi['id_home']) ?>.jpg" alt="unknown">
 
                         <div class="bandeau_bas red">
                             <p>
@@ -57,7 +59,7 @@ if (isset($_SESSION["utilisateur_selection"]["domicile_selection"])&&!empty($_SE
                 //Condition changement cadre rouge si capteur defectueux
                 //Gere lien direction piece
                 echo ("<a href='index_mvc.php?target=admin&function=gerer_piece_utilisateur&piece=".$piece["id_room"]."' class=\"carre_image\">
-                    <img src=\"view/assets/images/capteur_humidite.jpg\" alt=\"unknown\">
+                    <img src=\"view/assets/images/pieces/".helper::remove_accents($piece["name"]).".jpg\" alt=\"unknown\">
 
                     <div class=\"bandeau_bas\">
                         <p>".$piece["name"]."</p>
