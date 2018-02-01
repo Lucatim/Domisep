@@ -31,7 +31,7 @@ $(document).ready(function () {
 
                 var sujet = e.subject;
                 var surname = e.surname;
-                var nom = e.nom;
+                var nom = e.name;
                 var picture = e.pic;
                 var message = e.mess;
                 var id_client = e.id_client;
@@ -49,7 +49,7 @@ $(document).ready(function () {
 
 
 
-                if ( id_client == id_utilisateur_co && corbeille == "1"){
+                if ( id_client == sender && corbeille == "1"){
                     //$(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +

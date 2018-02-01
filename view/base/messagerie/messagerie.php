@@ -72,7 +72,7 @@
                                 <OPTION value="Autre">Autre
                             </SELECT>
                         </div>
-                        
+
 
                         <div class="form_flex_edit">
                             <label id="the_message">Message </label>

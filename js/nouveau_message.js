@@ -40,7 +40,6 @@ function validateForm()
     }
 
 
-
     formulaire.submit();
 
 };

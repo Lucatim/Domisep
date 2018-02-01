@@ -70,8 +70,8 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
         case  "corbeille":
             $numClient=$_GET["idUser"];
 
-            $req = $bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
-            $req->execute(array($numClient));
+            $req = $bdd->prepare('SELECT * FROM mail,client WHERE bin = ? AND sender = ?');
+            $req->execute(array(1, $numClient));
             $val=$req->fetchAll();
             $req->closeCursor();
 
@@ -93,7 +93,7 @@ if (isset($_GET['function']) && !empty($_GET['function'])) {
         case  "messageEnvoye":
             $numClient=$_GET["idUser"];
 
-            $req = $bdd->prepare('SELECT * FROM mail,client WHERE num_client=?');
+            $req = $bdd->prepare('SELECT * FROM mail,client WHERE sender=?');
             $req->execute(array($numClient));
             $val=$req->fetchAll();
             $req->closeCursor();

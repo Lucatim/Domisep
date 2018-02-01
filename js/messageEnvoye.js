@@ -31,7 +31,7 @@ $(document).ready(function () {
 
                 var sujet = e.subject;
                 var surname = e.surname;
-                var nom = e.nom;
+                var nom = e.name;
                 var picture = e.pic;
                 var message = e.mess;
                 var id_client = e.id_client;
@@ -50,7 +50,7 @@ $(document).ready(function () {
                 var new_id_delete = "delete"+id_mail;
 
 
-                if (sender == id_utilisateur_co && id_client == id_utilisateur_co && corbeille==0){
+                if (sender == id_utilisateur_co && id_client == sender && corbeille==0){
                    $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
@@ -63,9 +63,6 @@ $(document).ready(function () {
                         "                        <p id=\"nom_prenom\" class=\"texte_gras\">Prénom NOM</p>\n" +
                         "                        <p id=\"sujet\" class=\"texte_gras texte_gris\">Sujet</p>\n" +
                         "                        <p id=\"message\" class=\"messagerie_message texte_gris\">Lorem ipsum .</p>\n" +
-                        "                        <p id=\"recipient\" class=\"messagerie_message texte_gris\">Lorem ipsum .</p>\n" +
-                        "                    </div>\n" +
-                        "\n" +
                         "                    <div class=\"informations_message_date_supprimer\">\n" +
                         "                        <div class=\"messagerie_delete\">\n" +
                         "                            <a href=\"#\" id=\"delete\"><i class=\"material-icons\">delete</i></a>\n" +
@@ -85,7 +82,6 @@ $(document).ready(function () {
 
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#"+new_id_message).text(message);});});//remplacer le message
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#"+new_id_sujet).text(sujet);});});//remplacer le sujet
-                    $(document).ready(function(){$("#messageEnvoye").click(function(){$("#"+id_recipient).text('à  ' + recipient);});});//remplacer le nom recipient
 
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#"+new_id_nom_prenom).text(surname +" "+nom);});});//remplacer le nom et Prenom
                     $(document).ready(function(){$("#messageEnvoye").click(function(){$("#"+new_id_pic).attr('src',picture);});});//remplacer l'image
