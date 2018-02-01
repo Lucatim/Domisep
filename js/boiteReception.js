@@ -47,12 +47,11 @@ $(document).ready(function () {
                 var new_id_nom_prenom = "nom_prenom"+id_mail;
                 var new_id_pic = "pic"+id_mail;
                 var new_id_delete = "delete"+id_mail;
-                var id_sender = "sender"+id_mail;
 
 
 
 
-                if (recipient == id_utilisateur_co && id_client == id_utilisateur_co && corbeille == 0){
+                if (recipient == id_utilisateur_co && id_client == sender && corbeille == 0 ){
                     $(document).ready(function(){$("#corbeille").click(function(){$(".adapt_content").empty()})});
                     $(document).ready(function(){$("#boiteReception").click(function(){$(".adapt_content").append(
                         "<div id=\"container_principal\">\n" +
@@ -65,11 +64,7 @@ $(document).ready(function () {
                         "                        <p id=\"nom_prenom\" class=\"texte_gras\">Prénom NOM</p>\n" +
                         "                        <p id=\"sujet\" class=\"texte_gras texte_gris\">Sujet</p>\n" +
                         "                        <p id=\"message\" class=\"messagerie_message texte_gris\">Lorem ipsum .</p>\n" +
-                        "                        <p id=\"sender\" class=\"messagerie_message texte_gris\">Lorem ipsum .</p>\n" +
-                        "                    </div>\n" +
-                        "\n" +
                         "                    <div class=\"informations_message_date_supprimer\">\n" +
-                        "                        <p class=\"messagerie_date\">hh:mm</p>\n" +
                         "                        <div class=\"messagerie_delete\">\n" +
                         "                            <a href=\"#\" id=\"delete\"><i class=\"material-icons\">delete</i></a>\n" +
                         "                        </div>\n" +
@@ -79,7 +74,6 @@ $(document).ready(function () {
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#container_principal").attr('id',new_id_container);});});//remplacer l'id
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#message").attr('id',new_id_message);});});//remplacer l'id
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#sujet").attr('id',new_id_sujet);});});//remplacer l'id
-                    $(document).ready(function(){$("#boiteReception").click(function(){$("#sender").attr('id',id_sender);});});//remplacer l'id
 
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#nom_prenom").attr('id',new_id_nom_prenom);});});//remplacer l'id
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#pic").attr('id',new_id_pic);});});//remplacer l'id
@@ -89,7 +83,6 @@ $(document).ready(function () {
 
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#"+new_id_message).text(message);});});//remplacer le message
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#"+new_id_sujet).text(sujet);});});//remplacer le sujet
-                    $(document).ready(function(){$("#boiteReception").click(function(){$("#"+id_sender).text('de  ' + sender);});});//remplacer le nom recipient
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#"+new_id_nom_prenom).text(surname +" "+nom);});});//remplacer le nom et Prenom
                     $(document).ready(function(){$("#boiteReception").click(function(){$("#"+new_id_pic).attr('src',picture);});});//remplacer l'image
 

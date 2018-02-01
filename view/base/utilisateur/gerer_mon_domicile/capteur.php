@@ -63,7 +63,7 @@ if ((isset($_SESSION["domiSelect"])&& !empty($_SESSION["domiSelect"])) && (isset
                             ?>
                         </ul>
 
-                        <p>Nombre de capteurs : <span class="texte_gris"><?php echo($_SESSION["nbCapteursPiece"]) ?></span></p>
+                        <p>Nombre de capteurs : <span class="texte_gris"> </span></p>
                     </div>
                 </div>
                 <?php

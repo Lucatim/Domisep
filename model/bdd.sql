@@ -290,9 +290,16 @@ INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,2);
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL ,3);
 
-INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (1,3,3,0,"Mon compte en ligne","je veux changer de mot de passe");
-INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (2,3,3,0,"Mes données","hello world");
-INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (3,3,3,0,"Mon compte en ligne","hello world");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (1,2,1,0,"Mon compte en ligne","vous avez un nouveau mot de passe");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (2,1,2,0,"Mes données","votre compte bancaire à été mis à jour");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (3,1,3,0,"Autre","Bienvenue chez Domisep");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (4,2,4,0,"Mon installation","votre installation est à jour");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (5,1,5,0,"Mes données","vos données ont bien été modifiée");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (6,2,6,0,"Autre","Bienvenue chez Domisep");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (7,2,7,0,"Autre","Bienvenue chez Domisep");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (8,1,8,0,"Mes données","mos de passe mis à jour");
+INSERT INTO mail (recipient, sender, num_client, bin, subject, mess) VALUES (9,1,9,0,"Mon compte en ligne","votre inscription est à jour");
+
 
 INSERT INTO sub_list(name,price) VALUES ('Standard',30);
 INSERT INTO sub_list(name,price) VALUES ('Premium',50);

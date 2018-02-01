@@ -146,7 +146,7 @@ if (isset($_SESSION['role']) && (!empty($_SESSION['role']) || $_SESSION['role'] 
         //Utilisateur est admin
         //echo ("pas gestionnaire");
         if($admin==="1"){
-            echo ("Admin");
+            //echo ("Admin");
             ?>
             <header>
                 <div id="bloc_header">
