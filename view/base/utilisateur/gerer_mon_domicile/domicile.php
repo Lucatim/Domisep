@@ -6,10 +6,19 @@
  * Time: 23:57
  */
 ?>
-<?php if (isset($_SESSION["domiSelect"]) && !empty($_SESSION["domiSelect"])){
-    var_dump($_SESSION["domiSelect"]);
+<?php
+if (isset($_SESSION["domiSelect"]) && !empty($_SESSION["domiSelect"])) {
+    //var_dump($_SESSION["domiSelect"]);
 
-    $domi=$_SESSION["domiSelect"];
+    $domi = $_SESSION["domiSelect"];
+    /*var_dump($_SESSION["domiHasResidence"]);
+    var_dump($_SESSION["residenceSelectUser"]);
+    var_dump($_SESSION["idRes"]);*/
+
+
+if (isset($_SESSION["residenceSelectUser"]) && !empty($_SESSION["residenceSelectUser"])) {
+    $res = $_SESSION["residenceSelectUser"];
+}
 ?>
 <section id="content">
     <div id="bloc_content">
@@ -32,15 +41,28 @@
                     </div>
                 </div>
 
-                <?php echo ('
+                <?php if ($_SESSION["domiHasResidence"]==1) { // On affiche les coordonnées en fonction de la résidence
+                    echo ('
+                    <div class="texte_droite_cgi">
+                        <p>Adresse : <span class="texte_gris">'.$res["addr"].' </span></p>
+                        <p>Code postal : <span class="texte_gris">'.$res["post_code"].' </span></p>
+                        <p>Ville : <span class="texte_gris">'.$res["town"].'</span></p>
+                        <p>Pays : <span class="texte_gris">'.$res["country"]. '</span></p>
+                        <p class="p_padding_top">Nombre de pièces : <span class="texte_gris">'.$domi["nbrPiece"].'</span></p>
+                        <p>Nombre de capteurs : <span class="texte_gris">'.$domi["nbrCapteurs"].'</span></p>
+                    </div>');
+                }
+                else { // On affiche les coordonnées en fonction de l'habitation (pas de coordonnées dans la résidence)
+                    echo ('
                     <div class="texte_droite_cgi">
                         <p>Adresse : <span class="texte_gris">'.$domi["addr"].' </span></p>
                         <p>Code postal : <span class="texte_gris">'.$domi["post_code"].' </span></p>
                         <p>Ville : <span class="texte_gris">'.$domi["state"].'</span></p>
                         <p>Pays : <span class="texte_gris">'.$domi["country"]. '</span></p>
-                        <p class="p_padding_top">Nombre de pièces : <span class="texte_gris">XX</span></p>
-                        <p>Nombre de capteurs : <span class="texte_gris">XX</span></p>
+                        <p class="p_padding_top">Nombre de pièces : <span class="texte_gris">'.$domi["nbrPiece"].'</span></p>
+                        <p>Nombre de capteurs : <span class="texte_gris">'.$domi["nbrCapteurs"].'</span></p>
                     </div>');
+                }
                 ?>
             </div>
 <?php /*
@@ -53,7 +75,7 @@
             <h2>Mes pièces</h2>
             <div class="groupe_carre_image">
             <?php
-            var_dump($domi["pieces"]);
+            //var_dump($domi["pieces"]);
             foreach ($domi["pieces"] as $piece){
                 //Condition changement cadre rouge si capteur defectueux
                 //Gere lien direction piece
@@ -65,6 +87,9 @@
                     </div>
                 </a>");
             }
+
+            if ($domi["pieces"] == NULL)
+                echo ('<p>Aucune pièce n\'est associée à votre compte.</p>');
             ?>
             </div>
 
@@ -89,16 +114,6 @@
             </div>
 */
             ?>
-
-            <div class="groupe_bouton_vert">
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
-                </div>
-
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">delete</i>Supprimer</a>
-                </div>
-            </div>
 
             <hr>
 
@@ -128,17 +143,10 @@
                 </a>');
             }
 
+            if ($domi["capteurs"] == NULL)
+                echo ('<p>Aucun capteur n\'est associé à votre compte.</p>');
+
             ?>
-            </div>
-
-            <div class="groupe_bouton_vert">
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
-                </div>
-
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">delete</i>Supprimer</a>
-                </div>
             </div>
 
             <hr>

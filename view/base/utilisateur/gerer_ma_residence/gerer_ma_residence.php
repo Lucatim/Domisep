@@ -53,15 +53,7 @@
 
             </div>
 
-            <div class="groupe_bouton_vert">
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
-                </div>
 
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">delete</i>Supprimer</a>
-                </div>
-            </div>
 
         </div>
 </section>

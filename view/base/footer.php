@@ -17,7 +17,7 @@ echo ("<footer>
                         <li><a href=\"index_mvc.php?target=base&function=mentions_legales\">Mentions légales</a></li>
                         <li><a href=\"#\">On parle de nous</a></li>
                         <li><a href=\"index_mvc.php?target=base&function=notre_equipe\">Notre équipe</a></li>
-                        <li><a href=\"#\">Nous contacter</a></li>
+                        <li><a href=\"index_mvc.php?target=base&function=nous_contacter\">Nous contacter</a></li>
                     </ul>
                 </div>
             </div>

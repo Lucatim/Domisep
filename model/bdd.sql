@@ -102,6 +102,11 @@ CREATE TABLE residence (
   temp_max int DEFAULT 30,
   heat_on boolean DEFAULT TRUE,
   pic varchar(128) DEFAULT "view/assets/images/unknown.jpg",
+  addr varchar(32),
+  town varchar(32),
+  post_code int,
+  state varchar(32),
+  country varchar(32),
 
   PRIMARY KEY (id_residence)
 );
@@ -159,6 +164,7 @@ CREATE TABLE sensor (
 
   data float,
   sensor_on boolean DEFAULT TRUE,
+  sensor_error boolean DEFAULT FALSE,
 
   PRIMARY KEY (id_sensor),
   FOREIGN KEY (id_room) REFERENCES room(id_room),
@@ -255,16 +261,21 @@ INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison d
 /* Home2 */
 INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Appart de Gigi','Sous les sunlights des tropiques',971,'Guadeloupe','France',2);
 
+/* Home 3 */
+INSERT INTO home(name,addr,post_code,state,country,number_user) VALUES('Maison de retraite de Gigi','Test',97102,'Guadeloupe','France',2);
+
 /* Attribut des domiciles aux users */
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,1,1);
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(3,2,2);
-INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(4,3,3);
+INSERT INTO client_home_residence(num_client,id_home) VALUES(3,3);
+INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(4,1,3);
 
 INSERT INTO sensor_list(name,pic,unite) VALUES('Température','view/assets/images/capteurs/capteur_temperature.jpg','°C'),('Humidité','view/assets/images/capteurs/capteur_humidite.jpg',''),('Pression','view/assets/images/capteurs/capteur_pression.jpg','Bar'),('Lumière','view/assets/images/capteurs/capteur_lumiere.jpg','Lumens'),('Fumée','view/assets/images/capteurs/capteur_fumee.jpg','Feu'),('Intrusion','view/assets/images/capteurs/capteur_intrusion.jpg',NULL);
 
 INSERT INTO room_list(name) VALUES('Salon'),('Cuisine'),('Chambre'),('Salle de Bain'),('Bureau'),('Couloir'),('Entrée'),('Toilettes'),('Buanderie'),('Salle à manger'),('Grenier'),('Garage'),('Cellier'),('Salle Cinéma'),('Cave');
 
 INSERT INTO room(id_home,id_room_list) VALUES (1,1);
+INSERT INTO room(id_home,id_room_list) VALUES (1,11);
 
 INSERT INTO sensor(id_room,id_sensor_list,data) VALUES (1,1,20);
 
@@ -275,9 +286,9 @@ INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,12,"2017-12-19");
 INSERT INTO sensor_data(id_sensor,data,date_sensor) VALUES (1,26,"2017-12-12");
 
 /*Jeu essai Residence*/
-INSERT INTO residence(name) VALUES ("Résidence Reubell");
-INSERT INTO residence(name) VALUES ("Résidence Lodge");
-INSERT INTO residence(name) VALUES ("Résidence Overlook");
+INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Reubell","Rue de la soif 1","Paris","75005","France");
+INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Lodge","Rue de la soif 2","Paris","75005","France");
+INSERT INTO residence(name,addr,town,post_code,country) VALUES ("Résidence Overlook","Rue de la soif 3","Paris","75005","France");
 
 /* Attribut des residences aux gestionnaires */
 INSERT INTO client_home_residence(num_client,id_home,id_residence) VALUES(2,NULL,1);

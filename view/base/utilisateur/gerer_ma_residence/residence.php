@@ -10,6 +10,8 @@
     var_dump($_SESSION["residenceSelect"]);
 
     $res=$_SESSION["residenceSelect"];
+
+    var_dump($_SESSION["numberOfHome"]);
 ?>
 <section id="content">
     <div id="bloc_content">
@@ -32,15 +34,18 @@
                     </div>
                 </div>
 
-                <?php echo ('
-                    <div class="texte_droite_cgi">
-                        <p>Adresse : <span class="texte_gris"> </span></p>
-                        <p>Code postal : <span class="texte_gris"> </span></p>
-                        <p>Ville : <span class="texte_gris"></span></p>
-                        <p>Pays : <span class="texte_gris"></span></p>
-                        <p class="p_padding_top">Nombre d\'habitations : <span class="texte_gris">XX</span></p>
-                    </div>');
-                ?>
+                <div class="texte_droite_cgi">
+                    <p>Adresse : <span class="texte_gris"><?php echo $res["addr"] ?></span></p>
+                    <p>Code postal : <span class="texte_gris"><?php echo $res["post_code"] ?></span></p>
+                    <p>Ville : <span class="texte_gris"><?php echo $res["town"] ?></span></p>
+                    <p>Pays : <span class="texte_gris"><?php echo $res["country"] ?></span></p>
+                    <p class="p_padding_top">Nombre d'habitations : <span class="texte_gris"><?php echo $_SESSION["numberOfHome"] ?></span></p>
+                </div>
+
+            </div>
+
+            <div class="bouton_vert bouton_gris">
+                <a href="index_mvc.php?target=utilisateur&function=gerer_ma_residence"><i class="material-icons">undo</i>Retour</a>
             </div>
 <?php /*
             <div class="bouton_vert">
@@ -84,20 +89,10 @@
 */
             ?>
 
-            <div class="groupe_bouton_vert">
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">add_circle</i>Ajouter</a>
-                </div>
-
-                <div class="bouton_vert">
-                    <a href="#"><i class="material-icons">delete</i>Supprimer</a>
-                </div>
-            </div>
-
             <hr>
 
 
-            <h2>Ma consommation</h2>
+            <h2>Consommation de ma résidence</h2>
 
             <div class="groupe_carre_image">
                 <a href="#" class="carre_image">

@@ -36,8 +36,15 @@ switch ($function){
         if(isset($_GET["home"])&& !empty($_GET["home"])){
             //Recupere tous info domicile, pieces et capteurs
             $_SESSION["domiSelect"]= utilisateur::getDomicileComplet($_GET["home"]);
+            $_SESSION["domiHasResidence"]= utilisateur::getResidenceOfDomicile($_SESSION["id"], $_GET["home"]);
+            if ($_SESSION["domiHasResidence"]==1) {
+                $idResidence =  utilisateur::getIDResidence($_GET["home"]);
+                $_SESSION["idRes"] = $idResidence;
+                $_SESSION["residenceSelectUser"]=utilisateur::getResidenceInformation($idResidence);
+            }
+
             ini_set('xdebug.var_display_max_depth', 15);
-            var_dump($_SESSION["domiSelect"]);
+            //var_dump($_SESSION["domiSelect"]);
             require_once ("view/base/utilisateur/gerer_mon_domicile/domicile.php");
         }
        //penser a la redirection vers les domiciles
@@ -91,6 +98,7 @@ switch ($function){
         if(isset($_GET["residence"])&&!empty($_GET["residence"])){
             //VERIFIER QUE RESIDENCE APPARTIENT BIEN A UTILISATEUR
             $_SESSION["residenceSelect"]=utilisateur::getResidenceInformation($_GET["residence"]);
+            $_SESSION["numberOfHome"]=utilisateur::getNumberOfHome($_GET["residence"]);
         }
         require_once ("view/base/utilisateur/gerer_ma_residence/residence.php");
         break;

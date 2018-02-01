@@ -79,6 +79,7 @@ switch ($function){
             $name_file = pathinfo($_FILES['fichier']['name']);
             //$name_file = $_SESSION["profilSelect"]["id_client"] . '_' . helper::remove_accents($_SESSION["profilSelect"]["surname"]) . '_' . helper::remove_accents($_SESSION["profilSelect"]["name"]) . '.' . $name_file['extension'];
             $name_file = $_SESSION["profilSelect"]["id_client"] . '.' . $name_file['extension'];
+            echo($name_file);
 
             // Gestion de la supression des anciens fichiers pour éviter d'avoir des fichiers en double avec une extension différente
             // On récupère le chemin des fichiers
@@ -95,6 +96,7 @@ switch ($function){
                 }
             }
 
+            echo($_FILES['fichier']['name']);
             // On upload le nouveau fichier
             if( !move_uploaded_file($tmp_file, $content_dir . $name_file) )
             {

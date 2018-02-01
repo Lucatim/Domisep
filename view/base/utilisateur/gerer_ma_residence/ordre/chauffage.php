@@ -22,7 +22,7 @@
         <div id="bloc_content">
             <div id="container_principal">
 
-                <h2>Instructions chauffage de la résidence</h2>
+                <h2>Mes ordres - Chauffage</h2>
 
                 <div class="groupe_carre_image_texte_droite">
                     <div class="red_indice grand_carre_image <?php if ($res["heat_on"]==0){echo "red";}  ?>">
@@ -78,11 +78,10 @@
             </div>
 */ ?>
                 <hr>
+
                 <div class="bouton_vert bouton_gris">
                     <a href="index_mvc.php?target=utilisateur&function=residence&residence=<?php echo $res['id_residence'] ?>"><i class="material-icons">undo</i>Retour</a>
                 </div>
-
-                <hr>
 
             </div>
         </div>

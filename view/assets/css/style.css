@@ -444,9 +444,8 @@ select {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.carre_image .bandeau_bas.red {
-    background-color: #f05545;
-    opacity: 0.7;
+.carre_image .bandeau_bas.red:not(p) { /* Ne pas mettre l'opacité sur le texte */
+    background-color: rgba(240, 85, 69, 0.7);
 }
 
 .carre_image.red {
