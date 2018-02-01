@@ -105,6 +105,16 @@ class utilisateur
         return $val;
     }
 
+    //Fonction permettant de recuperer l'id du nom de la piece à partir de la piece
+    public static function getPieceListFromPiece($idPiece){
+        $bdd = PdoDomisep::pdoConnectDB();
+        $req = $bdd->prepare('SELECT id_room_list FROM room WHERE id_room=?');
+        $req->execute(array($idPiece));
+        $val = $req->fetch();
+        $req->closeCursor();
+        return $val;
+    }
+
     //Fonction permettant de recuperer les caracteristique d'une piece (nom)
     public static function getCaracteristiquePiece($idPieceList)
     {

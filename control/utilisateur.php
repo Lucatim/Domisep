@@ -79,7 +79,9 @@ switch ($function){
 
     case "piece":
         if (isset($_GET["piece"])&& !empty($_GET["piece"])){
-            $_SESSION["pieceSelect"]=utilisateur::getCaracteristiquePiece($_GET["piece"]);
+
+            $idListPiece=utilisateur::getPieceListFromPiece($_GET["piece"]);
+            $_SESSION["pieceSelect"]=utilisateur::getCaracteristiquePiece($idListPiece["id_room_list"]);
             $_SESSION["pieceSelect"]["capteurs"]=utilisateur::getCapteursPiece($_GET["piece"]);
             require_once ("view/base/utilisateur/gerer_mon_domicile/piece.php");
         }
