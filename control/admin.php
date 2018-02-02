@@ -59,6 +59,7 @@ switch ($function){
                 admin::ajouterUtilisateur($_POST);
             }
         }
+        require_once 'view/base/admin/gerer_mon_domisep/gerer_mon_domisep.php';
         break;
 
     case "recherche_utilisateur":
@@ -124,7 +125,9 @@ switch ($function){
             $_SESSION["pieceSelect"]["capteurs"]=utilisateur::getCapteursPiece($_GET["piece"]);
             */
             $idPiece=$_GET["piece"];
-            $_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]=utilisateur::getCaracteristiquePiece($_GET["piece"]);
+            $idPieceList=utilisateur::getPieceListFromPiece($idPiece);
+            //var_dump($idPieceList);
+            $_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]=utilisateur::getCaracteristiquePiece($idPieceList["id_room_list"]);
             $_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]["capteurs"]=utilisateur::getCapteursPiece($_GET["piece"]);
             //$_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]+=$idPiece;
             $_SESSION["utilisateur_selection"]["domicile_selection"]["piece_selection"]["idPiece"]=$idPiece;

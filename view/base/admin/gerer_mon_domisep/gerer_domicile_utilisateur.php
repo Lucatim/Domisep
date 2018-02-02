@@ -23,7 +23,7 @@ if (isset($_SESSION["utilisateur_selection"]["domicile_selection"])&&!empty($_SE
                     <div class="carre_image red">
 
                         <img src="view/assets/images/domicile/domicile-<?php echo($domi['id_home']) ?>.jpg" alt="unknown">
-                        
+
                         <div class="bandeau_bas red">
                             <p>
                                 <?php

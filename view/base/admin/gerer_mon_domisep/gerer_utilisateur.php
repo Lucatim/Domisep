@@ -20,7 +20,11 @@
                     <p>Civilité : <span class="texte_gris">M.</span></p>
                     <p>Prénom : <span class="texte_gris">'.$profil["surname"].'</span></p>
                     <p>Nom : <span class="texte_gris">'.$profil["name"].'</span></p>
-                    <p>Date de naissance : <span class="texte_gris">'.$_SESSION["birth_form"].'</span></p>
+                    <p>Date de naissance : <span class="texte_gris">');
+            if (isset($_SESSION["birth_form"])&& !empty($_SESSION["birth_form"])){
+                echo $_SESSION["birth_form"];
+            }
+                    echo ('</span></p>
                 </div>
 
             <h2>Adresse de facturation</h2>
