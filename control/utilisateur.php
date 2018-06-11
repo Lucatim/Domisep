@@ -10,6 +10,7 @@ require_once 'model/PdoDomisep.php';
 require_once 'model/connexion.php';
 require_once 'model/utilisateur.php';
 require_once 'model/helper.php';
+require_once 'model/passerelle.php';
 
 //include_once ('view/base/header.php');
 
@@ -53,6 +54,7 @@ switch ($function){
 
     case "capteur":
         if (isset($_GET["capteur"])&& !empty($_GET["capteur"])){
+            passerelle::traitementTrame();
             $_SESSION["capteurSelect"]=utilisateur::getCaracteristiqueCapteur($_GET["capteur"]);
             $_SESSION["nbCapteursHome"]=utilisateur::getNombreCapteurDomicile($_GET["capteur"]);
             require_once ("view/base/utilisateur/gerer_mon_domicile/capteur.php");
